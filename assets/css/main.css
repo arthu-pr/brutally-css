@@ -1,0 +1,69 @@
+@font-face {
+  font-family: "Boogaloo";
+  src: url("./fonts/boogaloo-regular-webfont.woff") format("woff"),
+ url("./fonts/boogaloo-regular-webfont.woff2") format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "CaviarDreams";
+  src: url("./fonts/CaviarDreams-webfont.woff") format("woff");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "ImpactLabel";
+  src: url("./fonts/Impact_Label-webfont.woff") format("woff");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "ImpactLabelReversed";
+  src: url("./fonts/Impact_Label_Reversed-webfont.woff") format("woff");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Kavoon";
+  src: url("./fonts/Kavoon-Regular.otf") format("opentype");
+  font-display: swap;
+}
+
+
+@font-face {
+  font-family: "mail ray stuff";
+  src: url("./fonts/mail ray stuff.otf") format("opentype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Salsa-Regular";
+  src: url("./fonts/salsa-regular-webfont.woff") format("woff"),
+ url("./fonts/salsa-regular-webfont.woff2") format("woff2");
+  font-display: swap;
+}
+
+
+html {
+  box-sizing: border-box;
+  font-family: "Salsa-Regular", sans-serif;
+  /* font-family: "Boogaloo", sans-serif; */
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+body {
+  margin: 0;
+  font-size: var(--text);
+  background-color: rgba(111, 78, 55, 0.5);
+  color: rgba(64, 47, 29, 0.8);
+}
