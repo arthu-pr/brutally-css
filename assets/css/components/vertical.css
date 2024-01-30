@@ -1,0 +1,88 @@
+.vertical {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  height: unset;
+  text-align: right;
+  flex: unset;
+  padding: 0 30px 0 28px;
+  /* writing-mode: vertical-rl; */
+
+  /* animation properties */
+  -moz-transform: translateX(100%) rotate(180deg);
+  -webkit-transform: translateX(100%) rotate(180deg);
+  transform: translateX(100%) rotate(180deg);
+
+  -moz-animation: move 30s linear infinite;
+  -webkit-animation: move 30s linear infinite;
+  animation: infinite-scroll 30s linear infinite;
+}
+
+@media only screen and (min-width: 1024px) {
+  .vertical {
+    writing-mode: vertical-rl;
+    transform: translateY(-100%);
+    animation: infinite-scroll-desktop 35s linear infinite;
+  }
+}
+
+/* Sliding effect */
+
+/* for Firefox */
+/* @-moz-keyframes move {
+  from {
+    -moz-transform: translateY(100%) rotate(180deg);
+  }
+  to {
+    -moz-transform: translateY(-100%) rotate(180deg);
+  }
+} */
+
+@keyframes infinite-scroll {
+  from {
+    -moz-transform: translateX(100%);
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
+  }
+  to {
+    -moz-transform: translateX(-100%);
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes infinite-scroll-desktop {
+  from {
+    -moz-transform: translateY(-100%) rotate(180deg);
+    -webkit-transform: translateY(-100%) rotate(180deg);
+    transform: translateY(-100%) rotate(180deg);
+  }
+  to {
+    -moz-transform: translateY(100%) rotate(180deg);
+    -webkit-transform: translateY(100%) rotate(180deg);
+    transform: translateY(100%) rotate(180deg);
+  }
+}
+
+/* for Chrome */
+/* @-webkit-keyframes move {
+  from {
+    -webkit-transform: translateY(100%) rotate(180deg);
+  }
+  to {
+    -webkit-transform: translateY(-100%) rotate(180deg);
+  }
+}
+
+@keyframes move {
+  from {
+    -moz-transform: translateY(100%) rotate(180deg);
+    -webkit-transform: translateY(100%) rotate(180deg);
+    transform: translateY(100%) rotate(180deg);
+  }
+  to {
+    -moz-transform: translateY(-100%) rotate(180deg);
+    -webkit-transform: translateY(-100%) rotate(180deg);
+    transform: translateY(-100%) rotate(180deg);
+  }
+} */

@@ -11,21 +11,20 @@
   --text: clamp(1rem, 0.9692rem + 0.1538vw, 1.125rem);
 
   /* Step 1: 21.33px → 29.12px */
-  --h5: clamp(1.3331rem, 1.2133rem + 0.5992vw, 1.82rem);
+  --h4: clamp(1.3331rem, 1.2133rem + 0.5992vw, 1.82rem);
 
   /* Step 2: 28.43px → 47.12px */
-  --h4: clamp(1.7769rem, 1.4893rem + 1.4377vw, 2.945rem);
+  --h3: clamp(1.7769rem, 1.4893rem + 1.4377vw, 2.945rem);
 
   /* Step 3: 37.90px → 76.24px */
-  --h3: clamp(2.3688rem, 1.7789rem + 2.9492vw, 4.765rem);
+  --h2: clamp(2.3688rem, 1.7789rem + 2.9492vw, 4.765rem);
 
   /* Step 4: 50.52px → 123.36px */
-  --h2: clamp(3.1575rem, 2.0369rem + 5.6031vw, 7.71rem);
+  --h1: clamp(3.1575rem, 2.0369rem + 5.6031vw, 7.71rem);
 
   /* Step 5: 67.34px → 199.60px */
-  --h1: clamp(4.2088rem, 2.174rem + 10.1738vw, 12.475rem);
+  /* --h1: clamp(4.2088rem, 2.174rem + 10.1738vw, 12.475rem); */
 }
-
 
 h1,
 .title-1 {

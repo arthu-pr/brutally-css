@@ -10,12 +10,13 @@
   --space-md: calc(1.25 * var(--space-unit));
   --space-lg: calc(2 * var(--space-unit));
   --space-xl: calc(3.25 * var(--space-unit));
+  --space-xxl: calc(5.25 * var(--space-unit));
 }
 
 /* responsive rule affecting all spacing variables */
 @media (min-width: 64rem) {
   :root {
-    --space-unit: 1.25em; /* 👇 this responsive decision affects all margins and paddings */
+    --space-unit: 3em; /* 👇 this responsive decision affects all margins and paddings */
   }
 }
 /* margin and padding util classes - apply spacing variables */
@@ -50,4 +51,3 @@
 .padding-xl {
   padding: var(--space-xl);
 }
- 

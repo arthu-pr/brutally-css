@@ -1,0 +1,100 @@
+.highlighted {
+  font-family: gotham;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin: 0;
+}
+
+.highlighted > span {
+  padding: 2px;
+}
+
+/* .highlighted:hover > span {
+  /* .highlighted:active > span { */
+/* background-image: linear-gradient(var(--color-primary), var(--color-primary));
+  position: relative;
+  box-decoration-break: clone; */
+/* // border-left: 5px solid $primary-color; */
+/**/
+/* // &::before { */
+/* //   content: ''; */
+/* //   position: absolute; */
+/* //   display: inline; */
+/* //   top: 0; */
+/* //   left: -3px; */
+/* //   width: 3px; */
+/* //   height: 100%; */
+/* //   background-image: linear-gradient($primary-color, $primary-color); */
+/* //   z-index: -1; */
+/* // } */
+/* } */
+/* } */
+
+/**/
+/* .highlighted:hover:not(.animate) > span { */
+/*  color: var(--color-primary-60); */
+/*  */
+/* } */
+
+.highlighted:hover > span {
+  background-image: linear-gradient(var(--color-primary), var(--color-primary));
+  position: relative;
+  box-decoration-break: clone;
+
+  background-size: 0% 100%;
+  -webkit-background-clip: padding-box, text;
+  background-clip: padding-box, text;
+  background-repeat: no-repeat;
+  background-position: left;
+
+  /* &.active { */
+  /* > span { */
+  animation: animate-in 0.7s 0.1s forwards, animate-out 0.7s 0.7s forwards;
+  /* } */
+
+  /* } */
+}
+/* 
+.highlighted:not(:hover) > span {
+  animation: animate-out 0.7s 0s forwards;
+} */
+
+@keyframes animate-in {
+  0% {
+    background-size: 0% 100%;
+  }
+  50% {
+    background-size: 100% 100%;
+    background-position: left;
+  }
+  100% {
+    background-size: 100% 100%;
+    background-position: right;
+    background-image: linear-gradient(
+      var(--color-primary),
+      var(--color-primary)
+    );
+    color: var(--color-bg);
+  }
+}
+
+@keyframes animate-out {
+  0% {
+    background-size: 100% 100%;
+    background-position: right;
+    background-image: linear-gradient(
+      var(--color-primary),
+      var(--color-primary)
+    );
+    color: var(--color-bg);
+  }
+  50% {
+    background-size: 100% 100%;
+    background-position: left;
+  }
+  100% {
+    background-size: 0% 100%;
+    background-color: blue;
+    /* background-position: right; */
+  }
+}

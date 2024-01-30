@@ -1,53 +1,52 @@
 @font-face {
   font-family: "Boogaloo";
-  src: url("./fonts/boogaloo-regular-webfont.woff") format("woff"),
- url("./fonts/boogaloo-regular-webfont.woff2") format("woff2");
+  src: url("../fonts/boogaloo-regular-webfont.woff") format("woff"),
+    url("../fonts/boogaloo-regular-webfont.woff2") format("woff2");
   font-display: swap;
 }
 
 @font-face {
   font-family: "CaviarDreams";
-  src: url("./fonts/CaviarDreams-webfont.woff") format("woff");
+  src: url("../fonts/CaviarDreams-webfont.woff") format("woff");
   font-display: swap;
 }
 
 @font-face {
   font-family: "ImpactLabel";
-  src: url("./fonts/Impact_Label-webfont.woff") format("woff");
+  src: url("../fonts/Impact_Label-webfont.woff") format("woff");
   font-display: swap;
 }
 
 @font-face {
   font-family: "ImpactLabelReversed";
-  src: url("./fonts/Impact_Label_Reversed-webfont.woff") format("woff");
+  src: url("../fonts/Impact_Label_Reversed-webfont.woff") format("woff");
   font-display: swap;
 }
 
 @font-face {
   font-family: "Kavoon";
-  src: url("./fonts/Kavoon-Regular.otf") format("opentype");
+  src: url("../fonts/Kavoon-Regular.otf") format("opentype");
   font-display: swap;
 }
 
-
 @font-face {
   font-family: "mail ray stuff";
-  src: url("./fonts/mail ray stuff.otf") format("opentype");
+  src: url("../fonts/mail ray stuff.otf") format("opentype");
   font-display: swap;
 }
 
 @font-face {
   font-family: "Salsa-Regular";
-  src: url("./fonts/salsa-regular-webfont.woff") format("woff"),
- url("./fonts/salsa-regular-webfont.woff2") format("woff2");
+  src: url("../fonts/salsa-regular-webfont.woff") format("woff"),
+    url("../fonts/salsa-regular-webfont.woff2") format("woff2");
   font-display: swap;
 }
 
-
 html {
   box-sizing: border-box;
-  font-family: "Salsa-Regular", sans-serif;
-  /* font-family: "Boogaloo", sans-serif; */
+  /* font-family: "CaviarDreams", sans-serif; */
+  font-family: "ImpactLabel", sans-serif;
+  font-family: "mail ray stuff", sans-serif;
 }
 
 *,
@@ -64,6 +63,137 @@ a {
 body {
   margin: 0;
   font-size: var(--text);
-  background-color: rgba(111, 78, 55, 0.5);
-  color: rgba(64, 47, 29, 0.8);
+  color: var(--color-primary);
+}
+
+button,
+input,
+textarea,
+label {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+.wrapper {
+  border: 6px solid var(--color-primary);
+  background-color: var(--color-bg);
+  height: 100svh;
+  overflow: hidden;
+  display: grid;
+  align-items: center;
+
+  /* TODO: From arthur-yellow */
+  /* grid-template: minmax(70px, 7%) 1fr / auto; */
+  /* grid-template-columns: repeat(auto-fit, minmax(70px, 7%)); */
+  /* grid-template-columns: repeat(auto-fit, minmax(clamp(70px, 8rem, 100%), 1fr)); */
+  /* grid-template-columns: repeat(auto-fit, minmax(70px, 1fr)); */
+  display: flex;
+  flex-wrap: wrap;
+  --gutter: 1rem;
+  --breakpoint: 40rem;
+  /* --modifier: calc(7rem - 100%); */
+}
+
+.wrapper > * {
+  min-width: clamp(
+    var(--min-width, 0px),
+    (var(--breakpoint) - 100%) * 999,
+    100% - var(--gutter)
+  );
+}
+
+header {
+  max-height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-sm);
+  background-color: var(--color-bg-90);
+  color: var(--color-primary);
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+main {
+  flex-grow: 1;
+  height: 100%;
+  background-color: var(--color-bg-90);
+  padding: var(--space-xs);
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(20rem, 100%), 1fr));
+  /* grid-template-rows: masonry; */
+  /* grid-template-columns: repeat(auto-fit, minmax(min(20rem, 100%), 1fr)); */
+  /* grid-auto-flow: dense; */
+  /* grid-auto-rows: minmax(1%, 1fr); */
+  /* gap: clamp(var(--space-sm), 1vw, var(--space-xl)); */
+}
+
+ul:hover {
+}
+
+li > div {
+  height: 100%;
+  /* width: clamp(1.5em, calc(30vw + 0.1rem), 5em); */
+  background-color: var(--color-bg-40);
+  /* aspect-ratio: 1/1; */
+  outline: 2px solid var(--color-secondary);
+  padding: var(--space-xs);
+}
+
+/* TODO: TO KEEP OR NOT */
+li .square {
+  aspect-ratio: 1/1;
+}
+
+li .square::before {
+  content: "";
+  display: block;
+  padding-bottom: 100%;
+}
+
+.li-1 {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+}
+
+.li-flexible {
+  aspect-ratio: var(--space-xxl, 5.25em) / var(--space-xxl, 5.25em);
+}
+/* TODO: TO KEEP OR NOT */
+
+/* This will create 2x images every 4 elements */
+main > ul > li:nth-child(3n) {
+  grid-column: span 2; /* Spans two columns */
+  grid-row: span 2; /* Spans two rows */
+}
+
+/* https://css-tricks.com/examples/HoverEverythingBut/ */
+main > ul {
+  list-style: none;
+  /* float: left; */
+  /* width: 200px; */
+  padding: 0 10px 0 0;
+}
+main div {
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+}
+main:hover div {
+  opacity: 0.2;
+}
+main:hover ul:hover div {
+  opacity: 0.5;
+}
+main:hover ul:hover div:hover {
+  opacity: 1;
 }
