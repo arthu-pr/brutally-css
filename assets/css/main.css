@@ -94,6 +94,12 @@ label {
   /* --modifier: calc(7rem - 100%); */
 }
 
+/* 
+ * Unholy Albatross
+ * https://www.miragecraft.com/blog/unholy-albatross
+ * (https://css-tricks.com/holy-albatross-with-widths)
+ *
+*/
 .wrapper > * {
   min-width: clamp(
     var(--min-width, 0px),
