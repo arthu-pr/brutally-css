@@ -229,6 +229,8 @@ label {
   transition-timing-function: ease-out;
   transform: translateX(100%);
   z-index: 1;
+  color: var(--color-primary);
+  padding: var(--space-md);
 }
 
 #how-does-it-work:target {
