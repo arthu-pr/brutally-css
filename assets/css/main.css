@@ -1,52 +1,83 @@
 @font-face {
-  font-family: "Boogaloo";
-  src: url("../fonts/boogaloo-regular-webfont.woff") format("woff"),
-    url("../fonts/boogaloo-regular-webfont.woff2") format("woff2");
+  font-family: 'Boogaloo';
+  src: url('../fonts/boogaloo-regular-webfont.woff') format('woff'),
+    url('../fonts/boogaloo-regular-webfont.woff2') format('woff2');
   font-display: swap;
 }
 
 @font-face {
-  font-family: "CaviarDreams";
-  src: url("../fonts/CaviarDreams-webfont.woff") format("woff");
+  font-family: 'CaviarDreams';
+  src: url('../fonts/CaviarDreams-webfont.woff') format('woff');
   font-display: swap;
 }
 
 @font-face {
-  font-family: "ImpactLabel";
-  src: url("../fonts/Impact_Label-webfont.woff") format("woff");
+  font-family: 'ImpactLabel';
+  src: url('../fonts/Impact_Label-webfont.woff') format('woff');
   font-display: swap;
 }
 
 @font-face {
-  font-family: "ImpactLabelReversed";
-  src: url("../fonts/Impact_Label_Reversed-webfont.woff") format("woff");
+  font-family: 'ImpactLabelReversed';
+  src: url('../fonts/Impact_Label_Reversed-webfont.woff') format('woff');
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Kavoon";
-  src: url("../fonts/Kavoon-Regular.otf") format("opentype");
+  font-family: 'Kavoon';
+  src: url('../fonts/Kavoon-Regular.otf') format('opentype');
   font-display: swap;
 }
 
 @font-face {
-  font-family: "mail ray stuff";
-  src: url("../fonts/mail ray stuff.otf") format("opentype");
+  font-family: 'mail ray stuff';
+  src: url('../fonts/mail ray stuff.otf') format('opentype');
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Salsa-Regular";
-  src: url("../fonts/salsa-regular-webfont.woff") format("woff"),
-    url("../fonts/salsa-regular-webfont.woff2") format("woff2");
+  font-family: 'Salsa-Regular';
+  src: url('../fonts/salsa-regular-webfont.woff') format('woff'),
+    url('../fonts/salsa-regular-webfont.woff2') format('woff2');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'gotham-black';
+  src: url('/assets/fonts/GOTHAM-BLACK.OTF') format('opentype');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'gotham-book';
+  src: url('/assets/fonts/GOTHAM-BOOK.woff') format('woff');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'gotham-bold';
+  src: url('/assets/fonts/GOTHAM-BOLD.woff') format('woff');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'VacationPostcard';
+  src: url('/assets/fonts/VacationPostcard.ttf') format('truetype');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'ChunkFive';
+  src: url('/assets/fonts/ChunkFive-Regular.woff2') format('woff2');
   font-display: swap;
 }
 
 html {
   box-sizing: border-box;
   /* font-family: "CaviarDreams", sans-serif; */
-  font-family: "ImpactLabel", sans-serif;
-  font-family: "mail ray stuff", sans-serif;
+  font-family: 'ImpactLabel', sans-serif;
+  /* font-family: "mail ray stuff", sans-serif; */
+  /* font-family: "VacationPostcard", sans-serif; */
 }
 
 *,
@@ -63,7 +94,24 @@ a {
 body {
   margin: 0;
   font-size: var(--text);
-  color: var(--color-primary);
+  /* color: var(--color-primary); */
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  /* font-family: gotham-book; */
+  font-family: gotham-black;
+  /* font-family: gotham-bold; */
+  text-transform: uppercase;
+}
+
+h4::after {
+  content: '\0021';
+  color: red;
+  font-style: italic;
 }
 
 button,
@@ -74,10 +122,55 @@ label {
   font-size: inherit;
 }
 
-.wrapper {
-  border: 6px solid var(--color-primary);
+.title__css-only {
+  display: block;
+  font-family: 'VacationPostcard';
+}
+
+.container {
+  position: relative;
+  --theme-color: var(--color-primary);
+  --spacing: var(--space-md);
+  --background-color: var(--color-bg-90);
+  color: var(--theme-color);
+  border: var(--border-width) solid var(--theme-color);
+  border-right: none;
   background-color: var(--color-bg);
-  height: 100svh;
+  display: flex;
+  flex-wrap: wrap;
+  --gutter: 1rem;
+  /* margin: calc(var(--gutter) / 2 * -1); */
+
+  --breakpoint: 40rem;
+
+  transition-property: transform;
+  transition-duration: 0.8s;
+  transition-timing-function: ease-out;
+  transform: translateX(0px);
+}
+
+.container > * {
+  min-width: clamp(
+    var(--min-width, 0px),
+    (var(--breakpoint) - 100%) * 999,
+    100% - var(--gutter)
+  );
+  /* min-height: 20vh; */
+  /* margin: calc(var(--gutter) / 2); */
+}
+
+/* main {
+  --min: 30rem;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(var(--min), 3fr));
+  grid-template-columns: minmax(50px, 10%) 1fr;
+  /* grid-template-rows: 5% 1fr; */
+/* grid-auto-flow: dense; */
+/* }  */
+
+.wrapper {
+  min-height: 100svh;
   overflow: hidden;
   display: grid;
   align-items: center;
@@ -87,11 +180,136 @@ label {
   /* grid-template-columns: repeat(auto-fit, minmax(70px, 7%)); */
   /* grid-template-columns: repeat(auto-fit, minmax(clamp(70px, 8rem, 100%), 1fr)); */
   /* grid-template-columns: repeat(auto-fit, minmax(70px, 1fr)); */
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  /* align-items: center; */
+  /* grid-auto-rows: auto; */
+  /* display: flex; */
+  /* flex-wrap: wrap; */
+
+  /* 
+ * Unholy Albatross
+ * https://www.miragecraft.com/blog/unholy-albatross
+ * (https://css-tricks.com/holy-albatross-with-widths)
+ *
+*/
+  /* flex-wrap: wrap;
   --gutter: 1rem;
-  --breakpoint: 40rem;
+  --breakpoint: 40rem; */
   /* --modifier: calc(7rem - 100%); */
+}
+
+.wrapper__banner {
+  position: relative;
+  height: calc(100svh - var(--border-width));
+  padding: 0 var(--spacing);
+  display: flex;
+  flex-direction: column;
+}
+
+.wrapper__banner__description > span {
+  font-family: 'ImpactLabelReversed';
+}
+
+.how-does-it-work {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+
+#how-does-it-work {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #000;
+  transition-property: transform;
+  transition-duration: 0.8s;
+  transition-timing-function: ease-out;
+  transform: translateX(100%);
+  z-index: 1;
+}
+
+#how-does-it-work:target {
+  transform: translateX(0);
+}
+
+#how-does-it-work:target ~ .container {
+  transform: translateX(-100%);
+}
+
+#zoom-in,
+#zoom-out {
+  position: absolute;
+  left: 0;
+  opacity: 0.01;
+}
+
+#zoom-in:checked ~ .container {
+  --spacing: var(--space-xs);
+}
+
+#zoom-out:checked ~ .container {
+  --spacing: var(--space-xxl);
+}
+
+:target ~ .container {
+  --theme-color: var(--color-primary);
+}
+
+:target ~ .container .primary-yellow {
+  fill: var(--color-primary);
+}
+
+#warm-pink:target ~ .container {
+  --theme-color: var(--theme-warm-pink);
+}
+
+#warm-pink:target ~ .container .warm-pink {
+  fill: var(--theme-warm-pink);
+}
+
+#red:target ~ .container {
+  --theme-color: var(--theme-red);
+}
+
+#red:target ~ .container .red {
+  fill: var(--theme-red);
+}
+
+#erotic-blue:target ~ .container {
+  --theme-color: var(--theme-erotic-blue);
+}
+
+#erotic-blue:target ~ .container .erotic-blue {
+  fill: var(--theme-erotic-blue);
+}
+
+/*  */
+
+.wrapper.xl:target {
+  padding: var(--space-xl);
+}
+
+.zoom-in {
+  width: var(--space-md);
+  height: var(--space-md);
+}
+
+.zoom-out {
+  width: var(--space-md);
+  height: var(--space-md);
+}
+
+.zoom-in,
+.zoom-out {
+  stroke: var(--theme-color);
+}
+
+.wrapper-container {
+  width: 1px;
+  flex-grow: 1;
 }
 
 /* 
@@ -108,51 +326,42 @@ label {
   );
 }
 
+.wrapper__banner__title {
+  margin-top: 15vh;
+}
+
 header {
-  max-height: 100%;
+  /* width: 100%; */
+  /* max-height: 100%; */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding: var(--space-sm);
+  padding: var(--space-xs) 0;
   background-color: var(--color-bg-90);
-  color: var(--color-primary);
+  color: var(--theme-color);
   position: relative;
   overflow: hidden;
   white-space: nowrap;
+  border-bottom: 5px solid var(--theme-color);
+  margin: auto calc(-1 * var(--spacing)) 0;
 }
 
-main {
+.grid-container {
   flex-grow: 1;
   height: 100%;
   background-color: var(--color-bg-90);
-  padding: var(--space-xs);
-}
-
-ul {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-  height: 100%;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(20rem, 100%), 1fr));
-  /* grid-template-rows: masonry; */
-  /* grid-template-columns: repeat(auto-fit, minmax(min(20rem, 100%), 1fr)); */
-  /* grid-auto-flow: dense; */
-  /* grid-auto-rows: minmax(1%, 1fr); */
-  /* gap: clamp(var(--space-sm), 1vw, var(--space-xl)); */
+  padding: var(--spacing);
 }
 
 ul:hover {
 }
 
 li > div {
-  height: 100%;
-  /* width: clamp(1.5em, calc(30vw + 0.1rem), 5em); */
+  /* height: 100%;
   background-color: var(--color-bg-40);
-  /* aspect-ratio: 1/1; */
   outline: 2px solid var(--color-secondary);
-  padding: var(--space-xs);
+  padding: var(--space-xs); */
 }
 
 /* TODO: TO KEEP OR NOT */
@@ -161,7 +370,7 @@ li .square {
 }
 
 li .square::before {
-  content: "";
+  content: '';
   display: block;
   padding-bottom: 100%;
 }
@@ -177,29 +386,29 @@ li .square::before {
 /* TODO: TO KEEP OR NOT */
 
 /* This will create 2x images every 4 elements */
-main > ul > li:nth-child(3n) {
+.grid-container > ul > li:nth-child(3n) {
   grid-column: span 2; /* Spans two columns */
   grid-row: span 2; /* Spans two rows */
 }
 
 /* https://css-tricks.com/examples/HoverEverythingBut/ */
-main > ul {
+.grid-container > ul {
   list-style: none;
   /* float: left; */
   /* width: 200px; */
   padding: 0 10px 0 0;
 }
-main div {
+.grid-container div.grid__item {
   -webkit-transition: all 0.2s ease;
   -moz-transition: all 0.2s ease;
   -o-transition: all 0.2s ease;
 }
-main:hover div {
+.grid-container:hover div.grid__item {
   opacity: 0.2;
 }
-main:hover ul:hover div {
+.grid-container:hover ul:hover div.grid__item {
   opacity: 0.5;
 }
-main:hover ul:hover div:hover {
+.grid-container:hover ul:hover div.grid__item:hover {
   opacity: 1;
 }

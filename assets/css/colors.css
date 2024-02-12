@@ -1,11 +1,13 @@
-:root,
-[data-theme="default"] {
+:root {
   --color-primary: #e3c567;
   --color-primary-80: #e3c56780;
   --color-primary-60: #e3c56760;
   --color-primary-50: #e3c56750;
   --color-primary-40: #e3c56740;
   --color-primary-20: #e3c56720;
+  --color-primary-10: #e3c56710;
+  --color-primary-5: #e3c56705;
+  --color-primary-2: #e3c56702;
 
   --color-secondary: #e9eaec;
 
@@ -20,19 +22,10 @@
   --color-contrast-medium: hsl(240, 1%, 48%);
   --color-contrast-high: hsl(240, 4%, 20%);
   --color-contrast-higher: black;
-}
 
-[data-theme] {
-  background-color: var(--color-bg);
-  color: var(--color-contrast-high);
-}
-
-[data-theme="dark"] {
-  /* --color-primary: red; */
-  /* color contrasts */
-  --color-contrast-lower: hsl(240, 6%, 15%);
-  --color-contrast-low: hsl(252, 4%, 25%);
-  --color-contrast-medium: hsl(240, 1%, 57%);
-  --color-contrast-high: hsl(0, 0%, 89%);
-  --color-contrast-higher: white;
+  /* themes colors */
+  --theme-red: rgb(192, 39, 45);
+  --theme-warm-pink: #fccccc;
+  /* https://picular.co/erotic */
+  --theme-erotic-blue: #2c6974;
 }

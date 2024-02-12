@@ -1,0 +1,122 @@
+.form {
+  /* display: none; */
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+.form.active {
+  display: block;
+}
+.form svg {
+  width: clamp(50px, 100%, 120px);
+}
+.form__input {
+  padding: var(--space-xs) var(--space-xs);
+
+  display: block;
+  /* width: 100%; */
+  color: var(--theme-color);
+  /* background: var(--theme-color-50); */
+  background: inherit;
+  border: none;
+  border: 2px solid var(--theme-color);
+  outline: none;
+  box-shadow: 8px 8px 0px 4px var(--theme-color);
+  box-shadow: 5px 6px 0px 1px var(--theme-color);
+}
+
+input:focus {
+  transform: translate(5px, 6px);
+  box-shadow: 2px 2px 0px 0 var(--theme-color);
+}
+
+.form__submit {
+  display: none;
+}
+
+.form__submit__button {
+  /* display: none; */
+  border: none;
+  cursor: pointer;
+  outline: none;
+  background-color: var(--theme-color);
+  color: var(--color-bg);
+  transition: background-color 0.4s;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 4px 8px;
+  box-shadow: 5px 6px 0px 1px var(--theme-color-50);
+}
+
+.form__submit__button:focus,
+.form__submit__button:active,
+.form__submit__button:disabled {
+  transform: translate(5px, 6px);
+  box-shadow: 2px 2px 0px 0 var(--theme-color);
+}
+
+#request-checkbox {
+  position: absolute;
+  left: 0;
+  opacity: 0.01;
+}
+
+.form__submit__loader {
+  margin-top: var(--space-xs);
+  display: none;
+  width: 120px;
+  height: 120px;
+  background-color: #6f53db;
+  border-radius: 2rem;
+}
+
+/* #loading:target {
+  display: block;
+} */
+
+#request-checkbox:checked {
+  display: none;
+}
+
+#request-checkbox:checked ~ .form__submit__loader {
+  display: block;
+}
+
+.form__loader__icon {
+  animation-name: rotate;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.reteach-logo {
+  display: none;
+}
+
+.reteach-logo:target {
+  display: block;
+}
+
+.form:valid .form__submit {
+  display: block;
+}
+
+.form:active .reteach-logo {
+  display: none;
+}
+
+.form:valid button:active {
+  background-color: chocolate;
+}
+
+button:active {
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
