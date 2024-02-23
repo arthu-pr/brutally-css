@@ -13,3 +13,7 @@
 .h-md {
   height: var(--space-md);
 }
+
+.cursor-pointer {
+  cursor: pointer;
+}

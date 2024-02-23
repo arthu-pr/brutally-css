@@ -15,6 +15,14 @@
   box-decoration-break: clone;
 }
 
+.highlighted.animate > span > span {
+  padding: 2px;
+  /* background-image: linear-gradient(var(--theme-color), var(--theme-color)); */
+  color: var(--theme-color);
+  position: relative;
+  box-decoration-break: clone;
+}
+
 /* .highlighted:hover > span {
   /* .highlighted:active > span { */
 /* background-image: linear-gradient(var(--theme-color), var(--theme-color));
@@ -24,8 +32,6 @@
 /**/
 /* // &::before { */
 /* //   content: ''; */
-BRUTALLY
-CSS-ONLY
 /* //   position: absolute; */
 /* //   display: inline; */
 /* //   top: 0; */
@@ -44,10 +50,11 @@ CSS-ONLY
 /*  */
 /* } */
 
-.highlighted.animate:hover > span {
-  background-image: linear-gradient(var(--theme-color), var(--theme-color));
+.highlighted.animate:hover > span > span {
   position: relative;
   box-decoration-break: clone;
+  /* color: var(--theme-color); */
+  background-image: linear-gradient(var(--theme-color), var(--theme-color));
 
   background-size: 0% 100%;
   -webkit-background-clip: padding-box, text;
@@ -57,14 +64,31 @@ CSS-ONLY
 
   /* &.active { */
   /* > span { */
-  animation: animate-in 0.7s 0.1s forwards, animate-out 0.7s 0.7s forwards;
+  animation: animate-in 0.7s 0.1s forwards;
+  /* animation: animate-in 0.7s 0.1s forwards reverse; ???  */
+  /* animation-duration: 0.7s; */
+  /* animation-iteration-count: infinite; */
+  /* animation-direction: reverse; */
+  /* //animate-out 0.7s 0.7s forwards; */
   /* } */
 
   /* } */
 }
+
+.highlighted.animate > span > span {
+  /* animation: animate-out 0.7s 0.1s forwards; */
+  animation-direction: reverse;
+}
 /* 
-.highlighted:not(:hover) > span {
-  animation: animate-out 0.7s 0s forwards;
+@keyframes animate-in {
+  from {
+    background-size: 0% 100%;
+    color: var(--theme-color);
+  }
+  to {
+    background-size: 100% 100%;
+    color: var(--color-bg);
+  }
 } */
 
 @keyframes animate-in {
@@ -92,11 +116,12 @@ CSS-ONLY
   }
   50% {
     background-size: 100% 100%;
-    background-position: left;
+    background-position: right;
   }
   100% {
     background-size: 0% 100%;
-    background-color: blue;
-    /* background-position: right; */
+    background-color: transparent;
+    background-position: left;
+    color: var(--theme-color);
   }
 }

@@ -16,6 +16,14 @@ jobs:
           username: ${{ secrets.SSH_USERNAME }}
 
           script: |
-            cd /var/www/reteach.arthur-yellow.me
-            git pull origin main
+            cd /var/www/css.arthur-yellow.me
+            if [ "$(find . -maxdepth 1 -type f -o -type d)" ]; then
+              echo "Files or folders exist in the current directory. Exiting script."
+              exit 1
+            fi
+            if [ -d '.git' ]; then
+              git pull origin main
+            else
+              git clone git@github.com:arthur-plazanet/css-fun.git .
+            fi
             echo 'Success deployment'

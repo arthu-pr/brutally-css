@@ -1,5 +1,5 @@
 .navbar {
-  margin: var(--space-xs) 0;
+  /* margin: var(--space-xs) 0; */
   /* height: 100%; */
   width: clamp(70px, 5rem, 10%);
   padding: var(--space-xs);

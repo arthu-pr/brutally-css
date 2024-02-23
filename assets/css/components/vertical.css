@@ -19,9 +19,9 @@
   -webkit-transform: translateX(100%);
   transform: translateX(100%);
 
-  -moz-animation: move 40s linear infinite;
-  -webkit-animation: move 40s linear infinite;
-  animation: infinite-scroll 40s linear infinite;
+  -moz-animation: move 20s linear infinite;
+  -webkit-animation: move 20s linear infinite;
+  animation: infinite-scroll 20s linear infinite;
 }
 /* 
 @media only screen and (min-width: 1024px) {
