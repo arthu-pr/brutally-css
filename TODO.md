@@ -7,3 +7,9 @@
 
 - :empty pseudo-class
 - https://blog.logrocket.com/styling-css-empty-pseudo-class/
+
+- Wrapper vs Container
+  https://css-tricks.com/best-way-implement-wrapper-css/
+
+- HTML Living Standard
+  https://html.spec.whatwg.org/
