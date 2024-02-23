@@ -17,10 +17,11 @@ jobs:
 
           script: |
             cd /var/www/css.arthur-yellow.me
-            if [ "find . -mindepth 1 -maxdepth 1 -type f -o -mindepth 1 -maxdepth 1 -type d" ]; then
-              echo "Files or folders exist in the current directory. Exiting script."
-              exit 1
-            fi
+            # https://chat.openai.com/c/75394dfa-434d-41fa-b8db-e6abe81840f0
+            # if [ "find . -mindepth 1 -maxdepth 1 -type f -o -mindepth 1 -maxdepth 1 -type d" ]; then
+            #   echo "Files or folders exist in the current directory. Exiting script."
+            #   exit 1
+            # fi
             if [ -d '.git' ]; then
               git pull origin main
             else
