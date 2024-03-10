@@ -1,3 +1,14 @@
 :root {
   --border-width: 10px;
+  --border-width: clamp(0.2rem, 1.5vw, 0.625rem);
+  --theme-bar-width: clamp(3rem, 5rem, 10svw);
+
+  --layout-transition: transform 0.8s ease-out;
+  --spacing: var(--space-sm);
+}
+
+@media (min-width: 64rem) {
+  :root {
+    --spacing: var(--space-md);
+  }
 }

@@ -13,6 +13,7 @@
   color: var(--color-bg);
   position: relative;
   box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
 }
 
 .highlighted.animate > span > span {

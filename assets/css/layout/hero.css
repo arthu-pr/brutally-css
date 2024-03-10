@@ -1,0 +1,29 @@
+.hero {
+  /* display: grid;
+  grid-template-columns: 1fr var(--theme-bar-width);
+
+  /* https://stackoverflow.com/a/50801675 */
+  /* grid-auto-flow: column; */
+  display: flex;
+  display: grid;
+  grid-template-columns: 1fr var(--theme-bar-width);
+  /* flex-wrap: wrap; */
+  /* --gutter: 1rem; */
+  /* --breakpoint: 40rem; */
+}
+
+/* 
+ * Unholy Albatross
+ * https://www.miragecraft.com/blog/unholy-albatross
+ * (https://css-tricks.com/holy-albatross-with-widths)
+ * 
+ * TODO: Not used for now
+*/
+.hero > * {
+  min-width: clamp(
+    var(--min-width, 0px),
+    (var(--breakpoint) - 100%) * 999,
+    100% - var(--gutter)
+  );
+  /* flex-grow: 1; */
+}
