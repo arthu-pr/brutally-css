@@ -1,0 +1,21 @@
+/* Part of the Theme Bar */
+/* .how-does-it-work-btn {
+  font-family: 'gotham-book';
+  font-size: var(--h3);
+} */
+
+.how-does-it-work {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #000;
+  transition: var(--layout-transition);
+  transform: translateX(100svw);
+  z-index: 1;
+  color: var(--theme-color);
+  /* TODO: */
+  padding: var(--space-md);
+  padding: var(--spacing);
+}

@@ -75,9 +75,21 @@
 html {
   box-sizing: border-box;
   /* font-family: "CaviarDreams", sans-serif; */
-  font-family: 'ImpactLabel', sans-serif;
+  font-family: 'ImpactLabelReversed', sans-serif;
   /* font-family: "mail ray stuff", sans-serif; */
   /* font-family: "VacationPostcard", sans-serif; */
+
+  /* Microsoft web browsers */
+  -ms-overflow-style: none;
+
+  /* Gecko-based browsers */
+  scrollbar-width: none;
+}
+
+/* https://blog.logrocket.com/hide-scrollbar-without-impacting-scrolling-css */
+/* Chrome, Edge, Opera, Safari, and other WebKit-based browsers */
+html::-webkit-scrollbar {
+  display: none;
 }
 
 *,
@@ -95,6 +107,10 @@ body {
   margin: 0;
   font-size: var(--text);
   /* color: var(--color-primary); */
+}
+
+.body::-webkit-scrollbar {
+  display: none;
 }
 
 h1,
@@ -127,22 +143,39 @@ label {
   font-family: 'VacationPostcard';
 }
 
+/* https://css-tricks.com/use-css-clamp-to-create-a-more-flexible-wrapper-utility/ */
 .wrapper {
   position: relative;
   --theme-color: var(--color-primary);
-  --spacing: var(--space-md);
+
   --background-color: var(--color-bg-90);
   color: var(--theme-color);
   border: var(--border-width) solid var(--theme-color);
   border-right: none;
   background-color: var(--color-bg);
-  display: flex;
-  flex-wrap: wrap;
+  /* display: flex; */
+  /* flex-wrap: wrap; */
   overflow-x: hidden;
-  --gutter: 1rem;
+  /* --gutter: 1rem; */
 
-  --breakpoint: 40rem;
+  /* --breakpoint: 40rem; */
+  -ms-overflow-style: none;
+
+  scrollbar-width: none;
 }
+
+.wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+/* 
+body {
+  margin-right: auto;
+  margin-left:  auto;
+  max-width: 960px;
+  padding-right: 10px;
+  padding-left:  10px;
+} */
 
 /* 
  * Unholy Albatross
@@ -150,22 +183,20 @@ label {
  * (https://css-tricks.com/holy-albatross-with-widths)
  *
 */
-.wrapper > * {
+/* .wrapper > * {
   min-width: clamp(
     var(--min-width, 0px),
     (var(--breakpoint) - 100%) * 999,
     100% - var(--gutter)
-  );
-  /* min-height: 20vh; */
-  /* margin: calc(var(--gutter) / 2); */
-}
+  ); */
+/* } */
 
-main {
+/* main {
   flex-grow: 1;
   flex-basis: 0;
   overflow: hidden;
   position: relative;
-}
+} */
 
 .main-container {
   position: relative;
@@ -185,10 +216,10 @@ main {
   /* grid-auto-rows: auto; */
   /* display: flex; */
   /* flex-wrap: wrap; */
-  transition-property: transform;
+  /* transition-property: transform;
   transition-duration: 0.8s;
   transition-timing-function: ease-out;
-  transform: translateX(0);
+  transform: translateX(0); */
 
   /* 
  * Unholy Albatross
@@ -202,28 +233,7 @@ main {
   /* --modifier: calc(7rem - 100%); */
 }
 
-.main-container__banner {
-  position: relative;
-  height: calc(100svh - var(--border-width));
-  /* if one element
-  calc(100svh - calc(2 * var(--border-width))) */
-  padding: 0 var(--spacing);
-  display: flex;
-  flex-direction: column;
-  border-bottom: var(--border-width) solid var(--theme-color);
-}
-
-.main-container__banner__description > span {
-  font-family: 'ImpactLabelReversed';
-}
-
-.main-container__banner__how-does-it-work-btn {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-}
-
-.how-does-it-work {
+/* .how-does-it-work {
   position: absolute;
   top: 0;
   right: 0;
@@ -237,107 +247,9 @@ main {
   z-index: 1;
   color: var(--theme-color);
   padding: var(--space-md);
-}
-
-#how-does-it-work:checked ~ .how-does-it-work,
-#how-does-it-work-back:checked ~ .how-does-it-work {
-  transform: translateX(0);
-}
-
-#how-does-it-work:checked ~ .main-container {
-  transform: translateX(-100%);
-}
-
-#how-does-it-work-back:checked ~ .how-does-it-work {
-  transform: translateX(100%);
-}
-
-#how-does-it-work-back:checked ~ .main-container {
-  transform: translateX(0);
-}
-
-#zoom-in,
-#zoom-out,
-#how-does-it-work,
-#how-does-it-work-back {
-  position: absolute;
-  left: 0;
-  opacity: 0.01;
-}
-
-#zoom-in:checked ~ .wrapper {
-  --spacing: var(--space-xs);
-}
-
-#zoom-out:checked ~ .wrapper {
-  --spacing: var(--space-xxl);
-}
-
-/* #how-does-it-work:checked ~ .wrapper {
-  --spacing: var(--space-xs);
 } */
 
-#zoom-out:checked ~ .wrapper {
-  --spacing: var(--space-xxl);
-}
-
-:target ~ .wrapper {
-  --theme-color: var(--color-primary);
-}
-
-:target ~ .wrapper .primary-yellow {
-  fill: var(--color-primary);
-}
-
-#warm-pink:target ~ .wrapper {
-  --theme-color: var(--theme-warm-pink);
-}
-
-#warm-pink:target ~ .wrapper .warm-pink {
-  fill: var(--theme-warm-pink);
-}
-
-#red:target ~ .wrapper {
-  --theme-color: var(--theme-red);
-}
-
-#red:target ~ .wrapper .red {
-  fill: var(--theme-red);
-}
-
-#erotic-blue:target ~ .wrapper {
-  --theme-color: var(--theme-erotic-blue);
-}
-
-#erotic-blue:target ~ .wrapper .erotic-blue {
-  fill: var(--theme-erotic-blue);
-}
-
 /*  */
-
-.main-container.xl:target {
-  padding: var(--space-xl);
-}
-
-.zoom-in {
-  width: var(--space-md);
-  height: var(--space-md);
-}
-
-.zoom-out {
-  width: var(--space-md);
-  height: var(--space-md);
-}
-
-.zoom-in,
-.zoom-out {
-  stroke: var(--theme-color);
-}
-
-.main-container-container {
-  width: 1px;
-  flex-grow: 1;
-}
 
 /* 
  * Unholy Albatross
@@ -345,34 +257,17 @@ main {
  * (https://css-tricks.com/holy-albatross-with-widths)
  *
 */
-.main-container > * {
+/* .main-container > * {
   min-width: clamp(
     var(--min-width, 0px),
     (var(--breakpoint) - 100%) * 999,
     100% - var(--gutter)
   );
-}
-
+} */
+/* 
 .main-container__banner__title {
   margin-top: 15vh;
-}
-
-.header__animation {
-  /* width: 100%; */
-  /* max-height: 100%; */
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  padding: var(--space-xs) 0;
-  background-color: var(--color-bg-90);
-  color: var(--theme-color);
-  position: relative;
-  overflow: hidden;
-  white-space: nowrap;
-  /* border-bottom: 5px solid var(--theme-color); */
-  margin: auto calc(-1 * var(--spacing)) 0;
-}
+} */
 
 .grid-container {
   flex-grow: 1;

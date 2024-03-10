@@ -16,11 +16,21 @@
     <link href="assets/css/components/form.css" rel="stylesheet" />
     <link href="assets/css/components/common.css" rel="stylesheet" />
     <link href="assets/css/variables.css" rel="stylesheet" />
+    <link href="assets/css/components/how-does-it-work.css" rel="stylesheet" />
+    <link href="assets/css/layout/hero.css" rel="stylesheet" />
+    <link href="assets/css/layout/utilities.css" rel="stylesheet" />
+    <link href="assets/css/banner.css" rel="stylesheet" />
+    <link href="assets/css/components/theme-bar.css" rel="stylesheet" />
   </head>
 
   <body>
     <input type="checkbox" id="zoom-in" />
     <input type="checkbox" id="zoom-out" />
+
+    <!-- Multiple labels point for the same form control -->
+    <!-- https://stackoverflow.com/a/2830137 -->
+    <!-- https://www.w3.org/TR/html401/interact/forms.html#h-17.9.1 -->
+    <input type="checkbox" id="how-does-it-work" />
 
     <span id="#"></span>
     <span id="red"></span>
@@ -30,133 +40,23 @@
     <div class="content"></div>
 
     <div class="wrapper">
-      <nav class="navbar">
-        <ul>
-          <li>
-            <button type="button" class="navbar__btn" aria-label="zoom-in">
-              <label for="zoom-in" class="navbar-content">
-                <svg
-                  class="zoom-in"
-                  viewBox="0 0 40 40"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <line x1="5" y1="20" x2="35" y2="20" />
-                  <line x1="20" y1="5" x2="20" y2="35" />
-                </svg>
-              </label>
-            </button>
-          </li>
-          <li>
-            <button type="button" class="navbar__btn" aria-label="zoom-out">
-              <label for="zoom-out" class="navbar-content">
-                <svg
-                  class="zoom-out"
-                  viewBox="0 0 40 40"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <line x1="5" y1="20" x2="35" y2="20" />
-                </svg>
-              </label>
-            </button>
-          </li>
-          <li></li>
-          <li>
-            <a href="#warm-pink" class="navbar-content">
-              <svg
-                class="warm-pink"
-                viewBox="0 0 40 40"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <rect width="40" height="40" />
-              </svg>
-            </a>
-          </li>
-          <li>
-            <a href="#red" class="navbar-content">
-              <svg
-                class="red"
-                viewBox="0 0 40 40"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <rect width="40" height="40" />
-              </svg>
-            </a>
-          </li>
-          <li>
-            <a href="#erotic-blue" class="navbar-content">
-              <svg
-                class="erotic-blue"
-                viewBox="0 0 40 40"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <rect width="40" height="40" />
-              </svg>
-            </a>
-          </li>
-        </ul>
-      </nav>
-      <main>
-        <!-- Multiple labels point for the same form control -->
-        <!-- https://stackoverflow.com/a/2830137 -->
-        <!-- https://www.w3.org/TR/html401/interact/forms.html#h-17.9.1 -->
-        <input type="checkbox" id="how-does-it-work" />
-        <!-- <input type="checkbox" id="how-does-it-work-back" /> -->
-
-        <div class="how-does-it-work">
-          <!-- <a href="#" class="back">
-            <button class="btn">Back</button>
-          </a> -->
-          <button
-            type="button"
-            class="btn how-does-it-work-back"
-            aria-label="btn-how-does-it-work-back"
-          >
-            <label for="how-does-it-work" class="cursor-pointer"> Back </label>
-          </button>
-          <a
-            href="https://css-tricks.com/a-complete-guide-to-custom-properties/"
-          >
-            <h3>A Complete Guide to Custom Properties</h3>
-          </a>
-
-          <a href="https://www.miragecraft.com/blog/unholy-albatross">
-            <h3>Layout: Unholy Albatros</h3>
-          </a>
-
-          <a
-            href="https://css-tricks.com/building-a-scalable-css-architecture-with-bem-and-utility-classes/"
-          >
-            <h3>
-              Building a Scalable CSS Architecture With BEM and Utility Classes
-            </h3>
-          </a>
-        </div>
-        <div class="main-container">
-          <header class="main-container__banner">
-            <button
-              type="button"
-              class="btn main-container__banner__how-does-it-work-btn"
-              aria-label="how-does-it-work"
-            >
-              <label for="how-does-it-work" class="cursor-pointer">
-                How does it work?
-              </label>
-            </button>
-            <!-- <a href="#how-does-it-work" class="how-does-it-work">
-                <button class="btn">How does it work?</button>
-              </a> -->
-            <div class="main-container__banner__title">
-              <h1>Brutally <span class="title__css-only">CSS-only</span></h1>
-              <p
-                class="main-container__banner__description title-3 highlighted"
-              >
+      <div class="content">
+        <div class="hero">
+          <header class="banner">
+            <div class="banner__title">
+              <h1>
+                Brutally <span class="banner__title__css-only">CSS-only</span>
+              </h1>
+              <p class="banner__description title-3 highlighted">
                 <span>
-                  This website is a playground to explore CSS capabilities and
-                  limits without any JavaScript.
+                  <span
+                    >This website is a playground to explore CSS capabilities
+                    and limits without any JavaScript.</span
+                  >
                 </span>
               </p>
             </div>
-            <div class="header__animation">
+            <div class="bannner__animation">
               <p class="highlighted animate active vertical title-3">
                 <span>
                   <span> CSS fun </span>
@@ -165,7 +65,162 @@
             </div>
           </header>
 
-          <!-- <div class="grid-container">
+          <section class="theme-bar">
+            <ul class="theme-bar__container">
+              <li class="theme-bar__container__element">
+                <button
+                  type="button"
+                  class="theme-bar__container__btn"
+                  role="button"
+                  aria-label="zoom-in"
+                >
+                  <label for="zoom-in">
+                    <svg
+                      class="zoom-in"
+                      viewBox="0 0 40 40"
+                      width="100%"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <line x1="5" y1="20" x2="35" y2="20" />
+                      <line x1="20" y1="5" x2="20" y2="35" />
+                    </svg>
+                  </label>
+                </button>
+              </li>
+              <li class="theme-bar__container__element">
+                <button
+                  type="button"
+                  class="theme-bar__container__btn"
+                  aria-label="zoom-out"
+                >
+                  <label for="zoom-out">
+                    <svg
+                      class="zoom-out"
+                      width="100%"
+                      viewBox="0 0 40 40"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <line x1="5" y1="20" x2="35" y2="20" />
+                    </svg>
+                  </label>
+                </button>
+              </li>
+              <li class="theme-bar__container__element"></li>
+              <li class="theme-bar__container__element">
+                <a href="#warm-pink">
+                  <svg
+                    class="warm-pink"
+                    width="100%"
+                    viewBox="0 0 40 40"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <rect width="40" height="40" />
+                  </svg>
+                </a>
+              </li>
+              <li class="theme-bar__container__element">
+                <a href="#red">
+                  <svg
+                    class="red"
+                    width="100%"
+                    viewBox="0 0 40 40"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <rect width="40" height="40" />
+                  </svg>
+                </a>
+              </li>
+              <li class="theme-bar__container__element">
+                <a href="#erotic-blue">
+                  <svg
+                    class="erotic-blue"
+                    width="100%"
+                    viewBox="0 0 40 40"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <rect width="40" height="40" />
+                  </svg>
+                </a>
+              </li>
+              <li class="theme-bar__container__element">
+                <a href="#">
+                  <svg
+                    class="primary-yellow"
+                    width="100%"
+                    viewBox="0 0 40 40"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <rect width="40" height="40" />
+                  </svg>
+                </a>
+              </li>
+              <li class="theme-bar__container__element">
+                <button
+                  type="button"
+                  class="theme-bar__container__btn"
+                  aria-label="how-does-it-work-btn"
+                >
+                  <label for="how-does-it-work">
+                    <svg
+                      class="how-does-it-work-open-btn"
+                      width="100%"
+                      viewBox="0 0 40 40"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <line x1="0" y1="0" x2="40" y2="0" />
+                      <line x1="40" y1="0" x2="40" y2="20" />
+                      <line x1="40" y1="20" x2="15" y2="20" />
+                      <line x1="20" y1="20" x2="20" y2="40" />
+                    </svg>
+                  </label>
+                </button>
+              </li>
+            </ul>
+          </section>
+          <div class="how-does-it-work">
+            <!-- <a href="#" class="back">
+              <button class="btn">Back</button>
+            </a> -->
+            <button
+              type="button"
+              class="btn how-does-it-work-back"
+              aria-label="btn-how-does-it-work-back"
+            >
+              <label for="how-does-it-work" class="cursor-pointer">
+                Back
+              </label>
+            </button>
+            <a
+              href="https://css-tricks.com/a-complete-guide-to-custom-properties/"
+            >
+              <h3>A Complete Guide to Custom Properties</h3>
+            </a>
+
+            <a href="https://www.miragecraft.com/blog/unholy-albatross">
+              <h3>Layout: Unholy Albatros</h3>
+            </a>
+
+            <h5>How to scale SVG</h5>
+
+            <a href="https://css-tricks.com/scale-svg/">How to scale SVG</a>
+            <p>Stack Overflow</p>
+            <a
+              href="https://stackoverflow.com/questions/19484707/how-can-i-make-an-svg-scale-with-its-parent-container"
+              >How can I make an SVG scale with its parent container?</a
+            >
+            <a
+              href="https://css-tricks.com/building-a-scalable-css-architecture-with-bem-and-utility-classes/"
+            >
+              <h3>
+                Building a Scalable CSS Architecture With BEM and Utility
+                Classes
+              </h3>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- <div class="grid-container">
               <ul class="grid">
                 <li class="grid__item">
                   <div class="grid__item__content"></div>
@@ -236,8 +291,9 @@
                 </li>
               </ul>
             </div> -->
-        </div>
-      </main>
+      <!-- </div> -->
+      <!-- <main>
+      </main> -->
     </div>
   </body>
 </html>

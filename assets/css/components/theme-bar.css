@@ -1,0 +1,260 @@
+.theme-bar {
+  /* padding: var(--space-xs); */
+  /* border: var(--border-width) solid var(--theme-color); */
+  border-left: var(--border-width) solid var(--theme-color);
+  border-right: var(--border-width) solid var(--theme-color);
+  /* border-left: var(--border-width) solid var(--theme-color); */
+  --min-width: 60px;
+  gap: var(--space-xs);
+  transition: var(--layout-transition);
+  /* transform: translateX(calc(100% - var(--theme-bar-width))); */
+  /* transform: translateX(100%); */
+  display: flex;
+  /* flex-wrap: wrap; */
+  /* width: 100svw; */
+  /* TODO: to keep? */
+  /* width: clamp(70px, 5rem, 10%); */
+  /* width: var(--theme-bar-width); */
+}
+
+/* 
+ * Unholy Albatross
+ * https://www.miragecraft.com/blog/unholy-albatross
+ * (https://css-tricks.com/holy-albatross-with-widths)
+ *
+ * TODO: Not used for now
+*/
+.theme-bar > * {
+  min-width: clamp(
+    var(--min-width, 0px),
+    (var(--breakpoint) - 100%) * 999,
+    100% - var(--gutter)
+  );
+  /* flex-grow: 1; */
+}
+
+.theme-bar__container {
+  /* Due to default text-align: -webkit-match-parent; on li element */
+  text-align: center;
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+  position: sticky;
+  top: 50px;
+  bottom: 0;
+  /* Default style applied to ul */
+  margin: 0;
+
+  /* TODO: check if necessary */
+  padding: var(--space-xs);
+
+  /* display: grid; */
+  /* https://css-tricks.com/look-ma-no-media-queries-responsive-layouts-using-css-grid/ */
+  /* grid-template-columns: repeat(auto-fill, minmax(40px, 1fr)); */
+  grid-template-columns: repeat(
+    auto,
+    clamp(var(--space-xs), 50%, var(--space-md))
+  );
+  width: 100%;
+  /* grid-auto-flow: column; */
+
+  /* @media (min-width: 40rem) {
+    grid-auto-flow: row;
+  } */
+  align-items: center;
+  justify-content: center;
+}
+
+/* TODO: fix this without media queries */
+@media (max-width: 40rem) {
+  .theme-bar {
+    /* border-right: none; */
+    /* border-bottom: var(--border-width) solid var(--theme-color); */
+  }
+}
+
+.theme-bar__container__element {
+  /* width: clamp(var(--space-xs), 50%, var(--space-lg)); */
+  /* height: clamp(var(--space-xs), 50%, var(--space-lg)); */
+}
+
+.theme-bar__container__btn {
+  background: transparent;
+  border: none;
+  padding: 0;
+}
+
+/*
+ * Style related to the actions/buttons available in the theme bar
+ */
+
+.zoom-in,
+.zoom-out,
+.how-does-it-work-open-btn {
+  cursor: pointer;
+  /* width: var(--space-md); */
+  /* height: var(--space-md); */
+  stroke: var(--theme-color);
+}
+
+.zoom-in,
+.zoom-out,
+.primary-yellow,
+.warm-pink,
+.red,
+.erotic-blue,
+.how-does-it-work-open-btn {
+  stroke-width: var(--border-width);
+  /* width: clamp(var(--space-xs), 50%, var(--space-md));
+  height: clamp(var(--space-xs), 50%, var(--space-md)); */
+}
+
+.primary-yellow,
+.warm-pink,
+.red,
+.erotic-blue {
+  transition: fill 0.5s ease;
+}
+
+.primary-yellow {
+  stroke: var(--color-primary);
+}
+
+.warm-pink {
+  stroke: var(--theme-warm-pink);
+}
+
+.red {
+  stroke: var(--theme-red);
+}
+
+.erotic-blue {
+  stroke: var(--theme-erotic-blue);
+}
+
+/*
+ * Pseudo elements trick
+ */
+
+/* 
+  * Due to the behavior of Grid, we can not overlap the children out of the space defined by their parent
+  * So we use pure viewport units
+  * Some possible workarounds:
+  * https://stackoverflow.com/a/35752327 wuith this answer https://stackoverflow.com/a/32727445
+  * SS tricks: https://css-tricks.com/positioning-overlay-content-with-css-grid/
+  */
+
+/* Manipulating grid-template-columns?
+ 
+  * #how-does-it-work:checked ~ .wrapper .hero,
+  * #how-does-it-work-back:checked ~ .wrapper .hero {
+  * grid-template-columns: XXX;
+  * } 
+  */
+
+#how-does-it-work:checked ~ .wrapper .theme-bar,
+#how-does-it-work-back:checked ~ .wrapper .theme-bar {
+  transform: translateX(calc(-100svw + var(--theme-bar-width)));
+}
+
+#how-does-it-work:checked ~ .wrapper .how-does-it-work,
+#how-does-it-work-back:checked ~ .wrapper .how-does-it-work {
+  transform: translateX(calc(0px + var(--theme-bar-width)));
+}
+
+#how-does-it-work:checked ~ .wrapper .banner {
+  transform: translateX(calc(-100svw + var(--theme-bar-width)));
+}
+
+/* #how-does-it-work-back:checked ~ .main-container {
+  transform: translateX(0);
+} */
+
+#zoom-in,
+#zoom-out,
+#how-does-it-work,
+#how-does-it-work-back {
+  position: absolute;
+  left: 0;
+  opacity: 0.01;
+}
+
+#zoom-in:checked ~ .wrapper {
+  --spacing: var(--space-xs);
+}
+
+#zoom-out:checked ~ .wrapper {
+  --spacing: var(--space-xxl);
+}
+
+#zoom-out:checked ~ .wrapper {
+  --spacing: var(--space-xxl);
+}
+
+:target ~ .wrapper .primary-yellow {
+  fill: var(--color-primary);
+}
+
+#warm-pink:target ~ .wrapper {
+  --theme-color: var(--theme-warm-pink);
+}
+
+#warm-pink:target ~ .wrapper .warm-pink {
+  fill: var(--theme-warm-pink);
+}
+
+#red:target ~ .wrapper {
+  --theme-color: var(--theme-red);
+}
+
+#red:target ~ .wrapper .red {
+  fill: var(--theme-red);
+}
+
+#erotic-blue:target ~ .wrapper {
+  --theme-color: var(--theme-erotic-blue);
+}
+
+#erotic-blue:target ~ .wrapper .erotic-blue {
+  fill: var(--theme-erotic-blue);
+}
+
+:target ~ .wrapper {
+  --theme-color: var(--color-primary);
+}
+
+:target ~ .wrapper .primary-yellow {
+  fill: var(--color-primary);
+}
+
+.navbar > ul {
+  list-style: none;
+  float: left;
+  padding: 0 10px 0 0;
+}
+
+.theme-bar__container__element {
+  text-decoration: none;
+  display: block;
+  color: white;
+  text-align: center;
+
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+}
+
+.navbar:hover .navbar-content {
+  opacity: 0.2;
+}
+
+.navbar:hover ul:hover .navbar-content {
+  opacity: 0.5;
+}
+
+.navbar:hover ul:hover .navbar-content:hover {
+  opacity: 1;
+}
