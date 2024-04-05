@@ -6,6 +6,8 @@
   padding: 0 var(--spacing);
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   border-bottom: var(--border-width) solid var(--theme-color);
   transition: var(--layout-transition);
 
@@ -18,8 +20,8 @@
 }
 
 .banner__title {
-  margin-top: auto;
-  margin-left: vw;
+  /* margin-top: auto; */
+  /* margin-left: vw; */
 }
 
 .banner__title__css-only {
@@ -30,7 +32,14 @@
 /* .banner__description > span { */
 .banner__description {
   font-family: 'ImpactLabelReversed';
-  width: clamp(14rem, 100%, 56rem);
+  width: clamp(14rem, 100%, 100rem);
+  font-size: var(--h3);
+}
+
+@media (min-width: 64rem) {
+  .banner__description {
+    font-size: var(--h2);
+  }
 }
 
 .bannner__animation {
