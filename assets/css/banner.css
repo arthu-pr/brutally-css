@@ -7,7 +7,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   border-bottom: var(--border-width) solid var(--theme-color);
   transition: var(--layout-transition);
 
@@ -19,9 +19,8 @@
   flex-basis: 0;
 }
 
-.banner__title {
-  /* margin-top: auto; */
-  /* margin-left: vw; */
+.banner__title-brutally {
+  display: flex;
 }
 
 .banner__title__css-only {
@@ -55,7 +54,6 @@
   position: relative;
   overflow: hidden;
   white-space: nowrap;
-  /* border-bottom: 5px solid var(--theme-color); */
   margin: auto calc(-1 * var(--spacing)) 0;
 }
 

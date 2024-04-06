@@ -21,6 +21,8 @@
     <link href="assets/css/layout/utilities.css" rel="stylesheet" />
     <link href="assets/css/banner.css" rel="stylesheet" />
     <link href="assets/css/components/theme-bar.css" rel="stylesheet" />
+    <link href="assets/css/components/shake.css" rel="stylesheet" />
+    <link href="assets/css/layout/main-content.css" rel="stylesheet" />
 
     <link rel="icon" type="image/x-icon" href="/assets/favicon/favicon.ico" />
     <link
@@ -46,6 +48,7 @@
   <body>
     <input type="checkbox" id="zoom-in" />
     <input type="checkbox" id="zoom-out" />
+    <input type="checkbox" id="shake" />
 
     <!-- Multiple labels point for the same form control -->
     <!-- https://stackoverflow.com/a/2830137 -->
@@ -57,263 +60,325 @@
     <span id="warm-pink"></span>
     <span id="red"></span>
     <span id="erotic-blue"></span>
-    <div class="content"></div>
 
     <div class="wrapper">
-      <div class="content">
-        <div class="hero">
-          <header class="banner">
-            <div class="banner__title">
-              <h1>
-                Brutally <span class="banner__title__css-only">CSS-only</span>
-              </h1>
-              <p class="banner__description text--2 highlighted">
-                <span>
-                  <span
-                    >This website is a playground to explore CSS capabilities
-                    and limits without any JavaScript.</span
-                  >
-                </span>
-              </p>
-            </div>
-            <!-- <div class="bannner__animation">
+      <div class="hero">
+        <header class="banner">
+          <h1 clas="banner__title">
+            <span class="banner__title-brutally">
+              B<span class="banner__title-brutally__r">r</span>utal<span
+                class="banner__title-brutally__ly"
+                >ly</span
+              >
+            </span>
+            <span class="banner__title__css-only">CSS-only</span>
+          </h1>
+          <p class="banner__description text--2 highlighted">
+            <span>
+              <span
+                >This website is a playground to explore CSS capabilities and
+                limits without any JavaScript.</span
+              >
+            </span>
+          </p>
+          <!-- <div class="bannner__animation">
               <p class="highlighted animate active vertical title-3">
                 <span>
                   <span> CSS fun </span>
                 </span>
               </p>
             </div> -->
-          </header>
+        </header>
 
-          <section class="theme-bar">
-            <ul class="theme-bar__container">
-              <li class="theme-bar__container__element">
-                <button
-                  type="button"
-                  class="theme-bar__container__btn"
-                  role="button"
-                  aria-label="zoom-in"
+        <section class="theme-bar">
+          <ul class="theme-bar__container">
+            <li class="theme-bar__container__element">
+              <button
+                type="button"
+                class="theme-bar__container__btn"
+                role="button"
+                aria-label="zoom-in"
+              >
+                <label for="zoom-in">
+                  <svg
+                    class="zoom-in"
+                    viewBox="0 0 40 40"
+                    width="100%"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <line x1="5" y1="20" x2="35" y2="20" />
+                    <line x1="20" y1="5" x2="20" y2="35" />
+                  </svg>
+                </label>
+              </button>
+            </li>
+            <li class="theme-bar__container__element">
+              <button
+                type="button"
+                class="theme-bar__container__btn"
+                aria-label="zoom-out"
+              >
+                <label for="zoom-out">
+                  <svg
+                    class="zoom-out"
+                    width="100%"
+                    viewBox="0 0 40 40"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <line x1="5" y1="20" x2="35" y2="20" />
+                  </svg>
+                </label>
+              </button>
+            </li>
+            <li class="theme-bar__container__element"></li>
+            <li class="theme-bar__container__element">
+              <a href="#warm-pink">
+                <svg
+                  class="warm-pink"
+                  width="100%"
+                  viewBox="0 0 40 40"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
-                  <label for="zoom-in">
-                    <svg
-                      class="zoom-in"
-                      viewBox="0 0 40 40"
-                      width="100%"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <line x1="5" y1="20" x2="35" y2="20" />
-                      <line x1="20" y1="5" x2="20" y2="35" />
-                    </svg>
-                  </label>
-                </button>
-              </li>
-              <li class="theme-bar__container__element">
-                <button
-                  type="button"
-                  class="theme-bar__container__btn"
-                  aria-label="zoom-out"
+                  <rect width="40" height="40" />
+                </svg>
+              </a>
+            </li>
+            <li class="theme-bar__container__element">
+              <a href="#red">
+                <svg
+                  class="red"
+                  width="100%"
+                  viewBox="0 0 40 40"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
-                  <label for="zoom-out">
-                    <svg
-                      class="zoom-out"
-                      width="100%"
-                      viewBox="0 0 40 40"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <line x1="5" y1="20" x2="35" y2="20" />
-                    </svg>
-                  </label>
-                </button>
-              </li>
-              <li class="theme-bar__container__element"></li>
-              <li class="theme-bar__container__element">
-                <a href="#warm-pink">
-                  <svg
-                    class="warm-pink"
-                    width="100%"
-                    viewBox="0 0 40 40"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <rect width="40" height="40" />
-                  </svg>
-                </a>
-              </li>
-              <li class="theme-bar__container__element">
-                <a href="#red">
-                  <svg
-                    class="red"
-                    width="100%"
-                    viewBox="0 0 40 40"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <rect width="40" height="40" />
-                  </svg>
-                </a>
-              </li>
-              <li class="theme-bar__container__element">
-                <a href="#erotic-blue">
-                  <svg
-                    class="erotic-blue"
-                    width="100%"
-                    viewBox="0 0 40 40"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <rect width="40" height="40" />
-                  </svg>
-                </a>
-              </li>
-              <li class="theme-bar__container__element">
-                <a href="#">
-                  <svg
-                    class="primary-yellow"
-                    width="100%"
-                    viewBox="0 0 40 40"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <rect width="40" height="40" />
-                  </svg>
-                </a>
-              </li>
-              <li class="theme-bar__container__element">
-                <button
-                  type="button"
-                  class="theme-bar__container__btn"
-                  aria-label="how-does-it-work-btn"
+                  <rect width="40" height="40" />
+                </svg>
+              </a>
+            </li>
+            <li class="theme-bar__container__element">
+              <a href="#erotic-blue">
+                <svg
+                  class="erotic-blue"
+                  width="100%"
+                  viewBox="0 0 40 40"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
-                  <label for="how-does-it-work">
-                    <svg
-                      class="how-does-it-work-open-btn"
-                      width="100%"
-                      viewBox="0 0 40 40"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <line x1="0" y1="0" x2="40" y2="0" />
-                      <line x1="40" y1="0" x2="40" y2="20" />
-                      <line x1="40" y1="20" x2="15" y2="20" />
-                      <line x1="20" y1="20" x2="20" y2="40" />
-                    </svg>
-                  </label>
-                </button>
-              </li>
-            </ul>
-          </section>
-          <div class="how-does-it-work">
-            <!-- <a href="#" class="back">
-              <button class="btn">Back</button>
-            </a> -->
-            <button
-              type="button"
-              class="btn how-does-it-work-back"
-              aria-label="btn-how-does-it-work-back"
-            >
-              <label for="how-does-it-work" class="cursor-pointer">
-                Back
-              </label>
-            </button>
-            <a
-              href="https://css-tricks.com/a-complete-guide-to-custom-properties/"
-            >
-              <h3>A Complete Guide to Custom Properties</h3>
-            </a>
+                  <rect width="40" height="40" />
+                </svg>
+              </a>
+            </li>
+            <li class="theme-bar__container__element">
+              <a href="#">
+                <svg
+                  class="primary-yellow"
+                  width="100%"
+                  viewBox="0 0 40 40"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <rect width="40" height="40" />
+                </svg>
+              </a>
+            </li>
+            <li class="theme-bar__container__element">
+              <button
+                type="button"
+                class="theme-bar__container__btn"
+                aria-label="how-does-it-work-btn"
+              >
+                <label for="how-does-it-work">
+                  <svg
+                    class="how-does-it-work-open-btn"
+                    width="100%"
+                    viewBox="0 0 40 40"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <line x1="0" y1="0" x2="40" y2="0" />
+                    <line x1="40" y1="0" x2="40" y2="20" />
+                    <line x1="40" y1="20" x2="15" y2="20" />
+                    <line x1="20" y1="20" x2="20" y2="40" />
+                  </svg>
+                </label>
+              </button>
+            </li>
+          </ul>
+        </section>
 
-            <a href="https://www.miragecraft.com/blog/unholy-albatross">
-              <h3>Layout: Unholy Albatros</h3>
-            </a>
-
-            <h5>How to scale SVG</h5>
-
-            <a href="https://css-tricks.com/scale-svg/">How to scale SVG</a>
-            <p>Stack Overflow</p>
-            <a
-              href="https://stackoverflow.com/questions/19484707/how-can-i-make-an-svg-scale-with-its-parent-container"
-              >How can I make an SVG scale with its parent container?</a
-            >
-            <a
-              href="https://css-tricks.com/building-a-scalable-css-architecture-with-bem-and-utility-classes/"
-            >
-              <h3>
+        <!-- How does it work? -->
+        <section class="how-does-it-work">
+          <button
+            type="button"
+            class="btn how-does-it-work-back"
+            aria-label="btn-how-does-it-work-back"
+          >
+            <label for="how-does-it-work" class="cursor-pointer"> Back </label>
+          </button>
+          <h2>How Does It Work?</h2>
+          <ul class="how-does-it-work__list">
+            <li class="how-does-it-work__list__item">
+              <p class="how-does-it-work__list__item__title">
+                A Complete Guide to Custom Properties
+                <a
+                  class="how-does-it-work__list__item__link"
+                  href="https://css-tricks.com/a-complete-guide-to-custom-properties/"
+                ></a>
+              </p>
+            </li>
+            <li class="how-does-it-work__list__item">
+              <p class="how-does-it-work__list__item__title">
+                Layout: Unholy Albatros
+                <a
+                  class="how-does-it-work__list__item__link"
+                  href="https://www.miragecraft.com/blog/unholy-albatross"
+                  >Unholy Albatross</a
+                >
+              </p>
+            </li>
+            <li class="how-does-it-work__list__item">
+              <p class="how-does-it-work__list__item__title">
+                How to scale SVG
+                <a
+                  class="how-does-it-work__list__item__link"
+                  href="https://css-tricks.com/scale-svg/"
+                  >How to scale SVG</a
+                >
+              </p>
+            </li>
+            <li class="how-does-it-work__list__item">
+              <p class="how-does-it-work__list__item__title">
+                How can I make an SVG scale with its parent container?
+                <a
+                  class="how-does-it-work__list__item__link"
+                  href="https://stackoverflow.com/questions/19484707/how-can-i-make-an-svg-scale-with-its-parent-container"
+                  >How can I make an SVG scale with its parent container?</a
+                >
+              </p>
+            </li>
+            <li class="how-does-it-work__list__item">
+              <p class="how-does-it-work__list__item__title">
                 Building a Scalable CSS Architecture With BEM and Utility
                 Classes
-              </h3>
-            </a>
-          </div>
-        </div>
+                <a
+                  class="how-does-it-work__list__item__link"
+                  href="https://css-tricks.com/building-a-scalable-css-architecture-with-bem-and-utility-classes/"
+                  >Building a Scalable CSS Architecture With BEM and Utility
+                  Classes</a
+                >
+              </p>
+            </li>
+            <li class="how-does-it-work__list__item">
+              <p class="how-does-it-work__list__item__title">
+                Shake CSS Animation
+                <a
+                  class="how-does-it-work__list__item__link"
+                  href="https://css-tricks.com/snippets/css/shake-css-keyframe-animation/"
+                  >Shake CSS Animation</a
+                >
+              </p>
+            </li>
+          </ul>
+        </section>
       </div>
 
-      <!-- <div class="grid-container">
-              <ul class="grid">
-                <li class="grid__item">
-                  <div class="grid__item__content"></div>
-                </li>
-                <li class="grid__item" id="dynamic-form">
-                  <h4 class="grid__item__title">
-                    <a href="#dynamic-form"> Dynamic Form </a>
-                  </h4>
-                  <div class="grid__item__content">
-                    <p>Pseudo Selectors and Checkbox Hack</p>
-                    <form class="form">
-                      <input
-                        type="text"
-                        name="request"
-                        placeholder="Add request"
-                        class="form__input"
-                        required
-                      />
-                      <div class="form__submit">
-                        <label
-                          for="request-checkbox"
-                          class="form__submit__button btn"
-                          >Send request</label
-                        >
-  
-                        <input type="checkbox" id="request-checkbox" />
-                        <div class="form__submit__loader" id="loading">
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            class="form__loader__icon"
-                            viewBox="0 0 90 90"
-                          >
-                            <defs>
-                              <style>
-                                .cls-1 {
-                                  fill: #fff;
-                                }
-  
-                                .cls-2,
-                                .cls-3 {
-                                  fill: #36365f;
-                                }
-  
-                                .cls-3 {
-                                  fill-rule: evenodd;
-                                }
-  
-                                .cls-4 {
-                                  fill: #6f53db;
-                                }
-                              </style>
-                            </defs>
-                            <g id="Ebene_1-2">
-                              <path
-                                class="cls-1"
-                                d="m74.4,49.9l-26.1,26.1c-1,1-2.3,1.5-3.6,1.5s-2.6-.5-3.6-1.5c-.1-.1-.2-.2-.3-.4-.2-.1-.3-.2-.4-.4l-12.4-12.3-.1-.1c-1.9-2-1.9-5.2.1-7.2,2-1.9,5.3-1.9,7.2.1l9.5,9.5,22.5-22.5c2-2,5.2-2,7.2,0,1.9,2,1.9,5.2,0,7.2Z"
-                              />
-                              <path
-                                class="cls-1"
-                                d="m64.1,23c-.1-1.8-2.2-2.6-3.5-1.4l-2.9,2.9-8.1-8.1c-.2-.1-.3-.3-.5-.4-.1-.1-.2-.2-.3-.3-2-2-5.2-2-7.2,0l-26,26.1c-.9,1-1.4,2.3-1.3,3.7s.6,2.6,1.6,3.5,2.2,1.3,3.4,1.3,2.5-.5,3.5-1.4l22.5-22.4,5.2,5.2-2.5,2.5c-1.3,1.3-.4,3.4,1.4,3.5l13.1.5c1.2,0,2.2-.9,2.1-2.1l-.5-13.1h0Z"
-                              />
-                            </g>
-                          </svg>
-                        <!-- </div>
-                      </div>
-                    </form>
+      <div class="grid-container">
+        <ul class="grid">
+          <li class="grid__item">
+            <div class="grid__item__content"></div>
+          </li>
+          <li class="grid__item" id="dynamic-form">
+            <h4 class="grid__item__title">
+              <a href="#dynamic-form"> Dynamic Form </a>
+            </h4>
+            <div class="grid__item__content">
+              <p>Pseudo Selectors and Checkbox Hack</p>
+              <form class="form">
+                <input
+                  type="text"
+                  name="request"
+                  placeholder="Add request"
+                  class="form__input"
+                  required
+                />
+                <div class="form__submit">
+                  <label for="request-checkbox" class="form__submit__button btn"
+                    >Send request</label
+                  >
+
+                  <input type="checkbox" id="request-checkbox" />
+                  <div class="form__submit__loader" id="loading">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="form__loader__icon"
+                      viewBox="0 0 90 90"
+                    >
+                      <defs>
+                        <style>
+                          .cls-1 {
+                            fill: #fff;
+                          }
+
+                          .cls-2,
+                          .cls-3 {
+                            fill: #36365f;
+                          }
+
+                          .cls-3 {
+                            fill-rule: evenodd;
+                          }
+
+                          .cls-4 {
+                            fill: #6f53db;
+                          }
+                        </style>
+                      </defs>
+                      <g id="Ebene_1-2">
+                        <path
+                          class="cls-1"
+                          d="m74.4,49.9l-26.1,26.1c-1,1-2.3,1.5-3.6,1.5s-2.6-.5-3.6-1.5c-.1-.1-.2-.2-.3-.4-.2-.1-.3-.2-.4-.4l-12.4-12.3-.1-.1c-1.9-2-1.9-5.2.1-7.2,2-1.9,5.3-1.9,7.2.1l9.5,9.5,22.5-22.5c2-2,5.2-2,7.2,0,1.9,2,1.9,5.2,0,7.2Z"
+                        />
+                        <path
+                          class="cls-1"
+                          d="m64.1,23c-.1-1.8-2.2-2.6-3.5-1.4l-2.9,2.9-8.1-8.1c-.2-.1-.3-.3-.5-.4-.1-.1-.2-.2-.3-.3-2-2-5.2-2-7.2,0l-26,26.1c-.9,1-1.4,2.3-1.3,3.7s.6,2.6,1.6,3.5,2.2,1.3,3.4,1.3,2.5-.5,3.5-1.4l22.5-22.4,5.2,5.2-2.5,2.5c-1.3,1.3-.4,3.4,1.4,3.5l13.1.5c1.2,0,2.2-.9,2.1-2.1l-.5-13.1h0Z"
+                        />
+                      </g>
+                    </svg>
                   </div>
-                </li>
-              </ul>
-            </div> -->
-      <!-- </div> -->
-      <!-- <main>
-      </main> -->
+                </div>
+              </form>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <main class="content">
+        <section class="section shake">
+          <h3>Shake</h3>
+          <div class="shake__container">
+            <label for="shake">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 40 40"
+                class="shake__shape"
+              >
+                <rect
+                  class="shake-rect"
+                  x="0"
+                  y="0"
+                  width="40"
+                  height="40"
+                  stroke-width="10"
+                />
+                <rect
+                  class="shake-rect-internal"
+                  x="10"
+                  y="10"
+                  width="20"
+                  height="20"
+                />
+              </svg>
+            </label>
+          </div>
+        </section>
+        <section class="section"></section>
+      </main>
     </div>
   </body>
 </html>
