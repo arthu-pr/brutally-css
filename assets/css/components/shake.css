@@ -1,0 +1,160 @@
+.shake {
+  max-width: 15svw;
+  margin: auto;
+  text-align: center;
+}
+
+.shake__container {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+}
+
+/* Simple shake on hover on the svg */
+.shake__shape:hover {
+  animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+.shake-rect {
+  fill: var(--theme-color);
+  stroke: var(--color-bg);
+}
+
+.shake-rect-internal {
+  fill: var(--color-bg);
+}
+
+#shake {
+  position: absolute;
+  left: 0;
+  opacity: 0.01;
+}
+
+/* shake the all website */
+#shake:checked ~ .wrapper {
+  animation: shake-hard 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) infinite;
+}
+
+/* Make the letter of the title as block element so we can apply every styles to them */
+.banner__title-brutally__r,
+.banner__title-brutally__ly {
+  display: block;
+  transition: opacity 5s linear;
+}
+/* 
+#shake:checked
+  ~ .wrapper
+  .banner
+  .banner__title-brutally::first-letter
+  #shake:checked
+  ~ .wrapper
+  .banner
+  .banner__title-brutally__r,
+#shake:checked ~ .wrapper .banner__title-brutally__ly {
+  opacity: 0;
+  color: blue;
+} */
+
+/* While the website is shaking, reduce the opacity of certain letters of the main title */
+#shake:checked ~ .wrapper .banner .banner__title-brutally::first-letter,
+#shake:checked ~ .wrapper .banner .banner__title-brutally__r,
+#shake:checked ~ .wrapper .banner .banner__title-brutally__ly {
+  opacity: 0;
+}
+
+/* While the website is shaking, animate the second part of the title */
+#shake:checked ~ .wrapper .banner .banner__title__css-only {
+  animation: translate-vertical 4s linear infinite;
+}
+
+/* Make the shake svg move from left to right */
+#shake:checked ~ .wrapper .shake__shape {
+  animation: translate-horizontal 4s linear infinite;
+  animation-fill-mode: forwards;
+}
+
+@keyframes shake {
+  10%,
+  90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+
+  20%,
+  80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%,
+  50%,
+  70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%,
+  60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
+
+@keyframes shake-hard {
+  10%,
+  90% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  20%,
+  80% {
+    transform: translate3d(8px, 0, 0);
+  }
+
+  30%,
+  50%,
+  70% {
+    transform: translate3d(-8px, 0, 0);
+  }
+
+  40%,
+  60% {
+    transform: translate3d(8px, 0, 0);
+  }
+}
+
+@keyframes translate-horizontal {
+  0% {
+    transform: translateX(0);
+  }
+
+  25% {
+    transform: translateX(calc(-50svw + var(--theme-bar-width)));
+  }
+
+  50% {
+    transform: translateX(0);
+  }
+
+  75% {
+    transform: translateX(calc(50svw - var(--theme-bar-width)));
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes translate-vertical {
+  0% {
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateY(3svw);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}

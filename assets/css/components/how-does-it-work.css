@@ -1,9 +1,3 @@
-/* Part of the Theme Bar */
-/* .how-does-it-work-btn {
-  font-family: 'gotham-book';
-  font-size: var(--h3);
-} */
-
 .how-does-it-work {
   position: absolute;
   top: 0;
@@ -18,4 +12,10 @@
   /* TODO: */
   padding: var(--space-md);
   padding: var(--spacing);
+}
+
+.how-does-it-work__list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
