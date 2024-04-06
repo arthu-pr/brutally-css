@@ -68,7 +68,7 @@
 
 /* While the website is shaking, animate the second part of the title */
 #shake:checked ~ .wrapper .banner .banner__title__css-only {
-  animation: translate-vertical 4s linear infinite;
+  animation: translate-vertical 2s linear infinite;
 }
 
 /* Make the shake svg move from left to right */
