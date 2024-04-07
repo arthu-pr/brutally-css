@@ -7,11 +7,31 @@
   position: relative;
 }
 
+/* https://stackoverflow.com/questions/6542212/use-css3-transitions-with-gradient-backgrounds/63848864#63848864 */
+/* Used for the shake animation see shake.css */
+@property --highlighted-color-1 {
+  syntax: '<color>';
+  initial-value: #e3c567;
+  inherits: false;
+}
+
+@property --highlighted-color-2 {
+  syntax: '<color>';
+  initial-value: #e3c567;
+  inherits: false;
+}
+
 .highlighted:not(.animate) > span {
+  --highlighted-color-2: var(--theme-color);
+  --highlighted-color-1: var(--theme-color);
+
   padding: 2px;
   left: clamp(-30px, -1.4vw, -2px);
   padding-left: clamp(2px, 1.4vw, 30px);
-  background-image: linear-gradient(var(--theme-color), var(--theme-color));
+  background-image: linear-gradient(
+    var(--highlighted-color-1),
+    var(--highlighted-color-2)
+  );
   color: var(--color-bg);
   position: relative;
   box-decoration-break: clone;

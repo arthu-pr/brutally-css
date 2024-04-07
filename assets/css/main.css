@@ -162,6 +162,11 @@ label {
   -ms-overflow-style: none;
 
   scrollbar-width: none;
+  /* themes colors */
+  --theme-red: rgb(192, 39, 45);
+  --theme-warm-pink: #fccccc;
+  /* https://picular.co/erotic */
+  --theme-erotic-blue: #2c6974;
 }
 
 .wrapper::-webkit-scrollbar {
