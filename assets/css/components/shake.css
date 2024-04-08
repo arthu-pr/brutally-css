@@ -45,19 +45,12 @@
   display: block;
   transition: opacity 5s linear;
 }
-/* 
-#shake:checked
-  ~ .wrapper
-  .banner
-  .banner__title-brutally::first-letter
-  #shake:checked
-  ~ .wrapper
-  .banner
-  .banner__title-brutally__r,
-#shake:checked ~ .wrapper .banner__title-brutally__ly {
-  opacity: 0;
-  color: blue;
-} */
+
+/* Display the banner alert and animate them */
+#shake:checked ~ .wrapper .banner__alert {
+  display: block;
+  animation: scale 1.5s linear infinite;
+}
 
 /* While the website is shaking, reduce the opacity of certain letters of the main title */
 #shake:checked ~ .wrapper .banner .banner__title-brutally::first-letter,
@@ -68,7 +61,11 @@
 
 /* While the website is shaking, animate the second part of the title */
 #shake:checked ~ .wrapper .banner .banner__title__css-only {
-  animation: translate-vertical 2s linear infinite;
+  animation: translate-vertical 1.5s linear infinite;
+}
+#shake:checked ~ .wrapper .highlighted:not(.animate) > span {
+  transition: background-image 0.5s linear;
+  animation: highlighted-shake 1.5s linear infinite;
 }
 
 /* Make the shake svg move from left to right */
@@ -103,23 +100,23 @@
 @keyframes shake-hard {
   10%,
   90% {
-    transform: translate3d(-4px, 0, 0);
+    transform: translate3d(-2px, -1px, 0);
   }
 
   20%,
   80% {
-    transform: translate3d(8px, 0, 0);
+    transform: translate3d(4x, 2px, 0);
   }
 
   30%,
   50%,
   70% {
-    transform: translate3d(-8px, 0, 0);
+    transform: translate3d(-4px, -2px, 0);
   }
 
   40%,
   60% {
-    transform: translate3d(8px, 0, 0);
+    transform: translate3d(4px, 2px, 0);
   }
 }
 
@@ -151,10 +148,51 @@
   }
 
   50% {
-    transform: translateY(3svw);
+    transform: translateY(5svw);
   }
 
   100% {
     transform: translateX(0);
+  }
+}
+
+@keyframes scale {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+
+@keyframes highlighted-shake {
+  0% {
+    padding: 0;
+    --highlighted-color-1: var(--theme-red);
+    --highlighted-color-2: var(--theme-red);
+  }
+  25% {
+    padding: 3px;
+    --highlighted-color-1: var(--theme-warm-pink);
+    --highlighted-color-2: var(--theme-warm-pink);
+  }
+  50% {
+    padding: 3px;
+    --highlighted-color-1: var(--theme-erotic-blue);
+    --highlighted-color-2: var(--theme-erotic-blue);
+  }
+  75% {
+    padding: 0;
+    --highlighted-color-1: var(--color-primary);
+    --highlighted-color-2: var(--color-primary);
+  }
+
+  100% {
+    padding: 0;
+    --highlighted-color-1: var(--theme-red);
+    --highlighted-color-2: var(--theme-red);
   }
 }
