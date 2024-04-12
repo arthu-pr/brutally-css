@@ -3,6 +3,7 @@
   /* border: var(--border-width) solid var(--theme-color); */
   border-left: var(--border-width) solid var(--theme-color);
   border-right: var(--border-width) solid var(--theme-color);
+  border-bottom: var(--border-width) solid var(--theme-color);
   /* border-left: var(--border-width) solid var(--theme-color); */
   --min-width: 60px;
   gap: var(--space-xs);
