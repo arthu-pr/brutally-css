@@ -76,11 +76,15 @@
 
 .banner__title-brutally {
   display: flex;
+  line-height: 0.8;
 }
 
 .banner__title__css-only {
   display: block;
   font-family: 'VacationPostcard';
+  line-height: 1;
+  letter-spacing: 18px;
+  font-size: var(--h1-highlight);
 }
 
 /* .banner__description > span { */

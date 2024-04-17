@@ -41,7 +41,7 @@
   --h1: clamp(3.0518rem, 1.9337rem + 5.5901vw, 7.5938rem);
 
   /* Step 5: 67.34px → 199.60px */
-  /* --h1: clamp(4.2088rem, 2.174rem + 10.1738vw, 12.475rem); */
+  --h1-highlight: clamp(4.2088rem, 2.174rem + 10.1738vw, 12.475rem);
   /* --h1: clamp(1.3688rem, 2.174rem + 10.1738vw, 12.475rem); */
 }
 
