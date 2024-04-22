@@ -1,6 +1,7 @@
 {
-  "name": "Brutally CSS-Only",
-  "short_name": "Brutally CSS-Only",
+  "name": "Brutally CSS",
+  "short_name": "Brutally CSS",
+  "description": "Playground Website to explore CSS capabilities and limits without any JavaScript.",
   "icons": [
     {
       "src": "/assets/favicon/android-chrome-192x192.png",
@@ -13,6 +14,7 @@
       "type": "image/png"
     }
   ],
+  "start_url": "./index.html",
   "theme_color": "#ffffff",
   "background_color": "#ffffff",
   "display": "standalone"
