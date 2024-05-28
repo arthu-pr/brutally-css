@@ -1,0 +1,13 @@
+.inp-t {
+  --component-bg: var(--main-dark);
+  --component-color: var(--primary);
+  --component-padding-y: var(--space-sm);
+
+  width: 100%;
+  border-color: var(--primary);
+}
+
+.inp-t::placeholder {
+  color: inherit;
+  opacity: 0.4;
+}

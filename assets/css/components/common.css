@@ -13,3 +13,64 @@
   box-shadow: 5px 6px 0px 1px
     color-mix(in srgb, var(--theme-color), transparent 50%);
 }
+
+:root {
+  --border-radius: 0;
+  --box-shadow-x: 4px;
+  --box-shadow-y: 4px;
+
+  --box-shadow-base: var(--box-shadow-x) var(--box-shadow-y) 0 0 black;
+  --box-shadow-hover: var(--box-shadow-x) var(--box-shadow-y) 0 0
+    var(--theme-color);
+}
+
+/* button, */
+/* input, */
+.theme {
+  --component-bg: var(--theme-color);
+  --component-color: var(--main-dark);
+  --component-box-shadow: var(--box-shadow-base);
+  --component-padding-x: var(--space-unit);
+  --component-padding-y: 0;
+
+  margin: var(--space-xs);
+  padding: var(--component-padding-y) var(--component-padding-x);
+  border: 2px solid var(--main-dark);
+  border-radius: var(--border-radius);
+  background-color: var(--component-bg);
+  box-shadow: var(--component-box-shadow);
+  color: var(--component-color);
+  font-size: var(--component-font-size, 1rem);
+  font-weight: bold;
+  outline: none;
+}
+
+.theme:not(.disabled):hover {
+  --component-box-shadow: var(--box-shadow-hover);
+}
+
+.theme:not(.disabled):active,
+.theme:not(.disabled):focus-visible {
+  transform: translate(4px, 4px);
+  --component-box-shadow: unset;
+}
+
+.theme.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.theme.raw {
+  box-shadow: none;
+}
+
+.theme.raw:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+.theme.raw:active,
+.theme.raw:focus-visible {
+  transform: none;
+  box-shadow: none;
+}

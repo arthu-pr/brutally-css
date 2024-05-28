@@ -11,6 +11,10 @@
 
   --color-secondary: #e9eaec;
 
+  --primary: hsl(from var(--color-primary) h s l / 100%);
+  --color-main-dark: #0b0c0c;
+  --main-dark: hsl(from var(--color-main-dark) h s l / 100%);
+
   --color-bg: #0b0c0c;
   --color-bg-90: #0b0c0c90;
   --color-bg-80: #0b0c0c80;
@@ -28,4 +32,7 @@
   --theme-warm-pink: #fccccc;
   /* https://picular.co/erotic */
   --theme-erotic-blue: #2c6974;
+
+  /* Initial state */
+  --theme-color: var(--primary);
 }
