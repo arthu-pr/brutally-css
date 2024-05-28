@@ -1,6 +1,7 @@
 name: Build & Deploy
 on:
-  push:
+  # temporary disable workflows
+  pull_request:
     branches:
       - main
 
