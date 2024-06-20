@@ -74,10 +74,7 @@
 
 html {
   box-sizing: border-box;
-  /* font-family: "CaviarDreams", sans-serif; */
   font-family: 'ImpactLabelReversed', sans-serif;
-  /* font-family: "mail ray stuff", sans-serif; */
-  /* font-family: "VacationPostcard", sans-serif; */
 
   /* Microsoft web browsers */
   -ms-overflow-style: none;
@@ -92,21 +89,9 @@ html::-webkit-scrollbar {
   display: none;
 }
 
-*,
-*:before,
-*:after {
-  box-sizing: inherit;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
 body {
   margin: 0;
   font-size: var(--text);
-  /* color: var(--color-primary); */
 }
 
 .body::-webkit-scrollbar {
@@ -118,24 +103,15 @@ h2,
 h3,
 h4,
 h5 {
-  /* font-family: gotham-book; */
   font-family: gotham-black;
-  /* font-family: gotham-bold; */
   text-transform: uppercase;
+  color: var(--theme-color);
 }
 
 h4::after {
   content: '\0021';
   color: red;
   font-style: italic;
-}
-
-button,
-input,
-textarea,
-label {
-  font-family: inherit;
-  font-size: inherit;
 }
 
 .title__css-only {
@@ -146,19 +122,19 @@ label {
 /* https://css-tricks.com/use-css-clamp-to-create-a-more-flexible-wrapper-utility/ */
 .wrapper {
   position: relative;
-  --theme-color: var(--color-primary);
+  --theme-color: var(--primary);
 
   --background-color: var(--color-bg-90);
   color: var(--theme-color);
+  color: hsl(from var(--theme-color) h s l / 0.2);
+  color: var(--color-contrast-lower);
+  /* color: white; */
   border: var(--border-width) solid var(--theme-color);
   border-right: none;
   background-color: var(--color-bg);
-  /* display: flex; */
-  /* flex-wrap: wrap; */
-  overflow-x: hidden;
-  /* --gutter: 1rem; */
 
-  /* --breakpoint: 40rem; */
+  /* https://medium.com/@ehsaneona/overcoming-position-sticky-issues-solving-overflow-hidden-problems-with-overflow-clip-e8e79a7b0c34 */
+  overflow: clip;
   -ms-overflow-style: none;
 
   scrollbar-width: none;
@@ -173,106 +149,46 @@ label {
   display: none;
 }
 
-/* 
-body {
-  margin-right: auto;
-  margin-left:  auto;
-  max-width: 960px;
-  padding-right: 10px;
-  padding-left:  10px;
-} */
-
-/* 
- * Unholy Albatross
- * https://www.miragecraft.com/blog/unholy-albatross
- * (https://css-tricks.com/holy-albatross-with-widths)
- *
-*/
-/* .wrapper > * {
-  min-width: clamp(
-    var(--min-width, 0px),
-    (var(--breakpoint) - 100%) * 999,
-    100% - var(--gutter)
-  ); */
-/* } */
-
-/* main {
-  flex-grow: 1;
-  flex-basis: 0;
-  overflow: hidden;
-  position: relative;
-} */
-
-.main-container {
-  position: relative;
-  min-height: 100svh;
-  overflow: hidden;
-  display: grid;
-  align-items: center;
-
-  /* TODO: From arthur-yellow */
-  /* grid-template: minmax(70px, 7%) 1fr / auto; */
-  /* grid-template-columns: repeat(auto-fit, minmax(70px, 7%)); */
-  /* grid-template-columns: repeat(auto-fit, minmax(clamp(70px, 8rem, 100%), 1fr)); */
-  /* grid-template-columns: repeat(auto-fit, minmax(70px, 1fr)); */
-  display: grid;
-  grid-template-rows: 1fr auto;
-  /* align-items: center; */
-  /* grid-auto-rows: auto; */
-  /* display: flex; */
-  /* flex-wrap: wrap; */
-  /* transition-property: transform;
-  transition-duration: 0.8s;
-  transition-timing-function: ease-out;
-  transform: translateX(0); */
-
-  /* 
- * Unholy Albatross
- * https://www.miragecraft.com/blog/unholy-albatross
- * (https://css-tricks.com/holy-albatross-with-widths)
- *
-*/
-  /* flex-wrap: wrap;
-  --gutter: 1rem;
-  --breakpoint: 40rem; */
-  /* --modifier: calc(7rem - 100%); */
+.section,
+.article {
+  padding: var(--space-unit);
 }
 
-/* .how-does-it-work {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background-color: #000;
-  transition-property: transform;
-  transition-duration: 0.8s;
-  transition-timing-function: ease-out;
-  transform: translateX(100%);
-  z-index: 1;
-  color: var(--theme-color);
-  padding: var(--space-md);
-} */
-
-/*  */
-
 /* 
  * Unholy Albatross
  * https://www.miragecraft.com/blog/unholy-albatross
  * (https://css-tricks.com/holy-albatross-with-widths)
  *
 */
-/* .main-container > * {
-  min-width: clamp(
-    var(--min-width, 0px),
-    (var(--breakpoint) - 100%) * 999,
-    100% - var(--gutter)
-  );
-} */
-/* 
-.main-container__banner__title {
-  margin-top: 15vh;
-} */
+
+@keyframes wipe-in-left {
+  from {
+    clip-path: inset(0 0 0 100%);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+[transition-style='in:wipe:left'] {
+  /* animation: 2.5s cubic-bezier(0.25, 1, 0.3, 1) wipe-in-left both; */
+}
+
+.layout {
+  width: calc(200svw - var(--theme-bar-width));
+  display: grid;
+  grid-template-columns:
+    calc(100svw - var(--theme-bar-width)) var(--theme-bar-width)
+    calc(100svw - var(--theme-bar-width));
+  grid-auto-rows: auto;
+  transition: var(--layout-transition);
+  transform: translateX(0);
+  clip-path: inset(0 0 0 0);
+}
+
+.main-content {
+  border-right: var(--border-width) solid var(--theme-color);
+}
 
 .grid-container {
   flex-grow: 1;
@@ -320,7 +236,6 @@ li .square::before {
 
 /* https://css-tricks.com/examples/HoverEverythingBut/ */
 .grid-container > ul {
-  list-style: none;
   /* float: left; */
   /* width: 200px; */
   padding: 0 10px 0 0;

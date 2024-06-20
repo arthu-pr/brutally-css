@@ -1,13 +1,13 @@
-.inp-t {
+.a-input {
   --component-bg: var(--main-dark);
-  --component-color: var(--primary);
+  --component-color: var(--theme-color);
   --component-padding-y: var(--space-sm);
 
   width: 100%;
-  border-color: var(--primary);
+  border-color: var(--theme-color);
 }
 
-.inp-t::placeholder {
+.a-input::placeholder {
   color: inherit;
   opacity: 0.4;
 }

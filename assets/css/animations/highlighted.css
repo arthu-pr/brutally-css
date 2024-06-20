@@ -1,4 +1,13 @@
-.highlighted {
+.a-text1.-highlighted,
+.a-text2.-highlighted,
+.a-text3.-highlighted,
+.a-text4.-highlighted,
+.a-text5.-highlighted,
+.a-text6.-highlighted,
+.a-paragraph.-highlighted,
+.a-textSm.-highlighted,
+.a-textXs.-highlighted,
+p.-highlighted {
   font-family: inherit;
   text-transform: uppercase;
   /* TODO: check responsive line-height */
@@ -21,7 +30,7 @@
   inherits: false;
 }
 
-.highlighted:not(.animate) > span {
+.-highlighted:not(.-highlighted-animate) > span {
   --highlighted-color-2: var(--theme-color);
   --highlighted-color-1: var(--theme-color);
 
@@ -38,7 +47,7 @@
   -webkit-box-decoration-break: clone;
 }
 
-.highlighted.animate > span > span {
+.-highlighted.-animate > span > span {
   padding: 2px;
   /* background-image: linear-gradient(var(--theme-color), var(--theme-color)); */
   color: var(--theme-color);
@@ -73,7 +82,7 @@
 /*  */
 /* } */
 
-.highlighted.animate:hover > span > span {
+.-highlighted.-animate:hover > span > span {
   position: relative;
   box-decoration-break: clone;
   /* color: var(--theme-color); */
@@ -98,7 +107,7 @@
   /* } */
 }
 
-.highlighted.animate > span > span {
+.-highlighted.-animate > span > span {
   /* animation: animate-out 0.7s 0.1s forwards; */
   animation-direction: reverse;
 }

@@ -1,0 +1,13 @@
+.o-howDoesItWork {
+  /* TODO: */
+  padding: var(--space-md);
+  padding: var(--spacing);
+
+  overflow-y: scroll;
+}
+
+.o-howDoesItWork__list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}

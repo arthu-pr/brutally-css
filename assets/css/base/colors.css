@@ -21,8 +21,8 @@
   --color-bg-40: #0b0c0c40;
   --color-bg-20: #0b0c0c20;
   /* color contrasts */
-  --color-contrast-lower: hsl(0, 0%, 95%);
-  --color-contrast-low: hsl(240, 1%, 83%);
+  --color-contrast-lower: hsl(0, 0%, 60%);
+  --color-contrast-low: hsl(240, 2%, 8%);
   --color-contrast-medium: hsl(240, 1%, 48%);
   --color-contrast-high: hsl(240, 4%, 20%);
   --color-contrast-higher: black;
@@ -34,5 +34,7 @@
   --theme-erotic-blue: #2c6974;
 
   /* Initial state */
-  --theme-color: var(--primary);
+  /* --theme-color: var(--primary); */
+  --theme-color: var(--color-primary);
+  --theme-color-50: hsl(from var(--theme-color) h s l / 50%);
 }

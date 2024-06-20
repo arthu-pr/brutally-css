@@ -1,70 +1,82 @@
-<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Brutally CSS</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link href="assets/css/main.css" rel="stylesheet" />
-    <link href="assets/css/layout/grid.css" rel="stylesheet" />
-    <link href="assets/css/utils.css" rel="stylesheet" />
-    <link href="assets/css/typography.css" rel="stylesheet" />
-    <link href="assets/css/layout/navbar.css" rel="stylesheet" />
-    <link href="assets/css/colors.css" rel="stylesheet" />
-    <link href="assets/css/spacing.css" rel="stylesheet" />
-    <link href="assets/css/components/highlighted.css" rel="stylesheet" />
-    <link href="assets/css/components/vertical.css" rel="stylesheet" />
-    <link href="assets/css/components/form.css" rel="stylesheet" />
-    <link href="assets/css/components/common.css" rel="stylesheet" />
-    <link href="assets/css/components/buttons.css" rel="stylesheet" />
-    <link href="assets/css/components/inputs.css" rel="stylesheet" />
-    <link href="assets/css/variables.css" rel="stylesheet" />
-    <link href="assets/css/components/how-does-it-work.css" rel="stylesheet" />
-    <link href="assets/css/layout/hero.css" rel="stylesheet" />
-    <link href="assets/css/layout/utilities.css" rel="stylesheet" />
-    <link href="assets/css/banner.css" rel="stylesheet" />
-    <link href="assets/css/components/theme-bar.css" rel="stylesheet" />
-    <link href="assets/css/components/shake.css" rel="stylesheet" />
-    <link href="assets/css/layout/main-content.css" rel="stylesheet" />
 
-    <link rel="icon" type="image/x-icon" href="/assets/favicon/favicon.ico" />
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="/assets/favicon/apple-touch-icon.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="/assets/favicon/favicon-32x32.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="/assets/favicon/favicon-16x16.png"
-    />
-    <link rel="manifest" href="/site.webmanifest" />
-  </head>
+<head>
+  <title>Brutally CSS</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="assets/css/main.css" rel="stylesheet" />
 
-  <body>
-    <input type="checkbox" id="zoom-in" />
-    <input type="checkbox" id="zoom-out" />
-    <input type="checkbox" id="shake" />
 
-    <!-- Multiple labels point for the same form control -->
-    <!-- https://stackoverflow.com/a/2830137 -->
-    <!-- https://www.w3.org/TR/html401/interact/forms.html#h-17.9.1 -->
-    <input type="checkbox" id="how-does-it-work" />
+  <link href="assets/css/components/common.css" rel="stylesheet" />
+  <link href="assets/css/banner.css" rel="stylesheet" />
 
-    <span id="#"></span>
-    <span id="red"></span>
-    <span id="warm-pink"></span>
-    <span id="red"></span>
-    <span id="erotic-blue"></span>
 
-    <div class="wrapper">
-      <div class="hero">
+  <!-- Base -->
+  <link href="assets/css/base/reset.css" rel="stylesheet" />
+  <link href="assets/css/base/helpers.css" rel="stylesheet" />
+  <link href="assets/css/base/variables.css" rel="stylesheet" />
+  <link href="assets/css/base/colors.css" rel="stylesheet" />
+  <link href="assets/css/base/spacing.css" rel="stylesheet" />
+
+
+  <!-- Atoms -->
+  <link href="assets/css/components/atoms/typography.css" rel="stylesheet" />
+  <link href="assets/css/components/atoms/input.css" rel="stylesheet" />
+  <link href="assets/css/components/atoms/buttons.css" rel="stylesheet" />
+
+
+  <!-- Molecules -->
+  <link href="assets/css/components/molecules/form.css" rel="stylesheet" />
+  <link href="assets/css/components/molecules/shake.css" rel="stylesheet" />
+  <link href="assets/css/components/molecules/dynamic-form.css" rel="stylesheet" />
+
+
+  <!-- Organisms -->
+  <link href="assets/css/components/organisms/grid.css" rel="stylesheet" />
+  <link href="assets/css/components/organisms/how-does-it-work.css" rel="stylesheet" />
+  <link href="assets/css/components/organisms/theme-bar.css" rel="stylesheet" />
+
+
+  <!-- Animations -->
+  <link href="assets/css/animations/highlighted.css" rel="stylesheet" />
+  <link href="assets/css/animations/vertical.css" rel="stylesheet" />
+  <link href="assets/css/animations/modifier.css" rel="stylesheet" />
+
+
+  <link rel="icon" type="image/x-icon" href="/assets/favicon/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+</head>
+
+<body>
+  <input type="checkbox" id="zoom-in" class="a-modifier" />
+  <input type="checkbox" id="zoom-out" class="a-modifier" />
+  <input type="checkbox" id="shake" class="a-modifier" />
+
+  <!-- Multiple labels point for the same form control -->
+  <!-- https://stackoverflow.com/a/2830137 -->
+  <!-- https://www.w3.org/TR/html401/interact/forms.html#h-17.9.1 -->
+
+  <!-- Theme Bar color modifiers  -->
+  <span id="/" class="a-modifier"></span>
+  <span id="red" class="a-modifier"></span>
+  <span id="warm-pink" class="a-modifier"></span>
+  <span id="red" class="a-modifier"></span>
+  <span id="erotic-blue" class="a-modifier"></span>
+
+  <!-- How does it work -->
+  <input type="checkbox" id="how-does-it-work" class="a-modifier" />
+  <input type="checkbox" id="how-does-it-work-back" class="a-modifier" />
+
+  <!-- Form -->
+  <input type="checkbox" id="request-checkbox" class="a-modifier" />
+
+  <div class="wrapper">
+    <div class="layout">
+      <div class="main-content">
+
         <header class="banner">
           <span class="banner__alert">&#9888;</span>
           <span class="banner__alert">&#9888;</span>
@@ -74,321 +86,340 @@
           <span class="banner__alert">&#9888;</span>
           <h1 clas="banner__title">
             <span class="banner__title-brutally">
-              B<span class="banner__title-brutally__r">r</span>utal<span
-                class="banner__title-brutally__ly"
-                >ly</span
-              >
+              B<span class="banner__title-brutally__r">r</span>utal<span class="banner__title-brutally__ly">ly</span>
             </span>
             <span class="banner__title__css-only">CSS</span>
           </h1>
-          <p class="banner__description text--2 highlighted">
+          <p class="banner__description text-2 -highlighted">
             <span>
-              <span
-                >This website is a playground to explore CSS capabilities and
-                limits without any JavaScript.</span
-              >
+              <span>This website is a playground to explore CSS capabilities
+                and limits without any JavaScript.</span>
             </span>
           </p>
           <!-- <div class="bannner__animation">
-              <p class="highlighted animate active vertical title-3">
-                <span>
-                  <span> CSS fun </span>
-                </span>
-              </p>
-            </div> -->
+                                        <p class="highlighted animate active vertical title-3">
+                                          <span>
+                                            <span> CSS fun </span>
+                                          </span>
+                                        </p>
+                                      </div> -->
         </header>
+        <main>
+          <section class="o-grid">
+            <article class="o-grid__item">
+              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis laudantium consequatur quisquam
+                rerum necessitatibus cupiditate praesentium, hic ad laboriosam ex sint et quam neque, a quas. Dolorum
+                in
+                aliquid perferendis.</p>
+            </article>
+            <article class="o-grid__item" style="--grid-row: 1; --grid-column: 1 / -1;">
+              <h3 class="a-text3 -highlighted">Dynamic form</h3>
+              <input type="checkbox" id="add-request" class="a-modifier" />
+              <form class="m-form dynamic-form">
+                <input type="text" name="request" placeholder="Add request" class="a-input theme" required />
 
-        <section class="theme-bar">
-          <ul class="theme-bar__container">
-            <li class="theme-bar__container__element">
-              <button
-                type="button"
-                class="theme-bar__container__btn"
-                role="button"
-                aria-label="zoom-in"
-              >
-                <label for="zoom-in">
-                  <svg
-                    class="zoom-in"
-                    viewBox="0 0 40 40"
-                    width="100%"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <line x1="5" y1="20" x2="35" y2="20" />
-                    <line x1="20" y1="5" x2="20" y2="35" />
-                  </svg>
-                </label>
-              </button>
-            </li>
-            <li class="theme-bar__container__element">
-              <button
-                type="button"
-                class="theme-bar__container__btn"
-                aria-label="zoom-out"
-              >
-                <label for="zoom-out">
-                  <svg
-                    class="zoom-out"
-                    width="100%"
-                    viewBox="0 0 40 40"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <line x1="5" y1="20" x2="35" y2="20" />
-                  </svg>
-                </label>
-              </button>
-            </li>
-            <li class="theme-bar__container__element"></li>
-            <li class="theme-bar__container__element">
-              <a href="#warm-pink">
-                <svg
-                  class="warm-pink"
-                  width="100%"
-                  viewBox="0 0 40 40"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <rect width="40" height="40" />
-                </svg>
-              </a>
-            </li>
-            <li class="theme-bar__container__element">
-              <a href="#red">
-                <svg
-                  class="red"
-                  width="100%"
-                  viewBox="0 0 40 40"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <rect width="40" height="40" />
-                </svg>
-              </a>
-            </li>
-            <li class="theme-bar__container__element">
-              <a href="#erotic-blue">
-                <svg
-                  class="erotic-blue"
-                  width="100%"
-                  viewBox="0 0 40 40"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <rect width="40" height="40" />
-                </svg>
-              </a>
-            </li>
-            <li class="theme-bar__container__element">
-              <a href="#">
-                <svg
-                  class="primary-yellow"
-                  width="100%"
-                  viewBox="0 0 40 40"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <rect width="40" height="40" />
-                </svg>
-              </a>
-            </li>
-            <li class="theme-bar__container__element">
-              <button
-                type="button"
-                class="theme-bar__container__btn"
-                aria-label="how-does-it-work-btn"
-              >
-                <label for="how-does-it-work">
-                  <svg
-                    class="how-does-it-work-open-btn"
-                    width="100%"
-                    viewBox="0 0 40 40"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <line x1="0" y1="0" x2="40" y2="0" />
-                    <line x1="40" y1="0" x2="40" y2="20" />
-                    <line x1="40" y1="20" x2="15" y2="20" />
-                    <line x1="20" y1="20" x2="20" y2="40" />
-                  </svg>
-                </label>
-              </button>
-            </li>
-          </ul>
-        </section>
+                <label type="button" for="add-request" class="m-formSubmit a-btn theme -relative">
+                  Send request</label>
+                <span class="dynamic-form-loader" id="loading">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="form__loader__icon" viewBox="0 0 90 90">
+                    <defs>
+                      <style>
+                        .cls-1 {
+                          fill: #fff;
+                        }
 
-        <!-- How does it work? -->
-        <section class="how-does-it-work">
-          <button
-            type="button"
-            class="btn how-does-it-work-back"
-            aria-label="btn-how-does-it-work-back"
-          >
-            <label for="how-does-it-work" class="cursor-pointer"> Back </label>
-          </button>
-          <h2>How Does It Work?</h2>
-          <ul class="how-does-it-work__list">
-            <li class="how-does-it-work__list__item">
-              <p class="how-does-it-work__list__item__title">
-                A Complete Guide to Custom Properties
-                <a
-                  class="how-does-it-work__list__item__link"
-                  href="https://css-tricks.com/a-complete-guide-to-custom-properties/"
-                ></a>
-              </p>
-            </li>
-            <li class="how-does-it-work__list__item">
-              <p class="how-does-it-work__list__item__title">
-                Layout: Unholy Albatros
-                <a
-                  class="how-does-it-work__list__item__link"
-                  href="https://www.miragecraft.com/blog/unholy-albatross"
-                  >Unholy Albatross</a
-                >
-              </p>
-            </li>
-            <li class="how-does-it-work__list__item">
-              <p class="how-does-it-work__list__item__title">
-                How to scale SVG
-                <a
-                  class="how-does-it-work__list__item__link"
-                  href="https://css-tricks.com/scale-svg/"
-                  >How to scale SVG</a
-                >
-              </p>
-            </li>
-            <li class="how-does-it-work__list__item">
-              <p class="how-does-it-work__list__item__title">
-                How can I make an SVG scale with its parent container?
-                <a
-                  class="how-does-it-work__list__item__link"
-                  href="https://stackoverflow.com/questions/19484707/how-can-i-make-an-svg-scale-with-its-parent-container"
-                  >How can I make an SVG scale with its parent container?</a
-                >
-              </p>
-            </li>
-            <li class="how-does-it-work__list__item">
-              <p class="how-does-it-work__list__item__title">
-                Building a Scalable CSS Architecture With BEM and Utility
-                Classes
-                <a
-                  class="how-does-it-work__list__item__link"
-                  href="https://css-tricks.com/building-a-scalable-css-architecture-with-bem-and-utility-classes/"
-                  >Building a Scalable CSS Architecture With BEM and Utility
-                  Classes</a
-                >
-              </p>
-            </li>
-            <li class="how-does-it-work__list__item">
-              <p class="how-does-it-work__list__item__title">
-                Shake CSS Animation
-                <a
-                  class="how-does-it-work__list__item__link"
-                  href="https://css-tricks.com/snippets/css/shake-css-keyframe-animation/"
-                  >Shake CSS Animation</a
-                >
-              </p>
-            </li>
-          </ul>
-        </section>
+                        .cls-2,
+                        .cls-3 {
+                          fill: #36365f;
+                        }
+
+                        .cls-3 {
+                          fill-rule: evenodd;
+                        }
+
+                        .cls-4 {
+                          fill: #6f53db;
+                        }
+                      </style>
+                    </defs>
+                    <g id="Ebene_1-2">
+                      <path class="cls-1"
+                        d="m74.4,49.9l-26.1,26.1c-1,1-2.3,1.5-3.6,1.5s-2.6-.5-3.6-1.5c-.1-.1-.2-.2-.3-.4-.2-.1-.3-.2-.4-.4l-12.4-12.3-.1-.1c-1.9-2-1.9-5.2.1-7.2,2-1.9,5.3-1.9,7.2.1l9.5,9.5,22.5-22.5c2-2,5.2-2,7.2,0,1.9,2,1.9,5.2,0,7.2Z" />
+                      <path class="cls-1"
+                        d="m64.1,23c-.1-1.8-2.2-2.6-3.5-1.4l-2.9,2.9-8.1-8.1c-.2-.1-.3-.3-.5-.4-.1-.1-.2-.2-.3-.3-2-2-5.2-2-7.2,0l-26,26.1c-.9,1-1.4,2.3-1.3,3.7s.6,2.6,1.6,3.5,2.2,1.3,3.4,1.3,2.5-.5,3.5-1.4l22.5-22.4,5.2,5.2-2.5,2.5c-1.3,1.3-.4,3.4,1.4,3.5l13.1.5c1.2,0,2.2-.9,2.1-2.1l-.5-13.1h0Z" />
+                    </g>
+                  </svg>
+                </span>
+              </form>
+            </article>
+            <article class="o-grid__item">
+              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis laudantium consequatur quisquam
+                rerum necessitatibus cupiditate praesentium, hic ad laboriosam ex sint et quam neque, a quas. Dolorum
+                in
+                aliquid perferendis.</p>
+            </article>
+            <article class="o-grid__item">
+              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis laudantium consequatur quisquam
+                rerum necessitatibus cupiditate praesentium, hic ad laboriosam ex sint et quam neque, a quas. Dolorum
+                in
+                aliquid perferendis.</p>
+            </article>
+            <article class="o-grid__item">
+              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis laudantium consequatur quisquam
+                rerum necessitatibus cupiditate praesentium, hic ad laboriosam ex sint et quam neque, a quas. Dolorum
+                in
+                aliquid perferendis.</p>
+            </article>
+            <article class="o-grid__item">
+              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis laudantium consequatur quisquam
+                rerum necessitatibus cupiditate praesentium, hic ad laboriosam ex sint et quam neque, a quas. Dolorum
+                in
+                aliquid perferendis.</p>
+            </article>
+            <article class="o-grid__item">
+              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis laudantium consequatur quisquam
+                rerum necessitatibus cupiditate praesentium, hic ad laboriosam ex sint et quam neque, a quas. Dolorum
+                in
+                aliquid perferendis.</p>
+            </article>
+            <article class="o-grid__item" style="--grid-column: 1 / -1;">
+              <h3>Shake</h3>
+              <label class="m-shake" for="shake">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" class="shake__shape">
+                  <rect class="shake-rect" x="0" y="0" width="40" height="40" stroke-width="5"></rect>
+                  <rect class="shake-rect-internal" x="5" y="5" width="30" height="30"></rect>
+                </svg>
+              </label>
+            </article>
+            <!-- <article class="o-grid__item" style="--grid-column: span 3">
+               
+              </article> -->
+
+          </section>
+
+        </main>
+        <!-- <main class=" o-grid">
+          <section class="o-grid__item" id="dynamic-form" style="--grid-column: 3">
+            <h4 class="grid__item__title">
+              <label for="dynamic-form"> Dynamic Form </label>
+            </h4>
+            <input type="checkbox" id="request-checkbox" />
+            <input type="checkbox" id="dynamic-form" class="a-modifier" />
+            <form class="m-form">
+
+              <div class="form__submit">
+                <label for="request-checkbox" class="form__submit__button btn theme b-ton">Send request</label>
+                <input type="text" name="request" placeholder="Add request" class="a-input theme" required />
+
+                <input type="checkbox" id="request-checkbox" />
+                <div class="form__submit__loader" id="loading">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="form__loader__icon" viewBox="0 0 90 90">
+                    <defs>
+                      <style>
+                        .cls-1 {
+                          fill: #fff;
+                        }
+
+                        .cls-2,
+                        .cls-3 {
+                          fill: #36365f;
+                        }
+
+                        .cls-3 {
+                          fill-rule: evenodd;
+                        }
+
+                        .cls-4 {
+                          fill: #6f53db;
+                        }
+                      </style>
+                    </defs>
+                    <g id="Ebene_1-2">
+                      <path class="cls-1"
+                        d="m74.4,49.9l-26.1,26.1c-1,1-2.3,1.5-3.6,1.5s-2.6-.5-3.6-1.5c-.1-.1-.2-.2-.3-.4-.2-.1-.3-.2-.4-.4l-12.4-12.3-.1-.1c-1.9-2-1.9-5.2.1-7.2,2-1.9,5.3-1.9,7.2.1l9.5,9.5,22.5-22.5c2-2,5.2-2,7.2,0,1.9,2,1.9,5.2,0,7.2Z" />
+                      <path class="cls-1"
+                        d="m64.1,23c-.1-1.8-2.2-2.6-3.5-1.4l-2.9,2.9-8.1-8.1c-.2-.1-.3-.3-.5-.4-.1-.1-.2-.2-.3-.3-2-2-5.2-2-7.2,0l-26,26.1c-.9,1-1.4,2.3-1.3,3.7s.6,2.6,1.6,3.5,2.2,1.3,3.4,1.3,2.5-.5,3.5-1.4l22.5-22.4,5.2,5.2-2.5,2.5c-1.3,1.3-.4,3.4,1.4,3.5l13.1.5c1.2,0,2.2-.9,2.1-2.1l-.5-13.1h0Z" />
+                    </g>
+                  </svg>
+                </div>
+              </div>
+            </form>
+          </section>
+          <section class="o-grid__item shake">
+            
+          </section>
+          <section class="section"></section>
+        </main> -->
       </div>
 
-      <div class="grid-container">
-        <ul class="grid">
-          <li class="grid__item">
-            <div class="grid__item__content"></div>
+
+      <!-- Theme bar -->
+      <section class="o-themeBar">
+        <ul class="o-themeBar__container">
+          <li class="o-o-themeBar__element">
+            <button type="button" class="o-themeBar__btn" role="button" aria-label="zoom-in">
+              <label for="zoom-in">
+                <svg class="zoom-in" viewBox="0 0 40 40" width="100%" xmlns="http://www.w3.org/2000/svg">
+                  <line x1="5" y1="20" x2="35" y2="20" />
+                  <line x1="20" y1="5" x2="20" y2="35" />
+                </svg>
+              </label>
+            </button>
           </li>
-          <li class="grid__item" id="dynamic-form">
-            <h4 class="grid__item__title">
-              <a href="#dynamic-form"> Dynamic Form </a>
-            </h4>
-            <div class="grid__item__content">
-              <p>Pseudo Selectors and Checkbox Hack</p>
-              <form class="form">
-                <input
-                  type="text"
-                  name="request"
-                  placeholder="Add request"
-                  class="form__input theme inp-t"
-                  required
-                />
-                <div class="form__submit">
-                  <label
-                    for="request-checkbox"
-                    class="form__submit__button btn theme b-ton"
-                    >Send request</label
-                  >
-
-                  <input type="checkbox" id="request-checkbox" />
-                  <div class="form__submit__loader" id="loading">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      class="form__loader__icon"
-                      viewBox="0 0 90 90"
-                    >
-                      <defs>
-                        <style>
-                          .cls-1 {
-                            fill: #fff;
-                          }
-
-                          .cls-2,
-                          .cls-3 {
-                            fill: #36365f;
-                          }
-
-                          .cls-3 {
-                            fill-rule: evenodd;
-                          }
-
-                          .cls-4 {
-                            fill: #6f53db;
-                          }
-                        </style>
-                      </defs>
-                      <g id="Ebene_1-2">
-                        <path
-                          class="cls-1"
-                          d="m74.4,49.9l-26.1,26.1c-1,1-2.3,1.5-3.6,1.5s-2.6-.5-3.6-1.5c-.1-.1-.2-.2-.3-.4-.2-.1-.3-.2-.4-.4l-12.4-12.3-.1-.1c-1.9-2-1.9-5.2.1-7.2,2-1.9,5.3-1.9,7.2.1l9.5,9.5,22.5-22.5c2-2,5.2-2,7.2,0,1.9,2,1.9,5.2,0,7.2Z"
-                        />
-                        <path
-                          class="cls-1"
-                          d="m64.1,23c-.1-1.8-2.2-2.6-3.5-1.4l-2.9,2.9-8.1-8.1c-.2-.1-.3-.3-.5-.4-.1-.1-.2-.2-.3-.3-2-2-5.2-2-7.2,0l-26,26.1c-.9,1-1.4,2.3-1.3,3.7s.6,2.6,1.6,3.5,2.2,1.3,3.4,1.3,2.5-.5,3.5-1.4l22.5-22.4,5.2,5.2-2.5,2.5c-1.3,1.3-.4,3.4,1.4,3.5l13.1.5c1.2,0,2.2-.9,2.1-2.1l-.5-13.1h0Z"
-                        />
-                      </g>
-                    </svg>
-                  </div>
-                </div>
-              </form>
-            </div>
+          <li class="o-themeBar__element">
+            <button type="button" class="o-themeBar__btn" aria-label="zoom-out">
+              <label for="zoom-out">
+                <svg class="zoom-out" width="100%" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                  <line x1="5" y1="20" x2="35" y2="20" />
+                </svg>
+              </label>
+            </button>
+          </li>
+          <li class="o-themeBar__element"></li>
+          <li class="o-themeBar__element">
+            <a href="#warm-pink">
+              <svg class="warm-pink" width="100%" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                <rect width="40" height="40" />
+              </svg>
+            </a>
+          </li>
+          <li class="o-themeBar__element">
+            <a href="#red">
+              <svg class="red" width="100%" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                <rect width="40" height="40" />
+              </svg>
+            </a>
+          </li>
+          <li class="o-themeBar__element">
+            <a href="#erotic-blue">
+              <svg class="erotic-blue" width="100%" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                <rect width="40" height="40" />
+              </svg>
+            </a>
+          </li>
+          <li class="o-themeBar__element">
+            <a href="#">
+              <svg class="primary-yellow" width="100%" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                <rect width="40" height="40" />
+              </svg>
+            </a>
+          </li>
+          <li class="o-themeBar__element">
+            <button type="button" class="o-themeBar__btn" aria-label="how-does-it-work-btn">
+              <label for="how-does-it-work">
+                <svg class="how-does-it-work-open-btn" width="100%" viewBox="0 0 40 40"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <line x1="0" y1="0" x2="40" y2="0" />
+                  <line x1="40" y1="0" x2="40" y2="20" />
+                  <line x1="40" y1="20" x2="15" y2="20" />
+                  <line x1="20" y1="20" x2="20" y2="40" />
+                </svg>
+              </label>
+            </button>
           </li>
         </ul>
-      </div>
-      <main class="content">
-        <section class="section shake">
-          <h3>Shake</h3>
-          <div class="shake__container">
-            <label for="shake">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 40 40"
-                class="shake__shape"
-              >
-                <rect
-                  class="shake-rect"
-                  x="0"
-                  y="0"
-                  width="40"
-                  height="40"
-                  stroke-width="10"
-                />
-                <rect
-                  class="shake-rect-internal"
-                  x="10"
-                  y="10"
-                  width="20"
-                  height="20"
-                />
-              </svg>
-            </label>
-          </div>
-        </section>
-        <section class="section"></section>
-      </main>
+
+      </section>
+      <!-- How does it work? -->
+      <section class="o-howDoesItWork">
+        <label type="button" for="how-does-it-work-back" class="o-howDoesItWork__backBtn a-btn theme"
+          aria-label="back-button">
+          Back
+        </label>
+        <h2>How Does It Work?</h2>
+        <ul class="o-howDoesItWork__list">
+          <li class="o-howDoesItWork__listItem">
+            <p class="o-howDoesItWork__listItem__title">
+              A Complete Guide to Custom Properties
+              <a class="o-howDoesItWork__listItem__link"
+                href="https://css-tricks.com/a-complete-guide-to-custom-properties/"></a>
+            </p>
+          </li>
+          <li class="o-howDoesItWork__listItem">
+            <p class="o-howDoesItWork__listItem__title">
+              Layout: Unholy Albatros
+              <a class="o-howDoesItWork__listItem__link" href="https://www.miragecraft.com/blog/unholy-albatross">Unholy
+                Albatross</a>
+            </p>
+          </li>
+          <li class="o-howDoesItWork__listItem">
+            <p class="o-howDoesItWork__listItem__title">
+              How to scale SVG
+              <a class="o-howDoesItWork__listItem__link" href="https://css-tricks.com/scale-svg/">How to scale SVG</a>
+            </p>
+          </li>
+          <li class="o-howDoesItWork__listItem">
+            <p class="o-howDoesItWork__listItem__title">
+              How can I make an SVG scale with its parent container?
+              <a class="o-howDoesItWork__listItem__link"
+                href="https://stackoverflow.com/questions/19484707/how-can-i-make-an-svg-scale-with-its-parent-container">How
+                can I make an SVG scale with its parent container?</a>
+            </p>
+          </li>
+          <li class="o-howDoesItWork__listItem">
+            <p class="o-howDoesItWork__listItem__title">
+              Building a Scalable CSS Architecture With BEM and Utility Classes
+              <a class="o-howDoesItWork__listItem__link"
+                href="https://css-tricks.com/building-a-scalable-css-architecture-with-bem-and-utility-classes/">Building
+                a
+                Scalable CSS Architecture With BEM and Utility Classes</a>
+            </p>
+          </li>
+          <li class="o-howDoesItWork__listItem">
+            <p class="o-howDoesItWork__listItem__title">
+              ABEM. A more useful adaptation of BEM.
+              <a class="o-howDoesItWork__listItem__link"
+                href="https://css-tricks.com/abem-useful-adaptation-bem/">Link</a>
+            </p>
+          </li>
+          <li class="o-howDoesItWork__listItem">
+            <p class="o-howDoesItWork__listItem__title">
+              Shake CSS Animation
+              <a class="o-howDoesItWork__listItem__link"
+                href="https://css-tricks.com/snippets/css/shake-css-keyframe-animation/">Shake CSS Animation</a>
+            </p>
+          </li>
+          <li class="o-howDoesItWork__listItem">
+            <h4 class="o-howDoesItWork__listItem__title">
+              `position: sticky` inside a container with overflow: hidden`
+            </h4>
+            <p class="o-howDoesItWork__listItem__description">
+              Use
+              <span class="o-howDoesItWork__listItem__description__solution">
+                `overflow: clip`
+              </span>
+              Sources: Stack Overflow
+              <a href="https://stackoverflow.com/a/72792224">answer from the specs</a>
+              More simple ELI5
+              <a
+                href="https://medium.com/@ehsaneona/overcoming-position-sticky-issues-solving-overflow-hidden-problems-with-overflow-clip-e8e79a7b0c34">article</a>
+              from Medium
+              <!-- make a line break before the span through CSS -->
+              <span class="o-howDoesItWork__listItem__description__used-on" style="
+                    display: inline-block;
+                    color: red;
+                    background: hsl(from red h s l / 0.2);
+                  ">(used on `.wrapper`)</span>
+            </p>
+          </li>
+          <li>
+            <h4 class="o-howDoesItWork__listItem__title">Grid</h4>
+            <p class="o-howDoesItWork__listItem__description">
+              <span class="o-howDoesItWork__listItem__description__solution">
+                grid-auto-flow: column; makes items flow across columns, ie into a
+                single row align-self: center; does vertical centering
+              </span>
+              Sources: Stack Overflow
+              <a href="https://stackoverflow.com/a/50801675        ">answer from the specs</a>
+            </p>
+          </li>
+          <li>
+            <h4 class="o-hdiw-sectionTitle"></h4>
+          </li>
+        </ul>
+      </section>
     </div>
-  </body>
+  </div>
+</body>
+
 </html>

@@ -9,7 +9,8 @@
   justify-content: center;
   align-items: flex-start;
   border-bottom: var(--border-width) solid var(--theme-color);
-  transition: var(--layout-transition);
+  /* transition: var(--layout-transition); */
+  /* transform: translateX(0svw); */
 
   /* Avoid children overlapping and always show the theme-bar section */
   /* https://stackoverflow.com/a/43312314 */

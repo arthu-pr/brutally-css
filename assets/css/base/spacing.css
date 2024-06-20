@@ -4,7 +4,8 @@
 
 /* Spacing | Global */
 :root {
-  --space-unit: 1.5em;
+  /* --space-unit: 1.5em; */
+  --space-unit: clamp(1em, 1.5vw, 2em);
   --space-xs: calc(0.5 * var(--space-unit));
   --space-sm: calc(0.75 * var(--space-unit));
   --space-md: calc(1.25 * var(--space-unit));
@@ -14,6 +15,12 @@
 }
 
 /* responsive rule affecting all spacing variables */
+@media (min-width: 48rem) {
+  :root {
+    --space-unit: 1.75em; /* 👇 this responsive decision affects all margins and paddings */
+  }
+}
+
 @media (min-width: 64rem) {
   :root {
     --space-unit: 2em; /* 👇 this responsive decision affects all margins and paddings */

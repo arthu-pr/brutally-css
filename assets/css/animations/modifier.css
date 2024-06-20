@@ -1,0 +1,152 @@
+.a-modifier {
+  opacity: 0.01;
+  position: fixed;
+  left: -9999px;
+}
+
+/*  Form  */
+#add-request:checked {
+  display: none;
+  --is-disabled: 1;
+}
+
+#add-request:checked ~ .dynamic-form .m-formSubmit {
+  cursor: not-allowed;
+  z-index: -1;
+}
+
+#add-request:checked ~ .dynamic-form .m-formSubmit::before {
+  content: 'Loading...';
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  inset: 0;
+  background-color: var(--theme-color);
+  background: conic-gradient(var(--theme-color) 50%, green 0) no-repeat;
+  background-size: 200% 100%;
+  /* background-position: 0% 0%; */
+  animation: back 30s 1 linear;
+  cursor: not-allowed;
+  z-index: 1;
+}
+
+@-webkit-keyframes back {
+  0% {
+    background-position: 100% 0%;
+  }
+  25% {
+    background-position: 30% 0%;
+  }
+  40% {
+    background-position: 5% 0%;
+  }
+  50% {
+    background-position: 50% 0%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}
+@-moz-keyframes back {
+  0% {
+    background-position: 100% 0%;
+  }
+  25% {
+    background-position: 30% 0%;
+  }
+  40% {
+    background-position: 5% 0%;
+  }
+  50% {
+    background-position: 50% 0%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}
+@keyframes back {
+  0% {
+    background-position: 100% 0%;
+  }
+  25% {
+    background-position: 30% 0%;
+  }
+  40% {
+    background-position: 5% 0%;
+  }
+  50% {
+    background-position: 50% 0%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}
+
+/* Theme Bar */
+
+#zoom-in:checked ~ .wrapper {
+  --spacing: var(--space-xs);
+}
+
+#zoom-out:checked ~ .wrapper {
+  --spacing: var(--space-xxl);
+}
+
+#zoom-out:checked ~ .wrapper {
+  --spacing: var(--space-xxl);
+}
+
+:target ~ .wrapper .primary-yellow {
+  fill: var(--color-primary);
+}
+
+#warm-pink:target ~ .wrapper {
+  --theme-color: var(--theme-warm-pink);
+}
+
+#warm-pink:target ~ .wrapper .warm-pink {
+  fill: var(--theme-warm-pink);
+}
+
+#red:target ~ .wrapper {
+  --theme-color: var(--theme-red);
+}
+
+#red:target ~ .wrapper .red {
+  fill: var(--theme-red);
+}
+
+#erotic-blue:target ~ .wrapper {
+  --theme-color: var(--theme-erotic-blue);
+}
+
+#erotic-blue:target ~ .wrapper .erotic-blue {
+  fill: var(--theme-erotic-blue);
+}
+
+:target ~ .wrapper {
+  --theme-color: var(--color-primary);
+}
+
+:target ~ .wrapper .primary-yellow {
+  fill: var(--color-primary);
+}
+
+/* How does it work? */
+
+#how-does-it-work:checked ~ .wrapper .layout,
+#how-does-it-work-back:checked ~ .wrapper .layout {
+  transform: translateX(calc(-100svw + var(--theme-bar-width)));
+}
+/* 
+#how-does-it-work-back:checked ~ .wrapper .layout {
+  transform: translateX(calc(0 + var(--theme-bar-width)));
+} */
+
+#how-does-it-work,
+#o-howDoesItWork__backBtn {
+  opacity: 0.01;
+  position: fixed;
+  left: -9999px;
+}

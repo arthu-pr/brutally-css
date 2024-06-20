@@ -1,7 +1,0 @@
-.flex {
-  display: flex;
-}
-
-.gap-md {
-  gap: var(--space-md);
-}

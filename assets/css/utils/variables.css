@@ -1,6 +1,6 @@
 :root {
-  --border-width: 10px;
-  --border-width: clamp(0.2rem, 1.5vw, 0.625rem);
+  --border-width: 0.5rem;
+  --border-width: clamp(0.2rem, 1.5vw, 0.5rem);
   --theme-bar-width: clamp(3rem, 5rem, 10svw);
 
   --layout-transition: transform 0.8s ease-out;
@@ -10,5 +10,13 @@
 @media (min-width: 64rem) {
   :root {
     --spacing: var(--space-lg);
+  }
+}
+@keyframes wipe-in-left {
+  from {
+    clip-path: inset(0 0 0 100%);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
   }
 }

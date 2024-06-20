@@ -1,20 +1,4 @@
-.btn {
-  border: none;
-  cursor: pointer;
-  outline: none;
-  font-family: 'gotham-book';
-  font-size: var(--h4);
-  background-color: var(--theme-color);
-  color: var(--color-bg);
-  transition: background-color 0.4s;
-  font-weight: bold;
-  text-transform: uppercase;
-  /* padding: 8px 16px; */
-  box-shadow: 5px 6px 0px 1px
-    color-mix(in srgb, var(--theme-color), transparent 50%);
-}
-
-:root {
+.theme {
   --border-radius: 0;
   --box-shadow-x: 4px;
   --box-shadow-y: 4px;
@@ -22,18 +6,14 @@
   --box-shadow-base: var(--box-shadow-x) var(--box-shadow-y) 0 0 black;
   --box-shadow-hover: var(--box-shadow-x) var(--box-shadow-y) 0 0
     var(--theme-color);
-}
 
-/* button, */
-/* input, */
-.theme {
   --component-bg: var(--theme-color);
   --component-color: var(--main-dark);
   --component-box-shadow: var(--box-shadow-base);
   --component-padding-x: var(--space-unit);
   --component-padding-y: 0;
 
-  margin: var(--space-xs);
+  margin-bottom: var(--space-xs);
   padding: var(--component-padding-y) var(--component-padding-x);
   border: 2px solid var(--main-dark);
   border-radius: var(--border-radius);
@@ -73,4 +53,8 @@
 .theme.raw:focus-visible {
   transform: none;
   box-shadow: none;
+}
+
+.theme.-hidden {
+  display: none;
 }
