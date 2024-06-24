@@ -29,3 +29,5 @@ jobs:
               git clone git@github.com:arthur-plazanet/css-fun.git .
             fi
             echo 'Success deployment'
+
+# cleancss -o main.min.css css/**/*.css

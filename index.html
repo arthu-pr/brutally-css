@@ -4,50 +4,51 @@
   <title>Brutally CSS</title>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link href="assets/css/main.css" rel="stylesheet" />
+  <link href="css/main.css" rel="stylesheet" />
 
 
-  <link href="assets/css/components/common.css" rel="stylesheet" />
-  <link href="assets/css/banner.css" rel="stylesheet" />
+  <link href="css/components/common.css" rel="stylesheet" />
+  <link href="css/banner.css" rel="stylesheet" />
 
 
   <!-- Base -->
-  <link href="assets/css/base/reset.css" rel="stylesheet" />
-  <link href="assets/css/base/helpers.css" rel="stylesheet" />
-  <link href="assets/css/base/colors.css" rel="stylesheet" />
-  <link href="assets/css/base/spacing.css" rel="stylesheet" />
+  <link href="css/base/reset.css" rel="stylesheet" />
+  <link href="css/base/helpers.css" rel="stylesheet" />
+  <link href="css/base/colors.css" rel="stylesheet" />
+  <link href="css/base/spacing.css" rel="stylesheet" />
 
 
   <!-- Atoms -->
-  <link href="assets/css/components/atoms/typography.css" rel="stylesheet" />
-  <link href="assets/css/components/atoms/input.css" rel="stylesheet" />
-  <link href="assets/css/components/atoms/buttons.css" rel="stylesheet" />
+  <link href="css/components/atoms/typography.css" rel="stylesheet" />
+  <link href="css/components/atoms/input.css" rel="stylesheet" />
+  <link href="css/components/atoms/buttons.css" rel="stylesheet" />
 
 
   <!-- Molecules -->
-  <link href="assets/css/components/molecules/form.css" rel="stylesheet" />
-  <link href="assets/css/components/molecules/shake.css" rel="stylesheet" />
-  <link href="assets/css/components/molecules/dynamic-form.css" rel="stylesheet" />
+  <link href="css/components/molecules/form.css" rel="stylesheet" />
+  <link href="css/components/molecules/shake.css" rel="stylesheet" />
+  <link href="css/components/molecules/dynamic-form.css" rel="stylesheet" />
 
 
   <!-- Organisms -->
-  <link href="assets/css/components/organisms/grid.css" rel="stylesheet" />
-  <link href="assets/css/components/organisms/how-does-it-work.css" rel="stylesheet" />
-  <link href="assets/css/components/organisms/theme-bar.css" rel="stylesheet" />
+  <link href="css/components/organisms/grid.css" rel="stylesheet" />
+  <link href="css/components/organisms/how-does-it-work.css" rel="stylesheet" />
+  <link href="css/components/organisms/theme-bar.css" rel="stylesheet" />
 
 
   <!-- Animations -->
-  <link href="assets/css/animations/highlighted.css" rel="stylesheet" />
-  <link href="assets/css/animations/vertical.css" rel="stylesheet" />
-  <link href="assets/css/animations/modifier.css" rel="stylesheet" />
+  <link href="css/animations/highlighted.css" rel="stylesheet" />
+  <link href="css/animations/vertical.css" rel="stylesheet" />
+  <link href="css/animations/modifier.css" rel="stylesheet" />
+  <link href="css/animations/opacity.css" rel="stylesheet" />
 
   <!-- Utils -->
-  <link href="assets/css/utils/variables.css" rel="stylesheet" />
+  <link href="css/utils/variables.css" rel="stylesheet" />
 
-  <link rel="icon" type="image/x-icon" href="/assets/favicon/favicon.ico" />
-  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png" />
-  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png" />
-  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png" />
+  <link rel="icon" type="image/x-icon" href="/favicon/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png" />
   <link rel="manifest" href="/site.webmanifest" />
 </head>
 
@@ -98,7 +99,7 @@
             </span>
           </p>
           <!-- <div class="bannner__animation">
-                                        <p class="highlighted animate active vertical title-3">
+                                        <p class="highlighted animate active vertical text-xl">
                                           <span>
                                             <span> CSS fun </span>
                                           </span>
@@ -114,7 +115,7 @@
                 aliquid perferendis.</p>
             </article>
             <article class="o-grid__item" style="--grid-row: 1; --grid-column: 1 / -1;">
-              <h3 class="a-text3 -highlighted">Dynamic form</h3>
+              <h3 class="a-text-xl -highlighted">Dynamic form</h3>
               <input type="checkbox" id="add-request" class="a-modifier" />
               <form class="m-form dynamic-form">
                 <input type="text" name="request" placeholder="Add request" class="a-input theme" required />
@@ -192,67 +193,9 @@
                 </svg>
               </label>
             </article>
-            <!-- <article class="o-grid__item" style="--grid-column: span 3">
-               
-              </article> -->
-
           </section>
-
         </main>
-        <!-- <main class=" o-grid">
-          <section class="o-grid__item" id="dynamic-form" style="--grid-column: 3">
-            <h4 class="grid__item__title">
-              <label for="dynamic-form"> Dynamic Form </label>
-            </h4>
-            <input type="checkbox" id="request-checkbox" />
-            <input type="checkbox" id="dynamic-form" class="a-modifier" />
-            <form class="m-form">
-
-              <div class="form__submit">
-                <label for="request-checkbox" class="form__submit__button btn theme b-ton">Send request</label>
-                <input type="text" name="request" placeholder="Add request" class="a-input theme" required />
-
-                <input type="checkbox" id="request-checkbox" />
-                <div class="form__submit__loader" id="loading">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="form__loader__icon" viewBox="0 0 90 90">
-                    <defs>
-                      <style>
-                        .cls-1 {
-                          fill: #fff;
-                        }
-
-                        .cls-2,
-                        .cls-3 {
-                          fill: #36365f;
-                        }
-
-                        .cls-3 {
-                          fill-rule: evenodd;
-                        }
-
-                        .cls-4 {
-                          fill: #6f53db;
-                        }
-                      </style>
-                    </defs>
-                    <g id="Ebene_1-2">
-                      <path class="cls-1"
-                        d="m74.4,49.9l-26.1,26.1c-1,1-2.3,1.5-3.6,1.5s-2.6-.5-3.6-1.5c-.1-.1-.2-.2-.3-.4-.2-.1-.3-.2-.4-.4l-12.4-12.3-.1-.1c-1.9-2-1.9-5.2.1-7.2,2-1.9,5.3-1.9,7.2.1l9.5,9.5,22.5-22.5c2-2,5.2-2,7.2,0,1.9,2,1.9,5.2,0,7.2Z" />
-                      <path class="cls-1"
-                        d="m64.1,23c-.1-1.8-2.2-2.6-3.5-1.4l-2.9,2.9-8.1-8.1c-.2-.1-.3-.3-.5-.4-.1-.1-.2-.2-.3-.3-2-2-5.2-2-7.2,0l-26,26.1c-.9,1-1.4,2.3-1.3,3.7s.6,2.6,1.6,3.5,2.2,1.3,3.4,1.3,2.5-.5,3.5-1.4l22.5-22.4,5.2,5.2-2.5,2.5c-1.3,1.3-.4,3.4,1.4,3.5l13.1.5c1.2,0,2.2-.9,2.1-2.1l-.5-13.1h0Z" />
-                    </g>
-                  </svg>
-                </div>
-              </div>
-            </form>
-          </section>
-          <section class="o-grid__item shake">
-            
-          </section>
-          <section class="section"></section>
-        </main> -->
       </div>
-
 
       <!-- Theme bar -->
       <section class="o-themeBar">
@@ -323,101 +266,174 @@
       </section>
       <!-- How does it work? -->
       <section class="o-howDoesItWork">
-        <label type="button" for="how-does-it-work-back" class="o-howDoesItWork__backBtn a-btn theme"
-          aria-label="back-button">
-          Back
-        </label>
-        <h2>How Does It Work?</h2>
-        <ul class="o-howDoesItWork__list">
-          <li class="o-howDoesItWork__listItem">
-            <p class="o-howDoesItWork__listItem__title">
-              A Complete Guide to Custom Properties
-              <a class="o-howDoesItWork__listItem__link"
-                href="https://css-tricks.com/a-complete-guide-to-custom-properties/"></a>
-            </p>
-          </li>
-          <li class="o-howDoesItWork__listItem">
-            <p class="o-howDoesItWork__listItem__title">
-              Layout: Unholy Albatros
-              <a class="o-howDoesItWork__listItem__link" href="https://www.miragecraft.com/blog/unholy-albatross">Unholy
-                Albatross</a>
-            </p>
-          </li>
-          <li class="o-howDoesItWork__listItem">
-            <p class="o-howDoesItWork__listItem__title">
-              How to scale SVG
-              <a class="o-howDoesItWork__listItem__link" href="https://css-tricks.com/scale-svg/">How to scale SVG</a>
-            </p>
-          </li>
-          <li class="o-howDoesItWork__listItem">
-            <p class="o-howDoesItWork__listItem__title">
-              How can I make an SVG scale with its parent container?
-              <a class="o-howDoesItWork__listItem__link"
-                href="https://stackoverflow.com/questions/19484707/how-can-i-make-an-svg-scale-with-its-parent-container">How
-                can I make an SVG scale with its parent container?</a>
-            </p>
-          </li>
-          <li class="o-howDoesItWork__listItem">
-            <p class="o-howDoesItWork__listItem__title">
-              Building a Scalable CSS Architecture With BEM and Utility Classes
-              <a class="o-howDoesItWork__listItem__link"
-                href="https://css-tricks.com/building-a-scalable-css-architecture-with-bem-and-utility-classes/">Building
-                a
-                Scalable CSS Architecture With BEM and Utility Classes</a>
-            </p>
-          </li>
-          <li class="o-howDoesItWork__listItem">
-            <p class="o-howDoesItWork__listItem__title">
-              ABEM. A more useful adaptation of BEM.
-              <a class="o-howDoesItWork__listItem__link"
-                href="https://css-tricks.com/abem-useful-adaptation-bem/">Link</a>
-            </p>
-          </li>
-          <li class="o-howDoesItWork__listItem">
-            <p class="o-howDoesItWork__listItem__title">
-              Shake CSS Animation
-              <a class="o-howDoesItWork__listItem__link"
-                href="https://css-tricks.com/snippets/css/shake-css-keyframe-animation/">Shake CSS Animation</a>
-            </p>
-          </li>
-          <li class="o-howDoesItWork__listItem">
-            <h4 class="o-howDoesItWork__listItem__title">
-              `position: sticky` inside a container with overflow: hidden`
-            </h4>
-            <p class="o-howDoesItWork__listItem__description">
-              Use
-              <span class="o-howDoesItWork__listItem__description__solution">
-                `overflow: clip`
-              </span>
-              Sources: Stack Overflow
-              <a href="https://stackoverflow.com/a/72792224">answer from the specs</a>
-              More simple ELI5
-              <a
-                href="https://medium.com/@ehsaneona/overcoming-position-sticky-issues-solving-overflow-hidden-problems-with-overflow-clip-e8e79a7b0c34">article</a>
-              from Medium
-              <!-- make a line break before the span through CSS -->
-              <span class="o-howDoesItWork__listItem__description__used-on" style="
+        <div class="o-howDoesItWork__header">
+          <label type="button" for="how-does-it-work-back" class="o-howDoesItWork__backBtn a-btn theme m-0"
+            aria-label="back-button">
+            Back
+          </label>
+          <h2 class="m-0">How Does It Work?</h2>
+        </div>
+        <div class="o-howDoesItWork__content">
+          <ul class="o-howDoesItWork__list">
+            <li class="o-howDoesItWork__listItem">
+              <p class="o-howDoesItWork__listItem__title">
+                A Complete Guide to Custom Properties
+                <a class="o-howDoesItWork__listItem__link"
+                  href="https://css-tricks.com/a-complete-guide-to-custom-properties/"></a>
+              </p>
+            </li>
+            <li class="o-howDoesItWork__listItem">
+              <p class="o-howDoesItWork__listItem__title">
+                Layout: Unholy Albatros
+                <a class="o-howDoesItWork__listItem__link"
+                  href="https://www.miragecraft.com/blog/unholy-albatross">Unholy
+                  Albatross</a>
+              </p>
+            </li>
+            <li class="o-howDoesItWork__listItem">
+              <p class="o-howDoesItWork__listItem__title">
+                How to scale SVG
+                <a class="o-howDoesItWork__listItem__link" href="https://css-tricks.com/scale-svg/">How to scale SVG</a>
+              </p>
+            </li>
+            <li class="o-howDoesItWork__listItem">
+              <p class="o-howDoesItWork__listItem__title">
+                How can I make an SVG scale with its parent container?
+                <a class="o-howDoesItWork__listItem__link"
+                  href="https://stackoverflow.com/questions/19484707/how-can-i-make-an-svg-scale-with-its-parent-container">How
+                  can I make an SVG scale with its parent container?</a>
+              </p>
+            </li>
+            <li class="o-howDoesItWork__listItem">
+              <p class="o-howDoesItWork__listItem__title">
+                Building a Scalable CSS Architecture With BEM and Utility Classes
+                <a class="o-howDoesItWork__listItem__link"
+                  href="https://css-tricks.com/building-a-scalable-css-architecture-with-bem-and-utility-classes/">Building
+                  a
+                  Scalable CSS Architecture With BEM and Utility Classes</a>
+              </p>
+            </li>
+            <li class="o-howDoesItWork__listItem">
+              <p class="o-howDoesItWork__listItem__title">
+                ABEM. A more useful adaptation of BEM.
+                <a class="o-howDoesItWork__listItem__link"
+                  href="https://css-tricks.com/abem-useful-adaptation-bem/">Link</a>
+              </p>
+            </li>
+            <li class="o-howDoesItWork__listItem">
+              <p class="o-howDoesItWork__listItem__title">
+                Shake CSS Animation
+                <a class="o-howDoesItWork__listItem__link"
+                  href="https://css-tricks.com/snippets/css/shake-css-keyframe-animation/">Shake CSS Animation</a>
+              </p>
+            </li>
+            <li class="o-howDoesItWork__listItem">
+              <h4 class="o-howDoesItWork__listItem__title">
+                `position: sticky` inside a container with overflow: hidden`
+              </h4>
+              <p class="o-howDoesItWork__listItem__description">
+                Use
+                <span class="o-howDoesItWork__listItem__description__solution">
+                  `overflow: clip`
+                </span>
+                Sources: Stack Overflow
+                <a href="https://stackoverflow.com/a/72792224">answer from the specs</a>
+                More simple ELI5
+                <a
+                  href="https://medium.com/@ehsaneona/overcoming-position-sticky-issues-solving-overflow-hidden-problems-with-overflow-clip-e8e79a7b0c34">article</a>
+                from Medium
+                <!-- make a line break before the span through CSS -->
+                <span class="o-howDoesItWork__listItem__description__used-on" style="
                     display: inline-block;
                     color: red;
                     background: hsl(from red h s l / 0.2);
                   ">(used on `.wrapper`)</span>
-            </p>
-          </li>
-          <li>
-            <h4 class="o-howDoesItWork__listItem__title">Grid</h4>
-            <p class="o-howDoesItWork__listItem__description">
-              <span class="o-howDoesItWork__listItem__description__solution">
-                grid-auto-flow: column; makes items flow across columns, ie into a
-                single row align-self: center; does vertical centering
-              </span>
-              Sources: Stack Overflow
-              <a href="https://stackoverflow.com/a/50801675        ">answer from the specs</a>
-            </p>
-          </li>
-          <li>
-            <h4 class="o-hdiw-sectionTitle"></h4>
-          </li>
-        </ul>
+              </p>
+            </li>
+            <li>
+              <h4 class="o-howDoesItWork__listItem__title">Grid</h4>
+              <p class="o-howDoesItWork__listItem__description">
+                <span class="o-howDoesItWork__listItem__description__solution">
+                  grid-auto-flow: column; makes items flow across columns, ie into a
+                  single row align-self: center; does vertical centering
+                </span>
+                Sources: Stack Overflow
+                <a href="https://stackoverflow.com/a/50801675        ">answer from the specs</a>
+              </p>
+            </li>
+            <li>
+              <h4 class="o-hdiw-sectionTitle"></h4>
+            </li>
+            <li>
+              <p class="text-xl">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta quis laborum
+                exercitationem! Accusantium
+                quod natus mollitia iste itaque maiores expedita alias voluptates maxime? Praesentium reprehenderit
+                dicta quos facere dolorem hic!</p>
+            </li>
+            <li>
+              <p class="text-xl">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta quis laborum
+                exercitationem! Accusantium
+                quod natus mollitia iste itaque maiores expedita alias voluptates maxime? Praesentium reprehenderit
+                dicta quos facere dolorem hic!</p>
+            </li>
+            <li>
+              <p class="text-xl">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta quis laborum
+                exercitationem! Accusantium
+                quod natus mollitia iste itaque maiores expedita alias voluptates maxime? Praesentium reprehenderit
+                dicta quos facere dolorem hic!</p>
+            </li>
+            <li>
+              <p class="text-xl">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta quis laborum
+                exercitationem! Accusantium
+                quod natus mollitia iste itaque maiores expedita alias voluptates maxime? Praesentium reprehenderit
+                dicta quos facere dolorem hic!</p>
+            </li>
+            <li>
+              <p class="text-xl">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta quis laborum
+                exercitationem! Accusantium
+                quod natus mollitia iste itaque maiores expedita alias voluptates maxime? Praesentium reprehenderit
+                dicta quos facere dolorem hic!</p>
+            </li>
+            <li>
+              <p class="text-xl">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta quis laborum
+                exercitationem! Accusantium
+                quod natus mollitia iste itaque maiores expedita alias voluptates maxime? Praesentium reprehenderit
+                dicta quos facere dolorem hic!</p>
+            </li>
+            <li>
+              <p class="text-xl">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta quis laborum
+                exercitationem! Accusantium
+                quod natus mollitia iste itaque maiores expedita alias voluptates maxime? Praesentium reprehenderit
+                dicta quos facere dolorem hic!</p>
+            </li>
+            <li>
+              <p class="text-xl">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta quis laborum
+                exercitationem! Accusantium
+                quod natus mollitia iste itaque maiores expedita alias voluptates maxime? Praesentium reprehenderit
+                dicta quos facere dolorem hic!</p>
+            </li>
+            <li>
+              <p class="text-xl">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta quis laborum
+                exercitationem! Accusantium
+                quod natus mollitia iste itaque maiores expedita alias voluptates maxime? Praesentium reprehenderit
+                dicta quos facere dolorem hic!</p>
+            </li>
+            <li>
+              <p class="text-xl">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta quis laborum
+                exercitationem! Accusantium
+                quod natus mollitia iste itaque maiores expedita alias voluptates maxime? Praesentium reprehenderit
+                dicta quos facere dolorem hic!</p>
+            </li>
+            <li>
+              <p class="text-xl">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta quis laborum
+                exercitationem! Accusantium
+                quod natus mollitia iste itaque maiores expedita alias voluptates maxime? Praesentium reprehenderit
+                dicta quos facere dolorem hic!</p>
+            </li>
+
+          </ul>
+        </div>
+
       </section>
     </div>
   </div>

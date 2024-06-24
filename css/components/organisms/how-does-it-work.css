@@ -1,0 +1,38 @@
+.o-howDoesItWork {
+  /* TODO: */
+  padding: var(--space-md);
+  padding: var(--spacing);
+
+  height: 100svh;
+  overflow-y: hidden;
+
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  position: sticky;
+  top: 0;
+}
+
+.o-howDoesItWork__header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.o-howDoesItWork__content {
+  flex-grow: 1;
+  overflow: hidden;
+  position: relative;
+}
+
+.o-howDoesItWork__list {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow-y: auto;
+  scrollbar-width: none;
+}

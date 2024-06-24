@@ -37,12 +37,12 @@
 .banner__description {
   font-family: 'ImpactLabelReversed';
   width: clamp(14rem, 100%, 100rem);
-  font-size: var(--h3);
+  font-size: var(--text-xl);
 }
 
 @media (min-width: 64rem) {
   .banner__description {
-    font-size: var(--h2);
+    font-size: var(--text-xxl);
   }
 }
 
@@ -64,5 +64,5 @@
 
 .banner__how-does-it-work-btn {
   font-family: 'VacationPostcard';
-  font-size: var(--h3);
+  font-size: var(--text-xl);
 }

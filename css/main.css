@@ -1,74 +1,74 @@
 @font-face {
   font-family: 'Boogaloo';
-  src: url('../fonts/boogaloo-regular-webfont.woff') format('woff'),
-    url('../fonts/boogaloo-regular-webfont.woff2') format('woff2');
+  src: url('/fonts/boogaloo-regular-webfont.woff') format('woff'),
+    url('/fonts/boogaloo-regular-webfont.woff2') format('woff2');
   font-display: swap;
 }
 
 @font-face {
   font-family: 'CaviarDreams';
-  src: url('../fonts/CaviarDreams-webfont.woff') format('woff');
+  src: url('/fonts/CaviarDreams-webfont.woff') format('woff');
   font-display: swap;
 }
 
 @font-face {
   font-family: 'ImpactLabel';
-  src: url('../fonts/Impact_Label-webfont.woff') format('woff');
+  src: url('/fonts/Impact_Label-webfont.woff') format('woff');
   font-display: swap;
 }
 
 @font-face {
   font-family: 'ImpactLabelReversed';
-  src: url('../fonts/Impact_Label_Reversed-webfont.woff') format('woff');
+  src: url('/fonts/Impact_Label_Reversed-webfont.woff') format('woff');
   font-display: swap;
 }
 
 @font-face {
   font-family: 'Kavoon';
-  src: url('../fonts/Kavoon-Regular.otf') format('opentype');
+  src: url('/fonts/Kavoon-Regular.otf') format('opentype');
   font-display: swap;
 }
 
 @font-face {
   font-family: 'mail ray stuff';
-  src: url('../fonts/mail ray stuff.otf') format('opentype');
+  src: url('/fonts/mail ray stuff.otf') format('opentype');
   font-display: swap;
 }
 
 @font-face {
   font-family: 'Salsa-Regular';
-  src: url('../fonts/salsa-regular-webfont.woff') format('woff'),
-    url('../fonts/salsa-regular-webfont.woff2') format('woff2');
+  src: url('/fonts/salsa-regular-webfont.woff') format('woff'),
+    url('/fonts/salsa-regular-webfont.woff2') format('woff2');
   font-display: swap;
 }
 
 @font-face {
   font-family: 'gotham-black';
-  src: url('/assets/fonts/GOTHAM-BLACK.OTF') format('opentype');
+  src: url('/fonts/GOTHAM-BLACK.OTF') format('opentype');
   font-display: swap;
 }
 
 @font-face {
   font-family: 'gotham-book';
-  src: url('/assets/fonts/GOTHAM-BOOK.woff') format('woff');
+  src: url('/fonts/GOTHAM-BOOK.woff') format('woff');
   font-display: swap;
 }
 
 @font-face {
   font-family: 'gotham-bold';
-  src: url('/assets/fonts/GOTHAM-BOLD.woff') format('woff');
+  src: url('/fonts/GOTHAM-BOLD.woff') format('woff');
   font-display: swap;
 }
 
 @font-face {
   font-family: 'VacationPostcard';
-  src: url('/assets/fonts/VacationPostcard.ttf') format('truetype');
+  src: url('/fonts/VacationPostcard.ttf') format('truetype');
   font-display: swap;
 }
 
 @font-face {
   font-family: 'ChunkFive';
-  src: url('/assets/fonts/ChunkFive-Regular.woff2') format('woff2');
+  src: url('/fonts/ChunkFive-Regular.woff2') format('woff2');
   font-display: swap;
 }
 
@@ -91,7 +91,7 @@ html::-webkit-scrollbar {
 
 body {
   margin: 0;
-  font-size: var(--text);
+  font-size: var(--text-md);
 }
 
 .body::-webkit-scrollbar {
@@ -182,7 +182,14 @@ h4::after {
     calc(100svw - var(--theme-bar-width));
   grid-auto-rows: auto;
   transition: var(--layout-transition);
-  transform: translateX(0);
+
+  --layout-translate-main: translateX(0);
+  --layout-translate-howDoesItWork: translateX(
+    calc(-100svw + var(--theme-bar-width))
+  );
+  --layout-transform-value: var(--layout-translate-main);
+
+  transform: var(--layout-transform-value);
   clip-path: inset(0 0 0 0);
 }
 

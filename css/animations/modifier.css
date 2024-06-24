@@ -4,33 +4,6 @@
   left: -9999px;
 }
 
-/*  Form  */
-#add-request:checked {
-  display: none;
-  --is-disabled: 1;
-}
-
-#add-request:checked ~ .dynamic-form .m-formSubmit {
-  cursor: not-allowed;
-  z-index: -1;
-}
-
-#add-request:checked ~ .dynamic-form .m-formSubmit::before {
-  content: 'Loading...';
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: absolute;
-  inset: 0;
-  background-color: var(--theme-color);
-  background: conic-gradient(var(--theme-color) 50%, green 0) no-repeat;
-  background-size: 200% 100%;
-  /* background-position: 0% 0%; */
-  animation: back 30s 1 linear;
-  cursor: not-allowed;
-  z-index: 1;
-}
-
 @-webkit-keyframes back {
   0% {
     background-position: 100% 0%;
@@ -135,9 +108,14 @@
 
 /* How does it work? */
 
-#how-does-it-work:checked ~ .wrapper .layout,
-#how-does-it-work-back:checked ~ .wrapper .layout {
+#how-does-it-work:checked ~ .wrapper .layout {
+  --layout-transform-value: var(--layout-translate-howDoesItWork);
   transform: translateX(calc(-100svw + var(--theme-bar-width)));
+}
+
+#how-does-it-work-back:checked ~ .wrapper .layout {
+  --layout-transform-value: var(--layout-translate-main);
+  transform: translateX(0);
 }
 /* 
 #how-does-it-work-back:checked ~ .wrapper .layout {

@@ -35,7 +35,7 @@
 }
 
 .banner__alert {
-  font-size: var(--h2);
+  font-size: var(--text-xxl);
   display: none;
   position: absolute;
   --position-1: 5%;

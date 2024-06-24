@@ -1,12 +1,14 @@
-.a-text1.-highlighted,
-.a-text2.-highlighted,
-.a-text3.-highlighted,
-.a-text4.-highlighted,
-.a-text5.-highlighted,
-.a-text6.-highlighted,
-.a-paragraph.-highlighted,
-.a-textSm.-highlighted,
-.a-textXs.-highlighted,
+h1.-highlighted,
+h2.-highlighted,
+h3.-highlighted,
+h4.-highlighted,
+.h1.-highlighted,
+.text-xxl.-highlighted,
+.text-xl.-highlighted,
+.text-lg.-highlighted,
+.text-md.-highlighted,
+.text-sm.-highlighted,
+.text-xs.-highlighted,
 p.-highlighted {
   font-family: inherit;
   text-transform: uppercase;
