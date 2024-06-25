@@ -122,8 +122,6 @@ h4::after {
 /* https://css-tricks.com/use-css-clamp-to-create-a-more-flexible-wrapper-utility/ */
 .wrapper {
   position: relative;
-  --theme-color: var(--primary);
-
   --background-color: var(--color-bg-90);
   color: var(--theme-color);
   color: hsl(from var(--theme-color) h s l / 0.2);
