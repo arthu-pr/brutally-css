@@ -1,10 +1,10 @@
 .a-input {
-  --component-bg: var(--main-dark);
+  --component-bg: var(--color-main-dark);
   --component-color: var(--theme-color);
   --component-padding-y: var(--space-sm);
+  --component-border-color: var(--theme-color);
 
   width: 100%;
-  border-color: var(--theme-color);
 }
 
 .a-input::placeholder {
