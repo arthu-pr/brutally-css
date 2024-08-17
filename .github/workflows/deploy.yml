@@ -24,7 +24,8 @@ jobs:
             #   exit 1
             # fi
             if [ -d '.git' ]; then
-              git pull origin main
+              # git pull origin main
+              git pull origin feature/rework-how-does-it-work-section
             else
               git clone git@github.com:arthur-plazanet/css-fun.git .
             fi
