@@ -2,7 +2,7 @@ name: Build & Deploy
 on:
   # temporary disable workflows
   push:
-    pull_request:
+    branches:
       - main
 
 jobs:
