@@ -1,0 +1,10 @@
+.m-list {
+}
+
+.m-list__item {
+  padding: var(--space-xs) var(--space-xxs);
+}
+
+.m-list__item:not(:last-child) {
+  border-bottom: var(--border-width-50) solid var(--color-primary-60);
+}

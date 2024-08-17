@@ -53,3 +53,29 @@ p {
 .text-xs {
   font-size: var(--text-xs);
 }
+
+.a-title,
+.a-subtitle {
+  margin: 0.5rem 0;
+  font-family: gotham-black;
+  text-transform: uppercase;
+  color: var(--theme-color);
+}
+
+.a-title {
+  font-size: var(--text-md);
+}
+
+.a-subtitle {
+  font-size: var(--text-sm);
+}
+
+@media (min-width: 64rem) {
+  .a-title {
+    font-size: var(--text-lg);
+  }
+
+  .a-subtitle {
+    font-size: var(--text-md);
+  }
+}

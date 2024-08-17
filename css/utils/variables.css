@@ -1,6 +1,7 @@
 :root {
   --border-width: 0.5rem;
   --border-width: clamp(0.2rem, 1.5vw, 0.5rem);
+  --border-width-50: calc(0.5 * var(--border-width));
   --theme-bar-width: clamp(3rem, 5rem, 10svw);
 
   --layout-transition: transform 0.8s ease-out;

@@ -28,6 +28,7 @@
   <link href="css/components/molecules/form.css" rel="stylesheet" />
   <link href="css/components/molecules/shake.css" rel="stylesheet" />
   <link href="css/components/molecules/dynamic-form.css" rel="stylesheet" />
+  <link href="css/components/molecules/list.css" rel="stylesheet" />
 
 
   <!-- Organisms -->
@@ -115,7 +116,7 @@
                 aliquid perferendis.</p>
             </article>
             <article class="o-grid__item" style="--grid-row: 1; --grid-column: 1 / -1;">
-              <h3 class="a-text-xl -highlighted">Dynamic form</h3>
+              <h3 class="a-a-subtitle">Dynamic form</h3>
               <input type="checkbox" id="add-request" class="a-modifier" />
               <form class="m-form dynamic-form">
                 <input type="text" name="request" placeholder="Add request" class="a-input theme" required />
@@ -266,174 +267,181 @@
       </section>
       <!-- How does it work? -->
       <section class="o-howDoesItWork">
-        <div class="o-howDoesItWork__header">
-          <label type="button" for="how-does-it-work-back" class="o-howDoesItWork__backBtn a-btn theme m-0"
-            aria-label="back-button">
-            Back
-          </label>
-          <h2 class="m-0">How Does It Work?</h2>
-        </div>
-        <div class="o-howDoesItWork__content">
-          <ul class="o-howDoesItWork__list">
-            <li class="o-howDoesItWork__listItem">
-              <p class="o-howDoesItWork__listItem__title">
-                A Complete Guide to Custom Properties
-                <a class="o-howDoesItWork__listItem__link"
-                  href="https://css-tricks.com/a-complete-guide-to-custom-properties/"></a>
-              </p>
-            </li>
-            <li class="o-howDoesItWork__listItem">
-              <p class="o-howDoesItWork__listItem__title">
-                Layout: Unholy Albatros
-                <a class="o-howDoesItWork__listItem__link"
-                  href="https://www.miragecraft.com/blog/unholy-albatross">Unholy
-                  Albatross</a>
-              </p>
-            </li>
-            <li class="o-howDoesItWork__listItem">
-              <p class="o-howDoesItWork__listItem__title">
-                How to scale SVG
-                <a class="o-howDoesItWork__listItem__link" href="https://css-tricks.com/scale-svg/">How to scale SVG</a>
-              </p>
-            </li>
-            <li class="o-howDoesItWork__listItem">
-              <p class="o-howDoesItWork__listItem__title">
-                How can I make an SVG scale with its parent container?
-                <a class="o-howDoesItWork__listItem__link"
-                  href="https://stackoverflow.com/questions/19484707/how-can-i-make-an-svg-scale-with-its-parent-container">How
-                  can I make an SVG scale with its parent container?</a>
-              </p>
-            </li>
-            <li class="o-howDoesItWork__listItem">
-              <p class="o-howDoesItWork__listItem__title">
-                Building a Scalable CSS Architecture With BEM and Utility Classes
-                <a class="o-howDoesItWork__listItem__link"
-                  href="https://css-tricks.com/building-a-scalable-css-architecture-with-bem-and-utility-classes/">Building
-                  a
-                  Scalable CSS Architecture With BEM and Utility Classes</a>
-              </p>
-            </li>
-            <li class="o-howDoesItWork__listItem">
-              <p class="o-howDoesItWork__listItem__title">
-                ABEM. A more useful adaptation of BEM.
-                <a class="o-howDoesItWork__listItem__link"
-                  href="https://css-tricks.com/abem-useful-adaptation-bem/">Link</a>
-              </p>
-            </li>
-            <li class="o-howDoesItWork__listItem">
-              <p class="o-howDoesItWork__listItem__title">
-                Shake CSS Animation
-                <a class="o-howDoesItWork__listItem__link"
-                  href="https://css-tricks.com/snippets/css/shake-css-keyframe-animation/">Shake CSS Animation</a>
-              </p>
-            </li>
-            <li class="o-howDoesItWork__listItem">
-              <h4 class="o-howDoesItWork__listItem__title">
-                `position: sticky` inside a container with overflow: hidden`
-              </h4>
-              <p class="o-howDoesItWork__listItem__description">
-                Use
-                <span class="o-howDoesItWork__listItem__description__solution">
-                  `overflow: clip`
-                </span>
-                Sources: Stack Overflow
-                <a href="https://stackoverflow.com/a/72792224">answer from the specs</a>
-                More simple ELI5
-                <a
-                  href="https://medium.com/@ehsaneona/overcoming-position-sticky-issues-solving-overflow-hidden-problems-with-overflow-clip-e8e79a7b0c34">article</a>
-                from Medium
-                <!-- make a line break before the span through CSS -->
-                <span class="o-howDoesItWork__listItem__description__used-on" style="
-                    display: inline-block;
-                    color: red;
-                    background: hsl(from red h s l / 0.2);
-                  ">(used on `.wrapper`)</span>
-              </p>
-            </li>
-            <li>
-              <h4 class="o-howDoesItWork__listItem__title">Grid</h4>
-              <p class="o-howDoesItWork__listItem__description">
-                <span class="o-howDoesItWork__listItem__description__solution">
-                  grid-auto-flow: column; makes items flow across columns, ie into a
-                  single row align-self: center; does vertical centering
-                </span>
-                Sources: Stack Overflow
-                <a href="https://stackoverflow.com/a/50801675        ">answer from the specs</a>
-              </p>
-            </li>
-            <li>
-              <h4 class="o-hdiw-sectionTitle"></h4>
-            </li>
-            <li>
-              <p class="text-xl">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta quis laborum
-                exercitationem! Accusantium
-                quod natus mollitia iste itaque maiores expedita alias voluptates maxime? Praesentium reprehenderit
-                dicta quos facere dolorem hic!</p>
-            </li>
-            <li>
-              <p class="text-xl">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta quis laborum
-                exercitationem! Accusantium
-                quod natus mollitia iste itaque maiores expedita alias voluptates maxime? Praesentium reprehenderit
-                dicta quos facere dolorem hic!</p>
-            </li>
-            <li>
-              <p class="text-xl">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta quis laborum
-                exercitationem! Accusantium
-                quod natus mollitia iste itaque maiores expedita alias voluptates maxime? Praesentium reprehenderit
-                dicta quos facere dolorem hic!</p>
-            </li>
-            <li>
-              <p class="text-xl">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta quis laborum
-                exercitationem! Accusantium
-                quod natus mollitia iste itaque maiores expedita alias voluptates maxime? Praesentium reprehenderit
-                dicta quos facere dolorem hic!</p>
-            </li>
-            <li>
-              <p class="text-xl">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta quis laborum
-                exercitationem! Accusantium
-                quod natus mollitia iste itaque maiores expedita alias voluptates maxime? Praesentium reprehenderit
-                dicta quos facere dolorem hic!</p>
-            </li>
-            <li>
-              <p class="text-xl">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta quis laborum
-                exercitationem! Accusantium
-                quod natus mollitia iste itaque maiores expedita alias voluptates maxime? Praesentium reprehenderit
-                dicta quos facere dolorem hic!</p>
-            </li>
-            <li>
-              <p class="text-xl">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta quis laborum
-                exercitationem! Accusantium
-                quod natus mollitia iste itaque maiores expedita alias voluptates maxime? Praesentium reprehenderit
-                dicta quos facere dolorem hic!</p>
-            </li>
-            <li>
-              <p class="text-xl">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta quis laborum
-                exercitationem! Accusantium
-                quod natus mollitia iste itaque maiores expedita alias voluptates maxime? Praesentium reprehenderit
-                dicta quos facere dolorem hic!</p>
-            </li>
-            <li>
-              <p class="text-xl">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta quis laborum
-                exercitationem! Accusantium
-                quod natus mollitia iste itaque maiores expedita alias voluptates maxime? Praesentium reprehenderit
-                dicta quos facere dolorem hic!</p>
-            </li>
-            <li>
-              <p class="text-xl">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta quis laborum
-                exercitationem! Accusantium
-                quod natus mollitia iste itaque maiores expedita alias voluptates maxime? Praesentium reprehenderit
-                dicta quos facere dolorem hic!</p>
-            </li>
-            <li>
-              <p class="text-xl">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta quis laborum
-                exercitationem! Accusantium
-                quod natus mollitia iste itaque maiores expedita alias voluptates maxime? Praesentium reprehenderit
-                dicta quos facere dolorem hic!</p>
-            </li>
+        <div class="o-howDoesItWork__container">
+          <div class="o-howDoesItWork__header">
+            <label type="button" for="how-does-it-work-back" class="o-howDoesItWork__backBtn a-btn theme m-0"
+              aria-label="back-button">
+              Back
+            </label>
+            <h2 class="m-0">How Does It Work?</h2>
+          </div>
+          <div class="o-howDoesItWork__content">
+            <div class="o-howDoesItWork__list">
+              <p class="a-subtitle">Global architecture</p>
+              <ul class="m-list">
+                <li class="m-list__item">
+                  <p class="a-subtitle">
+                    <span> A Complete Guide to Custom Properties</span>
+                  </p>
+                  <a class="m-list__item__link"
+                    href="https://css-tricks.com/a-complete-guide-to-custom-properties/"></a>
+                </li>
+                <li class="m-list__item">
+                  <p class="a-subtitle">
+                    <span> Layout: Unholy Albatros
+                    </span>
+                  </p>
+                  <a class="m-list__item__link" href="https://www.miragecraft.com/blog/unholy-albatross">Unholy
+                    Albatross</a>
+                </li>
+                <li class="m-list__item">
+                  <p class="a-subtitle">
+                    <span>How to scale SVG</span>
 
-          </ul>
-        </div>
+                  </p>
+                  <a class="m-list__item__link" href="https://css-tricks.com/scale-svg/">How to scale
+                    SVG</a>
+                </li>
+                <li class="m-list__item">
+                  <p class="a-subtitle">
+                    <span> How can I make an SVG scale with its parent container?</span>
+                  </p>
+                  <a class="m-list__item__link"
+                    href="https://stackoverflow.com/questions/19484707/how-can-i-make-an-svg-scale-with-its-parent-container">How
+                    can I make an SVG scale with its parent container?</a>
+                  </p>
+                </li>
+                <li class="m-list__item">
+                  <p class="a-subtitle">
+                    <span>Building a Scalable CSS Architecture With BEM and Utility Classes</span>
 
+                  </p>
+                  <a class="m-list__item__link"
+                    href="https://css-tricks.com/building-a-scalable-css-architecture-with-bem-and-utility-classes/">Building
+                    a
+                    Scalable CSS Architecture With BEM and Utility Classes</a>
+                </li>
+                <li class="m-list__item">
+                  <p class="a-subtitle">
+                    <span> ABEM. A more useful adaptation of BEM.</span>
+                    <a class="m-list__item__link" href="https://css-tricks.com/abem-useful-adaptation-bem/">Link</a>
+                  </p>
+                </li>
+                <li class="m-list__item">
+                  <p class="a-subtitle">
+                    <span>Shake CSS Animation</span>
+
+                  </p>
+                  <a class="m-list__item__link"
+                    href="https://css-tricks.com/snippets/css/shake-css-keyframe-animation/">Shake CSS Animation</a>
+                </li>
+                <li class="m-list__item">
+                  <p class="a-subtitle">
+                    <span> `position: sticky` inside a container with overflow: hidden`</span>
+                  </p>
+                  <p class="m-list__item__description">
+                    Use
+                    <span class="m-list__item__description__solution">
+                      `overflow: clip`
+                    </span>
+                    Sources: Stack Overflow
+                    <a href="https://stackoverflow.com/a/72792224">answer from the specs</a>
+                    More simple ELI5
+                    <a
+                      href="https://medium.com/@ehsaneona/overcoming-position-sticky-issues-solving-overflow-hidden-problems-with-overflow-clip-e8e79a7b0c34">article</a>
+                    from Medium
+                    <!-- make a line break before the span through CSS -->
+                    <span class="m-list__item__description__used-on" style="
+                      display: inline-block;
+                      color: red;
+                      background: hsl(from red h s l / 0.2);
+                    ">(used on `.wrapper`)</span>
+                  </p>
+                </li>
+                <li>
+                  <h4 class="m-list__item -highlighted text-xl">Grid</h4>
+                  <p class="m-list__item__description">
+                    <span class="m-list__item__description__solution">
+                      grid-auto-flow: column; makes items flow across columns, ie into a
+                      single row align-self: center; does vertical centering
+                    </span>
+                    Sources: Stack Overflow
+                    <a href="https://stackoverflow.com/a/50801675        ">answer from the specs</a>
+                  </p>
+                </li>
+                <li>
+                  <h4 class="o-hdiw-sectionTitle"></h4>
+                </li>
+                <li>
+                  <p class="text-xl">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta quis laborum
+                    exercitationem! Accusantium
+                    quod natus mollitia iste itaque maiores expedita alias voluptates maxime? Praesentium reprehenderit
+                    dicta quos facere dolorem hic!</p>
+                </li>
+                <li>
+                  <p class="text-xl">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta quis laborum
+                    exercitationem! Accusantium
+                    quod natus mollitia iste itaque maiores expedita alias voluptates maxime? Praesentium reprehenderit
+                    dicta quos facere dolorem hic!</p>
+                </li>
+                <li>
+                  <p class="text-xl">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta quis laborum
+                    exercitationem! Accusantium
+                    quod natus mollitia iste itaque maiores expedita alias voluptates maxime? Praesentium reprehenderit
+                    dicta quos facere dolorem hic!</p>
+                </li>
+                <li>
+                  <p class="text-xl">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta quis laborum
+                    exercitationem! Accusantium
+                    quod natus mollitia iste itaque maiores expedita alias voluptates maxime? Praesentium reprehenderit
+                    dicta quos facere dolorem hic!</p>
+                </li>
+                <li>
+                  <p class="text-xl">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta quis laborum
+                    exercitationem! Accusantium
+                    quod natus mollitia iste itaque maiores expedita alias voluptates maxime? Praesentium reprehenderit
+                    dicta quos facere dolorem hic!</p>
+                </li>
+                <li>
+                  <p class="text-xl">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta quis laborum
+                    exercitationem! Accusantium
+                    quod natus mollitia iste itaque maiores expedita alias voluptates maxime? Praesentium reprehenderit
+                    dicta quos facere dolorem hic!</p>
+                </li>
+                <li>
+                  <p class="text-xl">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta quis laborum
+                    exercitationem! Accusantium
+                    quod natus mollitia iste itaque maiores expedita alias voluptates maxime? Praesentium reprehenderit
+                    dicta quos facere dolorem hic!</p>
+                </li>
+                <li>
+                  <p class="text-xl">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta quis laborum
+                    exercitationem! Accusantium
+                    quod natus mollitia iste itaque maiores expedita alias voluptates maxime? Praesentium reprehenderit
+                    dicta quos facere dolorem hic!</p>
+                </li>
+                <li>
+                  <p class="text-xl">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta quis laborum
+                    exercitationem! Accusantium
+                    quod natus mollitia iste itaque maiores expedita alias voluptates maxime? Praesentium reprehenderit
+                    dicta quos facere dolorem hic!</p>
+                </li>
+                <li>
+                  <p class="text-xl">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta quis laborum
+                    exercitationem! Accusantium
+                    quod natus mollitia iste itaque maiores expedita alias voluptates maxime? Praesentium reprehenderit
+                    dicta quos facere dolorem hic!</p>
+                </li>
+                <li>
+                  <p class="text-xl">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta quis laborum
+                    exercitationem! Accusantium
+                    quod natus mollitia iste itaque maiores expedita alias voluptates maxime? Praesentium reprehenderit
+                    dicta quos facere dolorem hic!</p>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </section>
     </div>
   </div>
