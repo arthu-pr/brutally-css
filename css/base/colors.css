@@ -28,13 +28,14 @@
   --color-contrast-higher: black;
 
   /* themes colors */
-  --theme-red: rgb(192, 39, 45);
+  /* https://picular.co/brutal */
+  --theme-red: #bc2b3b;
   --theme-warm-pink: #fccccc;
   /* https://picular.co/erotic */
   --theme-erotic-blue: #2c6974;
 
   /* Initial state */
   /* --theme-color: var(--primary); */
-  --theme-color: var(--color-primary);
   --theme-color-50: hsl(from var(--theme-color) h s l / 50%);
+  --theme-color: var(--color-primary);
 }

@@ -2,9 +2,21 @@
 }
 
 .m-list__item {
-  padding: var(--space-xs) var(--space-xxs);
+  position: relative;
+  padding: var(--space-xs) 0 var(--space-sm);
 }
 
 .m-list__item:not(:last-child) {
-  border-bottom: var(--border-width-50) solid var(--color-primary-60);
+  /* border-bottom: var(--border-width-10) solid var(--theme-color); */
+}
+
+.m-list__item:not(:last-child)::after {
+  content: '-';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 5%;
+  background-color: var(--theme-color);
+  height: 0.5rem;
+  width: 5%;
 }
