@@ -30,7 +30,6 @@
   <link href="css/animations/highlighted.css" rel="stylesheet" />
   <link href="css/animations/vertical.css" rel="stylesheet" />
   <link href="css/animations/modifier.css" rel="stylesheet" />
-  <link href="css/animations/opacity.css" rel="stylesheet" />
   <!-- Utils -->
   <link href="css/utils/variables.css" rel="stylesheet" />
   <link rel="icon" type="image/x-icon" href="/favicon/favicon.ico" />
@@ -82,11 +81,11 @@
         <main>
           <section class="o-grid">
             <article class="o-grid__item">
-              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis laudantium consequatur quisquam
+              <p> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis laudantium consequatur quisquam
                 rerum necessitatibus cupiditate praesentium, hic ad laboriosam ex sint et quam neque, a quas. Dolorum in
-                aliquid perferendis.</p>
+                aliquid perferendis. </p>
             </article>
-            <article class="o-grid__item" style="--grid-row: 1; --grid-column: 1 / -1;">
+            <article class="o-grid__item" style="--grow: 1 / span 5; --gcolumn: 5 / -1">
               <h3 class="-highlighted">Dynamic <span>form</span></h3>
               <input type="checkbox" id="add-request" class="a-modifier" />
               <form class="m-form dynamic-form">
@@ -125,31 +124,31 @@
               </form>
             </article>
             <article class="o-grid__item">
-              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis laudantium consequatur quisquam
+              <p> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis laudantium consequatur quisquam
                 rerum necessitatibus cupiditate praesentium, hic ad laboriosam ex sint et quam neque, a quas. Dolorum in
-                aliquid perferendis.</p>
+                aliquid perferendis. </p>
             </article>
             <article class="o-grid__item">
-              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis laudantium consequatur quisquam
+              <p> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis laudantium consequatur quisquam
                 rerum necessitatibus cupiditate praesentium, hic ad laboriosam ex sint et quam neque, a quas. Dolorum in
-                aliquid perferendis.</p>
+                aliquid perferendis. </p>
             </article>
             <article class="o-grid__item">
-              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis laudantium consequatur quisquam
+              <p> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis laudantium consequatur quisquam
                 rerum necessitatibus cupiditate praesentium, hic ad laboriosam ex sint et quam neque, a quas. Dolorum in
-                aliquid perferendis.</p>
+                aliquid perferendis. </p>
             </article>
             <article class="o-grid__item">
-              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis laudantium consequatur quisquam
+              <p> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis laudantium consequatur quisquam
                 rerum necessitatibus cupiditate praesentium, hic ad laboriosam ex sint et quam neque, a quas. Dolorum in
-                aliquid perferendis.</p>
+                aliquid perferendis. </p>
             </article>
             <article class="o-grid__item">
-              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis laudantium consequatur quisquam
+              <p> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis laudantium consequatur quisquam
                 rerum necessitatibus cupiditate praesentium, hic ad laboriosam ex sint et quam neque, a quas. Dolorum in
-                aliquid perferendis.</p>
+                aliquid perferendis. </p>
             </article>
-            <article class="o-grid__item" style="--grid-column: 1 / -1;">
+            <article class="o-grid__item" style="--gcolumn: 1 / -1">
               <h3 class="-highlighted"><span>Shake</span></h3>
               <label class="m-shake" for="shake">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" class="shake__shape">
@@ -241,7 +240,7 @@
               <ul class="m-list">
                 <li class="m-list__item">
                   <p class="a-subtitle">CSS Custom properties</p>
-                  <p> Used for every variables and be changed at runtime. </p>
+                  <p>Used for every variables and be changed at runtime.</p>
                   <a class="a-link" href="https://css-tricks.com/a-complete-guide-to-custom-properties/">CSS-Tricks - A
                     Complete Guide to Custom Properties</a>
                 </li>
@@ -275,20 +274,29 @@
             </div>
             <div class="container">
               <h4>Specific features</h4>
-              <ul class="m-list">
+              <ol class="m-list">
                 <li class="m-list__item">
-                  <p class="a-subtitle">How can I make an SVG scale with its parent container?</p>
+                  <p class="a-subtitle">Grid, apply styles to everything <i>but the element actually being hovered</i>
+                  </p>
+                  <a class="a-link" href="https://css-tricks.com/hover-on-everything-but/"> Hover on “Everything
+                    But”</a>
+                  <div class="a-box -info">
+                    <span><a href="https://css-tricks.com/examples/HoverEverythingBut/">Live Demo</a></span>
+                  </div>
+                  <p class="-info"></p>
+                </li>
+                <li class="m-list__item">
+                  <p class="a-subtitle"> How can I make an SVG scale with its parent container? </p>
                   <a class="a-link"
                     href="https://stackoverflow.com/questions/19484707/how-can-i-make-an-svg-scale-with-its-parent-container">
                     How can I make an SVG scale with its parent container? </a>
-                  </p>
                 </li>
                 <li class="m-list__item">
-                  <p class="a-subtitle"> How to scale SVG </p>
+                  <p class="a-subtitle">How to scale SVG</p>
                   <a class="a-link" href="https://css-tricks.com/scale-svg/">CSS-Tricks - How to scale SVG</a>
                 </li>
                 <li class="m-list__item">
-                  <p class="a-subtitle"> Shake CSS Animation </p>
+                  <p class="a-subtitle">Shake CSS Animation</p>
                   <a class="a-link" href="https://css-tricks.com/snippets/css/shake-css-keyframe-animation/">CSS-Tricks
                     - Shake CSS Animation</a>
                 </li>
@@ -306,7 +314,7 @@
                         ">(used on `.wrapper`)</span>
                   </p>
                 </li>
-              </ul>
+              </ol>
             </div>
           </div>
         </div>

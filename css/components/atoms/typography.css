@@ -63,19 +63,19 @@ p {
 }
 
 .a-title {
-  font-size: var(--text-md);
+  font-size: var(--text-lg);
 }
 
 .a-subtitle {
-  font-size: var(--text-sm);
+  font-size: var(--text-lg);
 }
 
 @media (min-width: 64rem) {
   .a-title {
-    font-size: var(--text-lg);
+    font-size: var(--text-xl);
   }
 
   .a-subtitle {
-    font-size: var(--text-md);
+    font-size: var(--text-lg);
   }
 }

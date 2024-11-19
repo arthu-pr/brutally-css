@@ -1,22 +1,26 @@
 .m-list {
+  list-style-type: upper-roman;
 }
 
 .m-list__item {
   position: relative;
   padding: var(--space-xs) 0 var(--space-sm);
+  border-top: var(--border-theme-10);
+}
+
+.m-list__item::marker {
+  background-color: var(--theme-color);
 }
 
 .m-list__item:not(:last-child) {
-  /* border-bottom: var(--border-width-10) solid var(--theme-color); */
+  border-bottom: var(--border-theme-25);
 }
 
-.m-list__item:not(:last-child)::after {
-  content: '-';
+/* .m-list__item:not(:last-child)::before {
+  content: '|';
   position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  bottom: 5%;
-  background-color: var(--theme-color);
-  height: 0.5rem;
-  width: 5%;
-}
+  left: -3%;
+  background-color: var(--color-contrast-lower);
+  height: 100%;
+  width: 2%;
+} */
