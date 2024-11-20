@@ -1,33 +1,34 @@
-name: Build & Deploy
-on:
-  # temporary disable workflows
-  push:
-    branches:
-      - main
+# name: Build & Deploy
+# on:
+#   # temporary disable workflows
+#   pull_request:
+#     branches:
+#       - main
 
-jobs:
-  deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Deploy app
-        uses: appleboy/ssh-action@master
-        with:
-          host: ${{ secrets.SSH_HOST }}
-          key: ${{ secrets.SSH_KEY }}
-          username: ${{ secrets.SSH_USERNAME }}
+# jobs:
+#   deploy:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Deploy app
+#         uses: appleboy/ssh-action@master
+#         with:
+#           host: ${{ secrets.SSH_HOST }}
+#           key: ${{ secrets.SSH_KEY }}
+#           username: ${{ secrets.SSH_USERNAME }}
 
-          script: |
-            cd /var/www/css.arthur-yellow.me
-            # https://chat.openai.com/c/75394dfa-434d-41fa-b8db-e6abe81840f0
-            # if [ "find . -mindepth 1 -maxdepth 1 -type f -o -mindepth 1 -maxdepth 1 -type d" ]; then
-            #   echo "Files or folders exist in the current directory. Exiting script."
-            #   exit 1
-            # fi
-            if [ -d '.git' ]; then
-              git pull origin main
-            else
-              git clone git@github.com:arthur-plazanet/css-fun.git .
-            fi
-            echo 'Success deployment'
+#           script: |
+#             cd /var/www/css.arthur-yellow.me
+#             # https://chat.openai.com/c/75394dfa-434d-41fa-b8db-e6abe81840f0
+#             # if [ "find . -mindepth 1 -maxdepth 1 -type f -o -mindepth 1 -maxdepth 1 -type d" ]; then
+#             #   echo "Files or folders exist in the current directory. Exiting script."
+#             #   exit 1
+#             # fi
+#             if [ -d '.git' ]; then
+#               # git pull origin main
+#               git pull origin feature/rework-how-does-it-work-section
+#             else
+#               git clone git@github.com:arthur-plazanet/css-fun.git .
+#             fi
+#             echo 'Success deployment'
 
-# cleancss -o main.min.css css/**/*.css
+# # cleancss -o main.min.css css/**/*.css

@@ -1,7 +1,17 @@
 :root {
   --border-width: 0.5rem;
   --border-width: clamp(0.2rem, 1.5vw, 0.5rem);
+  --border-width-10: calc(0.1 * var(--border-width));
+  --border-width-25: calc(0.25 * var(--border-width));
+  --border-width-50: calc(0.5 * var(--border-width));
+  --border-width-75: calc(0.75 * var(--border-width));
   --theme-bar-width: clamp(3rem, 5rem, 10svw);
+
+  --border-theme: var(--border-width) solid var(--theme-color);
+  --border-theme-10: var(--border-width-10) solid var(--theme-color);
+  --border-theme-25: var(--border-width-25) solid var(--theme-color);
+  --border-theme-50: var(--border-width-50) solid var(--theme-color);
+  --border-theme-75: var(--border-width-75) solid var(--theme-color);
 
   --layout-transition: transform 0.8s ease-out;
   --spacing: var(--space-sm);

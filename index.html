@@ -5,46 +5,33 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link href="css/main.css" rel="stylesheet" />
-
-
   <link href="css/components/common.css" rel="stylesheet" />
   <link href="css/banner.css" rel="stylesheet" />
-
-
   <!-- Base -->
   <link href="css/base/reset.css" rel="stylesheet" />
   <link href="css/base/helpers.css" rel="stylesheet" />
   <link href="css/base/colors.css" rel="stylesheet" />
   <link href="css/base/spacing.css" rel="stylesheet" />
-
-
   <!-- Atoms -->
   <link href="css/components/atoms/typography.css" rel="stylesheet" />
   <link href="css/components/atoms/input.css" rel="stylesheet" />
   <link href="css/components/atoms/buttons.css" rel="stylesheet" />
-
-
+  <link href="css/components/atoms/link.css" rel="stylesheet" />
   <!-- Molecules -->
   <link href="css/components/molecules/form.css" rel="stylesheet" />
   <link href="css/components/molecules/shake.css" rel="stylesheet" />
   <link href="css/components/molecules/dynamic-form.css" rel="stylesheet" />
-
-
+  <link href="css/components/molecules/list.css" rel="stylesheet" />
   <!-- Organisms -->
   <link href="css/components/organisms/grid.css" rel="stylesheet" />
   <link href="css/components/organisms/how-does-it-work.css" rel="stylesheet" />
   <link href="css/components/organisms/theme-bar.css" rel="stylesheet" />
-
-
   <!-- Animations -->
   <link href="css/animations/highlighted.css" rel="stylesheet" />
   <link href="css/animations/vertical.css" rel="stylesheet" />
   <link href="css/animations/modifier.css" rel="stylesheet" />
-  <link href="css/animations/opacity.css" rel="stylesheet" />
-
   <!-- Utils -->
   <link href="css/utils/variables.css" rel="stylesheet" />
-
   <link rel="icon" type="image/x-icon" href="/favicon/favicon.ico" />
   <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png" />
@@ -56,29 +43,23 @@
   <input type="checkbox" id="zoom-in" class="a-modifier" />
   <input type="checkbox" id="zoom-out" class="a-modifier" />
   <input type="checkbox" id="shake" class="a-modifier" />
-
   <!-- Multiple labels point for the same form control -->
   <!-- https://stackoverflow.com/a/2830137 -->
   <!-- https://www.w3.org/TR/html401/interact/forms.html#h-17.9.1 -->
-
   <!-- Theme Bar color modifiers  -->
   <span id="/" class="a-modifier"></span>
   <span id="red" class="a-modifier"></span>
   <span id="warm-pink" class="a-modifier"></span>
   <span id="red" class="a-modifier"></span>
   <span id="erotic-blue" class="a-modifier"></span>
-
   <!-- How does it work -->
   <input type="checkbox" id="how-does-it-work" class="a-modifier" />
   <input type="checkbox" id="how-does-it-work-back" class="a-modifier" />
-
   <!-- Form -->
   <input type="checkbox" id="request-checkbox" class="a-modifier" />
-
   <div class="wrapper">
     <div class="layout">
       <div class="main-content">
-
         <header class="banner">
           <span class="banner__alert">&#9888;</span>
           <span class="banner__alert">&#9888;</span>
@@ -87,41 +68,29 @@
           <span class="banner__alert">&#9888;</span>
           <span class="banner__alert">&#9888;</span>
           <h1 clas="banner__title">
-            <span class="banner__title-brutally">
-              B<span class="banner__title-brutally__r">r</span>utal<span class="banner__title-brutally__ly">ly</span>
+            <span class="banner__title-brutally"> B<span class="banner__title-brutally__r">r</span>utal<span
+                class="banner__title-brutally__ly">ly</span>
             </span>
             <span class="banner__title__css-only">CSS</span>
           </h1>
           <p class="banner__description text-2 -highlighted">
-            <span>
-              <span>This website is a playground to explore CSS capabilities
-                and limits without any JavaScript.</span>
-            </span>
+            <span class="labeled">This website</span>is a playground to explore <span>CSS capabilities and limits</span>
+            without any JavaScript.
           </p>
-          <!-- <div class="bannner__animation">
-                                        <p class="highlighted animate active vertical text-xl">
-                                          <span>
-                                            <span> CSS fun </span>
-                                          </span>
-                                        </p>
-                                      </div> -->
         </header>
         <main>
           <section class="o-grid">
             <article class="o-grid__item">
-              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis laudantium consequatur quisquam
-                rerum necessitatibus cupiditate praesentium, hic ad laboriosam ex sint et quam neque, a quas. Dolorum
-                in
-                aliquid perferendis.</p>
+              <p> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis laudantium consequatur quisquam
+                rerum necessitatibus cupiditate praesentium, hic ad laboriosam ex sint et quam neque, a quas. Dolorum in
+                aliquid perferendis. </p>
             </article>
-            <article class="o-grid__item" style="--grid-row: 1; --grid-column: 1 / -1;">
-              <h3 class="a-text-xl -highlighted">Dynamic form</h3>
+            <article class="o-grid__item" style="--grow: 1 / span 5; --gcolumn: 5 / -1">
+              <h3 class="-highlighted">Dynamic <span>form</span></h3>
               <input type="checkbox" id="add-request" class="a-modifier" />
               <form class="m-form dynamic-form">
                 <input type="text" name="request" placeholder="Add request" class="a-input theme" required />
-
-                <label type="button" for="add-request" class="m-formSubmit a-btn theme -relative">
-                  Send request</label>
+                <label type="button" for="add-request" class="m-formSubmit a-btn theme -relative"> Send request</label>
                 <span class="dynamic-form-loader" id="loading">
                   <svg xmlns="http://www.w3.org/2000/svg" class="form__loader__icon" viewBox="0 0 90 90">
                     <defs>
@@ -155,37 +124,32 @@
               </form>
             </article>
             <article class="o-grid__item">
-              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis laudantium consequatur quisquam
-                rerum necessitatibus cupiditate praesentium, hic ad laboriosam ex sint et quam neque, a quas. Dolorum
-                in
-                aliquid perferendis.</p>
+              <p> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis laudantium consequatur quisquam
+                rerum necessitatibus cupiditate praesentium, hic ad laboriosam ex sint et quam neque, a quas. Dolorum in
+                aliquid perferendis. </p>
             </article>
             <article class="o-grid__item">
-              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis laudantium consequatur quisquam
-                rerum necessitatibus cupiditate praesentium, hic ad laboriosam ex sint et quam neque, a quas. Dolorum
-                in
-                aliquid perferendis.</p>
+              <p> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis laudantium consequatur quisquam
+                rerum necessitatibus cupiditate praesentium, hic ad laboriosam ex sint et quam neque, a quas. Dolorum in
+                aliquid perferendis. </p>
             </article>
             <article class="o-grid__item">
-              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis laudantium consequatur quisquam
-                rerum necessitatibus cupiditate praesentium, hic ad laboriosam ex sint et quam neque, a quas. Dolorum
-                in
-                aliquid perferendis.</p>
+              <p> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis laudantium consequatur quisquam
+                rerum necessitatibus cupiditate praesentium, hic ad laboriosam ex sint et quam neque, a quas. Dolorum in
+                aliquid perferendis. </p>
             </article>
             <article class="o-grid__item">
-              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis laudantium consequatur quisquam
-                rerum necessitatibus cupiditate praesentium, hic ad laboriosam ex sint et quam neque, a quas. Dolorum
-                in
-                aliquid perferendis.</p>
+              <p> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis laudantium consequatur quisquam
+                rerum necessitatibus cupiditate praesentium, hic ad laboriosam ex sint et quam neque, a quas. Dolorum in
+                aliquid perferendis. </p>
             </article>
             <article class="o-grid__item">
-              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis laudantium consequatur quisquam
-                rerum necessitatibus cupiditate praesentium, hic ad laboriosam ex sint et quam neque, a quas. Dolorum
-                in
-                aliquid perferendis.</p>
+              <p> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis laudantium consequatur quisquam
+                rerum necessitatibus cupiditate praesentium, hic ad laboriosam ex sint et quam neque, a quas. Dolorum in
+                aliquid perferendis. </p>
             </article>
-            <article class="o-grid__item" style="--grid-column: 1 / -1;">
-              <h3>Shake</h3>
+            <article class="o-grid__item" style="--gcolumn: 1 / -1">
+              <h3 class="-highlighted"><span>Shake</span></h3>
               <label class="m-shake" for="shake">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" class="shake__shape">
                   <rect class="shake-rect" x="0" y="0" width="40" height="40" stroke-width="5"></rect>
@@ -196,7 +160,6 @@
           </section>
         </main>
       </div>
-
       <!-- Theme bar -->
       <section class="o-themeBar">
         <ul class="o-themeBar__container">
@@ -262,178 +225,99 @@
             </button>
           </li>
         </ul>
-
       </section>
       <!-- How does it work? -->
       <section class="o-howDoesItWork">
         <div class="o-howDoesItWork__header">
           <label type="button" for="how-does-it-work-back" class="o-howDoesItWork__backBtn a-btn theme m-0"
-            aria-label="back-button">
-            Back
-          </label>
+            aria-label="back-button"> Back </label>
           <h2 class="m-0">How Does It Work?</h2>
         </div>
         <div class="o-howDoesItWork__content">
-          <ul class="o-howDoesItWork__list">
-            <li class="o-howDoesItWork__listItem">
-              <p class="o-howDoesItWork__listItem__title">
-                A Complete Guide to Custom Properties
-                <a class="o-howDoesItWork__listItem__link"
-                  href="https://css-tricks.com/a-complete-guide-to-custom-properties/"></a>
-              </p>
-            </li>
-            <li class="o-howDoesItWork__listItem">
-              <p class="o-howDoesItWork__listItem__title">
-                Layout: Unholy Albatros
-                <a class="o-howDoesItWork__listItem__link"
-                  href="https://www.miragecraft.com/blog/unholy-albatross">Unholy
-                  Albatross</a>
-              </p>
-            </li>
-            <li class="o-howDoesItWork__listItem">
-              <p class="o-howDoesItWork__listItem__title">
-                How to scale SVG
-                <a class="o-howDoesItWork__listItem__link" href="https://css-tricks.com/scale-svg/">How to scale SVG</a>
-              </p>
-            </li>
-            <li class="o-howDoesItWork__listItem">
-              <p class="o-howDoesItWork__listItem__title">
-                How can I make an SVG scale with its parent container?
-                <a class="o-howDoesItWork__listItem__link"
-                  href="https://stackoverflow.com/questions/19484707/how-can-i-make-an-svg-scale-with-its-parent-container">How
-                  can I make an SVG scale with its parent container?</a>
-              </p>
-            </li>
-            <li class="o-howDoesItWork__listItem">
-              <p class="o-howDoesItWork__listItem__title">
-                Building a Scalable CSS Architecture With BEM and Utility Classes
-                <a class="o-howDoesItWork__listItem__link"
-                  href="https://css-tricks.com/building-a-scalable-css-architecture-with-bem-and-utility-classes/">Building
-                  a
-                  Scalable CSS Architecture With BEM and Utility Classes</a>
-              </p>
-            </li>
-            <li class="o-howDoesItWork__listItem">
-              <p class="o-howDoesItWork__listItem__title">
-                ABEM. A more useful adaptation of BEM.
-                <a class="o-howDoesItWork__listItem__link"
-                  href="https://css-tricks.com/abem-useful-adaptation-bem/">Link</a>
-              </p>
-            </li>
-            <li class="o-howDoesItWork__listItem">
-              <p class="o-howDoesItWork__listItem__title">
-                Shake CSS Animation
-                <a class="o-howDoesItWork__listItem__link"
-                  href="https://css-tricks.com/snippets/css/shake-css-keyframe-animation/">Shake CSS Animation</a>
-              </p>
-            </li>
-            <li class="o-howDoesItWork__listItem">
-              <h4 class="o-howDoesItWork__listItem__title">
-                `position: sticky` inside a container with overflow: hidden`
-              </h4>
-              <p class="o-howDoesItWork__listItem__description">
-                Use
-                <span class="o-howDoesItWork__listItem__description__solution">
-                  `overflow: clip`
-                </span>
-                Sources: Stack Overflow
-                <a href="https://stackoverflow.com/a/72792224">answer from the specs</a>
-                More simple ELI5
-                <a
-                  href="https://medium.com/@ehsaneona/overcoming-position-sticky-issues-solving-overflow-hidden-problems-with-overflow-clip-e8e79a7b0c34">article</a>
-                from Medium
-                <!-- make a line break before the span through CSS -->
-                <span class="o-howDoesItWork__listItem__description__used-on" style="
-                    display: inline-block;
-                    color: red;
-                    background: hsl(from red h s l / 0.2);
-                  ">(used on `.wrapper`)</span>
-              </p>
-            </li>
-            <li>
-              <h4 class="o-howDoesItWork__listItem__title">Grid</h4>
-              <p class="o-howDoesItWork__listItem__description">
-                <span class="o-howDoesItWork__listItem__description__solution">
-                  grid-auto-flow: column; makes items flow across columns, ie into a
-                  single row align-self: center; does vertical centering
-                </span>
-                Sources: Stack Overflow
-                <a href="https://stackoverflow.com/a/50801675        ">answer from the specs</a>
-              </p>
-            </li>
-            <li>
-              <h4 class="o-hdiw-sectionTitle"></h4>
-            </li>
-            <li>
-              <p class="text-xl">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta quis laborum
-                exercitationem! Accusantium
-                quod natus mollitia iste itaque maiores expedita alias voluptates maxime? Praesentium reprehenderit
-                dicta quos facere dolorem hic!</p>
-            </li>
-            <li>
-              <p class="text-xl">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta quis laborum
-                exercitationem! Accusantium
-                quod natus mollitia iste itaque maiores expedita alias voluptates maxime? Praesentium reprehenderit
-                dicta quos facere dolorem hic!</p>
-            </li>
-            <li>
-              <p class="text-xl">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta quis laborum
-                exercitationem! Accusantium
-                quod natus mollitia iste itaque maiores expedita alias voluptates maxime? Praesentium reprehenderit
-                dicta quos facere dolorem hic!</p>
-            </li>
-            <li>
-              <p class="text-xl">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta quis laborum
-                exercitationem! Accusantium
-                quod natus mollitia iste itaque maiores expedita alias voluptates maxime? Praesentium reprehenderit
-                dicta quos facere dolorem hic!</p>
-            </li>
-            <li>
-              <p class="text-xl">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta quis laborum
-                exercitationem! Accusantium
-                quod natus mollitia iste itaque maiores expedita alias voluptates maxime? Praesentium reprehenderit
-                dicta quos facere dolorem hic!</p>
-            </li>
-            <li>
-              <p class="text-xl">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta quis laborum
-                exercitationem! Accusantium
-                quod natus mollitia iste itaque maiores expedita alias voluptates maxime? Praesentium reprehenderit
-                dicta quos facere dolorem hic!</p>
-            </li>
-            <li>
-              <p class="text-xl">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta quis laborum
-                exercitationem! Accusantium
-                quod natus mollitia iste itaque maiores expedita alias voluptates maxime? Praesentium reprehenderit
-                dicta quos facere dolorem hic!</p>
-            </li>
-            <li>
-              <p class="text-xl">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta quis laborum
-                exercitationem! Accusantium
-                quod natus mollitia iste itaque maiores expedita alias voluptates maxime? Praesentium reprehenderit
-                dicta quos facere dolorem hic!</p>
-            </li>
-            <li>
-              <p class="text-xl">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta quis laborum
-                exercitationem! Accusantium
-                quod natus mollitia iste itaque maiores expedita alias voluptates maxime? Praesentium reprehenderit
-                dicta quos facere dolorem hic!</p>
-            </li>
-            <li>
-              <p class="text-xl">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta quis laborum
-                exercitationem! Accusantium
-                quod natus mollitia iste itaque maiores expedita alias voluptates maxime? Praesentium reprehenderit
-                dicta quos facere dolorem hic!</p>
-            </li>
-            <li>
-              <p class="text-xl">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta quis laborum
-                exercitationem! Accusantium
-                quod natus mollitia iste itaque maiores expedita alias voluptates maxime? Praesentium reprehenderit
-                dicta quos facere dolorem hic!</p>
-            </li>
-
-          </ul>
+          <div class="o-howDoesItWork__lists">
+            <div class="container">
+              <h4>Global architecture</h4>
+              <ul class="m-list">
+                <li class="m-list__item">
+                  <p class="a-subtitle">CSS Custom properties</p>
+                  <p>Used for every variables and be changed at runtime.</p>
+                  <a class="a-link" href="https://css-tricks.com/a-complete-guide-to-custom-properties/">CSS-Tricks - A
+                    Complete Guide to Custom Properties</a>
+                </li>
+                <li class="m-list__item">
+                  <p class="a-subtitle"> ABEM: Atomic BEM (Block Element Modifier) CSS architecture </p>
+                  <a class="a-link" href="https://css-tricks.com/abem-useful-adaptation-bem/">CSS-Tricks - ABEM. A more
+                    useful adaptation of BEM.</a>
+                </li>
+                <!-- <li class="m-list__item"></li>
+                  <p class="a-subtitle">
+                    Building a Scalable CSS Architecture With BEM and Utility Classes
+                  </p>
+                  <a class="a-link"
+                    href="https://css-tricks.com/building-a-scalable-css-architecture-with-bem-and-utility-classes/">Building
+                    a
+                    Scalable CSS Architecture With BEM and Utility Classes</a>
+                </li> -->
+                <li class="m-list__item">
+                  <p class="a-subtitle">Layout: Unholy Albatros</p>
+                  <a class="a-link" href="https://www.miragecraft.com/blog/unholy-albatross">Unholy Albatross</a>
+                </li>
+                <li>
+                  <h4 class="m-list__item -highlighted text-xl"></h4>
+                  <p class="m-list__item__description">
+                    <span class="m-list__item__description__solution"> grid-auto-flow: column; makes items flow across
+                      columns, ie into a single row align-self: center; does vertical centering </span> Sources: Stack
+                    Overflow <a href="https://stackoverflow.com/a/50801675">answer from the specs</a>
+                  </p>
+                </li>
+              </ul>
+            </div>
+            <div class="container">
+              <h4>Specific features</h4>
+              <ol class="m-list">
+                <li class="m-list__item">
+                  <p class="a-subtitle">Grid, apply styles to everything <i>but the element actually being hovered</i>
+                  </p>
+                  <a class="a-link" href="https://css-tricks.com/hover-on-everything-but/"> Hover on “Everything
+                    But”</a>
+                  <div class="a-box -info">
+                    <span><a href="https://css-tricks.com/examples/HoverEverythingBut/">Live Demo</a></span>
+                  </div>
+                  <p class="-info"></p>
+                </li>
+                <li class="m-list__item">
+                  <p class="a-subtitle"> How can I make an SVG scale with its parent container? </p>
+                  <a class="a-link"
+                    href="https://stackoverflow.com/questions/19484707/how-can-i-make-an-svg-scale-with-its-parent-container">
+                    How can I make an SVG scale with its parent container? </a>
+                </li>
+                <li class="m-list__item">
+                  <p class="a-subtitle">How to scale SVG</p>
+                  <a class="a-link" href="https://css-tricks.com/scale-svg/">CSS-Tricks - How to scale SVG</a>
+                </li>
+                <li class="m-list__item">
+                  <p class="a-subtitle">Shake CSS Animation</p>
+                  <a class="a-link" href="https://css-tricks.com/snippets/css/shake-css-keyframe-animation/">CSS-Tricks
+                    - Shake CSS Animation</a>
+                </li>
+                <li class="m-list__item">
+                  <p class="a-subtitle"> `position: sticky` inside a container with overflow: hidden` </p>
+                  <p class="m-list__item__description"> Use <span class="m-list__item__description__solution">
+                      `overflow: clip` </span> Sources: Stack Overflow <a
+                      href="https://stackoverflow.com/a/72792224">answer from the specs</a> More simple ELI5 <a
+                      href="https://medium.com/@ehsaneona/overcoming-position-sticky-issues-solving-overflow-hidden-problems-with-overflow-clip-e8e79a7b0c34">article</a>
+                    from Medium <!-- make a line break before the span through CSS -->
+                    <span class="m-list__item__description__used-on" style="
+                          display: inline-block;
+                          color: red;
+                          background: hsl(from red h s l / 0.2);
+                        ">(used on `.wrapper`)</span>
+                  </p>
+                </li>
+              </ol>
+            </div>
+          </div>
         </div>
-
       </section>
     </div>
   </div>

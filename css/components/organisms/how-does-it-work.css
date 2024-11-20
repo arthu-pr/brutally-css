@@ -1,16 +1,14 @@
 .o-howDoesItWork {
-  /* TODO: */
-  padding: var(--space-md);
+  overflow: hidden;
+  height: 100%;
+  position: sticky;
+  /* top: calc(0 - var(--border-width)); */
+  top: var(--spacing);
   padding: var(--spacing);
-
-  height: 100svh;
-  overflow-y: hidden;
-
+  max-height: calc(100vh - var(--spacing) - 2 * var(--border-width));
   display: flex;
   flex-direction: column;
-  gap: var(--space-sm);
-  position: sticky;
-  top: 0;
+  padding-top: 0;
 }
 
 .o-howDoesItWork__header {
@@ -25,14 +23,27 @@
   position: relative;
 }
 
-.o-howDoesItWork__list {
+.o-howDoesItWork__lists {
   position: absolute;
-  top: 0;
-  bottom: 0;
-
+  inset: 0;
   margin: 0;
   padding: 0;
   height: 100%;
   overflow-y: auto;
   scrollbar-width: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--space-lg);
+}
+
+.o-howDoesItWork .container {
+  flex: 1;
+  /* position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow-y: auto;
+  scrollbar-width: none; */
 }
