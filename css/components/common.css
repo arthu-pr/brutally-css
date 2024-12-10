@@ -1,19 +1,60 @@
-.theme {
+/* 
+ * Main Theme Component or element styles
+ * A set of CSS variables are used to define the theme
+ * Some modifiers are also available directly applied in the template
+ * 
+ * e.g.
+ * <div class="theme -disabled">Disabled</div>
+ * <div class="theme -raw">Raw</div>
+ * <div class="theme -hidden">Hidden</div>
+ *
+ */
+
+@property --raw {
+  syntax: '<number>';
+  initial-value: 0;
+  inherits: true;
+}
+
+:root {
+  /* https://dev.to/tracygjg/conditional-css-437e */
+  --TRUE: 1;
+  --FALSE: 0;
+  --theme: ;
+  /* --raw: var(--FALSE); */
+
+  --theme: ;
+
+  /* --is-raw: var(--raw); */
+
   --border-radius: 0;
-  --box-shadow-x: 4px;
-  --box-shadow-y: 4px;
+}
+
+.theme {
+  --not-raw: calc(1 - var(--raw));
+  --theme-base-unit: 4px;
+  --theme-base-unit-calc: calc(4px * var(--not-raw, 1));
+  --box-shadow-x: var(--theme-base-unit-calc);
+  --box-shadow-y: var(--theme-base-unit-calc);
+
+  --component-translate-x: var(--theme-base-unit-calc);
+  --component-translate-y: var(--theme-base-unit-calc);
 
   --box-shadow-base: var(--box-shadow-x) var(--box-shadow-y) 0 0 black;
   --box-shadow-hover: var(--box-shadow-x) var(--box-shadow-y) 0 0
     var(--theme-color);
-  --component-bg: var(--theme-color);
-  --component-color: var(--color-main-dark);
+  --component-color: var(--theme-color);
+  --component-bg: currentcolor;
   --component-box-shadow: var(--box-shadow-base);
   --component-padding-x: var(--space-unit);
   --component-padding-y: 0;
-  --component-border-width: 2px;
+  --component-border-width: var(--border-width-25);
   --component-border-style: solid;
-  --component-border-color: var(--color-main-dark);
+  --component-border-color: var(--color-bg);
+  --component-transform: translate(
+    var(--component-translate-x),
+    var(--component-translate-y)
+  );
 
   margin-bottom: var(--space-xs);
   padding: var(--component-padding-y) var(--component-padding-x);
@@ -28,36 +69,53 @@
   outline: none;
 }
 
-.theme:not(.disabled):hover {
+.theme:not(.-disabled):hover {
   --component-box-shadow: var(--box-shadow-hover);
 }
 
-.theme:not(.disabled):active,
-.theme:not(.disabled):focus-visible {
-  transform: translate(4px, 4px);
-  --component-box-shadow: unset;
-}
-
-.theme.disabled {
+.theme.-disabled {
   opacity: 0.5;
   cursor: not-allowed;
 }
 
-.theme.raw {
-  box-shadow: none;
-}
-
-.theme.raw:hover {
-  transform: none;
-  box-shadow: none;
-}
-
-.theme.raw:active,
-.theme.raw:focus-visible {
-  transform: none;
-  box-shadow: none;
+/* Raw modifier: removes box shadow and produce an effect-free component */
+.theme.-raw,
+.theme.-raw:hover {
+  /* transform: 0;
+  --component-box-shadow: 0; */
+  --raw: var(--TRUE);
 }
 
 .theme.-hidden {
   display: none;
+}
+
+/* Disable the active and focus-visible states on disabled and raw modifiers on interactive components */
+.theme:not(.-disabled, .-raw):active,
+.theme:not(.-disabled, .-raw):focus-visible {
+  --component-box-shadow: unset;
+}
+
+/* Disable the active and focus-visible states on disabled and raw modifiers */
+.theme.-interactive:not(.-disabled, .-raw):active,
+.theme.-interactive:not(.-disabled, .-raw):focus-visible {
+  transform: translate(
+    var(--component-translate-x),
+    var(--component-translate-y)
+  );
+  --component-box-shadow: unset;
+}
+
+.theme[data-component-label] {
+  margin-top: var(--space-xs);
+}
+
+.theme[data-component-label]::before {
+  content: attr(data-component-label);
+  position: absolute;
+  /* top: 0; */
+  left: 0;
+  bottom: calc(100% + calc(var(--component-padding-y) / 2));
+  transform: translate(0, calc(0 - var(--component-padding-y)));
+  text-transform: uppercase;
 }

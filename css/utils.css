@@ -2,10 +2,30 @@
   display: flex;
 }
 
+.flex-column {
+  flex-direction: column;
+}
+
 .align-center {
   align-items: center;
 }
 
 .justify-center {
   justify-content: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.justify-end {
+  justify-content: flex-end;
+}
+
+.gap-xs {
+  gap: var(--space-xs);
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
 }

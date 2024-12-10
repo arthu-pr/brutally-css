@@ -1,12 +1,12 @@
 .a-link {
   color: var(--theme-color);
-  /* text-decoration-line: underline; */
   text-decoration-color: currentColor;
   text-decoration-thickness: 2px;
   text-underline-offset: 2px;
   display: flex;
   align-items: flex-start;
   gap: 0.5rem;
+  margin: var(--space-xxs) 0;
 }
 
 .a-link::before {
