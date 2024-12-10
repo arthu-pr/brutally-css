@@ -52,6 +52,7 @@ p.-highlighted {
   /* background-image: linear-gradient(var(--theme-color), var(--theme-color)); */
   color: var(--theme-color);
   position: relative;
+  -webkit-box-decoration-break: clone;
   box-decoration-break: clone;
 }
 
@@ -84,6 +85,7 @@ p.-highlighted {
 
 .-highlighted.-animate:hover > span > span {
   position: relative;
+  -webkit-box-decoration-break: clone;
   box-decoration-break: clone;
   /* color: var(--theme-color); */
   background-image: linear-gradient(var(--theme-color), var(--theme-color));

@@ -9,9 +9,9 @@
   min-width: clamp(
     var(--min-width, 0px),
     (var(--breakpoint) - 100%) * 999,
-    100% - var(--gutter) 
-  ); 
-   flex-grow: 1;/
+    100% - var(--gutter)
+  );
+  flex-grow: 1;
 }
 
 .o-themeBar {

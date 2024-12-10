@@ -13,6 +13,12 @@
   --border-theme-50: var(--border-width-50) solid var(--theme-color);
   --border-theme-75: var(--border-width-75) solid var(--theme-color);
 
+  --border-bg: var(--border-width) solid var(--color-bg);
+  --border-bg-10: var(--border-width-10) solid var(--color-bg);
+  --border-bg-25: var(--border-width-25) solid var(--color-bg);
+  --border-bg-50: var(--border-width-50) solid var(--color-bg);
+  --border-bg-75: var(--border-width-75) solid var(--color-bg);
+
   --layout-transition: transform 0.8s ease-out;
   --spacing: var(--space-sm);
 }

@@ -4,59 +4,19 @@
   left: -9999px;
 }
 
-@-webkit-keyframes back {
-  0% {
-    background-position: 100% 0%;
-  }
-  25% {
-    background-position: 30% 0%;
-  }
-  40% {
-    background-position: 5% 0%;
-  }
-  50% {
-    background-position: 50% 0%;
-  }
-  100% {
-    background-position: 0% 0%;
-  }
-}
-@-moz-keyframes back {
-  0% {
-    background-position: 100% 0%;
-  }
-  25% {
-    background-position: 30% 0%;
-  }
-  40% {
-    background-position: 5% 0%;
-  }
-  50% {
-    background-position: 50% 0%;
-  }
-  100% {
-    background-position: 0% 0%;
-  }
-}
-@keyframes back {
-  0% {
-    background-position: 100% 0%;
-  }
-  25% {
-    background-position: 30% 0%;
-  }
-  40% {
-    background-position: 5% 0%;
-  }
-  50% {
-    background-position: 50% 0%;
-  }
-  100% {
-    background-position: 0% 0%;
-  }
-}
+/* 
+ * Main file for CSS modifier using Checkbox Hack
+ * https://css-tricks.com/the-checkbox-hack/
+ *
+ * 1 - Theme Bar
+ * 2 - "How does it work?" section
+ * 3 - Modal
+ *
+ */
 
-/* Theme Bar */
+/* ----------------------------------------------------------------------------- */
+
+/* 1 - Theme Bar */
 
 #zoom-in:checked ~ .wrapper {
   --spacing: var(--space-xs);
@@ -106,7 +66,11 @@
   fill: var(--color-primary);
 }
 
-/* How does it work? */
+/* ----------------------------------------------------------------------------- */
+
+/* 
+ * 2 - "How does it work?" section 
+ */
 
 #how-does-it-work:checked ~ .wrapper .layout {
   --layout-transform-value: var(--layout-translate-howDoesItWork);
@@ -117,14 +81,141 @@
   --layout-transform-value: var(--layout-translate-main);
   transform: translateX(0);
 }
-/* 
-#how-does-it-work-back:checked ~ .wrapper .layout {
-  transform: translateX(calc(0 + var(--theme-bar-width)));
-} */
 
 #how-does-it-work,
 #o-howDoesItWork__backBtn {
   opacity: 0.01;
   position: fixed;
   left: -9999px;
+}
+
+/* ----------------------------------------------------------------------------- */
+
+/* 
+ * 3 - Modal & Drawer
+ *
+ * 3.1 - Visibility trick
+ * 3.2 - Overlay component
+ * 3.3 - Disable scrolling when Modal is open
+ * 3.4 - Modal and Drawer animations
+ * 3.5 - Modal button modifiers
+ *
+ */
+
+/* 
+* 3.1 - Visibility trick from https://webdesign.tutsplus.com/css-only-modal--cms-107772t
+* "We’ll delay the visibility transition of the modal to allow the exit animations 
+* to be completed before it’s completely hidden."
+ */
+#modal:not(:checked) ~ .wrapper .m-modal,
+#drawer:not(:checked) ~ .wrapper .m-drawer,
+#modal:not(:checked) ~ .wrapper .a-overlay[for='modal'],
+#drawer:not(:checked) ~ .wrapper .a-overlay[for='drawer'] {
+  visibility: hidden;
+  transition-delay: 500ms;
+  transition-property: visibility;
+}
+
+/* 
+ * 3.2 Overlay component
+ */
+#modal:checked ~ .wrapper .a-overlay[for='modal'],
+#drawer:checked ~ .wrapper .a-overlay[for='drawer'] {
+  animation: overlay-fade-in ease 0.5s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+#modal:not(:checked) ~ .wrapper .a-overlay[for='modal'],
+#drawer:not(:checked) ~ .wrapper .a-overlay[for='drawer'] {
+  animation: overlay-fade-out ease 0.5s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+/* 
+ * 3.3 Disable scrolling when Modal is open
+ */
+#modal:checked ~ .wrapper {
+  height: 100svh;
+  overflow-y: hidden;
+  overscroll-behavior: contain;
+}
+
+#modal:not(:checked) ~ .wrapper {
+  height: auto;
+  overscroll-behavior: contain;
+}
+
+/* 
+ * 3.4 Modal and Drawer animations
+ */
+#modal[data-animation='fade'] ~ .wrapper .m-modal {
+  --animation-in: modal-fade-in;
+  --animation-out: modal-fade-out;
+}
+
+#drawer[data-animation='slide'] ~ .wrapper .m-drawer {
+  --animation-in: drawer-slide-in;
+  --animation-out: drawer-slide-out;
+}
+
+#modal:checked ~ .wrapper .m-modal,
+#drawer:checked ~ .wrapper .m-drawer {
+  animation: var(--animation-in) ease 0.5s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+#modal:not(:checked) ~ .wrapper .m-modal,
+#drawer:not(:checked) ~ .wrapper .m-drawer {
+  animation: var(--animation-out) ease 0.5s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+/* 
+ * 3.5 Modal button modifiers
+ */
+#center-modal:checked ~ .wrapper .m-modal {
+  --top-modal: 50svh;
+  --modal-translate-y: -50%;
+}
+
+#center-modal:checked
+  ~ .wrapper
+  .m-modal__footer
+  label[for='center-modal']::after {
+  content: 'Put me on top';
+}
+
+#brutalist-modal:checked
+  ~ .wrapper
+  .m-modal__footer
+  label[for='brutalist-modal']::after {
+  content: 'Classic Modal';
+}
+
+#brutalist-modal:checked ~ .wrapper .a-overlay {
+  /* --overlay-bg: orange; */
+}
+
+#brutalist-modal:checked ~ .wrapper .m-modal {
+  --raw: var(--FALSE);
+  --dialog-bg: var(--theme-color);
+  --dialog-border: var(--border-bg);
+  --dialog-box-shadow: none;
+}
+
+#brutalist-modal:checked ~ .wrapper .m-modal .m-modal__title,
+#brutalist-modal:checked ~ .wrapper .m-modal p,
+#brutalist-modal:checked ~ .wrapper .m-modal span,
+#brutalist-modal:checked ~ .wrapper .m-modal label::after {
+  --mix-blend-mode: difference;
+  color: var(--color-bg);
+}
+
+#brutalist-modal:checked ~ .wrapper .m-modal .m-modal__header,
+#brutalist-modal:checked ~ .wrapper .m-modal .m-modal__footer {
+  border-color: var(--color-bg);
 }
