@@ -4,12 +4,6 @@
   inset: 0;
 }
 
-:root {
-  --dialog-bg: var(--color-bg-light);
-  --dialog-border: var(--border-theme);
-  --dialog-box-shadow: var(--box-shadow-base);
-}
-
 @property --modal-opacity {
   syntax: '<percentage>';
   initial-value: 0%;
@@ -26,6 +20,13 @@
   syntax: '<percentage>';
   initial-value: -50%;
   inherits: false;
+}
+
+.m-modal,
+.m-drawer {
+  --dialog-bg: var(--color-bg-light);
+  --dialog-border: var(--border-theme);
+  --dialog-box-shadow: var(--box-shadow-base);
 }
 
 .m-modal {
@@ -60,7 +61,7 @@
   position: fixed;
   top: 0;
   bottom: 0;
-  height: 100svh;
+  /* height: 100svh; */
   right: 0;
   transform: translateX(-600px);
 }

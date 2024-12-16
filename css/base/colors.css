@@ -1,17 +1,19 @@
 @property --color-primary {
   syntax: '<color>';
-  initial-value: #e3c567;
+  initial-value: inherit;
   inherits: false;
 }
 
 @property --theme-color {
   syntax: '<color>';
-  initial-value: #e3c567;
+  initial-value: inherit;
   inherits: true;
 }
 
 :root {
-  /* --color-primary: #e3c567; */
+  /* Default state */
+  --color-primary: #e3c567;
+  --theme-color: var(--color-primary);
   --color-primary-80: #e3c56780;
   --color-primary-60: #e3c56760;
   --color-primary-50: #e3c56750;
