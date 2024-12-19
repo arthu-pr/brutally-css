@@ -26,6 +26,18 @@
   gap: var(--space-xs);
 }
 
+.gap-sm {
+  gap: var(--space-sm);
+}
+
 .flex-wrap {
   flex-wrap: wrap;
+}
+
+.flex-grow {
+  flex-grow: 1;
+}
+
+.flex-basis-full {
+  flex-basis: 100%;
 }

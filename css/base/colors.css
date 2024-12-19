@@ -4,9 +4,9 @@
   inherits: false;
 }
 
-@property --theme-color {
-  syntax: '<color>';
-  initial-value: inherit;
+@property --variant {
+  syntax: '<number>';
+  initial-value: 0;
   inherits: true;
 }
 
