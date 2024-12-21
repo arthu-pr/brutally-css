@@ -99,10 +99,13 @@ body {
 }
 
 h1,
+.text-h1,
 h2,
+.text-xxl,
 h3,
+.text-xl,
 h4,
-h5 {
+.text-lg {
   font-family: gotham-black;
   text-transform: uppercase;
   color: var(--theme-color);
@@ -128,12 +131,6 @@ h4::after {
   color: var(--color-contrast-lower);
   mix-blend-mode: var(--mix-blend-mode);
 
-  /* TODO: Move to a separate file (theme.css?) and/or using container queries */
-  --border-theme: var(--border-width) solid var(--theme-color);
-  --border-theme-10: var(--border-width-10) solid var(--theme-color);
-  --border-theme-25: var(--border-width-25) solid var(--theme-color);
-  --border-theme-50: var(--border-width-50) solid var(--theme-color);
-  --border-theme-75: var(--border-width-75) solid var(--theme-color);
   /* color: white; */
   border: var(--border-width) solid var(--theme-color);
   border-right: none;
