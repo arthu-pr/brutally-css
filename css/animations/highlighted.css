@@ -1,23 +1,3 @@
-h1.-highlighted,
-h2.-highlighted,
-h3.-highlighted,
-h4.-highlighted,
-.h1.-highlighted,
-.text-xxl.-highlighted,
-.text-xl.-highlighted,
-.text-lg.-highlighted,
-.text-md.-highlighted,
-.text-sm.-highlighted,
-.text-xs.-highlighted,
-p.-highlighted {
-  font-family: inherit;
-  text-transform: uppercase;
-  /* TODO: check responsive line-height */
-  line-height: 135%;
-  margin: 0;
-  position: relative;
-}
-
 /* https://stackoverflow.com/questions/6542212/use-css3-transitions-with-gradient-backgrounds/63848864#63848864 */
 /* Used for the shake animation see shake.css */
 @property --highlighted-color-1 {
@@ -32,125 +12,110 @@ p.-highlighted {
   inherits: false;
 }
 
-.-highlighted:not(.-highlighted-animate) > span {
-  --highlighted-color-2: var(--theme-color);
-  --highlighted-color-1: var(--theme-color);
+/* Control wether the highlighted background is displayed by default */
+/* Used with animation */
+@property --active {
+  syntax: '<integer>';
+  initial-value: 1;
+  inherits: true;
+}
 
-  padding: 2px;
-  background-image: linear-gradient(
-    var(--highlighted-color-1),
-    var(--highlighted-color-2)
+h1.-highlighted,
+h2.-highlighted,
+h3.-highlighted,
+h4.-highlighted,
+.h1.-highlighted,
+.text-xxl.-highlighted,
+.text-xl.-highlighted,
+.text-lg.-highlighted,
+.text-md.-highlighted,
+.text-sm.-highlighted,
+.text-xs.-highlighted,
+p.-highlighted {
+  --highlighted-bg-color: color-mix(
+    in srgb,
+    var(--color-bg),
+    var(--theme-color) calc(100% * var(--active, 0))
   );
+  --highlighted-bg-color-1: var(--highlighted-bg-color);
+  --highlighted-bg-color-2: var(--highlighted-bg-color);
+
+  text-transform: uppercase;
+  /* TODO: check responsive line-height */
+  line-height: 135%;
+  margin: 0;
+  position: relative;
+}
+
+.-highlighted > span {
+  position: relative;
+
+  --highlighted-bg-color-1: var(--theme-color);
+  --highlighted-bg-color-2: var(--theme-color);
+
+  --highlighted-bg: linear-gradient(
+    var(--highlighted-bg-color-1),
+    var(--highlighted-bg-color-2)
+  );
+
   color: var(--color-bg);
-  position: relative;
-  box-decoration-break: clone;
-  -webkit-box-decoration-break: clone;
-}
-
-.-highlighted.-animate > span > span {
   padding: 2px;
-  /* background-image: linear-gradient(var(--theme-color), var(--theme-color)); */
-  color: var(--theme-color);
-  position: relative;
+  background-image: var(--highlighted-bg);
   -webkit-box-decoration-break: clone;
   box-decoration-break: clone;
 }
-
-/* .highlighted:hover > span {
-  /* .highlighted:active > span { */
-/* background-image: linear-gradient(var(--theme-color), var(--theme-color));
-  position: relative;
-  box-decoration-break: clone; */
-/* // border-left: 5px solid $primary-color; */
-/**/
-/* // &::before { */
-/* //   content: ''; */
-/* //   position: absolute; */
-/* //   display: inline; */
-/* //   top: 0; */
-/* //   left: -3px; */
-/* //   width: 3px; */
-/* //   height: 100%; */
-/* //   background-image: linear-gradient($primary-color, $primary-color); */
-/* //   z-index: -1; */
-/* // } */
-/* } */
-/* } */
-
-/**/
-/* .highlighted:hover:not(.animate) > span { */
-/*  color: var(--theme-color-60); */
-/*  */
-/* } */
-
-.-highlighted.-animate:hover > span > span {
-  position: relative;
-  -webkit-box-decoration-break: clone;
-  box-decoration-break: clone;
-  /* color: var(--theme-color); */
-  background-image: linear-gradient(var(--theme-color), var(--theme-color));
-
-  background-size: 0% 100%;
-  -webkit-background-clip: padding-box, text;
-  background-clip: padding-box, text;
-  background-repeat: no-repeat;
-  background-position: left;
-
-  /* &.active { */
-  /* > span { */
-  animation: animate-in 0.7s 0.1s forwards;
-  /* animation: animate-in 0.7s 0.1s forwards reverse; ???  */
-  /* animation-duration: 0.7s; */
-  /* animation-iteration-count: infinite; */
-  /* animation-direction: reverse; */
-  /* //animate-out 0.7s 0.7s forwards; */
-  /* } */
-
-  /* } */
-}
-
-.-highlighted.-animate > span > span {
-  /* animation: animate-out 0.7s 0.1s forwards; */
-  animation-direction: reverse;
-}
-/* 
-@keyframes animate-in {
-  from {
-    background-size: 0% 100%;
-    color: var(--theme-color);
-  }
-  to {
-    background-size: 100% 100%;
-    color: var(--color-bg);
-  }
-} */
 
 .-highlighted > span.labeled {
   left: clamp(-30px, -1.4vw, -2px);
   padding-left: clamp(2px, 1.4vw, 30px);
 }
 
-@keyframes animate-in {
+@media (min-width: 80rem) {
+  /* 1280px */
+  .-highlighted.-animate > span {
+    color: var(--theme-color);
+    --animate-in: highlight-to-left 0.5s 0.1s forwards;
+    --animate-out: highlight-to-right 0.4s forwards;
+    background-size: 0% 100%;
+    -webkit-background-clip: padding-box, text;
+    background-clip: padding-box, text;
+    background-repeat: no-repeat;
+    background-position: left;
+    animation: var(--highlight-animate);
+  }
+
+  .-highlighted.-animate.-active > span {
+    --animate-in: highlight-to-right 0.5s forwards;
+    --animate-out: highlight-to-left 0.4s 0.1s forwards;
+  }
+
+  .-highlighted.-animate:has(> span:hover) > span {
+    --highlight-animate: var(--animate-in);
+  }
+
+  .-highlighted.-animate:has(> span:not(:hover)) > span {
+    --highlight-animate: var(--animate-out);
+  }
+}
+
+@keyframes highlight-to-left {
   0% {
     background-size: 0% 100%;
   }
   50% {
     background-size: 100% 100%;
-    background-position: left;
   }
   100% {
     background-size: 100% 100%;
-    background-position: right;
-    background-image: linear-gradient(var(--theme-color), var(--theme-color));
+    background-image: var(--highlighted-bg);
     color: var(--color-bg);
   }
 }
 
-@keyframes animate-out {
+@keyframes highlight-to-right {
   0% {
     background-size: 100% 100%;
-    background-position: right;
-    background-image: linear-gradient(var(--theme-color), var(--theme-color));
+    background-image: var(--highlighted-bg);
     color: var(--color-bg);
   }
   50% {
@@ -160,7 +125,7 @@ p.-highlighted {
   100% {
     background-size: 0% 100%;
     background-color: transparent;
-    background-position: left;
+    background-position: right;
     color: var(--theme-color);
   }
 }

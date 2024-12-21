@@ -1,4 +1,33 @@
+/* TODO: Not working as expected as much as common.css */
+
+@property --theme-color {
+  syntax: '<color>';
+  initial-value: inherit;
+  inherits: true;
+}
+
+@property --raw {
+  syntax: '<number>';
+  initial-value: 0;
+  inherits: true;
+}
+
+@property --disabled {
+  syntax: '<number>';
+  initial-value: 0;
+  inherits: true;
+}
+
+@property --component-bg {
+  syntax: '<color>';
+  initial-value: currentcolor;
+  inherits: true;
+}
+
 body {
+  /* Initial State */
+  --theme-color: var(--color-primary);
+
   /* Borders */
   --border-theme: var(--border-width) solid var(--theme-color);
   --border-theme-10: var(--border-width-10) solid var(--theme-color);
@@ -8,6 +37,38 @@ body {
 
   /* Spacing */
   --container: var(--space-md) var(--space-lg) var(--space-sm);
+
+  /* Components */
+  --not-raw: calc(1 - var(--raw));
+  --not-disabled: calc(1 - var(--disabled));
+
+  --opacity: var(--not-disabled, 1);
+  --theme-base-unit: 4px;
+
+  /* AND Operation */
+  /* We verify if the element is neither raw or disabled */
+  --theme-base-unit-calc: 4px * var(--not-raw, 1);
+  --box-shadow-x: var(--theme-base-unit-calc);
+  --box-shadow-y: var(--theme-base-unit-calc);
+
+  --component-translate-x: var(--theme-base-unit-calc);
+  --component-translate-y: var(--theme-base-unit-calc);
+
+  --box-shadow-base: var(--box-shadow-x) var(--box-shadow-y) 0 0 black;
+  --box-shadow-hover: var(--box-shadow-x) var(--box-shadow-y) 0 0
+    var(--theme-color);
+  --component-color: var(--theme-color);
+  /* --component-bg: var(--color-bg); */
+  --component-box-shadow: var(--box-shadow-base);
+  --component-padding-x: var(--space-unit);
+  --component-padding-y: 0;
+  --component-border-width: var(--border-width-25);
+  --component-border-style: solid;
+  --component-border-color: var(--color-bg);
+  --component-transform: translate(
+    var(--component-translate-x),
+    var(--component-translate-y)
+  );
 }
 
 @media (min-width: 48rem) {

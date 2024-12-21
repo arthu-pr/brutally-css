@@ -1,3 +1,15 @@
+@property --animate-in {
+  syntax: '<animation-name>';
+  initial-value: none;
+  inherits: false;
+}
+
+@property --animate-out {
+  syntax: '<animation-name>';
+  initial-value: none;
+  inherits: false;
+}
+
 [data-animation='fade'] {
   --animation-in: fade-in;
   --animation-out: fade-out;

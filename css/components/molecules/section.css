@@ -7,10 +7,14 @@
   margin-block-start: var(--space-md);
 }
 
-.m-section__title {
+.m-section .m-section__title {
   margin-block: 0 var(--space-sm);
   text-align: center;
   flex: 1 0 100%;
+}
+
+.m-section .m-section__content {
+  flex-grow: 1;
 }
 
 @media (min-width: 48rem) {
@@ -19,7 +23,7 @@
     flex-wrap: nowrap;
   }
 
-  .m-section__title {
+  .m-section .m-section__title {
     font-size: var(--text-xxl);
     text-align: right;
     flex: unset;
