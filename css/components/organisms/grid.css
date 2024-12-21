@@ -27,12 +27,13 @@
   padding: var(--space-unit);
   grid-row: var(--grow, auto);
   grid-column: var(--gcolumn, 1);
-  background-color: hsla(0, 0%, 100%, var(--opacity, 0));
+  /* background-color: hsla(0, 0%, 100%, var(--opacity, 1)); */
 
   /* TODO: Keep? */
   list-style: none;
 
   position: relative;
+  overflow: hidden;
 }
 
 .o-grid__item::after {
