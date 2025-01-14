@@ -22,6 +22,12 @@
   inherits: true;
 }
 
+@property --primary {
+  syntax: '<number>';
+  initial-value: 1;
+  inherits: true;
+}
+
 @property --secondary {
   syntax: '<number>';
   initial-value: 0;
@@ -46,6 +52,7 @@
   --not-raw: calc(1 - var(--raw));
   --not-disabled: calc(1 - var(--disabled));
   --not-secondary: calc(1 - var(--secondary));
+  --primary: calc(1 - var(--secondary));
 
   --theme-base-unit: 4px;
   --theme-base-unit-calc: calc(4px * var(--not-raw, 1));
@@ -63,8 +70,8 @@
   /* Automatically define default and secondary theme */
   --component-color: color-mix(
     in srgb,
-    var(--theme-color),
-    var(--theme-color) calc(100% * var(--not-secondary, 0))
+    var(--color-bg) calc(100% * var(--primary, 0)),
+    var(--theme-color) calc(100% * var(--secondary, 0))
   );
 
   --component-bg: color-mix(

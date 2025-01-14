@@ -2,6 +2,10 @@
   margin: var(--space-xs) 0;
 }
 
+.m-form:user-invalid {
+  border-color: var(--color-error);
+}
+
 .form svg {
   width: clamp(50px, 100%, 120px);
 }

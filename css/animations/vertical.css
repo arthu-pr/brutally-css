@@ -1,11 +1,14 @@
 .vertical {
+  position: absolute;
+  right: 0;
+  left: 0;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: flex-end;
   height: unset;
   text-align: right;
-  flex: unset;
+  /* flex: unset; */
   font-family: ChunkFive;
   /* padding: 0 30px 0 28px; */
   /* writing-mode: vertical-rl; */
@@ -19,9 +22,9 @@
   -webkit-transform: translateX(100%);
   transform: translateX(100%);
 
-  -moz-animation: move 20s linear infinite;
-  -webkit-animation: move 20s linear infinite;
-  animation: infinite-scroll 20s linear infinite;
+  -moz-animation: move 5s linear infinite;
+  -webkit-animation: move 5s linear infinite;
+  animation: infinite-scroll 5s linear infinite;
 }
 /* 
 @media only screen and (min-width: 1024px) {
