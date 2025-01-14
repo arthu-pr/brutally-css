@@ -29,3 +29,25 @@
   animation-iteration-count: infinite;
   animation-timing-function: linear;
 }
+
+.m-form__component:user-invalid {
+  --theme-color: var(--color-error);
+}
+
+.m-form__component:user-invalid:before {
+  /* HTML symbol "!" */
+  content: '⚡';
+  position: absolute;
+  right: 0;
+  top: 0;
+  color: var(--theme-color);
+}
+
+.m-form__component:user-valid {
+  border-color: var(--theme-color);
+}
+
+/* Context Sensitive Style - https://css-tricks.com/abem-useful-adaptation-bem/#aa-context-sensitive-styles */
+.m-form .a-input {
+  --theme-color: var(--color-error);
+}

@@ -16,3 +16,14 @@
   color: inherit;
   opacity: 0.4;
 }
+
+/* Input Color */
+
+.a-inputColor {
+  --component-bg: var(--color-bg);
+  --component-padding-x: 0;
+  --component-padding-y: 0;
+  --component-border-color: var(--theme-color);
+}
+
+/* Input Radio */

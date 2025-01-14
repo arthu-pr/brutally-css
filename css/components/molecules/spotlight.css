@@ -1,0 +1,44 @@
+.m-spotlight {
+  display: grid;
+  grid-auto-flow: row;
+  grid-template-columns: repeat(auto, 1fr);
+
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(var(--space-xs), var(--space-xl))
+  );
+  grid-template-rows: repeat(10, auto);
+  background-color: var(--color-bg);
+}
+
+.m-spotlight span {
+  /* height: var(--space-sm); */
+  height: calc(100svh / 10);
+}
+
+@property --position-x {
+  syntax: '<number>';
+  initial-value: 0;
+  inherits: false;
+}
+
+@property --position-y {
+  syntax: '<number>';
+  initial-value: 0;
+  inherits: false;
+}
+
+.m-spotlight span:nth-child(2n):hover {
+  --position-x: calc(1 + n);
+  --position-y: n;
+}
+
+.m-spotlight__content {
+  display: flex;
+  position: absolute;
+  height: 40px;
+  aspect-ratio: 1;
+  background-color: var(--color-primary);
+  top: var(--position-y);
+  left: var(--position-x);
+}

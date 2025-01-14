@@ -48,7 +48,8 @@
   --border-radius: 0;
 }
 
-.theme {
+.theme,
+[data-component] {
   --not-raw: calc(1 - var(--raw));
   --not-disabled: calc(1 - var(--disabled));
   --not-secondary: calc(1 - var(--secondary));
@@ -70,8 +71,8 @@
   /* Automatically define default and secondary theme */
   --component-color: color-mix(
     in srgb,
-    var(--color-bg) calc(100% * var(--primary, 0)),
-    var(--theme-color) calc(100% * var(--secondary, 0))
+    var(--color-bg) calc(100% * var(--secondary, 0)),
+    var(--theme-color) calc(100% * var(--primary, 0))
   );
 
   --component-bg: color-mix(

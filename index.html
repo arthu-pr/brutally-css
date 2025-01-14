@@ -92,6 +92,54 @@
         </header>
         <main>
           <section class="o-grid">
+            <article class="o-grid__item" style="--grow: 1 / span 3; --gcolumn: 1 / 3">
+              <input type="checkbox" id="add-request" class="a-modifier" />
+              <div class="m-section">
+                <h3 class="m-section__title -highlighted -animate -active">Dynamic <span>form</span></h3>
+                <form class="m-form dynamic-form m-section__content">
+                  <label for="huey">Are you ready? <input type="radio" id="ready" name="ready" value="ready" checked />
+                  </label>
+                  <input data-component type="color" name="color" placeholder="Enter your color" class="a-inputColor"
+                    required />
+                  <label for="color">
+                    <input type="text" name="" placeholder="Add request" class="a-input theme -interactive" required />
+                  </label>
+                  <input type="text" name="request" placeholder="Add request" class="a-input theme -interactive"
+                    required />
+                  <label role="button" for="add-request" class="m-formSubmit a-btn theme -interactive -relative "> Send
+                    request</label>
+                  <span class="dynamic-form-loader" id="loading">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="form__loader__icon" viewBox="0 0 90 90">
+                      <defs>
+                        <style>
+                          .cls-1 {
+                            fill: #fff;
+                          }
+
+                          .cls-2,
+                          .cls-3 {
+                            fill: #36365f;
+                          }
+
+                          .cls-3 {
+                            fill-rule: evenodd;
+                          }
+
+                          .cls-4 {
+                            fill: #6f53db;
+                          }
+                        </style>
+                      </defs>
+                      <g id="Ebene_1-2">
+                        <path class="cls-1"
+                          d="m74.4,49.9l-26.1,26.1c-1,1-2.3,1.5-3.6,1.5s-2.6-.5-3.6-1.5c-.1-.1-.2-.2-.3-.4-.2-.1-.3-.2-.4-.4l-12.4-12.3-.1-.1c-1.9-2-1.9-5.2.1-7.2,2-1.9,5.3-1.9,7.2.1l9.5,9.5,22.5-22.5c2-2,5.2-2,7.2,0,1.9,2,1.9,5.2,0,7.2Z" />
+                        <path class="cls-1"
+                          d="m64.1,23c-.1-1.8-2.2-2.6-3.5-1.4l-2.9,2.9-8.1-8.1c-.2-.1-.3-.3-.5-.4-.1-.1-.2-.2-.3-.3-2-2-5.2-2-7.2,0l-26,26.1c-.9,1-1.4,2.3-1.3,3.7s.6,2.6,1.6,3.5,2.2,1.3,3.4,1.3,2.5-.5,3.5-1.4l22.5-22.4,5.2,5.2-2.5,2.5c-1.3,1.3-.4,3.4,1.4,3.5l13.1.5c1.2,0,2.2-.9,2.1-2.1l-.5-13.1h0Z" />
+                      </g>
+                    </svg>
+                  </span>
+                </form>
+            </article>
             <article class="o-grid__item">
               <p> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis laudantium consequatur quisquam
                 rerum necessitatibus cupiditate praesentium, hic ad laboriosam ex sint et quam neque, a quas. Dolorum in
@@ -105,46 +153,6 @@
                   <rect class="shake-rect-internal" x="5" y="5" width="30" height="30"></rect>
                 </svg>
               </label>
-            </article>
-            <article class="o-grid__item" style="--grow: 1 / span 5; --gcolumn: 5 / -1">
-              <h3 class="-highlighted">Dynamic <span>form</span></h3>
-              <input type="checkbox" id="add-request" class="a-modifier" />
-              <form class="m-form dynamic-form">
-                <input type="text" name="request" placeholder="Add request"
-                  class="m-form__component a-input theme -interactive" required />
-                <label role="button" for="add-request" class="m-formSubmit a-btn theme -interactive -relative"> Send
-                  request</label>
-                <span class="dynamic-form-loader" id="loading">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="form__loader__icon" viewBox="0 0 90 90">
-                    <defs>
-                      <style>
-                        .cls-1 {
-                          fill: #fff;
-                        }
-
-                        .cls-2,
-                        .cls-3 {
-                          fill: #36365f;
-                        }
-
-                        .cls-3 {
-                          fill-rule: evenodd;
-                        }
-
-                        .cls-4 {
-                          fill: #6f53db;
-                        }
-                      </style>
-                    </defs>
-                    <g id="Ebene_1-2">
-                      <path class="cls-1"
-                        d="m74.4,49.9l-26.1,26.1c-1,1-2.3,1.5-3.6,1.5s-2.6-.5-3.6-1.5c-.1-.1-.2-.2-.3-.4-.2-.1-.3-.2-.4-.4l-12.4-12.3-.1-.1c-1.9-2-1.9-5.2.1-7.2,2-1.9,5.3-1.9,7.2.1l9.5,9.5,22.5-22.5c2-2,5.2-2,7.2,0,1.9,2,1.9,5.2,0,7.2Z" />
-                      <path class="cls-1"
-                        d="m64.1,23c-.1-1.8-2.2-2.6-3.5-1.4l-2.9,2.9-8.1-8.1c-.2-.1-.3-.3-.5-.4-.1-.1-.2-.2-.3-.3-2-2-5.2-2-7.2,0l-26,26.1c-.9,1-1.4,2.3-1.3,3.7s.6,2.6,1.6,3.5,2.2,1.3,3.4,1.3,2.5-.5,3.5-1.4l22.5-22.4,5.2,5.2-2.5,2.5c-1.3,1.3-.4,3.4,1.4,3.5l13.1.5c1.2,0,2.2-.9,2.1-2.1l-.5-13.1h0Z" />
-                    </g>
-                  </svg>
-                </span>
-              </form>
             </article>
             <article class="o-grid__item">
               <p> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis laudantium consequatur quisquam
@@ -185,6 +193,9 @@
               <p> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis laudantium consequatur quisquam
                 rerum necessitatibus cupiditate praesentium, hic ad laboriosam ex sint et quam neque, a quas. Dolorum in
                 aliquid perferendis. </p>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse veritatis corporis nostrum nisi unde.
+                Consequuntur officia rem pariatur, repellendus laborum ipsam fuga, commodi vero quas, nemo unde deserunt
+                beatae non!</p>
             </article>
           </section>
           <div class="m-section">
@@ -211,7 +222,6 @@
                 vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum
                 qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
             </div>
-          </div>
         </main>
       </div>
       <!-- Theme bar -->
@@ -296,6 +306,7 @@
                   <p class="a-subtitle -highlighted">
                     <span>CSS Custom properties</span>
                   </p>
+                  <p class="a-subtitle -highlighted"><span>CSS Custom properties</span></p>
                   <p>Used for every variables and be changed at runtime.</p>
                   <a class="a-link" href="https://css-tricks.com/a-complete-guide-to-custom-properties/">CSS-Tricks - A
                     Complete Guide to Custom Properties</a>
@@ -304,8 +315,9 @@
                   <p class="a-subtitle -highlighted">
                     <span> ABEM: Atomic BEM (Block Element Modifier) CSS architecture </span>
                   </p>
-                  <a class="a-link" href="https://css-tricks.com/abem-useful-adaptation-bem/">CSS-Tricks - ABEM. A more
-                    useful adaptation of BEM.</a>
+                  <p class="a-subtitle -highlighted"><span> ABEM: Atomic BEM (Block Element Modifier) CSS architecture
+                    </span></p> <a class="a-link" href="https://css-tricks.com/abem-useful-adaptation-bem/">CSS-Tricks -
+                    ABEM. A more useful adaptation of BEM.</a>
                 </li>
                 <!-- <li class="m-list__item"></li>
                   <p class="a-subtitle -highlighted"><span>
@@ -320,7 +332,8 @@
                   <p class="a-subtitle -highlighted">
                     <span>Layout: Unholy Albatros</span>
                   </p>
-                  <a class="a-link" href="https://www.miragecraft.com/blog/unholy-albatross">Unholy Albatross</a>
+                  <p class="a-subtitle -highlighted"><span>Layout: Unholy Albatros</span></p> Stashed changes <a
+                    class="a-link" href="https://www.miragecraft.com/blog/unholy-albatross">Unholy Albatross</a>
                 </li>
                 <li>
                   <h4 class="m-list__item -highlighted text-xl"></h4>
@@ -335,7 +348,8 @@
                     <span>CSS boolean variables</span>
                   </p>
                   <p> Re-usable state logic with tricks using calc and custom properties </p>
-                  <a class="a-link"
+                  <p class="a-subtitle -highlighted"><span>CSS boolean variables</span></p>
+                  <p>Re-usable state logic with tricks using calc and custom properties</p> <a class="a-link"
                     href="https://keithclark.co.uk/articles/pseudo-boolean-css-custom-properties/">Pseudo-boolean CSS
                     custom properties</a>
                   <a class="a-link" href="https://dev.to/tracygjg/conditional-css-437e">Conditional CSS </a>
@@ -350,8 +364,10 @@
                     <span>Grid, apply styles to everything <i>but the element actually being hovered</i>
                     </span>
                   </p>
-                  <a class="a-link" href="https://css-tricks.com/hover-on-everything-but/"> Hover on “Everything
-                    But”</a>
+                  <p class="a-subtitle -highlighted"><span>Grid, apply styles to everything <i>but the element actually
+                        being hovered</i>
+                    </span></p> <a class="a-link" href="https://css-tricks.com/hover-on-everything-but/"> Hover on
+                    “Everything But”</a>
                   <div class="a-box -info">
                     <span><a href="https://css-tricks.com/examples/HoverEverythingBut/">Live Demo</a></span>
                   </div>
@@ -360,7 +376,8 @@
                 <li class="m-list__item">
                   <p class="a-subtitle -highlighted">
                     <span> How can I make an SVG scale with its parent container?</span>
-                  </p>
+                  <p class="a-subtitle -highlighted"><span> How can I make an SVG scale with its parent
+                      container?</span> </p>
                   <a class="a-link"
                     href="https://stackoverflow.com/questions/19484707/how-can-i-make-an-svg-scale-with-its-parent-container">
                     How can I make an SVG scale with its parent container? </a>
@@ -368,27 +385,31 @@
                 <li class="m-list__item">
                   <p class="a-subtitle -highlighted">
                     <span>How to scale SVG </span>
-                  </p>
+                  <p class="a-subtitle -highlighted"><span>How to scale SVG </span> </p>
                   <a class="a-link" href="https://css-tricks.com/scale-svg/">CSS-Tricks - How to scale SVG</a>
                 </li>
                 <li class="m-list__item">
                   <p class="a-subtitle -highlighted">
                     <span>The "Checkbox Hack"</span>
                   </p>
-                  <a class="a-link" href="https://css-tricks.com/the-checkbox-hack/">CSS-Tricks - The “Checkbox Hack”
-                    (and things you can do with it)</a>
+                  <p class="a-subtitle -highlighted"><span>The "Checkbox Hack"</span></p> <a class="a-link"
+                    href="https://css-tricks.com/the-checkbox-hack/">CSS-Tricks - The “Checkbox Hack” (and things you
+                    can do with it)</a>
                 </li>
                 <li class="m-list__item">
                   <p class="a-subtitle -highlighted">
                     <span>Shake CSS Animation</span>
                   </p>
-                  <a class="a-link" href="https://css-tricks.com/snippets/css/shake-css-keyframe-animation/">CSS-Tricks
-                    - Shake CSS Animation</a>
+                  <p class="a-subtitle -highlighted"><span>Shake CSS Animation</span></p> <a class="a-link"
+                    href="https://css-tricks.com/snippets/css/shake-css-keyframe-animation/">CSS-Tricks - Shake CSS
+                    Animation</a>
                 </li>
                 <li class="m-list__item">
                   <p class="a-subtitle -highlighted">
                     <span> `position: sticky` inside a container with overflow: hidden`</span>
                   </p>
+                  <p class="a-subtitle -highlighted"><span> `position: sticky` inside a container with overflow:
+                      hidden`</span> </p>
                   <p class="m-list__item__description"> Use <span class="m-list__item__description__solution">
                       `overflow: clip` </span> Sources: Stack Overflow <a
                       href="https://stackoverflow.com/a/72792224">answer from the specs</a> More simple ELI5 <a
@@ -403,20 +424,28 @@
                 </li>
                 <li class="m-list__item">
                   <p class="a-subtitle -highlighted"><span>Modal</span></p>
-                  <p class="m-list__item__description"></p>
+                  <p class="m-list__item__description">
+                  </p>
                   <ul>
                     <li> Prevent Page Scrolling When a Modal is Open -
                       [CSS-Tricks](https://css-tricks.com/prevent-page-scrolling-when-a-modal-is-open/) and
                       [comment](https://css-tricks.com/prevent-page-scrolling-when-a-modal-is-open/#comment-1713778) on
                       `overscroll-behavior` [CSS
                       property](https://developer.mozilla.org/en-US/docs/Web/CSS/overscroll-behavior) </li>
-                    <li> What is a modal? And how to build a CSS-only Modal - <a
-                        href="https://webdesign.tutsplus.com/css-only-modal--cms-107772t" class="a-link">Article
-                        link</a>
-                    </li>
-                  </ul>
-                  <a class="a-link" href="https://css-tricks.com/the-checkbox-hack/">CSS-Tricks - The “Checkbox Hack”
-                    (and things you can do with it)</a>
+                    <p class="m-list__item__description">
+                    <ul>
+                      <li>Prevent Page Scrolling When a Modal is Open -
+                        [CSS-Tricks](https://css-tricks.com/prevent-page-scrolling-when-a-modal-is-open/) and
+                        [comment](https://css-tricks.com/prevent-page-scrolling-when-a-modal-is-open/#comment-1713778)
+                        on `overscroll-behavior` [CSS
+                        property](https://developer.mozilla.org/en-US/docs/Web/CSS/overscroll-behavior)</li> Stashed
+                      changes <li> What is a modal? And how to build a CSS-only Modal - <a
+                          href="https://webdesign.tutsplus.com/css-only-modal--cms-107772t" class="a-link">Article
+                          link</a>
+                      </li>
+                    </ul>
+                    <a class="a-link" href="https://css-tricks.com/the-checkbox-hack/">CSS-Tricks - The “Checkbox Hack”
+                      (and things you can do with it)</a>
                 </li>
               </ol>
             </div>
@@ -447,6 +476,7 @@
       </div>
       <div class="m-modal__content">
         <p>Example of a drawer component.</p>
+        <p> Example of a drawer component.</p>
       </div>
       <div class="m-modal__footer">
         <label class="a-btn theme -interactive" for="drawer"><span>Close</span></label>
