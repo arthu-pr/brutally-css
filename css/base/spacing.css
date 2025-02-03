@@ -54,6 +54,10 @@
   margin-top: var(--space-md);
 }
 
+.mb-xs {
+  margin-bottom: var(--space-xs);
+}
+
 .padding-0 {
   padding: 0;
 }

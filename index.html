@@ -22,7 +22,7 @@
   <link href="css/components/atoms/typography.css" rel="stylesheet" />
   <link href="css/components/atoms/input.css" rel="stylesheet" />
   <link href="css/components/atoms/buttons.css" rel="stylesheet" />
-  <link href="css/components/atoms/link.css" rel="stylesheet" />
+  <link href="css/components/atoms/code.css" rel="stylesheet" />
   <!-- Molecules -->
   <link href="css/components/molecules/form.css" rel="stylesheet" />
   <link href="css/components/molecules/shake.css" rel="stylesheet" />
@@ -70,6 +70,8 @@
   <input type="checkbox" id="brutalist-modal" class="a-modifier" />
   <input type="checkbox" id="close-modal" class="a-modifier" />
   <div class="wrapper">
+    <div class="a-modifier">
+    </div>
     <div class="layout">
       <div class="main-content">
         <header class="banner">
@@ -92,6 +94,73 @@
         </header>
         <main>
           <section class="o-grid">
+            <article class="o-grid__item" style="--grow: 1 / span 3; --gcolumn: 1 / 3">
+              <div class="m-section">
+                <h3 class="m-section__title -highlighted -animate -active">Dynamic <span>form</span></h3>
+                <div class="dynamic-form">
+                  <input type="checkbox" id="add-request" class="a-modifier" />
+                  <form class="m-form  m-section__content">
+                    <div class="m-form-group">
+                      <label for="huey">Start the </label>
+                      <input type="radio" id="ready" name="ready" value="ready" />
+                    </div>
+                    <div class="interactive-choice m-form-group">
+                      <!-- Interactive choice checkboxes -->
+                      <div class="display-flex mb-xs">
+                        <label for="simple">Simple input</label>
+                        <input type="radio" id="simple" name="interactive-choice" value="simple" checked />
+                        <label for="colorful-input">Colorful input</label>
+                        <input type="radio" id="colorful-input" name="interactive-choice" value="colorful-input" />
+                        <label for="louie">Louie</label>
+                        <input type="radio" id="louie" name="interactive-choice" value="louie" />
+                      </div>
+                      <div data-component="colorful-input-text" class="m-form-group ">
+                        <label for="color" class="a-btn theme">qsdqsdqsd</label>
+                        <div class="position-relative">
+                          <input type="color" name="color" class="a-inputColor" id="color" />
+                          <input type="text" name="" placeholder="Add request" class="a-input theme -raw" />
+                        </div>
+                      </div>
+                      <input type="text" name="request" placeholder="Add request" class="a-input theme -interactive"
+                        id="simple-input" required/>
+                      <p id="louie-text">Lorem ipsum</p>
+                    </div>
+                    <label role="button" for="add-request" class="m-formSubmit a-btn theme -raw -relative ">
+                      <span>Send request</span>
+                    </label>
+                    <span class="dynamic-form-loader" id="loading">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="form__loader__icon" viewBox="0 0 90 90">
+                        <defs>
+                          <style>
+                            .cls-1 {
+                              fill: #fff;
+                            }
+
+                            .cls-2,
+                            .cls-3 {
+                              fill: #36365f;
+                            }
+
+                            .cls-3 {
+                              fill-rule: evenodd;
+                            }
+
+                            .cls-4 {
+                              fill: #6f53db;
+                            }
+                          </style>
+                        </defs>
+                        <g id="Ebene_1-2">
+                          <path class="cls-1"
+                            d="m74.4,49.9l-26.1,26.1c-1,1-2.3,1.5-3.6,1.5s-2.6-.5-3.6-1.5c-.1-.1-.2-.2-.3-.4-.2-.1-.3-.2-.4-.4l-12.4-12.3-.1-.1c-1.9-2-1.9-5.2.1-7.2,2-1.9,5.3-1.9,7.2.1l9.5,9.5,22.5-22.5c2-2,5.2-2,7.2,0,1.9,2,1.9,5.2,0,7.2Z" />
+                          <path class="cls-1"
+                            d="m64.1,23c-.1-1.8-2.2-2.6-3.5-1.4l-2.9,2.9-8.1-8.1c-.2-.1-.3-.3-.5-.4-.1-.1-.2-.2-.3-.3-2-2-5.2-2-7.2,0l-26,26.1c-.9,1-1.4,2.3-1.3,3.7s.6,2.6,1.6,3.5,2.2,1.3,3.4,1.3,2.5-.5,3.5-1.4l22.5-22.4,5.2,5.2-2.5,2.5c-1.3,1.3-.4,3.4,1.4,3.5l13.1.5c1.2,0,2.2-.9,2.1-2.1l-.5-13.1h0Z" />
+                        </g>
+                      </svg>
+                    </span>
+                  </form>
+                </div>
+            </article>
             <article class="o-grid__item">
               <p> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis laudantium consequatur quisquam
                 rerum necessitatibus cupiditate praesentium, hic ad laboriosam ex sint et quam neque, a quas. Dolorum in
@@ -276,39 +345,39 @@
                   <line x1="20" y1="20" x2="20" y2="40" />
                 </svg>
               </label>
-            </button>
+              </a>
           </li>
         </ul>
       </section>
       <!-- How does it work? -->
       <section class="o-howDoesItWork">
         <div class="o-howDoesItWork__header">
-          <label role="button" for="how-does-it-work-back" class="o-howDoesItWork__backBtn a-btn theme m-0"
-            aria-label="back-button"> Back </label>
+          <!-- <label role="button" for="how-does-it-work-back" class="o-howDoesItWork__backBtn a-btn theme m-0"
+            aria-label="back-button"> Back </label> -->
           <h2 class="m-0">How Does It Work?</h2>
         </div>
         <div class="o-howDoesItWork__content">
           <div class="o-howDoesItWork__lists">
             <div class="container">
-              <h4>Global architecture</h4>
-              <ul class="m-list">
+              <h3>Global architecture</h3>
+              <ol class="m-list">
                 <li class="m-list__item">
-                  <p class="a-subtitle -highlighted">
+                  <h4 class="a-subtitle -highlighted">
                     <span>CSS Custom properties</span>
-                  </p>
+                  </h4>
                   <p>Used for every variables and be changed at runtime.</p>
                   <a class="a-link" href="https://css-tricks.com/a-complete-guide-to-custom-properties/">CSS-Tricks - A
                     Complete Guide to Custom Properties</a>
                 </li>
                 <li class="m-list__item">
-                  <p class="a-subtitle -highlighted">
+                  <h4 class="a-subtitle -highlighted">
                     <span> ABEM: Atomic BEM (Block Element Modifier) CSS architecture </span>
-                  </p>
+                  </h4>
                   <a class="a-link" href="https://css-tricks.com/abem-useful-adaptation-bem/">CSS-Tricks - ABEM. A more
                     useful adaptation of BEM.</a>
                 </li>
                 <!-- <li class="m-list__item"></li>
-                  <p class="a-subtitle -highlighted"><span>
+                  <h4 class="a-subtitle -highlighted"><span>
                     Building a Scalable CSS Architecture With BEM and Utility Classes
                   </p>
                   <a class="a-link"
@@ -317,78 +386,106 @@
                     Scalable CSS Architecture With BEM and Utility Classes</a>
                 </li> -->
                 <li class="m-list__item">
-                  <p class="a-subtitle -highlighted">
+                  <h4 class="a-subtitle -highlighted">
                     <span>Layout: Unholy Albatros</span>
-                  </p>
+                  </h4>
                   <a class="a-link" href="https://www.miragecraft.com/blog/unholy-albatross">Unholy Albatross</a>
                 </li>
-                <li>
+                <!-- <li>
                   <h4 class="m-list__item -highlighted text-xl"></h4>
                   <p class="m-list__item__description">
                     <span class="m-list__item__description__solution"> grid-auto-flow: column; makes items flow across
                       columns, ie into a single row align-self: center; does vertical centering </span> Sources: Stack
                     Overflow <a href="https://stackoverflow.com/a/50801675">answer from the specs</a>
                   </p>
+                </li> -->
+              </ol>
+              <h3>Tricks used</h3>
+              <ol>
+                <li class="m-list__item">
+                  <h4 class="a-subtitle -highlighted">
+                    <span>The "Checkbox Hack"</span>
+                  </h4>
+                  <a class="a-link" href="https://css-tricks.com/the-checkbox-hack/">CSS-Tricks - The “Checkbox Hack”
+                    (and things you can do with it)</a>
                 </li>
                 <li class="m-list__item">
-                  <p class="a-subtitle -highlighted">
+                  <h4 class="a-subtitle -highlighted">
                     <span>CSS boolean variables</span>
-                  </p>
-                  <p> Re-usable state logic with tricks using calc and custom properties </p>
-                  <a class="a-link"
-                    href="https://keithclark.co.uk/articles/pseudo-boolean-css-custom-properties/">Pseudo-boolean CSS
-                    custom properties</a>
+                  </h4>
+                  <p>Re-usable state logic with tricks using calc and custom properties</p>
                   <a class="a-link" href="https://dev.to/tracygjg/conditional-css-437e">Conditional CSS </a>
+                  <a class="a-link" href="https://keithclark.co.uk/articles/pseudo-boolean-css-custom-properties/">
+                    Pseudo-boolean CSS custom properties </a>
+                  <pre data-code="css">
+                    <code>
+--icon-visible: 1;
+  .icon {
+    width: calc(16px * var(--icon-visible, 1));
+  }
+
+  /* Later */
+  --icon-visible: 0;
+                    </code>
+                  </pre>
                 </li>
-              </ul>
+                <li class="m-list__item">
+                  <h4 class="a-subtitle -highlighted">
+                    <span>Pseudo-selector</span>
+                  </h4>
+                  <h5>:has()</h5>
+                  <p>:has() acts as a parent selector - style the parent depending on the child(ren)</p>
+                  <pre data-code="css">
+                    <code>
+.dynamic-form {
+  container: dynamic-form;
+  container-type: inline-size;
+  --unstyled: 0;
+  --border-color: var(--theme-color);
+}
+
+.dynamic-form:has(#ready:not(:checked)) {
+  --unstyled: 1;
+  --border-color: transparent;
+}
+                    </code>
+                  </pre>
+                  <a class="a-link" href="https://ishadeed.com/article/css-has-guide/">CSS :has() Interactive Guide</a>
+                </li>
+              </ol>
             </div>
             <div class="container">
-              <h4>Specific features</h4>
-              <ol class="m-list">
+              <h3>Specific features</h3>
+              <ol role="list">
                 <li class="m-list__item">
-                  <p class="a-subtitle -highlighted">
-                    <span>Grid, apply styles to everything <i>but the element actually being hovered</i>
-                    </span>
-                  </p>
-                  <a class="a-link" href="https://css-tricks.com/hover-on-everything-but/"> Hover on “Everything
-                    But”</a>
+                  <h4 class="a-subtitle -highlighted"><span>Grid, apply styles to everything <i>but the element actually
+                        being hovered</i>
+                    </span></h4> <a class="a-link" href="https://css-tricks.com/hover-on-everything-but/"> Hover on
+                    “Everything But”</a>
                   <div class="a-box -info">
                     <span><a href="https://css-tricks.com/examples/HoverEverythingBut/">Live Demo</a></span>
                   </div>
                   <p class="-info"></p>
                 </li>
                 <li class="m-list__item">
-                  <p class="a-subtitle -highlighted">
-                    <span> How can I make an SVG scale with its parent container?</span>
-                  </p>
+                  <h4 class="a-subtitle -highlighted"><span> How can I make an SVG scale with its parent
+                      container?</span> </h4>
                   <a class="a-link"
                     href="https://stackoverflow.com/questions/19484707/how-can-i-make-an-svg-scale-with-its-parent-container">
                     How can I make an SVG scale with its parent container? </a>
                 </li>
                 <li class="m-list__item">
-                  <p class="a-subtitle -highlighted">
-                    <span>How to scale SVG </span>
-                  </p>
+                  <h4 class="a-subtitle -highlighted"><span>How to scale SVG </span> </h4>
                   <a class="a-link" href="https://css-tricks.com/scale-svg/">CSS-Tricks - How to scale SVG</a>
                 </li>
                 <li class="m-list__item">
-                  <p class="a-subtitle -highlighted">
-                    <span>The "Checkbox Hack"</span>
-                  </p>
-                  <a class="a-link" href="https://css-tricks.com/the-checkbox-hack/">CSS-Tricks - The “Checkbox Hack”
-                    (and things you can do with it)</a>
+                  <h4 class="a-subtitle -highlighted"><span>Shake CSS Animation</span></p> <a class="a-link"
+                    href="https://css-tricks.com/snippets/css/shake-css-keyframe-animation/">CSS-Tricks - Shake CSS
+                    Animation</a>
                 </li>
                 <li class="m-list__item">
-                  <p class="a-subtitle -highlighted">
-                    <span>Shake CSS Animation</span>
-                  </p>
-                  <a class="a-link" href="https://css-tricks.com/snippets/css/shake-css-keyframe-animation/">CSS-Tricks
-                    - Shake CSS Animation</a>
-                </li>
-                <li class="m-list__item">
-                  <p class="a-subtitle -highlighted">
-                    <span> `position: sticky` inside a container with overflow: hidden`</span>
-                  </p>
+                  <h4 class="a-subtitle -highlighted"><span> `position: sticky` inside a container with overflow:
+                      hidden`</span> </h4>
                   <p class="m-list__item__description"> Use <span class="m-list__item__description__solution">
                       `overflow: clip` </span> Sources: Stack Overflow <a
                       href="https://stackoverflow.com/a/72792224">answer from the specs</a> More simple ELI5 <a
@@ -401,24 +498,41 @@
                         ">(used on `.wrapper`)</span>
                   </p>
                 </li>
-                <li class="m-list__item">
-                  <p class="a-subtitle -highlighted"><span>Modal</span></p>
-                  <p class="m-list__item__description"></p>
-                  <ul>
-                    <li> Prevent Page Scrolling When a Modal is Open -
-                      [CSS-Tricks](https://css-tricks.com/prevent-page-scrolling-when-a-modal-is-open/) and
-                      [comment](https://css-tricks.com/prevent-page-scrolling-when-a-modal-is-open/#comment-1713778) on
-                      `overscroll-behavior` [CSS
-                      property](https://developer.mozilla.org/en-US/docs/Web/CSS/overscroll-behavior) </li>
-                    <li> What is a modal? And how to build a CSS-only Modal - <a
-                        href="https://webdesign.tutsplus.com/css-only-modal--cms-107772t" class="a-link">Article
+                </ol>
+                <h3>Components</h3>
+                <ol>
+                  <li class="m-list__item">
+                    <h4 class="a-subtitle -highlighted"><span>Modal</span></h4>
+                    <p class="m-list__item__description">
+                    </p>
+                        <h5>Prevent Page Scrolling When a Modal is Open</h5>
+                        <a href="https://css-tricks.com/prevent-page-scrolling-when-a-modal-is-open/" class="a-link">CSS-Tricks</a>
+                        and <a
+                          href="https://css-tricks.com/prevent-page-scrolling-when-a-modal-is-open/#comment-1713778">comment</a>
+                        `overscroll-behavior` [CSS
+                        property](https://developer.mozilla.org/en-US/docs/Web/CSS/overscroll-behavior)
+                        <h5 class=""><span>What is a modal? And how to build a CSS-only Modal</span></h5>
+                      <a href="https://webdesign.tutsplus.com/css-only-modal--cms-107772t" class="a-link">Article
                         link</a>
-                    </li>
-                  </ul>
-                  <a class="a-link" href="https://css-tricks.com/the-checkbox-hack/">CSS-Tricks - The “Checkbox Hack”
-                    (and things you can do with it)</a>
+                  </li>
+                  <li class="m-list__item">
+                    <h4 class="a-subtitle -highlighted"><span>Form</span></h4>
+                    <p class="m-list__item__description">
+                    </p>
+                        <h5>`:focus-within`</h5>
+                        <a href="https://css-tricks.com/accessible-forms-with-pseudo-classes/">Accessible Forms with Pseudo Classes</a>
+                  </li>
+                  </ol>
+                  <h3>Other</h3>
+                  <ol>
+                <li class="m-list__item">
+                  <p class="m-list__item__description">
+                  </p>
+                      <h5> `accent-color`</h5>
+                      https://dev.to/technoph1le/the-css-accent-color-property-explained-4h9o and <a
+                        href="https://css-tricks.com/almanac/properties/a/accent-color/">CSS-Tricks</a>
                 </li>
-              </ol>
+                </ol>
             </div>
           </div>
         </div>

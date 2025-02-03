@@ -3,7 +3,40 @@
   position: relative;
 }
 
-.dynamic-form:valid .m-formSubmit {
+.dynamic-form {
+  --unstyled: 0;
+  --border-color: var(--theme-color);
+}
+
+.dynamic-form:has(#ready:not(:checked)) {
+  --unstyled: 1;
+  --border-color: transparent;
+}
+
+input[name='request'],
+[data-component='colorful-input-text'],
+#louie-text {
+  display: none;
+}
+
+.dynamic-form:has(#simple:checked) #simple-input {
+  display: block;
+}
+
+.dynamic-form:has(#colorful-input:checked)
+  [data-component='colorful-input-text'] {
+  display: block;
+}
+
+.dynamic-form:has(#louie:checked) #louie-text {
+  display: block;
+}
+
+.dynamic-form form {
+  height: 100%;
+}
+
+.dynamic-form form:valid .m-formSubmit {
   display: inline-block;
   content: 'Send Request';
 }
@@ -32,7 +65,7 @@
   --is-disabled: 1;
 }
 
-#add-request:checked ~ .dynamic-form .m-formSubmit {
+#add-request:checked ~ .m-form .m-formSubmit {
   cursor: not-allowed;
   z-index: -1;
 
@@ -40,7 +73,7 @@
   animation-delay: 30s;
 }
 
-#add-request:checked ~ .dynamic-form .m-formSubmit::before {
+#add-request:checked ~ .m-form .m-formSubmit::before {
   content: 'Loading...';
   display: flex;
   align-items: center;
@@ -57,7 +90,7 @@
   z-index: 1;
 }
 
-#add-request:checked ~ .dynamic-form .m-formSubmit::after {
+#add-request:checked ~ .m-form .m-formSubmit::after {
   content: 'ERROR';
   display: flex;
   align-items: center;

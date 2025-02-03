@@ -1,0 +1,21 @@
+[data-code] {
+  font-size: var(--text-sm);
+  position: relative;
+  background-color: var(--color-contrast-low);
+  padding: var(--space-xxs) var(--space-sm);
+}
+
+[data-code]::after {
+  content: attr(data-code);
+  position: absolute;
+  top: var(--space-xxs);
+  right: var(--space-sm);
+  /* background-color: var(--color-theme-50);
+  color: var(--color-theme-900);
+  padding: var(--space-xs);
+  border-radius: var(--radius);
+  font-size: var(--text-xs); */
+  /* font-weight: bold; */
+  text-transform: uppercase;
+  font-size: var(--text-md);
+}

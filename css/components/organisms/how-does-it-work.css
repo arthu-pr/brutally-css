@@ -1,4 +1,6 @@
 .o-howDoesItWork {
+  container: how-does-it-work;
+  container-type: inline-size;
   overflow: hidden;
   height: 100%;
   position: sticky;
@@ -46,4 +48,53 @@
   height: 100%;
   overflow-y: auto;
   scrollbar-width: none; */
+}
+
+/* --------------------------------------------- */
+
+/*  Styling of the list based on the parend */
+@container how-does-it-work (min-width: 0) {
+  .m-list {
+    list-style-type: upper-roman;
+  }
+
+  .m-list__item {
+    position: relative;
+    padding: var(--space-xs) 0 var(--space-sm);
+    border-top: var(--border-theme-10);
+  }
+
+  .m-list__item:not(:last-child) {
+    border-bottom: var(--border-theme-25);
+  }
+
+  .a-link {
+    color: var(--theme-color);
+    text-decoration-color: currentColor;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 2px;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    margin: var(--space-xxs) 0;
+  }
+
+  .a-link::before {
+    content: '';
+    background-color: var(--theme-color);
+    background-image: url('/img/hyperlink.svg');
+    background-repeat: no-repeat;
+    height: 1rem;
+    flex-basis: 1rem;
+    flex-shrink: 0;
+    padding: 2px;
+    background-position: center center;
+  }
+
+  h4,
+  h5 {
+    margin: var(--space-xs) 0;
+    color: var(--theme-color);
+    font-weight: 700;
+  }
 }

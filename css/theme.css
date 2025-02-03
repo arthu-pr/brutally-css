@@ -36,7 +36,7 @@ body {
   --border-theme-75: var(--border-width-75) solid var(--theme-color);
 
   /* Spacing */
-  --container: var(--space-md) var(--space-lg) var(--space-sm);
+  --container: var(--space-md) var(--space-md) var(--space-sm);
 
   /* Components */
   --not-raw: calc(1 - var(--raw));

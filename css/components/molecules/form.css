@@ -1,5 +1,13 @@
 .m-form {
   margin: var(--space-xs) 0;
+  padding: 0 var(--space-xs);
+  border: var(--border-width-50) solid var(--border-color);
+  container: dynamic-form;
+  container-type: inline-size;
+}
+
+.m-form .m-form-group {
+  margin-bottom: var(--space-xs);
 }
 
 .form svg {
@@ -25,3 +33,38 @@
   animation-iteration-count: infinite;
   animation-timing-function: linear;
 }
+
+[data-initial-state='hidden'] {
+  visibility: hidden;
+}
+
+.m-form__component:user-invalid {
+  --theme-color: var(--color-error);
+}
+
+.m-form__component:user-invalid:before {
+  /* HTML symbol "!" */
+  content: '⚡';
+  position: absolute;
+  right: 0;
+  top: 0;
+  color: var(--theme-color);
+}
+
+.m-form__component:user-valid {
+  border-color: var(--theme-color);
+}
+
+/* Context Sensitive Style - https://css-tricks.com/abem-useful-adaptation-bem/#aa-context-sensitive-styles */
+.m-form .a-input {
+  /* --theme-color: var(--color-error); */
+}
+label[for='color'] {
+  position: relative;
+  width: 100%;
+  display: inline-block;
+}
+
+/* .m-form:focus-within {
+  border-color: var(--theme-color);
+} */

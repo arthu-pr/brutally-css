@@ -1,15 +1,29 @@
 :root {
+  --font-size-base: 1rem;
+  --multiplier: 1.5;
   /* https://utopia.fyi/type/calculator/?c=320,16,1.25,1620,16,1.5,5,5,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
   /* Step -2: 10.24px → 7.1111px */
   --text-xs: clamp(0.4444rem, 0.6881rem + -0.2407vw, 0.64rem);
   /* Step -1: 12.8px → 10.6667px */
   --text-sm: clamp(0.6667rem, 0.8328rem + -0.1641vw, 0.8rem);
   /* Step 0: 16px → 16px */
-  --text-md: clamp(1rem, 1rem + 0vw, 1rem);
+  --text-md: clamp(
+    var(--font-size-base),
+    var(--font-size-base),
+    var(--font-size-base)
+  );
   /* Step 1: 20px → 24px */
-  --text-lg: clamp(1.25rem, 1.1885rem + 0.3077vw, 1.5rem);
+  --text-lg: clamp(
+    calc(1.25 * var(--font-size-base)),
+    1.25rem,
+    calc(1.5 * var(--font-size-base))
+  );
   /* Step 2: 25px → 36px */
-  --text-xl: clamp(1.5625rem, 1.3933rem + 0.8462vw, 2.25rem);
+  --text-xl: clamp(
+    calc(1.5625 * var(--font-size-base)),
+    1.3933rem + 0.8462vw,
+    calc(2.25 * var(--font-size-base))
+  );
   /* Step 3: 31.25px → 54px */
   --text-xxl: clamp(1.9531rem, 1.6031rem + 1.75vw, 3.375rem);
   /* Step 4: 39.0625px → 81px */
@@ -66,16 +80,16 @@ p {
   font-size: var(--text-lg);
 }
 
-.a-subtitle {
+/* .a-subtitle {
   font-size: var(--text-lg);
-}
+} */
 
 @media (min-width: 64rem) {
   .a-title {
     font-size: var(--text-xl);
   }
 
-  .a-subtitle {
+  /* .a-subtitle {
     font-size: var(--text-lg);
-  }
+  } */
 }
