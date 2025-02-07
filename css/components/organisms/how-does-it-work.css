@@ -75,11 +75,12 @@
     text-underline-offset: 2px;
     display: flex;
     align-items: flex-start;
+    align-items: center;
     gap: 0.5rem;
     margin: var(--space-xxs) 0;
   }
 
-  .a-link::before {
+  /* .a-link::before {
     content: '';
     background-color: var(--theme-color);
     background-image: url('/img/hyperlink.svg');
@@ -89,7 +90,7 @@
     flex-shrink: 0;
     padding: 2px;
     background-position: center center;
-  }
+  } */
 
   h4,
   h5 {

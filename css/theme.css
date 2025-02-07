@@ -69,6 +69,13 @@ body {
     var(--component-translate-x),
     var(--component-translate-y)
   );
+
+  /* ----------------------------------------------------------------------------- */
+
+  /* Components */
+
+  /* Navbar */
+  --navbar-size: 60px;
 }
 
 @media (min-width: 48rem) {

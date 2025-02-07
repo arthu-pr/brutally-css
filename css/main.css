@@ -198,6 +198,7 @@ h4::after {
 .main-content {
   position: relative;
   border-right: var(--border-width) solid var(--theme-color);
+  transform: translateY(0);
 }
 
 .grid-container {

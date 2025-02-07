@@ -34,6 +34,54 @@
   /* Step 5: 67.34px → 199.60px */
   --h1-highlight: clamp(4.2088rem, 2.174rem + 10.1738vw, 12.475rem);
   /* --h1: clamp(1.3688rem, 2.174rem + 10.1738vw, 12.475rem); */
+
+  --text-xxs: clamp(0.3537rem, 0.551rem + -0.1948cqi, 0.512rem);
+  /* Step -2: 10.24px → 8.0024px */
+  --text-xs: clamp(0.5002rem, 0.6744rem + -0.1721cqi, 0.64rem);
+  /* Step -1: 12.8px → 11.3154px */
+  --text-sm: clamp(0.7072rem, 0.8228rem + -0.1142cqi, 0.8rem);
+  /* Step 0: 16px → 16px */
+  --text-md: clamp(1rem, 1rem + 0cqi, 1rem);
+  /* Step 1: 20px → 22.624px */
+  --text-lg: clamp(1.25rem, 1.2096rem + 0.2018cqi, 1.414rem);
+  /* Step 2: 25px → 31.9903px */
+  --text-xl: clamp(1.5625rem, 1.455rem + 0.5377cqi, 1.9994rem);
+  /* Step 3: 31.25px → 45.2343px */
+  --text-xxl: clamp(1.9531rem, 1.738rem + 1.0757cqi, 2.8271rem);
+  /* Step 4: 39.0625px → 63.9613px */
+  --h1: clamp(2.4414rem, 2.0583rem + 1.9153cqi, 3.9976rem);
+  /* Step 5: 48.8281px → 95.9516px */
+  --h1-highlight: clamp(3.8147rem, 2.7863rem + 5.1422cqi, 7.9928rem);
+  /* --h1: clamp(3.8147rem, 2.7863rem + 5.1422cqi, 7.9928rem); */
+
+  /* Step -3: 8.192px → 4.7407px */
+  --text--3: clamp(0.2963rem, 0.5651rem + -0.2655cqi, 0.512rem);
+  /* Step -2: 10.24px → 7.1111px */
+  --text--2: clamp(0.4444rem, 0.6881rem + -0.2407cqi, 0.64rem);
+  /* Step -1: 12.8px → 10.6667px */
+  --text--1: clamp(0.6667rem, 0.8328rem + -0.1641cqi, 0.8rem);
+  /* Step 0: 16px → 16px */
+  --text-0: clamp(1rem, 1rem + 0cqi, 1rem);
+  /* Step 1: 20px → 24px */
+  --text-1: clamp(1.25rem, 1.1885rem + 0.3077cqi, 1.5rem);
+  /* Step 2: 25px → 36px */
+  --text-2: clamp(1.5625rem, 1.3933rem + 0.8462cqi, 2.25rem);
+  /* Step 3: 31.25px → 54px */
+  --text-3: clamp(1.9531rem, 1.6031rem + 1.75cqi, 3.375rem);
+  /* Step 4: 39.0625px → 81px */
+  --text-4: clamp(2.4414rem, 1.7962rem + 3.226cqi, 5.0625rem);
+  /* Step 5: 48.8281px → 121.5px */
+  --text-5: clamp(3.0518rem, 1.9337rem + 5.5901cqi, 7.5938rem);
+
+  --text-xxs: var(--text--3);
+  --text-xs: var(--text--2);
+  --text-sm: var(--text--1);
+  --text-md: var(--text-0);
+  --text-lg: var(--text-1);
+  --text-xl: var(--text-2);
+  --text-xxl: var(--text-3);
+  --h1: var(--text-4);
+  --h1-highlight: var(--text-5);
 }
 
 h1,

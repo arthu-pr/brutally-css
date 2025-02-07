@@ -23,6 +23,7 @@
   <link href="css/components/atoms/input.css" rel="stylesheet" />
   <link href="css/components/atoms/buttons.css" rel="stylesheet" />
   <link href="css/components/atoms/code.css" rel="stylesheet" />
+  <link href="css/components/atoms/link.css" rel="stylesheet" />
   <!-- Molecules -->
   <link href="css/components/molecules/form.css" rel="stylesheet" />
   <link href="css/components/molecules/shake.css" rel="stylesheet" />
@@ -30,10 +31,12 @@
   <link href="css/components/molecules/list.css" rel="stylesheet" />
   <link href="css/components/molecules/modal.css" rel="stylesheet" />
   <link href="css/components/molecules/section.css" rel="stylesheet" />
+  <link href="css/components/molecules/navbar.css" rel="stylesheet" />
   <!-- Organisms -->
   <link href="css/components/organisms/grid.css" rel="stylesheet" />
   <link href="css/components/organisms/how-does-it-work.css" rel="stylesheet" />
   <link href="css/components/organisms/theme-bar.css" rel="stylesheet" />
+  <link href="css/components/organisms/info-section.css" rel="stylesheet" />
   <!-- Animations -->
   <link href="css/animations/highlighted.css" rel="stylesheet" />
   <link href="css/animations/vertical.css" rel="stylesheet" />
@@ -74,6 +77,12 @@
     </div>
     <div class="layout">
       <div class="main-content">
+        <section class="o-infoSection">
+          <div class="o-infoSection__content"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto culpa
+            rerum fuga odit quam quia debitis cumque, perspiciatis illo aperiam vitae nobis, porro vero at, possimus
+            omnis molestiae velit nostrum. </div>
+          <div role="navigation" class="m-navbar">Show Components !!</div>
+        </section>
         <header class="banner">
           <span class="banner__alert">&#9888;</span>
           <span class="banner__alert">&#9888;</span>
@@ -122,7 +131,7 @@
                         </div>
                       </div>
                       <input type="text" name="request" placeholder="Add request" class="a-input theme -interactive"
-                        id="simple-input" required/>
+                        id="simple-input" required />
                       <p id="louie-text">Lorem ipsum</p>
                     </div>
                     <label role="button" for="add-request" class="m-formSubmit a-btn theme -raw -relative ">
@@ -205,7 +214,6 @@
                 rerum necessitatibus cupiditate praesentium, hic ad laboriosam ex sint et quam neque, a quas. Dolorum in
                 aliquid perferendis. </p>
             </article>
-           
           </section>
           <div class="m-section">
             <h3 class="m-section__title">Section</h3>
@@ -313,7 +321,7 @@
               <h3>Global architecture</h3>
               <ol class="m-list">
                 <li class="m-list__item">
-                  <h4 class="a-subtitle -highlighted">
+                  <h4>
                     <span>CSS Custom properties</span>
                   </h4>
                   <p>Used for every variables and be changed at runtime.</p>
@@ -321,14 +329,14 @@
                     Complete Guide to Custom Properties</a>
                 </li>
                 <li class="m-list__item">
-                  <h4 class="a-subtitle -highlighted">
+                  <h4>
                     <span> ABEM: Atomic BEM (Block Element Modifier) CSS architecture </span>
                   </h4>
                   <a class="a-link" href="https://css-tricks.com/abem-useful-adaptation-bem/">CSS-Tricks - ABEM. A more
                     useful adaptation of BEM.</a>
                 </li>
                 <!-- <li class="m-list__item"></li>
-                  <h4 class="a-subtitle -highlighted"><span>
+                  <h4 ><span>
                     Building a Scalable CSS Architecture With BEM and Utility Classes
                   </p>
                   <a class="a-link"
@@ -337,18 +345,20 @@
                     Scalable CSS Architecture With BEM and Utility Classes</a>
                 </li> -->
                 <li class="m-list__item">
-                  <h4 class="a-subtitle -highlighted">
+                  <h4>
                     <span>Layout: Unholy Albatros</span>
                   </h4>
                   <a class="a-link" href="https://www.miragecraft.com/blog/unholy-albatross">Unholy Albatross</a>
                 </li>
                 <li class="m-list__item">
-                  <h4 class="a-subtitle -highlighted">
+                  <h4>
                     <span>Container queries (WIP)</span>
                   </h4>
-                  <blockquote cite="https://css-tricks.com/css-container-queries/">Create layouts made with elements that respond to, say, the width of their containers rather than the width of the viewport.</blockquote>
-                  <a class="a-link" href="https://css-tricks.com/css-container-queries/">CSS-Tricks - CSS Container Queries
-                  </a>
+                  <blockquote cite="https://css-tricks.com/css-container-queries/">Create layouts made with elements
+                    that respond to, say, the width of their containers rather than the width of the viewport.
+                  </blockquote>
+                  <a class="a-link" href="https://css-tricks.com/css-container-queries/">CSS-Tricks - CSS Container
+                    Queries </a>
                 </li>
                 <!-- <li>
                   <h4 class="m-list__item -highlighted text-xl"></h4>
@@ -362,14 +372,14 @@
               <h3>Tricks used</h3>
               <ol>
                 <li class="m-list__item">
-                  <h4 class="a-subtitle -highlighted">
+                  <h4>
                     <span>The "Checkbox Hack"</span>
                   </h4>
                   <a class="a-link" href="https://css-tricks.com/the-checkbox-hack/">CSS-Tricks - The “Checkbox Hack”
                     (and things you can do with it)</a>
                 </li>
                 <li class="m-list__item">
-                  <h4 class="a-subtitle -highlighted">
+                  <h4>
                     <span>CSS boolean variables</span>
                   </h4>
                   <p>Re-usable state logic with tricks using calc and custom properties</p>
@@ -389,7 +399,7 @@
                   </pre>
                 </li>
                 <li class="m-list__item">
-                  <h4 class="a-subtitle -highlighted">
+                  <h4>
                     <span>Pseudo-selector</span>
                   </h4>
                   <h5>:has()</h5>
@@ -417,8 +427,7 @@
               <h3>Specific features</h3>
               <ol role="list">
                 <li class="m-list__item">
-                  <h4 class="a-subtitle -highlighted"><span>Grid, apply styles to everything <i>but the element actually
-                        being hovered</i>
+                  <h4><span>Grid, apply styles to everything <i>but the element actually being hovered</i>
                     </span></h4> <a class="a-link" href="https://css-tricks.com/hover-on-everything-but/"> Hover on
                     “Everything But”</a>
                   <div class="a-box -info">
@@ -427,24 +436,22 @@
                   <p class="-info"></p>
                 </li>
                 <li class="m-list__item">
-                  <h4 class="a-subtitle -highlighted"><span> How can I make an SVG scale with its parent
-                      container?</span> </h4>
+                  <h4><span> How can I make an SVG scale with its parent container?</span> </h4>
                   <a class="a-link"
                     href="https://stackoverflow.com/questions/19484707/how-can-i-make-an-svg-scale-with-its-parent-container">
                     How can I make an SVG scale with its parent container? </a>
                 </li>
                 <li class="m-list__item">
-                  <h4 class="a-subtitle -highlighted"><span>How to scale SVG </span> </h4>
+                  <h4><span>How to scale SVG </span> </h4>
                   <a class="a-link" href="https://css-tricks.com/scale-svg/">CSS-Tricks - How to scale SVG</a>
                 </li>
                 <li class="m-list__item">
-                  <h4 class="a-subtitle -highlighted"><span>Shake CSS Animation</span></p> <a class="a-link"
-                    href="https://css-tricks.com/snippets/css/shake-css-keyframe-animation/">CSS-Tricks - Shake CSS
-                    Animation</a>
+                  <h4><span>Shake CSS Animation</span></p> <a class="a-link"
+                      href="https://css-tricks.com/snippets/css/shake-css-keyframe-animation/">CSS-Tricks - Shake CSS
+                      Animation</a>
                 </li>
                 <li class="m-list__item">
-                  <h4 class="a-subtitle -highlighted"><span> `position: sticky` inside a container with overflow:
-                      hidden`</span> </h4>
+                  <h4><span> `position: sticky` inside a container with overflow: hidden`</span> </h4>
                   <p class="m-list__item__description"> Use <span class="m-list__item__description__solution">
                       `overflow: clip` </span> Sources: Stack Overflow <a
                       href="https://stackoverflow.com/a/72792224">answer from the specs</a> More simple ELI5 <a
@@ -457,41 +464,48 @@
                         ">(used on `.wrapper`)</span>
                   </p>
                 </li>
-                </ol>
-                <h3>Components</h3>
-                <ol>
-                  <li class="m-list__item">
-                    <h4 class="a-subtitle -highlighted"><span>Modal</span></h4>
-                    <p class="m-list__item__description">
-                    </p>
-                        <h5>Prevent Page Scrolling When a Modal is Open</h5>
-                        <a href="https://css-tricks.com/prevent-page-scrolling-when-a-modal-is-open/" class="a-link">CSS-Tricks</a>
-                        and <a
-                          href="https://css-tricks.com/prevent-page-scrolling-when-a-modal-is-open/#comment-1713778">comment</a>
-                        `overscroll-behavior` [CSS
-                        property](https://developer.mozilla.org/en-US/docs/Web/CSS/overscroll-behavior)
-                        <h5 class=""><span>What is a modal? And how to build a CSS-only Modal</span></h5>
-                      <a href="https://webdesign.tutsplus.com/css-only-modal--cms-107772t" class="a-link">Article
-                        link</a>
-                  </li>
-                  <li class="m-list__item">
-                    <h4 class="a-subtitle -highlighted"><span>Form</span></h4>
-                    <p class="m-list__item__description">
-                    </p>
-                        <h5>`:focus-within`</h5>
-                        <a href="https://css-tricks.com/accessible-forms-with-pseudo-classes/">Accessible Forms with Pseudo Classes</a>
-                  </li>
-                  </ol>
-                  <h3>Other</h3>
-                  <ol>
+              </ol>
+              <h3>Components</h3>
+              <ol>
+                <li class="m-list__item">
+                  <h4><span>Modal</span></h4>
+                <li class="m-list__item">
+                  <a class="a-link" href="https://css-tricks.com/prevent-page-scrolling-when-a-modal-is-open/">Prevent
+                    Page Scrolling When a Modal is Open</a> - CSS-Tricks and <a class="a-link"
+                    href="https://css-tricks.com/prevent-page-scrolling-when-a-modal-is-open/#comment-1713778">comment</a>
+                </li>
+                <li class="m-list__item">
+                  <a href="https://webdesign.tutsplus.com/css-only-modal--cms-107772t"> What is a modal? And how to
+                    build a CSS-only Modal </a>
+                </li>
+                <li class="m-list__item"> `overscroll-behavior` [CSS
+                  property](https://developer.mozilla.org/en-US/docs/Web/CSS/overscroll-behavior) </li>
+                <li class="m-list__item">
+                  <h4><span>Form</span></h4>
+                  <p class="m-list__item__description">
+                  </p>
+                  <h5>`:focus-within`</h5>
+                  <a class="a-link" href="https://css-tricks.com/accessible-forms-with-pseudo-classes/">Accessible Forms
+                    with Pseudo Classes</a>
+                </li>
+              </ol>
+              <h3>Other</h3>
+              <ol>
                 <li class="m-list__item">
                   <p class="m-list__item__description">
                   </p>
-                      <h5> `accent-color`</h5>
-                      https://dev.to/technoph1le/the-css-accent-color-property-explained-4h9o and <a
-                        href="https://css-tricks.com/almanac/properties/a/accent-color/">CSS-Tricks</a>
+                  <h5> `accent-color`</h5> https://dev.to/technoph1le/the-css-accent-color-property-explained-4h9o and
+                  <a href="https://css-tricks.com/almanac/properties/a/accent-color/">CSS-Tricks</a>
                 </li>
-                </ol>
+              </ol>
+              <h3>Accessibility</h3>
+              <ol>
+                <li class="m-list__item">
+                  <h4><span>Aria</span></h4>
+                  <a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/navigation_role">Navigation
+                    role</a>
+                </li>
+              </ol>
             </div>
           </div>
         </div>

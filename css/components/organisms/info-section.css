@@ -1,0 +1,19 @@
+.o-infoSection {
+  position: fixed;
+
+  background-color: blue;
+  height: calc(100svh + var(--navbar-size));
+  width: calc(calc(100svw - var(--theme-bar-width)) - 1 * var(--border-width));
+  transform: translateY(-100svh);
+
+  display: flex;
+  flex-direction: column;
+}
+
+.o-infoSection .m-navbar {
+  justify-self: flex-end;
+}
+
+.o-infoSection__content {
+  flex-grow: 1;
+}

@@ -1,0 +1,9 @@
+.m-navbar {
+  height: var(--navbar-size);
+  width: 100%;
+}
+
+.m-navbar.-vertical {
+  width: var(--navbar-size);
+  height: auto;
+}
