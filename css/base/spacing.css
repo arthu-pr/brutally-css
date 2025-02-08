@@ -58,6 +58,10 @@
   margin-bottom: var(--space-xs);
 }
 
+.margin-auto {
+  margin: auto;
+}
+
 .padding-0 {
   padding: 0;
 }

@@ -2,6 +2,7 @@
   display: inline-block;
   cursor: pointer;
   text-transform: uppercase;
+  /* color: var(--font-color); */
 
   --component-padding-x: var(--space-unit);
   --component-padding-y: var(--space-xs);

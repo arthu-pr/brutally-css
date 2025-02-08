@@ -1,4 +1,5 @@
 .o-howDoesItWork {
+  grid-area: how-does-it-work;
   container: how-does-it-work;
   container-type: inline-size;
   overflow: hidden;

@@ -87,23 +87,23 @@
     var(--theme-color);
 
   /* Pseudo-boolean CSS custom properties - https://keithclark.co.uk/articles/pseudo-boolean-css-custom-properties */
-  /* Automatically define default and secondary theme */
+  /* Define colors based on component state */
   --component-color: color-mix(
     in srgb,
-    var(--theme-color),
-    var(--theme-color) calc(100% * var(--not-secondary, 0))
+    var(--font-color) calc(100% * var(--primary, 0)),
+    var(--theme-color)
   );
 
   --component-bg: color-mix(
     in srgb,
-    transparent,
-    currentcolor calc(100% * var(--primary, 0))
+    var(--theme-color) calc(100% * var(--primary, 0)),
+    transparent
   );
 
   --component-border-color: color-mix(
     in srgb,
-    transparent,
-    var(--color-bg) calc(100% * var(--primary, 0))
+    var(--color-bg) calc(100% * var(--primary, 0)),
+    var(--theme-color)
   );
 
   --component-box-shadow: var(--box-shadow-base);
@@ -163,8 +163,8 @@
 }
 
 /* Disable the active and focus-visible states on disabled and raw modifiers */
-.theme.-interactive:not(.-disabled, .-raw):active,
-.theme.-interactive:not(.-disabled, .-raw):focus-visible {
+.theme:not(.-disabled, .-raw):active,
+.theme:not(.-disabled, .-raw):focus-visible {
   transform: translate(
     var(--component-translate-x),
     var(--component-translate-y)

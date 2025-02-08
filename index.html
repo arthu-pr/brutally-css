@@ -5,6 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link href="css/main.css" rel="stylesheet" />
+  <link href="css/layouts/wrapper.css" rel="stylesheet" />
   <link href="css/theme.css" rel="stylesheet" />
   <!-- Base -->
   <link href="css/base/reset.css" rel="stylesheet" />
@@ -76,13 +77,14 @@
     <div class="a-modifier">
     </div>
     <div class="layout">
+      <section class="o-infoSection">
+        <div class="o-infoSection__content"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto culpa
+          rerum fuga odit quam quia debitis cumque, perspiciatis illo aperiam vitae nobis, porro vero at, possimus
+          omnis molestiae velit nostrum. </div>
+        <div role="navigation" class="m-navbar">Show Components !!</div>
+      </section>
       <div class="main-content">
-        <section class="o-infoSection">
-          <div class="o-infoSection__content"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto culpa
-            rerum fuga odit quam quia debitis cumque, perspiciatis illo aperiam vitae nobis, porro vero at, possimus
-            omnis molestiae velit nostrum. </div>
-          <div role="navigation" class="m-navbar">Show Components !!</div>
-        </section>
+       
         <header class="banner">
           <span class="banner__alert">&#9888;</span>
           <span class="banner__alert">&#9888;</span>
@@ -130,7 +132,7 @@
                           <input type="text" name="" placeholder="Add request" class="a-input theme -raw" />
                         </div>
                       </div>
-                      <input type="text" name="request" placeholder="Add request" class="a-input theme -interactive"
+                      <input type="text" name="request" placeholder="Add request" class="a-input theme "
                         id="simple-input" required />
                       <p id="louie-text">Lorem ipsum</p>
                     </div>
@@ -194,11 +196,11 @@
                 <span>Components</span>
               </h3>
               <div class="flex gap-md flex-wrap">
-                <label role="button" for="modal" class="a-btn theme -interactive -relative"
+                <label role="button" for="modal" class="a-btn theme  -relative"
                   data-component-label="Modal">
                   <span>Open Modal</span>
                 </label>
-                <label role="button" for="drawer" class="a-btn theme -interactive -relative"
+                <label role="button" for="drawer" class="a-btn theme  -relative"
                   data-component-label="Drawer">
                   <span>Open Drawer</span>
                 </label>
@@ -521,9 +523,9 @@
         <p> Example of a fade modal with a close button. Don't like the position? Use the action buttons below. </p>
       </div>
       <div class="m-modal__footer flex flex-wrap justify-end gap-xs">
-        <label class="a-btn theme -interactive" for="center-modal"></label>
-        <label class="a-btn theme -interactive" for="brutalist-modal"></label>
-        <label class="a-btn theme -interactive" for="modal"><span>Close</span></label>
+        <label class="a-btn theme " for="center-modal"></label>
+        <label class="a-btn theme " for="brutalist-modal"></label>
+        <label class="a-btn theme " for="modal"><span>Close</span></label>
       </div>
     </div>
     <!-- Drawer Component -->
@@ -536,7 +538,7 @@
         <p>Example of a drawer component.</p>
       </div>
       <div class="m-modal__footer">
-        <label class="a-btn theme -interactive" for="drawer"><span>Close</span></label>
+        <label class="a-btn theme " for="drawer"><span>Close</span></label>
       </div>
     </div>
   </div>

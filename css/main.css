@@ -57,6 +57,7 @@
 @font-face {
   font-family: 'gotham-bold';
   src: url('/fonts/GOTHAM-BOLD.woff') format('woff');
+  font-weight: bold;
   font-display: swap;
 }
 
@@ -72,9 +73,42 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: 'Atkinson Hyperlegible';
+  src: url('/font/Atkinson-Hyperlegible-Regular-102a.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Atkinson Hyperlegible';
+  src: url('/font/Atkinson-Hyperlegible-Bold-102a.woff2') format('woff2');
+  /* font-weight: var(--font-weight-bold, 700); */
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Atkinson Hyperlegible';
+  src: url('/font/Atkinson-Hyperlegible-Italic-102a.woff2') format('woff2');
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Atkinson Hyperlegible';
+  src: url('/font/Atkinson-Hyperlegible-BoldItalic-102a.woff2') format('woff2');
+  font-weight: var(--font-weight-bold, bold);
+  font-style: italic;
+  font-display: swap;
+}
+
 html {
   box-sizing: border-box;
-  font-family: 'ImpactLabelReversed', sans-serif;
+  font-family: 'Atkinson Hyperlegible', sans-serif;
 
   /* Microsoft web browsers */
   -ms-overflow-style: none;
@@ -122,35 +156,6 @@ h4::after {
   font-family: 'VacationPostcard';
 }
 
-/* https://css-tricks.com/use-css-clamp-to-create-a-more-flexible-wrapper-utility/ */
-.wrapper {
-  position: relative;
-  --background-color: var(--color-bg-90);
-  --mix-blend-mode: normal;
-  color: var(--theme-color);
-
-  /* https://dev.to/technoph1le/the-css-accent-color-property-explained-4h9o */
-  accent-color: var(--theme-color);
-  color: hsl(from var(--theme-color) h s l / 0.2);
-  color: var(--color-contrast-lower);
-  mix-blend-mode: var(--mix-blend-mode);
-
-  /* color: white; */
-  border: var(--border-width) solid var(--theme-color);
-  border-right: none;
-  background-color: var(--color-bg);
-
-  /* https://medium.com/@ehsaneona/overcoming-position-sticky-issues-solving-overflow-hidden-problems-with-overflow-clip-e8e79a7b0c34 */
-  overflow: clip;
-  -ms-overflow-style: none;
-
-  scrollbar-width: none;
-}
-
-.wrapper::-webkit-scrollbar {
-  display: none;
-}
-
 .section,
 .article {
   padding: var(--space-unit);
@@ -177,14 +182,18 @@ h4::after {
 }
 
 .layout {
+  background-color: var(--color-bg);
   width: calc(200svw - var(--theme-bar-width));
   display: grid;
   grid-template-columns:
     calc(100svw - var(--theme-bar-width)) var(--theme-bar-width)
     calc(100svw - var(--theme-bar-width));
   grid-auto-rows: auto;
+  grid-template-areas:
+    'info-section . .'
+    'main-content theme-bar how-does-it-work';
   transition: var(--layout-transition);
-
+  border: var(--border-width) solid var(--theme-color);
   --layout-translate-main: translateX(0);
   --layout-translate-howDoesItWork: translateX(
     calc(-100svw + var(--theme-bar-width))
@@ -196,6 +205,7 @@ h4::after {
 }
 
 .main-content {
+  grid-area: main-content;
   position: relative;
   border-right: var(--border-width) solid var(--theme-color);
   transform: translateY(0);
