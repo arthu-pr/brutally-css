@@ -60,3 +60,11 @@ h6 {
 #__next {
   isolation: isolate;
 }
+
+/* CUSTOM */
+ul,
+ol {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}

@@ -1,3 +1,11 @@
+/* https://codepen.io/davatron5000/pen/mddmRJe */
+/* h1 {
+  --minFontSize: 32px;
+  --maxFontSize: 200px;
+  --scaler: 10vw;
+  font-size: clamp( var(--minFontSize), var(--scaler), var(--maxFontSize) );
+} */
+
 :root {
   --font-size-base: 1rem;
   --multiplier: 1.5;

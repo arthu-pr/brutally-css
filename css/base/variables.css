@@ -1,0 +1,10 @@
+:root {
+  --screen-xs: var(--breakpoint-xs, 30rem); /* 480px */
+  --screen-sm: var(--breakpoint-sm, 48rem); /* 768px */
+  --screen-md: var(--breakpoint-md, 64rem); /* 1024px */
+  --screen-lg: var(--breakpoint-lg, 80rem); /* 1280px */
+  --screen-xl: var(--breakpoint-xl, 96rem); /* 1536px */
+  --screen-xxl: var(--breakpoint-xxl, 128rem); /* 2048px */
+
+  --display-xs: calc(100 * var(--space-unit));
+}
