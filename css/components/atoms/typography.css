@@ -103,7 +103,7 @@ h1,
 
 h2,
 .text-xxl {
-  font-size: var(--text-xxl);
+  font-size: var(--text-xl);
 }
 
 h3,

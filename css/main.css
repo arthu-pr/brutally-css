@@ -183,7 +183,7 @@ h4::after {
 
 .layout {
   background-color: var(--color-bg);
-  width: calc(200svw - var(--theme-bar-width));
+  width: calc(200svw - 2 * var(--theme-bar-width));
   display: grid;
   grid-template-columns:
     calc(100svw - var(--theme-bar-width)) var(--theme-bar-width)
@@ -193,7 +193,6 @@ h4::after {
     'info-section . .'
     'main-content theme-bar how-does-it-work';
   transition: var(--layout-transition);
-  border: var(--border-width) solid var(--theme-color);
   --layout-translate-main: translateX(0);
   --layout-translate-howDoesItWork: translateX(
     calc(-100svw + var(--theme-bar-width))

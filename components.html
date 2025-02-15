@@ -6,16 +6,17 @@
     <link href="css/main.css" rel="stylesheet" />
     <link href="css/layouts/wrapper.css" rel="stylesheet" />
     <link href="css/layouts/box.css" rel="stylesheet" />
-    <link href="css/theme.css" rel="stylesheet" />
     <!-- Base -->
     <link href="css/base/reset.css" rel="stylesheet" />
     <link href="css/base/helpers.css" rel="stylesheet" />
     <link href="css/base/colors.css" rel="stylesheet" />
     <link href="css/base/spacing.css" rel="stylesheet" />
     <link href="css/base/animations.css" rel="stylesheet" />
+    <link href="css/base/variables.css" rel="stylesheet" />
     <!-- Utils -->
     <link href="css/utils/variables.css" rel="stylesheet" />
     <link href="css/utils.css" rel="stylesheet" />
+    <link href="css/utils/screens.css" rel="stylesheet" />
     <link href="css/components/common.css" rel="stylesheet" />
     <link href="css/banner.css" rel="stylesheet" />
     <link href="css/utils/helpers.css" rel="stylesheet" />
@@ -46,6 +47,8 @@
     <link href="css/animations/highlighted.css" rel="stylesheet" />
     <link href="css/animations/vertical.css" rel="stylesheet" />
     <link href="css/animations/modifier.css" rel="stylesheet" />
+    <!-- Main theme -->
+    <link href="css/theme.css" rel="stylesheet" />
     <link rel="icon" type="image/x-icon" href="/favicon/favicon.ico" />
     <link
       rel="apple-touch-icon"
@@ -68,14 +71,29 @@
   </head>
 
   <body>
-    <div class="wrapper">
-      <div class="container">
-        <h1>Brutally CSS - Components</h1>
+    <div class="wrapper h-full">
+      <div class="container padding-y-md">
+        <h1 class="-highlighted"><span class="labeled">Components</span></h1>
         <h2>Atoms</h2>
         <section class="box">
-          <h3>Button</h3>
-          <button class="a-btn theme">Button</button>
-          <button data-component="secondary" class="a-btn theme">Button</button>
+          <p aria-label="box-title" ="text-xl">Button</p>
+          <div class="flex gap-md">
+            <button class="a-btn theme">Primary</button>
+            <button data-component="secondary" class="a-btn theme">
+              Secondary
+            </button>
+            <button class="a-btn theme -raw">Raw</button>
+            <button data-component="secondary" class="a-btn theme -raw">
+              Raw
+            </button>
+            <button
+              data-component="secondary"
+              class="a-btn theme -raw"
+              disabled
+            >
+              Disabled
+            </button>
+          </div>
         </section>
       </div>
     </div>

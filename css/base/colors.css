@@ -1,3 +1,7 @@
+/* 
+ * TODO: Migrate this file in variables.css
+ */
+
 @property --color-primary {
   syntax: '<color>';
   initial-value: inherit;
@@ -11,18 +15,6 @@
 }
 
 :root {
-  /* Default state */
-  --color-primary: #e3c567;
-  --theme-color: var(--color-primary);
-  --color-primary-80: #e3c56780;
-  --color-primary-60: #e3c56760;
-  --color-primary-50: #e3c56750;
-  --color-primary-40: #e3c56740;
-  --color-primary-20: #e3c56720;
-  --color-primary-10: #e3c56710;
-  --color-primary-5: #e3c56705;
-  --color-primary-2: #e3c56702;
-
   --color-secondary: #e9eaec;
 
   --primary: hsl(from var(--color-primary) h s l / 100%);
@@ -65,8 +57,4 @@
   /* --theme-color: var(--color-primary); */
 
   --theme-error: hsl(from var(--theme-color) 30% s l / 100%);
-
-  /* Forms */
-  --invalid-color: var(--theme-red);
-  --color-error: var(--theme-error);
 }

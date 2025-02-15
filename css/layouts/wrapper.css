@@ -10,9 +10,9 @@
   color: var(--color-contrast-lower);
   mix-blend-mode: var(--mix-blend-mode);
   background-color: var(--color-bg);
-
+  border: var(--border-width) solid var(--theme-color);
   /* https://medium.com/@ehsaneona/overcoming-position-sticky-issues-solving-overflow-hidden-problems-with-overflow-clip-e8e79a7b0c34 */
-  /* overflow: clip; */
+  overflow: clip;
   -ms-overflow-style: none;
 
   scrollbar-width: none;
@@ -25,5 +25,5 @@
 .container {
   max-width: 980px;
   margin: 0 auto;
-  padding: 0 var(--space-unit);
+  padding: var(--container);
 }

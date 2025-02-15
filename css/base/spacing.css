@@ -62,6 +62,11 @@
   margin: auto;
 }
 
+.padding-y-md {
+  padding-top: var(--space-md);
+  padding-bottom: var(--space-md);
+}
+
 .padding-0 {
   padding: 0;
 }

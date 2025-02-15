@@ -5,6 +5,9 @@
   width: 100%;
   display: flex;
   padding: var(--space-sm) var(--space-md);
+
+  /* Render links etc. as unstyled components */
+  --unstyled: var(--TRUE);
 }
 
 .m-navbar.-vertical {
@@ -12,15 +15,9 @@
   height: auto;
 }
 
-@container navbar (min-width: 0) {
-  .m-navbar_menu {
-    display: flex;
-    gap: var(--space-md);
-  }
-}
-
-@container navbar (min-width: 48rem) {
-  .m-navbar_menu {
-    display: none;
-  }
+.m-navbar_menu {
+  display: flex;
+  gap: var(--space-md);
+  stroke: var(--theme-color);
+  fill: var(--theme-color);
 }

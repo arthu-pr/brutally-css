@@ -59,8 +59,10 @@
   /* Base for all theming: if --unstyled is set, all styles are removed */
   --styled: calc(1 - var(--unstyled));
 
-  /* Main theming variables */
-  /* Remove all theming if unstyled = 1 */
+  /* 
+   * Main theming variables
+   * Remove all theming if unstyled = 1 
+   */
   --not-secondary: calc(calc(1 - var(--secondary)) * var(--styled));
   --not-primary: calc(calc(1 - var(--primary)) * var(--styled));
   --not-disabled: calc(calc(1 - var(--disabled)) * var(--styled));
@@ -86,8 +88,10 @@
   --box-shadow-hover: var(--box-shadow-x) var(--box-shadow-y) 0 0
     var(--theme-color);
 
-  /* Pseudo-boolean CSS custom properties - https://keithclark.co.uk/articles/pseudo-boolean-css-custom-properties */
-  /* Define colors based on component state */
+  /*
+   * Pseudo-boolean CSS custom properties - https://keithclark.co.uk/articles/pseudo-boolean-css-custom-properties
+   * Define colors based on component state 
+   */
   --component-color: color-mix(
     in srgb,
     var(--font-color) calc(100% * var(--primary, 0)),
@@ -137,19 +141,28 @@
 
 .theme:not(.-disabled):hover {
   --component-box-shadow: var(--box-shadow-hover);
+  --component-bg: color-mix(
+    in srgb,
+    var(--color-bg-component-primary-hover) calc(100% * var(--primary, 0)),
+    var(--color-bg-component-secondary-hover)
+  );
 }
 
-.theme.-disabled {
+.theme.-disabled,
+.theme:disabled {
   opacity: 0.5;
   cursor: not-allowed;
 }
 
 /* Raw modifier: removes box shadow and produce an effect-free component */
-.theme.-raw,
-.theme.-raw:hover {
+.theme.-raw {
   /* transform: 0;
   --component-box-shadow: 0; */
   --raw: var(--TRUE);
+}
+
+.theme.-raw:hover {
+  filter: brightness(85%);
 }
 
 .theme.-hidden {
