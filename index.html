@@ -5,16 +5,18 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link href="css/main.css" rel="stylesheet" />
-  <link href="css/theme.css" rel="stylesheet" />
+  <link href="css/layouts/wrapper.css" rel="stylesheet" />
   <!-- Base -->
   <link href="css/base/reset.css" rel="stylesheet" />
   <link href="css/base/helpers.css" rel="stylesheet" />
   <link href="css/base/colors.css" rel="stylesheet" />
   <link href="css/base/spacing.css" rel="stylesheet" />
   <link href="css/base/animations.css" rel="stylesheet" />
+  <link href="css/base/variables.css" rel="stylesheet" />
   <!-- Utils -->
   <link href="css/utils/variables.css" rel="stylesheet" />
   <link href="css/utils.css" rel="stylesheet" />
+  <link href="css/utils/screens.css" rel="stylesheet" />
   <link href="css/components/common.css" rel="stylesheet" />
   <link href="css/banner.css" rel="stylesheet" />
   <!-- Atoms -->
@@ -41,6 +43,9 @@
   <link href="css/animations/highlighted.css" rel="stylesheet" />
   <link href="css/animations/vertical.css" rel="stylesheet" />
   <link href="css/animations/modifier.css" rel="stylesheet" />
+
+  <link href="css/theme.css" rel="stylesheet" />
+
   <link rel="icon" type="image/x-icon" href="/favicon/favicon.ico" />
   <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png" />
@@ -49,8 +54,7 @@
 </head>
 
 <body>
-  <input type="checkbox" id="zoom-in" class="a-modifier" />
-  <input type="checkbox" id="zoom-out" class="a-modifier" />
+
   <input type="checkbox" id="shake" class="a-modifier" />
   <!-- Multiple labels point for the same form control -->
   <!-- https://stackoverflow.com/a/2830137 -->
@@ -66,23 +70,43 @@
   <input type="checkbox" id="how-does-it-work-back" class="a-modifier" />
   <!-- Form -->
   <input type="checkbox" id="request-checkbox" class="a-modifier" />
-  <!-- Modal -->
-  <input type="checkbox" id="modal" data-animation="fade" class="a-modifier" />
-  <input type="checkbox" id="drawer" data-animation="slide" class="a-modifier" />
-  <input type="checkbox" id="center-modal" class="a-modifier" />
-  <input type="checkbox" id="brutalist-modal" class="a-modifier" />
-  <input type="checkbox" id="close-modal" class="a-modifier" />
+      <!-- Modal -->
+      <input aria-hidden="true" type="checkbox" id="modal" data-animation="fade" class="a-modifier" />
+      <input aria-hidden="true" type="checkbox" id="drawer" data-animation="slide" class="a-modifier" />
+      <input aria-hidden="true" type="checkbox" id="center-modal" class="a-modifier" />
+      <input aria-hidden="true" type="checkbox" id="brutalist-modal" class="a-modifier" />
+      <input aria-hidden="true" type="checkbox" id="close-modal" class="a-modifier" />
+
+  <div class="state">
+    <input type="checkbox" id="zoom-in" class="a-modifier" />
+    <input type="checkbox" id="zoom-out" class="a-modifier" />
+
+  </div>
   <div class="wrapper">
-    <div class="a-modifier">
-    </div>
+   
     <div class="layout">
+      <section class="o-infoSection">
+        <div class="o-infoSection__content"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto culpa
+          rerum fuga odit quam quia debitis cumque, perspiciatis illo aperiam vitae nobis, porro vero at, possimus
+          omnis molestiae velit nostrum. </div>
+        <nav class="m-navbar">
+          <svg class="m-navbar_menu screen-sm" viewBox="0 0 100 80" width="40" height="40">
+            <rect width="100" height="20" rx="8"></rect>
+            <rect y="30" width="100" height="20" rx="8"></rect>
+            <rect y="60" width="100" height="20" rx="8"></rect>
+        </svg>
+        <ul class="flex flex-grow justify-between">
+          <li><a class="a-link theme" href="/components">Components</a></li>
+          <li>
+              <label type="button" aria-label="how-does-it-work-btn" class="a-btn theme" for="how-does-it-work">How does it work?</label>
+          </li>
+
+        </ul>
+          
+    </nav>
+      </section>
       <div class="main-content">
-        <section class="o-infoSection">
-          <div class="o-infoSection__content"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto culpa
-            rerum fuga odit quam quia debitis cumque, perspiciatis illo aperiam vitae nobis, porro vero at, possimus
-            omnis molestiae velit nostrum. </div>
-          <div role="navigation" class="m-navbar">Show Components !!</div>
-        </section>
+       
         <header class="banner">
           <span class="banner__alert">&#9888;</span>
           <span class="banner__alert">&#9888;</span>
@@ -130,7 +154,7 @@
                           <input type="text" name="" placeholder="Add request" class="a-input theme -raw" />
                         </div>
                       </div>
-                      <input type="text" name="request" placeholder="Add request" class="a-input theme -interactive"
+                      <input type="text" name="request" placeholder="Add request" class="a-input theme "
                         id="simple-input" required />
                       <p id="louie-text">Lorem ipsum</p>
                     </div>
@@ -194,11 +218,11 @@
                 <span>Components</span>
               </h3>
               <div class="flex gap-md flex-wrap">
-                <label role="button" for="modal" class="a-btn theme -interactive -relative"
+                <label role="button" for="modal" class="a-btn theme  -relative"
                   data-component-label="Modal">
                   <span>Open Modal</span>
                 </label>
-                <label role="button" for="drawer" class="a-btn theme -interactive -relative"
+                <label role="button" for="drawer" class="a-btn theme  -relative"
                   data-component-label="Drawer">
                   <span>Open Drawer</span>
                 </label>
@@ -521,9 +545,9 @@
         <p> Example of a fade modal with a close button. Don't like the position? Use the action buttons below. </p>
       </div>
       <div class="m-modal__footer flex flex-wrap justify-end gap-xs">
-        <label class="a-btn theme -interactive" for="center-modal"></label>
-        <label class="a-btn theme -interactive" for="brutalist-modal"></label>
-        <label class="a-btn theme -interactive" for="modal"><span>Close</span></label>
+        <label class="a-btn theme " for="center-modal"></label>
+        <label class="a-btn theme " for="brutalist-modal"></label>
+        <label class="a-btn theme " for="modal"><span>Close</span></label>
       </div>
     </div>
     <!-- Drawer Component -->
@@ -536,7 +560,7 @@
         <p>Example of a drawer component.</p>
       </div>
       <div class="m-modal__footer">
-        <label class="a-btn theme -interactive" for="drawer"><span>Close</span></label>
+        <label class="a-btn theme " for="drawer"><span>Close</span></label>
       </div>
     </div>
   </div>

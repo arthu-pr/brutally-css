@@ -7,6 +7,15 @@
 /* 
  * Main file for CSS modifier using Checkbox Hack
  * https://css-tricks.com/the-checkbox-hack/
+ * The ".state" is parent to all modifier (checkboxes and targets) and is triggered
+ * using :has() pseudo-class
+ * The ".wrapper" is the main container for the layout
+ * and the direct adjacent sibling to the ".state"
+ */
+
+/* TODO: Change all modifier with :has()
+
+/* 
  *
  * 1 - Theme Bar
  * 2 - "How does it work?" section
@@ -18,11 +27,11 @@
 
 /* 1 - Theme Bar */
 
-#zoom-in:checked ~ .wrapper {
+.state:has(#zoom-in:checked) + .wrapper {
   --spacing: var(--space-xs);
 }
 
-#zoom-out:checked ~ .wrapper {
+.state:has(#zoom-out:checked) + .wrapper {
   --spacing: var(--space-xxl);
 }
 

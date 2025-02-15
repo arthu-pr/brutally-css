@@ -1,6 +1,18 @@
+/* https://codepen.io/davatron5000/pen/mddmRJe */
+/* h1 {
+  --minFontSize: 32px;
+  --maxFontSize: 200px;
+  --scaler: 10vw;
+  font-size: clamp( var(--minFontSize), var(--scaler), var(--maxFontSize) );
+} */
+
 :root {
   --font-size-base: 1rem;
   --multiplier: 1.5;
+
+  --font-weight-light: 300;
+  --font-weight-normal: 400;
+  --font-weight-bold: 700;
   /* https://utopia.fyi/type/calculator/?c=320,16,1.25,1620,16,1.5,5,5,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
   /* Step -2: 10.24px → 7.1111px */
   --text-xs: clamp(0.4444rem, 0.6881rem + -0.2407vw, 0.64rem);
@@ -91,7 +103,7 @@ h1,
 
 h2,
 .text-xxl {
-  font-size: var(--text-xxl);
+  font-size: var(--text-xl);
 }
 
 h3,

@@ -15,6 +15,7 @@
 }
 
 .o-themeBar {
+  grid-area: theme-bar;
   width: var(--theme-bar-width);
 
   /* border-left: var(--border-width) solid var(--theme-color); */

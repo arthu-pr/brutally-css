@@ -1,8 +1,8 @@
 .a-link {
   color: var(--theme-color);
   text-decoration-color: currentColor;
-  text-decoration-thickness: 2px;
-  text-underline-offset: 2px;
+  text-decoration-thickness: 1px;
+  text-underline-offset: var(--space-xs);
   display: flex;
   align-items: flex-start;
   gap: 0.5rem;

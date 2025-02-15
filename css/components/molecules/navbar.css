@@ -1,9 +1,23 @@
 .m-navbar {
+  container: navbar;
+  container-type: inline-size;
   height: var(--navbar-size);
   width: 100%;
+  display: flex;
+  padding: var(--space-sm) var(--space-md);
+
+  /* Render links etc. as unstyled components */
+  --unstyled: var(--TRUE);
 }
 
 .m-navbar.-vertical {
   width: var(--navbar-size);
   height: auto;
+}
+
+.m-navbar_menu {
+  display: flex;
+  gap: var(--space-md);
+  stroke: var(--theme-color);
+  fill: var(--theme-color);
 }
