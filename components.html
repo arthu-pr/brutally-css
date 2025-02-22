@@ -75,9 +75,11 @@
       <div class="container padding-y-md">
         <h1 class="-highlighted"><span class="labeled">Components</span></h1>
         <h2>Atoms</h2>
+
+        <!-- Button -->
         <section class="box">
           <p aria-label="box-title" ="text-xl">Button</p>
-          <div class="flex gap-md">
+          <div class="flex gap-md flex-wrap">
             <button class="a-btn theme">Primary</button>
             <button data-component="secondary" class="a-btn theme">
               Secondary
@@ -93,6 +95,31 @@
             >
               Disabled
             </button>
+          </div>
+        </section>
+
+        <!-- Input -->
+        <section class="box">
+          <p aria-label="box-title" ="text-xl">Text Input</p>
+          <div class="flex gap-md flex-wrap">
+            <input type="text" class="a-input theme" placeholder="Primary" />
+            <input
+              type="text"
+              class="a-input theme secondary"
+              placeholder="Secondary"
+            />
+            <input type="text" class="a-input theme -raw" placeholder="Raw" />
+            <input
+              type="text"
+              class="a-input theme secondary -raw"
+              placeholder="Raw Secondary"
+            />
+            <input
+              type="text"
+              class="a-input theme -raw"
+              disabled
+              placeholder="Disabled"
+            />
           </div>
         </section>
       </div>
