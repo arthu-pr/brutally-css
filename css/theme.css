@@ -25,6 +25,69 @@
 }
 
 :root {
+  /* Theme colors */
+  --color-theme-100: color-mix(
+    in srgb,
+    var(--color-theme, var(--color-arylide-yellow-500)),
+    white 10%
+  );
+  --color-theme-200: color-mix(
+    in srgb,
+    var(--color-theme, var(--color-arylide-yellow-500)),
+    white 20%
+  );
+  --color-theme-300: color-mix(
+    in srgb,
+    var(--color-theme, var(--color-arylide-yellow-500)),
+    white 30%
+  );
+  --color-theme-400: color-mix(
+    in srgb,
+    var(--color-theme, var(--color-arylide-yellow-500)),
+    white 40%
+  );
+  --color-theme-500: var(--color-theme, var(--color-arylide-yellow-500));
+  --color-theme-600: color-mix(
+    in srgb,
+    var(--color-theme, var(--color-arylide-yellow-500)),
+    white 60%
+  );
+  --color-theme-700: color-mix(
+    in srgb,
+    var(--color-theme, var(--color-arylide-yellow-500)),
+    white 70%
+  );
+  --color-theme-800: color-mix(
+    in srgb,
+    var(--color-theme, var(--color-arylide-yellow-500)),
+    white 80%
+  );
+  --color-theme-900: color-mix(
+    in srgb,
+    var(--color-theme, var(--color-arylide-yellow-500)),
+    white 90%
+  );
+  --color-theme: var(--color-theme, var(--color-arylide-yellow-500));
+
+  --color-bg: var(--color-night-500);
+  --color-bg-inverse: var(--color-white-smoke-500);
+  --color-bg-dialog-default: var(--color-white-smoke-500);
+  --color-border-theme: var(--color-theme-500);
+  --color-border-dark: var(--color-night-500);
+  --color-border-focus: var(--color-theme-300);
+  --color-primary-lighter: var(--color-theme-100);
+  --color-primary-light: var(--color-theme-300);
+  --color-primary-base: var(--color-theme-500);
+  --color-primary-dark: var(--color-theme-700);
+  --color-primary-darker: var(--color-theme-900);
+  --color-secondary-lighter: var(--color-night-100);
+  --color-secondary-light: var(--color-night-300);
+  --color-secondary-base: var(--color-night-500);
+  --color-secondary-dark: var(--color-night-700);
+  --color-secondary-darker: var(--color-night-900);
+  --font-family-base: var(--asset-font-opensans-name);
+  --font-family-icons: var(--asset-font-icon-name);
+
   /* Borders */
   --border-theme: var(--border-width) solid var(--theme-color);
   --border-theme-10: var(--border-width-10) solid var(--theme-color);
