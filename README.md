@@ -1,3 +1,6 @@
+<img width="100%" alt="image" src="https://github.com/user-attachments/assets/0ed4885d-77a0-4ff8-b376-973be2d3c17e" />
+
+
 ## Minify HTML and CSS commands
 
 ```sh
