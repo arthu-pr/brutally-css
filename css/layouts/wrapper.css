@@ -1,5 +1,6 @@
 /* https://css-tricks.com/use-css-clamp-to-create-a-more-flexible-wrapper-utility/ */
 .wrapper {
+  /* --theme-color: oklch(from var(--color-theme-default) h s l / 100%); */
   position: relative;
   --mix-blend-mode: normal;
   color: var(--theme-color);
