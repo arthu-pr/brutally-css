@@ -1,0 +1,40 @@
+@import url('../../build/css/colors.primitive.css') layer(colors.primitives);
+@import url('../../build/css/colors.semantic.css') layer(colors.semantic);
+@import url('../../build/css/colors.intent.css') layer(colors.intent);
+@import url('../../build/css/themes/public-theme.css') layer(theme);
+
+/* @import url('build/css/cube/cube.composition.css') layer(cube.composition); */
+/* @import url('build/css/cube/cube.utility.css') layer(cube.utility); */
+/* @import url('build/css/cube/cube.block.css') layer(cube.block); */
+
+@layer color, cube, theme;
+
+@layer theme {
+  :root {
+    --border-radius-default: 0;
+
+    --screen-xs: var(--breakpoint-mobile, 30rem);
+    --screen-sm: var(--breakpoint-tablet, 48rem);
+    --screen-md: var(--breakpoint-desktop, 64rem);
+    --screen-lg: var(--breakpoint-desktop, 80rem);
+    --screen-xl: var(--breakpoint-desktop-xl, 96rem);
+    --screen-xxl: var(--breakpoint-desktop-xxl, 128rem);
+  }
+}
+
+@layer color {
+}
+
+@layer cube {
+  @layer composition {
+    :root {
+      --flow-space: var(--cube-composition-flow-flow-space);
+      --stack-gap: var(--cube-composition-stack-gap);
+      --cluster-gap: var(--cube-composition-cluster-gap);
+      --cluster-align: var(--cube-composition-cluster-align);
+      --stack-align: var(--cube-composition-stack-align);
+      --center-max-width: var(--cube-composition-center-max-width);
+      --center-padding-inline: var(--cube-composition-center-padding-inline);
+    }
+  }
+}

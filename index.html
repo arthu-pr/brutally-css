@@ -3,51 +3,52 @@
     <title>Brutally CSS</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link href="css/main.css" rel="stylesheet" />
-    <link href="css/layouts/wrapper.css" rel="stylesheet" />
+    <!-- <link href="css/main.css" rel="stylesheet" />
+    <link href="css/layouts/wrapper.css" rel="stylesheet" /> -->
     <!-- Base -->
-    <link href="css/base/reset.css" rel="stylesheet" />
+    <!-- <link href="css/base/reset.css" rel="stylesheet" />
     <link href="css/base/helpers.css" rel="stylesheet" />
     <link href="css/base/colors.css" rel="stylesheet" />
     <link href="css/base/spacing.css" rel="stylesheet" />
     <link href="css/base/animations.css" rel="stylesheet" />
-    <link href="css/base/variables.css" rel="stylesheet" />
+    <link href="css/base/variables.css" rel="stylesheet" /> -->
     <!-- Utils -->
-    <link href="css/utils/variables.css" rel="stylesheet" />
+    <!-- <link href="css/utils/variables.css" rel="stylesheet" />
     <link href="css/utils.css" rel="stylesheet" />
     <link href="css/utils/screens.css" rel="stylesheet" />
-    <link href="css/components/common.css" rel="stylesheet" />
+    <link href="css/blocks/common.css" rel="stylesheet" />
     <link href="css/banner.css" rel="stylesheet" />
-    <link href="css/utils/viewport.css" rel="stylesheet" />
+    <link href="css/utils/viewport.css" rel="stylesheet" /> -->
     <!-- Atoms -->
-    <link href="css/components/atoms/overlay.css" rel="stylesheet" />
-    <link href="css/components/atoms/typography.css" rel="stylesheet" />
-    <link href="css/components/atoms/input.css" rel="stylesheet" />
-    <link href="css/components/atoms/buttons.css" rel="stylesheet" />
-    <link href="css/components/atoms/code.css" rel="stylesheet" />
-    <link href="css/components/atoms/link.css" rel="stylesheet" />
+    <!-- <link href="css/blocks/atoms/overlay.css" rel="stylesheet" />
+    <link href="css/blocks/atoms/typography.css" rel="stylesheet" />
+    <link href="css/blocks/atoms/typewriter.css" rel="stylesheet" />
+    <link href="css/blocks/atoms/input.css" rel="stylesheet" />
+    <link href="css/blocks/atoms/buttons.css" rel="stylesheet" />
+    <link href="css/blocks/atoms/code.css" rel="stylesheet" />
+    <link href="css/blocks/atoms/link.css" rel="stylesheet" /> -->
     <!-- Molecules -->
-    <link href="css/components/molecules/form.css" rel="stylesheet" />
-    <link href="css/components/molecules/shake.css" rel="stylesheet" />
-    <link href="css/components/molecules/dynamic-form.css" rel="stylesheet" />
-    <link href="css/components/molecules/list.css" rel="stylesheet" />
-    <link href="css/components/molecules/modal.css" rel="stylesheet" />
-    <link href="css/components/molecules/section.css" rel="stylesheet" />
-    <link href="css/components/molecules/navbar.css" rel="stylesheet" />
+    <!-- <link href="css/blocks/molecules/form.css" rel="stylesheet" />
+    <link href="css/blocks/molecules/shake.css" rel="stylesheet" />
+    <link href="css/blocks/molecules/dynamic-form.css" rel="stylesheet" />
+    <link href="css/blocks/molecules/list.css" rel="stylesheet" />
+    <link href="css/blocks/molecules/modal.css" rel="stylesheet" />
+    <link href="css/blocks/molecules/section.css" rel="stylesheet" />
+    <link href="css/blocks/molecules/navbar.css" rel="stylesheet" /> -->
     <!-- Organisms -->
-    <link href="css/components/organisms/grid.css" rel="stylesheet" />
-    <link
-      href="css/components/organisms/how-does-it-work.css"
-      rel="stylesheet"
-    />
-    <link href="css/components/organisms/theme-bar.css" rel="stylesheet" />
-    <link href="css/components/organisms/info-section.css" rel="stylesheet" />
+    <!-- <link href="css/blocks/organisms/grid.css" rel="stylesheet" /> -->
+    <!-- <link href="css/blocks/organisms/how-does-it-work.css" rel="stylesheet" /> -->
+    <!-- <link href="css/blocks/organisms/theme-bar.css" rel="stylesheet" /> -->
+    <!-- <link href="css/blocks/organisms/info-section.css" rel="stylesheet" /> -->
     <!-- Animations -->
-    <link href="css/animations/highlighted.css" rel="stylesheet" />
-    <link href="css/animations/vertical.css" rel="stylesheet" />
-    <link href="css/animations/modifier.css" rel="stylesheet" />
+    <!-- <link href="css/animations/highlighted.css" rel="stylesheet" /> -->
+    <!-- <link href="css/animations/vertical.css" rel="stylesheet" /> -->
+    <!-- <link href="css/animations/modifier.css" rel="stylesheet" /> -->
 
-    <link href="css/theme.css" rel="stylesheet" />
+    <!-- <link href="css/theme.css" rel="stylesheet" /> -->
+
+    <link rel="stylesheet" href="css/theme/brutally-css.css" />
+    <link href="css/main.min.css" rel="stylesheet" />
 
     <link rel="icon" type="image/x-icon" href="/favicon/favicon.ico" />
     <link
@@ -175,11 +176,11 @@
               </span>
               <span class="banner__title__css-only">CSS</span>
             </h1>
-            <p class="banner__description text-2 -highlighted">
+            <div class="banner__description text-2 -highlighted typewriter">
               <span class="labeled">This website</span>is a playground to
               explore <span>CSS capabilities and limits</span>
               without any JavaScript.
-            </p>
+            </div>
             <div class="typewriter">
               <h1>The cat and the hat.</h1>
             </div>
@@ -192,7 +193,7 @@
               >
                 <div class="m-section">
                   <h3 class="m-section__title -highlighted -animate -active">
-                    Dynamic <span>form</span>
+                    Dynamic <span class="labeled">form</span>
                   </h3>
                   <div class="dynamic-form">
                     <input
@@ -421,7 +422,7 @@
                   mollit anim id est laborum.
                 </p>
                 <h3 class="-highlighted -animate">
-                  <span>Highlighted</span>
+                  <span class="labeled">Highlighted</span>
                 </h3>
                 <p>
                   Sed ut perspiciatis unde omnis iste natus error sit voluptatem

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>League of Legends</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="lol-icon.png" type="image/png" />
+  </head>
+  <body>
+    <main class="stack" style="--stack-gap: var(--space)">
+      <header class="cluster" style="--justify: space-between">
+        <h1 style="font-size: var(--step-2)">Page title</h1>
+        <nav class="cluster" style="--gap: 0.5rem">...</nav>
+      </header>
+
+      <!-- Auto-collapsing sidebar -->
+      <section class="sidebar" style="--gap: var(--space); --sidebar: 22rem">
+        <article class="stack" style="--stack-gap: 1rem">
+          <p style="font-size: var(--step-0)">Main content…</p>
+          <div class="grid" style="--gap: var(--space); --min: 18rem">
+            <!-- cards -->
+            <article class="stack">...</article>
+            <article class="stack">...</article>
+            <article class="stack">...</article>
+          </div>
+        </article>
+
+        <aside class="stack" style="--stack-gap: 0.75rem">
+          <!-- widgets -->
+        </aside>
+      </section>
+
+      <!-- Switch to multi-column when space allows -->
+      <section class="switcher" style="--gap: var(--space); --switch-at: 24rem">
+        <div class="stack">Block A</div>
+        <div class="stack">Block B</div>
+        <div class="stack">Block C</div>
+      </section>
+    </main>
+    <aside class="stack" style="--stack-gap: var(--space)">
+      <h2>Sidebar</h2>
+      <p>Sidebar content…</p>
+      <nav class="stack" style="--stack-gap: 0.5rem">
+        <a href="#">Link 1</a>
+        <a href="#">Link 2</a>
+        <a href="#">Link 3</a>
+      </nav>
+    </aside>
+
+    <footer class="stack" style="--stack-gap: var(--space)">
+      <p>Footer content…</p>
+      <nav class="cluster" style="--gap: 0.5rem">
+        <a href="#">Link 1</a>
+        <a href="#">Link 2</a>
+        <a href="#">Link 3</a>
+      </nav>
+    </footer>
+  </body>
+</html>
+<style>
+  .stack {
+    display: flex;
+    flex-wrap: wrap;
+    --margin: 1rem;
+    --modifier: calc(40rem - 100%);
+    margin: calc(var(--margin) * -1);
+    background-color: red;
+  }
+
+  .stack > * {
+    flex-grow: 1;
+    flex-basis: calc(var(--modifier) * 999);
+    margin: var(--margin);
+    background-color: blue;
+  }
+
+  /**
+   * Holy Albatross utility
+   * https://heydonworks.com/article/the-flexbox-holy-albatross-reincarnated/
+   */
+  .holy {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--gap, 1rem);
+    --switch: 40rem;
+  }
+  .holy > * {
+    flex-grow: 1;
+    flex-basis: calc((var(--switch) - 100%) * 999);
+    /* avoid overflow from long content */
+    min-width: 0;
+  }
+</style>

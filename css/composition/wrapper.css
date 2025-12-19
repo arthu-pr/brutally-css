@@ -7,9 +7,9 @@
 
   /* https://dev.to/technoph1le/the-css-accent-color-property-explained-4h9o */
   accent-color: var(--theme-color);
-  color: hsl(from var(--theme-color) h s l / 0.2);
-  color: var(--color-contrast-lower);
-  mix-blend-mode: var(--mix-blend-mode);
+  /* color: hsl(from var(--theme-color) h s l / 0.2); */
+  /* color: var(--color-contrast-lower); */
+  /* mix-blend-mode: var(--mix-blend-mode); */
   background-color: var(--color-bg);
   border: var(--border-width) solid var(--theme-color);
   /* https://medium.com/@ehsaneona/overcoming-position-sticky-issues-solving-overflow-hidden-problems-with-overflow-clip-e8e79a7b0c34 */
@@ -27,4 +27,26 @@
   max-width: 980px;
   margin: 0 auto;
   padding: var(--container);
+}
+
+/* TODO: */
+.wrapper-TODO {
+  /* https://grafikart.fr/tutoriels/conteneur-css-1233 */
+  box-sizing: border-box;
+  width: min(
+    var(--breakpoint-desktop-xl),
+    calc(100% - 2 * var(--layout-mobile-padding))
+  );
+  margin-inline: auto;
+}
+
+@media screen and (min-width: 48rem) {
+  .wrapper-TODO {
+    /* https://css-tricks.com/use-css-clamp-to-create-a-more-flexible-wrapper-utility/ */
+    width: clamp(100%, 90vw, 70rem);
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: var(--space-unit);
+    padding-right: var(--space-unit);
+  }
 }
