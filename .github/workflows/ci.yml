@@ -2,9 +2,9 @@ name: Minify & Deploy & Check Design Tokens
 on:
   # temporary disable workflows
 
-  pull_request:
+  push:
     branches:
-      - disabled
+      - main
 
 jobs:
   minify:

@@ -28,7 +28,10 @@
 .border-theme-50 { border: var(--border-width-50) solid var(--color-border-theme) }
 .border-theme-75 { border: var(--border-width-75) solid var(--color-border-theme) }
 .border-theme-100 { border: var(--border-width-100) solid var(--color-border-theme) }
-.border-width-10 { border-width: calc(0.1 * var(--border-width-default)) }
-.border-width-25 { border-width: calc(0.25 * var(--border-width-default)) }
-.border-width-50 { border-width: calc(0.5 * var(--border-width-default)) }
-.border-width-75 { border-width: calc(0.75 * var(--border-width-default)) }
+.border-width-10 { border-width: var(--border-width-10) }
+.border-width-25 { border-width: var(--border-width-25) }
+.border-width-50 { border-width: var(--border-width-50) }
+.border-width-75 { border-width: var(--border-width-75) }
+.border-radius-light { border-radius: var(--border-radius-light) }
+.border-radius-medium { border-radius: var(--border-radius-medium) }
+.border-radius-heavy { border-radius: var(--border-radius-heavy) }
