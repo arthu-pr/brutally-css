@@ -1,365 +1,599 @@
 <html lang="en">
+  <head>
+    <title>Brutally CSS</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- <link href="css/main.css" rel="stylesheet" />
+    <link href="css/layouts/wrapper.css" rel="stylesheet" /> -->
+    <!-- Base -->
+    <!-- <link href="css/base/reset.css" rel="stylesheet" />
+    <link href="css/base/helpers.css" rel="stylesheet" />
+    <link href="css/base/colors.css" rel="stylesheet" />
+    <link href="css/base/spacing.css" rel="stylesheet" />
+    <link href="css/base/animations.css" rel="stylesheet" />
+    <link href="css/base/variables.css" rel="stylesheet" /> -->
+    <!-- Utils -->
+    <!-- <link href="css/utils/variables.css" rel="stylesheet" />
+    <link href="css/utils.css" rel="stylesheet" />
+    <link href="css/utils/screens.css" rel="stylesheet" />
+    <link href="css/blocks/common.css" rel="stylesheet" />
+    <link href="css/banner.css" rel="stylesheet" />
+    <link href="css/utils/viewport.css" rel="stylesheet" /> -->
+    <!-- Atoms -->
+    <!-- <link href="css/blocks/atoms/overlay.css" rel="stylesheet" />
+    <link href="css/blocks/atoms/typography.css" rel="stylesheet" />
+    <link href="css/blocks/atoms/typewriter.css" rel="stylesheet" />
+    <link href="css/blocks/atoms/input.css" rel="stylesheet" />
+    <link href="css/blocks/atoms/buttons.css" rel="stylesheet" />
+    <link href="css/blocks/atoms/code.css" rel="stylesheet" />
+    <link href="css/blocks/atoms/link.css" rel="stylesheet" /> -->
+    <!-- Molecules -->
+    <!-- <link href="css/blocks/molecules/form.css" rel="stylesheet" />
+    <link href="css/blocks/molecules/shake.css" rel="stylesheet" />
+    <link href="css/blocks/molecules/dynamic-form.css" rel="stylesheet" />
+    <link href="css/blocks/molecules/list.css" rel="stylesheet" />
+    <link href="css/blocks/molecules/modal.css" rel="stylesheet" />
+    <link href="css/blocks/molecules/section.css" rel="stylesheet" />
+    <link href="css/blocks/molecules/navbar.css" rel="stylesheet" /> -->
+    <!-- Organisms -->
+    <!-- <link href="css/blocks/organisms/grid.css" rel="stylesheet" /> -->
+    <!-- <link href="css/blocks/organisms/how-does-it-work.css" rel="stylesheet" /> -->
+    <!-- <link href="css/blocks/organisms/theme-bar.css" rel="stylesheet" /> -->
+    <!-- <link href="css/blocks/organisms/info-section.css" rel="stylesheet" /> -->
+    <!-- Animations -->
+    <!-- <link href="css/animations/highlighted.css" rel="stylesheet" /> -->
+    <!-- <link href="css/animations/vertical.css" rel="stylesheet" /> -->
+    <!-- <link href="css/animations/modifier.css" rel="stylesheet" /> -->
 
-<head>
-  <title>Brutally CSS</title>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link href="css/main.css" rel="stylesheet" />
-  <link href="css/layouts/wrapper.css" rel="stylesheet" />
-  <!-- Base -->
-  <link href="css/base/reset.css" rel="stylesheet" />
-  <link href="css/base/helpers.css" rel="stylesheet" />
-  <link href="css/base/colors.css" rel="stylesheet" />
-  <link href="css/base/spacing.css" rel="stylesheet" />
-  <link href="css/base/animations.css" rel="stylesheet" />
-  <link href="css/base/variables.css" rel="stylesheet" />
-  <!-- Utils -->
-  <link href="css/utils/variables.css" rel="stylesheet" />
-  <link href="css/utils.css" rel="stylesheet" />
-  <link href="css/utils/screens.css" rel="stylesheet" />
-  <link href="css/components/common.css" rel="stylesheet" />
-  <link href="css/banner.css" rel="stylesheet" />
-  <!-- Atoms -->
-  <link href="css/components/atoms/overlay.css" rel="stylesheet" />
-  <link href="css/components/atoms/typography.css" rel="stylesheet" />
-  <link href="css/components/atoms/input.css" rel="stylesheet" />
-  <link href="css/components/atoms/buttons.css" rel="stylesheet" />
-  <link href="css/components/atoms/code.css" rel="stylesheet" />
-  <link href="css/components/atoms/link.css" rel="stylesheet" />
-  <!-- Molecules -->
-  <link href="css/components/molecules/form.css" rel="stylesheet" />
-  <link href="css/components/molecules/shake.css" rel="stylesheet" />
-  <link href="css/components/molecules/dynamic-form.css" rel="stylesheet" />
-  <link href="css/components/molecules/list.css" rel="stylesheet" />
-  <link href="css/components/molecules/modal.css" rel="stylesheet" />
-  <link href="css/components/molecules/section.css" rel="stylesheet" />
-  <link href="css/components/molecules/navbar.css" rel="stylesheet" />
-  <!-- Organisms -->
-  <link href="css/components/organisms/grid.css" rel="stylesheet" />
-  <link href="css/components/organisms/how-does-it-work.css" rel="stylesheet" />
-  <link href="css/components/organisms/theme-bar.css" rel="stylesheet" />
-  <link href="css/components/organisms/info-section.css" rel="stylesheet" />
-  <!-- Animations -->
-  <link href="css/animations/highlighted.css" rel="stylesheet" />
-  <link href="css/animations/vertical.css" rel="stylesheet" />
-  <link href="css/animations/modifier.css" rel="stylesheet" />
+    <!-- <link href="css/theme.css" rel="stylesheet" /> -->
 
-  <link href="css/theme.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/themes/brutally-css.css" />
+    <link href="dist/main.min.css" rel="stylesheet" />
 
-  <link rel="icon" type="image/x-icon" href="/favicon/favicon.ico" />
-  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png" />
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png" />
-  <link rel="manifest" href="/site.webmanifest" />
-</head>
+    <link rel="icon" type="image/x-icon" href="/favicon/favicon.ico" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/favicon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="/site.webmanifest" />
+  </head>
 
-<body>
+  <body>
+    <input type="checkbox" id="shake" class="a-modifier" />
+    <!-- Multiple labels point for the same form control -->
+    <!-- https://stackoverflow.com/a/2830137 -->
+    <!-- https://www.w3.org/TR/html401/interact/forms.html#h-17.9.1 -->
+    <!-- Theme Bar color modifiers  -->
+    <span id="/" class="a-modifier"></span>
+    <span id="red" class="a-modifier"></span>
+    <span id="warm-pink" class="a-modifier"></span>
+    <span id="red" class="a-modifier"></span>
+    <span id="erotic-blue" class="a-modifier"></span>
+    <!-- How does it work -->
+    <input type="checkbox" id="how-does-it-work" class="a-modifier" />
+    <input type="checkbox" id="how-does-it-work-back" class="a-modifier" />
+    <!-- Form -->
+    <input type="checkbox" id="request-checkbox" class="a-modifier" />
+    <!-- Modal -->
+    <input
+      aria-hidden="true"
+      type="checkbox"
+      id="modal"
+      data-animation="fade"
+      class="a-modifier"
+    />
+    <input
+      aria-hidden="true"
+      type="checkbox"
+      id="drawer"
+      data-animation="slide"
+      class="a-modifier"
+    />
+    <input
+      aria-hidden="true"
+      type="checkbox"
+      id="center-modal"
+      class="a-modifier"
+    />
+    <input
+      aria-hidden="true"
+      type="checkbox"
+      id="brutalist-modal"
+      class="a-modifier"
+    />
+    <input
+      aria-hidden="true"
+      type="checkbox"
+      id="close-modal"
+      class="a-modifier"
+    />
 
-  <input type="checkbox" id="shake" class="a-modifier" />
-  <!-- Multiple labels point for the same form control -->
-  <!-- https://stackoverflow.com/a/2830137 -->
-  <!-- https://www.w3.org/TR/html401/interact/forms.html#h-17.9.1 -->
-  <!-- Theme Bar color modifiers  -->
-  <span id="/" class="a-modifier"></span>
-  <span id="red" class="a-modifier"></span>
-  <span id="warm-pink" class="a-modifier"></span>
-  <span id="red" class="a-modifier"></span>
-  <span id="erotic-blue" class="a-modifier"></span>
-  <!-- How does it work -->
-  <input type="checkbox" id="how-does-it-work" class="a-modifier" />
-  <input type="checkbox" id="how-does-it-work-back" class="a-modifier" />
-  <!-- Form -->
-  <input type="checkbox" id="request-checkbox" class="a-modifier" />
-      <!-- Modal -->
-      <input aria-hidden="true" type="checkbox" id="modal" data-animation="fade" class="a-modifier" />
-      <input aria-hidden="true" type="checkbox" id="drawer" data-animation="slide" class="a-modifier" />
-      <input aria-hidden="true" type="checkbox" id="center-modal" class="a-modifier" />
-      <input aria-hidden="true" type="checkbox" id="brutalist-modal" class="a-modifier" />
-      <input aria-hidden="true" type="checkbox" id="close-modal" class="a-modifier" />
-
-  <div class="state">
-    <input type="checkbox" id="zoom-in" class="a-modifier" />
-    <input type="checkbox" id="zoom-out" class="a-modifier" />
-
-  </div>
-  <div class="wrapper">
-   
-    <div class="layout">
-      <section class="o-infoSection">
-        <div class="o-infoSection__content"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto culpa
-          rerum fuga odit quam quia debitis cumque, perspiciatis illo aperiam vitae nobis, porro vero at, possimus
-          omnis molestiae velit nostrum. </div>
-        <nav class="m-navbar">
-          <svg class="m-navbar_menu screen-sm" viewBox="0 0 100 80" width="40" height="40">
-            <rect width="100" height="20" rx="8"></rect>
-            <rect y="30" width="100" height="20" rx="8"></rect>
-            <rect y="60" width="100" height="20" rx="8"></rect>
-        </svg>
-        <ul class="flex flex-grow justify-between">
-          <li><a class="a-link theme" href="/components">Components</a></li>
-          <li>
-              <label type="button" aria-label="how-does-it-work-btn" class="a-btn theme" for="how-does-it-work">How does it work?</label>
-          </li>
-
-        </ul>
-          
-    </nav>
-      </section>
-      <div class="main-content">
-       
-        <header class="banner">
-          <span class="banner__alert">&#9888;</span>
-          <span class="banner__alert">&#9888;</span>
-          <span class="banner__alert">&#9888;</span>
-          <span class="banner__alert">&#9888;</span>
-          <span class="banner__alert">&#9888;</span>
-          <span class="banner__alert">&#9888;</span>
-          <h1 clas="banner__title">
-            <span class="banner__title-brutally"> B<span class="banner__title-brutally__r">r</span>utal<span
-                class="banner__title-brutally__ly">ly</span>
-            </span>
-            <span class="banner__title__css-only">CSS</span>
-          </h1>
-          <p class="banner__description text-2 -highlighted">
-            <span class="labeled">This website</span>is a playground to explore <span>CSS capabilities and limits</span>
-            without any JavaScript.
-          </p>
-        </header>
-        <main>
-          <section class="o-grid">
-            <article class="o-grid__item" style="--grow: 1 / span 3; --gcolumn: 1 / 3">
-              <div class="m-section">
-                <h3 class="m-section__title -highlighted -animate -active">Dynamic <span>form</span></h3>
-                <div class="dynamic-form">
-                  <input type="checkbox" id="add-request" class="a-modifier" />
-                  <form class="m-form  m-section__content">
-                    <div class="m-form-group">
-                      <label for="huey">Start the </label>
-                      <input type="radio" id="ready" name="ready" value="ready" />
-                    </div>
-                    <div class="interactive-choice m-form-group">
-                      <!-- Interactive choice checkboxes -->
-                      <div class="display-flex mb-xs">
-                        <label for="simple">Simple input</label>
-                        <input type="radio" id="simple" name="interactive-choice" value="simple" checked />
-                        <label for="colorful-input">Colorful input</label>
-                        <input type="radio" id="colorful-input" name="interactive-choice" value="colorful-input" />
-                        <label for="louie">Louie</label>
-                        <input type="radio" id="louie" name="interactive-choice" value="louie" />
-                      </div>
-                      <div data-component="colorful-input-text" class="m-form-group ">
-                        <label for="color" class="a-btn theme">qsdqsdqsd</label>
-                        <div class="position-relative">
-                          <input type="color" name="color" class="a-inputColor" id="color" />
-                          <input type="text" name="" placeholder="Add request" class="a-input theme -raw" />
-                        </div>
-                      </div>
-                      <input type="text" name="request" placeholder="Add request" class="a-input theme "
-                        id="simple-input" required />
-                      <p id="louie-text">Lorem ipsum</p>
-                    </div>
-                    <label role="button" for="add-request" class="m-formSubmit a-btn theme -raw -relative ">
-                      <span>Send request</span>
-                    </label>
-                    <span class="dynamic-form-loader" id="loading">
-                      <svg xmlns="http://www.w3.org/2000/svg" class="form__loader__icon" viewBox="0 0 90 90">
-                        <defs>
-                          <style>
-                            .cls-1 {
-                              fill: #fff;
-                            }
-
-                            .cls-2,
-                            .cls-3 {
-                              fill: #36365f;
-                            }
-
-                            .cls-3 {
-                              fill-rule: evenodd;
-                            }
-
-                            .cls-4 {
-                              fill: #6f53db;
-                            }
-                          </style>
-                        </defs>
-                        <g id="Ebene_1-2">
-                          <path class="cls-1"
-                            d="m74.4,49.9l-26.1,26.1c-1,1-2.3,1.5-3.6,1.5s-2.6-.5-3.6-1.5c-.1-.1-.2-.2-.3-.4-.2-.1-.3-.2-.4-.4l-12.4-12.3-.1-.1c-1.9-2-1.9-5.2.1-7.2,2-1.9,5.3-1.9,7.2.1l9.5,9.5,22.5-22.5c2-2,5.2-2,7.2,0,1.9,2,1.9,5.2,0,7.2Z" />
-                          <path class="cls-1"
-                            d="m64.1,23c-.1-1.8-2.2-2.6-3.5-1.4l-2.9,2.9-8.1-8.1c-.2-.1-.3-.3-.5-.4-.1-.1-.2-.2-.3-.3-2-2-5.2-2-7.2,0l-26,26.1c-.9,1-1.4,2.3-1.3,3.7s.6,2.6,1.6,3.5,2.2,1.3,3.4,1.3,2.5-.5,3.5-1.4l22.5-22.4,5.2,5.2-2.5,2.5c-1.3,1.3-.4,3.4,1.4,3.5l13.1.5c1.2,0,2.2-.9,2.1-2.1l-.5-13.1h0Z" />
-                        </g>
-                      </svg>
-                    </span>
-                  </form>
-                </div>
-            </article>
-            <article class="o-grid__item">
-              <p> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis laudantium consequatur quisquam
-                rerum necessitatibus cupiditate praesentium, hic ad laboriosam ex sint et quam neque, a quas. Dolorum in
-                aliquid perferendis. </p>
-            </article>
-            <article class="o-grid__item">
-              <h3 class="-highlighted"><span>Shake</span></h3>
-              <label class="m-shake" for="shake">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" class="shake__shape">
-                  <rect class="shake-rect" x="0" y="0" width="40" height="40" stroke-width="5"></rect>
-                  <rect class="shake-rect-internal" x="5" y="5" width="30" height="30"></rect>
-                </svg>
-              </label>
-            </article>
-            <article class="o-grid__item">
-              <p> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis laudantium consequatur quisquam
-                rerum necessitatibus cupiditate praesentium, hic ad laboriosam ex sint et quam neque, a quas. Dolorum in
-                aliquid perferendis. </p>
-            </article>
-            <article class="o-grid__item flex flex-wrap gap-lg justify-center align-center">
-              <h3 class="-highlighted -animate flex-basis-full">
-                <span>Components</span>
-              </h3>
-              <div class="flex gap-md flex-wrap">
-                <label role="button" for="modal" class="a-btn theme  -relative"
-                  data-component-label="Modal">
-                  <span>Open Modal</span>
-                </label>
-                <label role="button" for="drawer" class="a-btn theme  -relative"
-                  data-component-label="Drawer">
-                  <span>Open Drawer</span>
-                </label>
-              </div>
-            </article>
-            <article class="o-grid__item">
-              <h3 class="vertical">
-                <span>Vertical</span>
-              </h3>
-            </article>
-            <article class="o-grid__item">
-              <p> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis laudantium consequatur quisquam
-                rerum necessitatibus cupiditate praesentium, hic ad laboriosam ex sint et quam neque, a quas. Dolorum in
-                aliquid perferendis. </p>
-            </article>
-          </section>
-          <div class="m-section">
-            <h3 class="m-section__title">Section</h3>
-            <div class="m-section__content">
-              <h3 class="-highlighted -animate -active">
-                <span>Highlighted active</span>
-              </h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
-                deserunt mollit anim id est laborum.</p>
-              <h3 class="-highlighted -animate">
-                <span>Highlighted</span>
-              </h3>
-              <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam
-                rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt
-                explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia
-                consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui
-                dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora
-                incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum
-                exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem
-                vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum
-                qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
-            </div>
+    <div class="state">
+      <input type="checkbox" id="zoom-in" class="a-modifier" />
+      <input type="checkbox" id="zoom-out" class="a-modifier" />
+    </div>
+    <div class="container">
+      <div class="layout">
+        <section class="o-infoSection">
+          <div class="o-infoSection__content">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto culpa
+            rerum fuga odit quam quia debitis cumque, perspiciatis illo aperiam
+            vitae nobis, porro vero at, possimus omnis molestiae velit nostrum.
           </div>
-        </main>
-      </div>
-      <!-- Theme bar -->
-      <section class="o-themeBar">
-        <ul class="o-themeBar__container">
-          <li class="o-o-themeBar__element">
-            <button type="button" class="o-themeBar__btn" aria-label="zoom-in">
-              <label for="zoom-in">
-                <svg class="zoom-in" viewBox="0 0 40 40" width="100%" xmlns="http://www.w3.org/2000/svg">
-                  <line x1="5" y1="20" x2="35" y2="20" />
-                  <line x1="20" y1="5" x2="20" y2="35" />
-                </svg>
-              </label>
-            </button>
-          </li>
-          <li class="o-themeBar__element">
-            <button type="button" class="o-themeBar__btn" aria-label="zoom-out">
-              <label for="zoom-out">
-                <svg class="zoom-out" width="100%" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
-                  <line x1="5" y1="20" x2="35" y2="20" />
-                </svg>
-              </label>
-            </button>
-          </li>
-          <li class="o-themeBar__element"></li>
-          <li class="o-themeBar__element">
-            <a href="#warm-pink">
-              <svg class="warm-pink" width="100%" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
-                <rect width="40" height="40" />
-              </svg>
-            </a>
-          </li>
-          <li class="o-themeBar__element">
-            <a href="#red">
-              <svg class="red" width="100%" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
-                <rect width="40" height="40" />
-              </svg>
-            </a>
-          </li>
-          <li class="o-themeBar__element">
-            <a href="#erotic-blue">
-              <svg class="erotic-blue" width="100%" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
-                <rect width="40" height="40" />
-              </svg>
-            </a>
-          </li>
-          <li class="o-themeBar__element">
-            <a href="#">
-              <svg class="primary-yellow" width="100%" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
-                <rect width="40" height="40" />
-              </svg>
-            </a>
-          </li>
-          <li class="o-themeBar__element">
-            <button type="button" class="o-themeBar__btn" aria-label="how-does-it-work-btn">
-              <label for="how-does-it-work">
-                <svg class="how-does-it-work-open-btn" width="100%" viewBox="0 0 40 40"
-                  xmlns="http://www.w3.org/2000/svg">
-                  <line x1="0" y1="0" x2="40" y2="0" />
-                  <line x1="40" y1="0" x2="40" y2="20" />
-                  <line x1="40" y1="20" x2="15" y2="20" />
-                  <line x1="20" y1="20" x2="20" y2="40" />
-                </svg>
-              </label>
-              </a>
-          </li>
-        </ul>
-      </section>
-      <!-- How does it work? -->
-      <section class="o-howDoesItWork">
-        <div class="o-howDoesItWork__header">
-          <!-- <label role="button" for="how-does-it-work-back" class="o-howDoesItWork__backBtn a-btn theme m-0"
-            aria-label="back-button"> Back </label> -->
-          <h2 class="m-0">How Does It Work?</h2>
+
+          <nav class="m-navbar">
+            <svg
+              class="m-navbar_menu screen-sm"
+              viewBox="0 0 100 80"
+              width="40"
+              height="40"
+            >
+              <rect width="100" height="20" rx="8"></rect>
+              <rect y="30" width="100" height="20" rx="8"></rect>
+              <rect y="60" width="100" height="20" rx="8"></rect>
+            </svg>
+            <ul class="flex flex-grow justify-between">
+              <li><a class="a-link theme" href="/components">Components</a></li>
+              <li>
+                <label
+                  type="button"
+                  aria-label="how-does-it-work-btn"
+                  class="a-btn theme"
+                  for="how-does-it-work"
+                  >How does it work?</label
+                >
+              </li>
+            </ul>
+          </nav>
+        </section>
+        <div class="main-content">
+          <header class="banner">
+            <span class="banner__alert">&#9888;</span>
+            <span class="banner__alert">&#9888;</span>
+            <span class="banner__alert">&#9888;</span>
+            <span class="banner__alert">&#9888;</span>
+            <span class="banner__alert">&#9888;</span>
+            <span class="banner__alert">&#9888;</span>
+            <h1 clas="banner__title">
+              <span class="banner__title-brutally">
+                B<span class="banner__title-brutally__r">r</span>utal<span
+                  class="banner__title-brutally__ly"
+                  >ly</span
+                >
+              </span>
+              <span class="banner__title__css-only">CSS</span>
+            </h1>
+            <div class="banner__description text2 -highlighted -active">
+              <span class="labeled">This website</span>is a playground to
+              explore <span class="labeled">CSS capabilities and limits</span>
+              without any JavaScript.
+            </div>
+            <div class="typewriter">
+              <h1>The cat and the hat.</h1>
+            </div>
+          </header>
+          <main>
+            <section class="o-grid">
+              <article
+                class="o-grid__item"
+                style="--grow: 1 / span 3; --gcolumn: 1 / 3"
+              >
+                <div class="m-section">
+                  <h3 class="m-section__title -highlighted -animate -active">
+                    Dynamic <span class="labeled">form</span>
+                  </h3>
+                  <div class="dynamic-form">
+                    <input
+                      type="checkbox"
+                      id="add-request"
+                      class="a-modifier"
+                    />
+                    <form class="m-form m-section__content">
+                      <div class="m-form-group">
+                        <label for="huey">Start the </label>
+                        <input
+                          type="radio"
+                          id="ready"
+                          name="ready"
+                          value="ready"
+                        />
+                      </div>
+                      <div class="interactive-choice m-form-group">
+                        <!-- Interactive choice checkboxes -->
+                        <div class="display-flex mb-xs">
+                          <label for="simple">Simple input</label>
+                          <input
+                            type="radio"
+                            id="simple"
+                            name="interactive-choice"
+                            value="simple"
+                            checked
+                          />
+                          <label for="colorful-input">Colorful input</label>
+                          <input
+                            type="radio"
+                            id="colorful-input"
+                            name="interactive-choice"
+                            value="colorful-input"
+                          />
+                          <label for="louie">Louie</label>
+                          <input
+                            type="radio"
+                            id="louie"
+                            name="interactive-choice"
+                            value="louie"
+                          />
+                        </div>
+                        <div
+                          data-component="colorful-input-text"
+                          class="m-form-group"
+                        >
+                          <label for="color" class="a-btn theme"
+                            >qsdqsdqsd</label
+                          >
+                          <div class="position-relative">
+                            <input
+                              type="color"
+                              name="color"
+                              class="a-inputColor"
+                              id="color"
+                            />
+                            <input
+                              type="text"
+                              name=""
+                              placeholder="Add request"
+                              class="a-input theme -raw"
+                            />
+                          </div>
+                        </div>
+                        <input
+                          type="text"
+                          name="request"
+                          placeholder="Add request"
+                          class="a-input theme"
+                          id="simple-input"
+                          required
+                        />
+                        <p id="louie-text">Lorem ipsum</p>
+                      </div>
+                      <label
+                        role="button"
+                        for="add-request"
+                        class="m-formSubmit a-btn theme -raw -relative"
+                      >
+                        <span>Send request</span>
+                      </label>
+                      <span class="dynamic-form-loader" id="loading">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          class="form__loader__icon"
+                          viewBox="0 0 90 90"
+                        >
+                          <defs>
+                            <style>
+                              .cls-1 {
+                                fill: #fff;
+                              }
+
+                              .cls-2,
+                              .cls-3 {
+                                fill: #36365f;
+                              }
+
+                              .cls-3 {
+                                fill-rule: evenodd;
+                              }
+
+                              .cls-4 {
+                                fill: #6f53db;
+                              }
+                            </style>
+                          </defs>
+                          <g id="Ebene_1-2">
+                            <path
+                              class="cls-1"
+                              d="m74.4,49.9l-26.1,26.1c-1,1-2.3,1.5-3.6,1.5s-2.6-.5-3.6-1.5c-.1-.1-.2-.2-.3-.4-.2-.1-.3-.2-.4-.4l-12.4-12.3-.1-.1c-1.9-2-1.9-5.2.1-7.2,2-1.9,5.3-1.9,7.2.1l9.5,9.5,22.5-22.5c2-2,5.2-2,7.2,0,1.9,2,1.9,5.2,0,7.2Z"
+                            />
+                            <path
+                              class="cls-1"
+                              d="m64.1,23c-.1-1.8-2.2-2.6-3.5-1.4l-2.9,2.9-8.1-8.1c-.2-.1-.3-.3-.5-.4-.1-.1-.2-.2-.3-.3-2-2-5.2-2-7.2,0l-26,26.1c-.9,1-1.4,2.3-1.3,3.7s.6,2.6,1.6,3.5,2.2,1.3,3.4,1.3,2.5-.5,3.5-1.4l22.5-22.4,5.2,5.2-2.5,2.5c-1.3,1.3-.4,3.4,1.4,3.5l13.1.5c1.2,0,2.2-.9,2.1-2.1l-.5-13.1h0Z"
+                            />
+                          </g>
+                        </svg>
+                      </span>
+                    </form>
+                  </div>
+                </div>
+              </article>
+              <article class="o-grid__item">
+                <p>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Perferendis laudantium consequatur quisquam rerum
+                  necessitatibus cupiditate praesentium, hic ad laboriosam ex
+                  sint et quam neque, a quas. Dolorum in aliquid perferendis.
+                </p>
+              </article>
+              <article class="o-grid__item">
+                <h3 class="-highlighted"><span>Shake</span></h3>
+                <label class="m-shake" for="shake">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 40 40"
+                    class="shake__shape"
+                  >
+                    <rect
+                      class="shake-rect"
+                      x="0"
+                      y="0"
+                      width="40"
+                      height="40"
+                      stroke-width="5"
+                    ></rect>
+                    <rect
+                      class="shake-rect-internal"
+                      x="5"
+                      y="5"
+                      width="30"
+                      height="30"
+                    ></rect>
+                  </svg>
+                </label>
+              </article>
+              <article class="o-grid__item">
+                <p>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Perferendis laudantium consequatur quisquam rerum
+                  necessitatibus cupiditate praesentium, hic ad laboriosam ex
+                  sint et quam neque, a quas. Dolorum in aliquid perferendis.
+                </p>
+              </article>
+              <article
+                class="o-grid__item flex flex-wrap gap-lg justify-center align-center"
+              >
+                <h3 class="-highlighted -animate flex-basis-full">
+                  <span>Components</span>
+                </h3>
+                <div class="flex gap-md flex-wrap">
+                  <label
+                    role="button"
+                    for="modal"
+                    class="a-btn theme -relative"
+                    data-component-label="Modal"
+                  >
+                    <span>Open Modal</span>
+                  </label>
+                  <label
+                    role="button"
+                    for="drawer"
+                    class="a-btn theme -relative"
+                    data-component-label="Drawer"
+                  >
+                    <span>Open Drawer</span>
+                  </label>
+                </div>
+              </article>
+              <article class="o-grid__item">
+                <h3 class="vertical">
+                  <span>Vertical</span>
+                </h3>
+              </article>
+              <article class="o-grid__item">
+                <p>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Perferendis laudantium consequatur quisquam rerum
+                  necessitatibus cupiditate praesentium, hic ad laboriosam ex
+                  sint et quam neque, a quas. Dolorum in aliquid perferendis.
+                </p>
+              </article>
+            </section>
+            <div class="m-section">
+              <h3 class="m-section__title">Section</h3>
+              <div class="m-section__content">
+                <h3 class="-highlighted -animate -active">
+                  <span
+                    >Highlighted active active active active Highlighted active
+                    active active active Highlighted active active active active
+                    Highlighted active active active active Highlighted active
+                    active active active Highlighted active active active active
+                    Highlighted active active active active
+                  </span>
+                </h3>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                  laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+                  irure dolor in reprehenderit in voluptate velit esse cillum
+                  dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+                  cupidatat non proident, sunt in culpa qui officia deserunt
+                  mollit anim id est laborum.
+                </p>
+                <h3 class="-highlighted -animate -active">
+                  <span class="labeled">Highlighted</span>
+                </h3>
+                <p>
+                  Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+                  accusantium doloremque laudantium, totam rem aperiam, eaque
+                  ipsa quae ab illo inventore veritatis et quasi architecto
+                  beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem
+                  quia voluptas sit aspernatur aut odit aut fugit, sed quia
+                  consequuntur magni dolores eos qui ratione voluptatem sequi
+                  nesciunt. Neque porro quisquam est, qui dolorem ipsum quia
+                  dolor sit amet, consectetur, adipisci velit, sed quia non
+                  numquam eius modi tempora incidunt ut labore et dolore magnam
+                  aliquam quaerat voluptatem. Ut enim ad minima veniam, quis
+                  nostrum exercitationem ullam corporis suscipit laboriosam,
+                  nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum
+                  iure reprehenderit qui in ea voluptate velit esse quam nihil
+                  molestiae consequatur, vel illum qui dolorem eum fugiat quo
+                  voluptas nulla pariatur?
+                </p>
+              </div>
+            </div>
+          </main>
         </div>
-        <div class="o-howDoesItWork__content">
-          <div class="o-howDoesItWork__lists">
-            <div class="container">
-              <h3>Global architecture</h3>
-              <ol class="m-list">
-                <li class="m-list__item">
-                  <h4>
-                    <span>CSS Custom properties</span>
-                  </h4>
-                  <p>Used for every variables and be changed at runtime.</p>
-                  <a class="a-link" href="https://css-tricks.com/a-complete-guide-to-custom-properties/">CSS-Tricks - A
-                    Complete Guide to Custom Properties</a>
-                </li>
-                <li class="m-list__item">
-                  <h4>
-                    <span> ABEM: Atomic BEM (Block Element Modifier) CSS architecture </span>
-                  </h4>
-                  <a class="a-link" href="https://css-tricks.com/abem-useful-adaptation-bem/">CSS-Tricks - ABEM. A more
-                    useful adaptation of BEM.</a>
-                </li>
-                <!-- <li class="m-list__item"></li>
+        <!-- Theme bar -->
+        <section class="o-themeBar">
+          <ul class="o-themeBar__container">
+            <li class="o-o-themeBar__element">
+              <button
+                type="button"
+                class="o-themeBar__btn"
+                aria-label="zoom-in"
+              >
+                <label for="zoom-in">
+                  <svg
+                    class="zoom-in"
+                    viewBox="0 0 40 40"
+                    width="100%"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <line x1="5" y1="20" x2="35" y2="20" />
+                    <line x1="20" y1="5" x2="20" y2="35" />
+                  </svg>
+                </label>
+              </button>
+            </li>
+            <li class="o-themeBar__element">
+              <button
+                type="button"
+                class="o-themeBar__btn"
+                aria-label="zoom-out"
+              >
+                <label for="zoom-out">
+                  <svg
+                    class="zoom-out"
+                    width="100%"
+                    viewBox="0 0 40 40"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <line x1="5" y1="20" x2="35" y2="20" />
+                  </svg>
+                </label>
+              </button>
+            </li>
+            <li class="o-themeBar__element"></li>
+            <li class="o-themeBar__element">
+              <a href="#warm-pink">
+                <svg
+                  class="warm-pink"
+                  width="100%"
+                  viewBox="0 0 40 40"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <rect width="40" height="40" />
+                </svg>
+              </a>
+            </li>
+            <li class="o-themeBar__element">
+              <a href="#red">
+                <svg
+                  class="red"
+                  width="100%"
+                  viewBox="0 0 40 40"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <rect width="40" height="40" />
+                </svg>
+              </a>
+            </li>
+            <li class="o-themeBar__element">
+              <a href="#erotic-blue">
+                <svg
+                  class="erotic-blue"
+                  width="100%"
+                  viewBox="0 0 40 40"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <rect width="40" height="40" />
+                </svg>
+              </a>
+            </li>
+            <li class="o-themeBar__element">
+              <a href="#">
+                <svg
+                  class="primary-yellow"
+                  width="100%"
+                  viewBox="0 0 40 40"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <rect width="40" height="40" />
+                </svg>
+              </a>
+            </li>
+            <li class="o-themeBar__element">
+              <button
+                type="button"
+                class="o-themeBar__btn"
+                aria-label="how-does-it-work-btn"
+              >
+                <label for="how-does-it-work">
+                  <svg
+                    class="how-does-it-work-open-btn"
+                    width="100%"
+                    viewBox="0 0 40 40"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <line x1="0" y1="0" x2="40" y2="0" />
+                    <line x1="40" y1="0" x2="40" y2="20" />
+                    <line x1="40" y1="20" x2="15" y2="20" />
+                    <line x1="20" y1="20" x2="20" y2="40" />
+                  </svg>
+                </label>
+              </button>
+            </li>
+          </ul>
+        </section>
+        <!-- How does it work? -->
+        <section class="o-howDoesItWork">
+          <div class="o-howDoesItWork__header">
+            <!-- <label role="button" for="how-does-it-work-back" class="o-howDoesItWork__backBtn a-btn theme m-0"
+            aria-label="back-button"> Back </label> -->
+            <h2 class="m-0">How Does It Work?</h2>
+          </div>
+          <div class="o-howDoesItWork__content">
+            <div class="o-howDoesItWork__lists">
+              <div class="container">
+                <h3>Global architecture</h3>
+                <ol class="m-list">
+                  <li class="m-list__item">
+                    <h4>
+                      <span>CSS Custom properties</span>
+                    </h4>
+                    <p>Used for every variables and be changed at runtime.</p>
+                    <a
+                      class="a-link"
+                      href="https://css-tricks.com/a-complete-guide-to-custom-properties/"
+                      >CSS-Tricks - A Complete Guide to Custom Properties</a
+                    >
+                  </li>
+                  <li class="m-list__item">
+                    <h4>
+                      <span>
+                        ABEM: Atomic BEM (Block Element Modifier) CSS
+                        architecture
+                      </span>
+                    </h4>
+                    <a
+                      class="a-link"
+                      href="https://css-tricks.com/abem-useful-adaptation-bem/"
+                      >CSS-Tricks - ABEM. A more useful adaptation of BEM.</a
+                    >
+                  </li>
+                  <!-- <li class="m-list__item"></li>
                   <h4 ><span>
                     Building a Scalable CSS Architecture With BEM and Utility Classes
                   </p>
@@ -368,23 +602,34 @@
                     a
                     Scalable CSS Architecture With BEM and Utility Classes</a>
                 </li> -->
-                <li class="m-list__item">
-                  <h4>
-                    <span>Layout: Unholy Albatros</span>
-                  </h4>
-                  <a class="a-link" href="https://www.miragecraft.com/blog/unholy-albatross">Unholy Albatross</a>
-                </li>
-                <li class="m-list__item">
-                  <h4>
-                    <span>Container queries (WIP)</span>
-                  </h4>
-                  <blockquote cite="https://css-tricks.com/css-container-queries/">Create layouts made with elements
-                    that respond to, say, the width of their containers rather than the width of the viewport.
-                  </blockquote>
-                  <a class="a-link" href="https://css-tricks.com/css-container-queries/">CSS-Tricks - CSS Container
-                    Queries </a>
-                </li>
-                <!-- <li>
+                  <li class="m-list__item">
+                    <h4>
+                      <span>Layout: Unholy Albatros</span>
+                    </h4>
+                    <a
+                      class="a-link"
+                      href="https://www.miragecraft.com/blog/unholy-albatross"
+                      >Unholy Albatross</a
+                    >
+                  </li>
+                  <li class="m-list__item">
+                    <h4>
+                      <span>Container queries (WIP)</span>
+                    </h4>
+                    <blockquote
+                      cite="https://css-tricks.com/css-container-queries/"
+                    >
+                      Create layouts made with elements that respond to, say,
+                      the width of their containers rather than the width of the
+                      viewport.
+                    </blockquote>
+                    <a
+                      class="a-link"
+                      href="https://css-tricks.com/css-container-queries/"
+                      >CSS-Tricks - CSS Container Queries
+                    </a>
+                  </li>
+                  <!-- <li>
                   <h4 class="m-list__item -highlighted text-xl"></h4>
                   <p class="m-list__item__description">
                     <span class="m-list__item__description__solution"> grid-auto-flow: column; makes items flow across
@@ -392,178 +637,282 @@
                     Overflow <a href="https://stackoverflow.com/a/50801675">answer from the specs</a>
                   </p>
                 </li> -->
-              </ol>
-              <h3>Tricks used</h3>
-              <ol>
-                <li class="m-list__item">
-                  <h4>
-                    <span>The "Checkbox Hack"</span>
-                  </h4>
-                  <a class="a-link" href="https://css-tricks.com/the-checkbox-hack/">CSS-Tricks - The “Checkbox Hack”
-                    (and things you can do with it)</a>
-                </li>
-                <li class="m-list__item">
-                  <h4>
-                    <span>CSS boolean variables</span>
-                  </h4>
-                  <p>Re-usable state logic with tricks using calc and custom properties</p>
-                  <a class="a-link" href="https://dev.to/tracygjg/conditional-css-437e">Conditional CSS </a>
-                  <a class="a-link" href="https://keithclark.co.uk/articles/pseudo-boolean-css-custom-properties/">
-                    Pseudo-boolean CSS custom properties </a>
-                  <pre data-code="css">
-                    <code>
---icon-visible: 1;
-  .icon {
-    width: calc(16px * var(--icon-visible, 1));
-  }
+                </ol>
+                <h3>Tricks used</h3>
+                <ol>
+                  <li class="m-list__item">
+                    <h4>
+                      <span>The "Checkbox Hack"</span>
+                    </h4>
+                    <a
+                      class="a-link"
+                      href="https://css-tricks.com/the-checkbox-hack/"
+                      >CSS-Tricks - The “Checkbox Hack” (and things you can do
+                      with it)</a
+                    >
+                  </li>
+                  <li class="m-list__item">
+                    <h4>
+                      <span>CSS boolean variables</span>
+                    </h4>
+                    <p>
+                      Re-usable state logic with tricks using calc and custom
+                      properties
+                    </p>
+                    <a
+                      class="a-link"
+                      href="https://dev.to/tracygjg/conditional-css-437e"
+                      >Conditional CSS
+                    </a>
+                    <a
+                      class="a-link"
+                      href="https://keithclark.co.uk/articles/pseudo-boolean-css-custom-properties/"
+                    >
+                      Pseudo-boolean CSS custom properties
+                    </a>
+                    <pre data-code="css"><code>
+                      `--icon-visible: 1;
+                        .icon {
+                          width: calc(16px * var(--icon-visible, 1));
+                        }
 
-  /* Later */
-  --icon-visible: 0;
+                        /* Later */
+                        --icon-visible: 0;`
+                    </code></pre>
+                  </li>
+                  <li class="m-list__item">
+                    <h4>
+                      <span>Pseudo-selector</span>
+                    </h4>
+                    <h5>:has()</h5>
+                    <p>
+                      :has() acts as a parent selector - style the parent
+                      depending on the child(ren)
+                    </p>
+                    <pre data-code="css">
+                    <code>
+                      .dynamic-form {
+                        container: dynamic-form;
+                        container-type: inline-size;
+                        --unstyled: 0;
+                        --border-color: var(--theme-color);
+                      }
+
+                      .dynamic-form:has(#ready:not(:checked)) {
+                        --unstyled: 1;
+                        --border-color: transparent;
+                      }
                     </code>
                   </pre>
-                </li>
-                <li class="m-list__item">
-                  <h4>
-                    <span>Pseudo-selector</span>
-                  </h4>
-                  <h5>:has()</h5>
-                  <p>:has() acts as a parent selector - style the parent depending on the child(ren)</p>
-                  <pre data-code="css">
-                    <code>
-.dynamic-form {
-  container: dynamic-form;
-  container-type: inline-size;
-  --unstyled: 0;
-  --border-color: var(--theme-color);
-}
-
-.dynamic-form:has(#ready:not(:checked)) {
-  --unstyled: 1;
-  --border-color: transparent;
-}
-                    </code>
-                  </pre>
-                  <a class="a-link" href="https://ishadeed.com/article/css-has-guide/">CSS :has() Interactive Guide</a>
-                </li>
-              </ol>
-            </div>
-            <div class="container">
-              <h3>Specific features</h3>
-              <ol role="list">
-                <li class="m-list__item">
-                  <h4><span>Grid, apply styles to everything <i>but the element actually being hovered</i>
-                    </span></h4> <a class="a-link" href="https://css-tricks.com/hover-on-everything-but/"> Hover on
-                    “Everything But”</a>
-                  <div class="a-box -info">
-                    <span><a href="https://css-tricks.com/examples/HoverEverythingBut/">Live Demo</a></span>
-                  </div>
-                  <p class="-info"></p>
-                </li>
-                <li class="m-list__item">
-                  <h4><span> How can I make an SVG scale with its parent container?</span> </h4>
-                  <a class="a-link"
-                    href="https://stackoverflow.com/questions/19484707/how-can-i-make-an-svg-scale-with-its-parent-container">
-                    How can I make an SVG scale with its parent container? </a>
-                </li>
-                <li class="m-list__item">
-                  <h4><span>How to scale SVG </span> </h4>
-                  <a class="a-link" href="https://css-tricks.com/scale-svg/">CSS-Tricks - How to scale SVG</a>
-                </li>
-                <li class="m-list__item">
-                  <h4><span>Shake CSS Animation</span></p> <a class="a-link"
-                      href="https://css-tricks.com/snippets/css/shake-css-keyframe-animation/">CSS-Tricks - Shake CSS
-                      Animation</a>
-                </li>
-                <li class="m-list__item">
-                  <h4><span> `position: sticky` inside a container with overflow: hidden`</span> </h4>
-                  <p class="m-list__item__description"> Use <span class="m-list__item__description__solution">
-                      `overflow: clip` </span> Sources: Stack Overflow <a
-                      href="https://stackoverflow.com/a/72792224">answer from the specs</a> More simple ELI5 <a
-                      href="https://medium.com/@ehsaneona/overcoming-position-sticky-issues-solving-overflow-hidden-problems-with-overflow-clip-e8e79a7b0c34">article</a>
-                    from Medium <!-- make a line break before the span through CSS -->
-                    <span class="m-list__item__description__used-on" style="
+                    <a
+                      class="a-link"
+                      href="https://ishadeed.com/article/css-has-guide/"
+                      >CSS :has() Interactive Guide</a
+                    >
+                  </li>
+                </ol>
+              </div>
+              <div class="container">
+                <h3>Specific features</h3>
+                <ol role="list">
+                  <li class="m-list__item">
+                    <h4>
+                      <span
+                        >Grid, apply styles to everything
+                        <i>but the element actually being hovered</i>
+                      </span>
+                    </h4>
+                    <a
+                      class="a-link"
+                      href="https://css-tricks.com/hover-on-everything-but/"
+                    >
+                      Hover on “Everything But”</a
+                    >
+                    <div class="a-box -info">
+                      <span
+                        ><a
+                          href="https://css-tricks.com/examples/HoverEverythingBut/"
+                          >Live Demo</a
+                        ></span
+                      >
+                    </div>
+                    <p class="-info"></p>
+                  </li>
+                  <li class="m-list__item">
+                    <h4>
+                      <span>
+                        How can I make an SVG scale with its parent
+                        container?</span
+                      >
+                    </h4>
+                    <a
+                      class="a-link"
+                      href="https://stackoverflow.com/questions/19484707/how-can-i-make-an-svg-scale-with-its-parent-container"
+                    >
+                      How can I make an SVG scale with its parent container?
+                    </a>
+                  </li>
+                  <li class="m-list__item">
+                    <h4><span>How to scale SVG </span></h4>
+                    <a class="a-link" href="https://css-tricks.com/scale-svg/"
+                      >CSS-Tricks - How to scale SVG</a
+                    >
+                  </li>
+                  <li class="m-list__item">
+                    <h4><span>Shake CSS Animation</span></h4>
+                    <a
+                      class="a-link"
+                      href="https://css-tricks.com/snippets/css/shake-css-keyframe-animation/"
+                      >CSS-Tricks - Shake CSS Animation</a
+                    >
+                  </li>
+                  <li class="m-list__item">
+                    <h4>
+                      <span>
+                        `position: sticky` inside a container with overflow:
+                        hidden`</span
+                      >
+                    </h4>
+                    <p class="m-list__item__description">
+                      Use
+                      <span class="m-list__item__description__solution">
+                        `overflow: clip`
+                      </span>
+                      Sources: Stack Overflow
+                      <a href="https://stackoverflow.com/a/72792224"
+                        >answer from the specs</a
+                      >
+                      More simple ELI5
+                      <a
+                        href="https://medium.com/@ehsaneona/overcoming-position-sticky-issues-solving-overflow-hidden-problems-with-overflow-clip-e8e79a7b0c34"
+                        >article</a
+                      >
+                      from Medium
+                      <!-- make a line break before the span through CSS -->
+                      <span
+                        class="m-list__item__description__used-on"
+                        style="
                           display: inline-block;
                           color: red;
                           background: hsl(from red h s l / 0.2);
-                        ">(used on `.wrapper`)</span>
-                  </p>
-                </li>
-              </ol>
-              <h3>Components</h3>
-              <ol>
-                <li class="m-list__item">
-                  <h4><span>Modal</span></h4>
-                <li class="m-list__item">
-                  <a class="a-link" href="https://css-tricks.com/prevent-page-scrolling-when-a-modal-is-open/">Prevent
-                    Page Scrolling When a Modal is Open</a> - CSS-Tricks and <a class="a-link"
-                    href="https://css-tricks.com/prevent-page-scrolling-when-a-modal-is-open/#comment-1713778">comment</a>
-                </li>
-                <li class="m-list__item">
-                  <a href="https://webdesign.tutsplus.com/css-only-modal--cms-107772t"> What is a modal? And how to
-                    build a CSS-only Modal </a>
-                </li>
-                <li class="m-list__item"> `overscroll-behavior` [CSS
-                  property](https://developer.mozilla.org/en-US/docs/Web/CSS/overscroll-behavior) </li>
-                <li class="m-list__item">
-                  <h4><span>Form</span></h4>
-                  <p class="m-list__item__description">
-                  </p>
-                  <h5>`:focus-within`</h5>
-                  <a class="a-link" href="https://css-tricks.com/accessible-forms-with-pseudo-classes/">Accessible Forms
-                    with Pseudo Classes</a>
-                </li>
-              </ol>
-              <h3>Other</h3>
-              <ol>
-                <li class="m-list__item">
-                  <p class="m-list__item__description">
-                  </p>
-                  <h5> `accent-color`</h5> https://dev.to/technoph1le/the-css-accent-color-property-explained-4h9o and
-                  <a href="https://css-tricks.com/almanac/properties/a/accent-color/">CSS-Tricks</a>
-                </li>
-              </ol>
-              <h3>Accessibility</h3>
-              <ol>
-                <li class="m-list__item">
-                  <h4><span>Aria</span></h4>
-                  <a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/navigation_role">Navigation
-                    role</a>
-                </li>
-              </ol>
+                        "
+                        >(used on `.wrapper`)</span
+                      >
+                    </p>
+                  </li>
+                </ol>
+                <h3>Components</h3>
+                <ol>
+                  <li class="m-list__item">
+                    <h4><span>Modal</span></h4>
+                  </li>
+
+                  <li class="m-list__item">
+                    <a
+                      class="a-link"
+                      href="https://css-tricks.com/prevent-page-scrolling-when-a-modal-is-open/"
+                      >Prevent Page Scrolling When a Modal is Open</a
+                    >
+                    - CSS-Tricks and
+                    <a
+                      class="a-link"
+                      href="https://css-tricks.com/prevent-page-scrolling-when-a-modal-is-open/#comment-1713778"
+                      >comment</a
+                    >
+                  </li>
+                  <li class="m-list__item">
+                    <a
+                      href="https://webdesign.tutsplus.com/css-only-modal--cms-107772t"
+                    >
+                      What is a modal? And how to build a CSS-only Modal
+                    </a>
+                  </li>
+                  <li class="m-list__item">
+                    `overscroll-behavior` [CSS
+                    property](https://developer.mozilla.org/en-US/docs/Web/CSS/overscroll-behavior)
+                  </li>
+                  <li class="m-list__item">
+                    <h4><span>Form</span></h4>
+                    <p class="m-list__item__description"></p>
+                    <h5>`:focus-within`</h5>
+                    <a
+                      class="a-link"
+                      href="https://css-tricks.com/accessible-forms-with-pseudo-classes/"
+                      >Accessible Forms with Pseudo Classes</a
+                    >
+                  </li>
+                </ol>
+                <h3>Other</h3>
+                <ol>
+                  <li class="m-list__item">
+                    <p class="m-list__item__description"></p>
+                    <h5>`accent-color`</h5>
+                    https://dev.to/technoph1le/the-css-accent-color-property-explained-4h9o
+                    and
+                    <a
+                      href="https://css-tricks.com/almanac/properties/a/accent-color/"
+                      >CSS-Tricks</a
+                    >
+                  </li>
+                </ol>
+                <h3>Accessibility</h3>
+                <ol>
+                  <li class="m-list__item">
+                    <h4><span>Aria</span></h4>
+                    <a
+                      href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/navigation_role"
+                      >Navigation role</a
+                    >
+                  </li>
+                </ol>
+              </div>
             </div>
           </div>
+        </section>
+      </div>
+      <!-- Modal Component -->
+      <label for="modal" class="a-overlay"></label>
+      <div
+        class="m-modal"
+        id="modal"
+        aria-modal="true"
+        role="dialog"
+        tabindex="-1"
+      >
+        <div class="m-modal__header">
+          <h3 class="m-modal__title">Modal title</h3>
         </div>
-      </section>
+        <div class="m-modal__content">
+          <p>
+            Example of a fade modal with a close button. Don't like the
+            position? Use the action buttons below.
+          </p>
+        </div>
+        <div class="m-modal__footer flex flex-wrap justify-end gap-xs">
+          <label class="a-btn theme" for="center-modal"></label>
+          <label class="a-btn theme" for="brutalist-modal"></label>
+          <label class="a-btn theme" for="modal"><span>Close</span></label>
+        </div>
+      </div>
+      <!-- Drawer Component -->
+      <label for="drawer" class="a-overlay"></label>
+      <div
+        class="m-drawer flex flex-column justify-between"
+        id="drawer"
+        aria-modal="true"
+        role="dialog"
+        tabindex="-1"
+      >
+        <div class="m-modal__header">
+          <h3 class="m-modal__title">Drawer Component</h3>
+        </div>
+        <div class="m-modal__content">
+          <p>Example of a drawer component.</p>
+        </div>
+        <div class="m-modal__footer">
+          <label class="a-btn theme" for="drawer"><span>Close</span></label>
+        </div>
+      </div>
     </div>
-    <!-- Modal Component -->
-    <label for="modal" class="a-overlay"></label>
-    <div class="m-modal" id="modal" aria-modal="true" role="dialog" tabindex="-1">
-      <div class="m-modal__header">
-        <h3 class="m-modal__title">Modal title</h3>
-      </div>
-      <div class="m-modal__content">
-        <p> Example of a fade modal with a close button. Don't like the position? Use the action buttons below. </p>
-      </div>
-      <div class="m-modal__footer flex flex-wrap justify-end gap-xs">
-        <label class="a-btn theme " for="center-modal"></label>
-        <label class="a-btn theme " for="brutalist-modal"></label>
-        <label class="a-btn theme " for="modal"><span>Close</span></label>
-      </div>
-    </div>
-    <!-- Drawer Component -->
-    <label for="drawer" class="a-overlay"></label>
-    <div class="m-drawer flex flex-column justify-between" id="drawer" aria-modal="true" role="dialog" tabindex="-1">
-      <div class="m-modal__header">
-        <h3 class="m-modal__title">Drawer Component</h3>
-      </div>
-      <div class="m-modal__content">
-        <p>Example of a drawer component.</p>
-      </div>
-      <div class="m-modal__footer">
-        <label class="a-btn theme " for="drawer"><span>Close</span></label>
-      </div>
-    </div>
-  </div>
-</body>
-
+  </body>
 </html>

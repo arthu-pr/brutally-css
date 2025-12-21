@@ -1,0 +1,110 @@
+/*
+ * https://dev.to/janeori/css-type-casting-to-numeric-tanatan2-scalars-582j
+ * https://css-tip.com/screen-dimension/
+*/
+@property --100vw {
+  syntax: '<length>';
+  initial-value: 0px;
+  inherits: false;
+}
+@property --100vh {
+  syntax: '<length>';
+  initial-value: 0px;
+  inherits: false;
+}
+
+:root {
+  --100svw: 100vw;
+  --100svh: 100vh;
+  --viewport-width: tan(atan2(var(--100svw), 1px));
+  --viewport-height: tan(atan2(var(--100svh), 1px));
+  /* calc() wrapper required for Safari, bug:
+  // https://bugs.webkit.org/show_bug.cgi?id=263000
+  */
+
+  --vw: var(--viewport-width);
+  --vh: var(--viewport-height);
+
+  --is-screen-xs: min(1, round(calc((var(--breakpoint-xs) / var(--vw)))));
+  --is-screen-sm: min(1, round(calc((var(--breakpoint-sm) / var(--vw)))));
+  --is-screen-md: min(1, round(calc((var(--breakpoint-md) / var(--vw)))));
+  --is-screen-lg: min(1, round(calc((var(--breakpoint-lg) / var(--vw)))));
+  --is-screen-xl: min(1, round(calc((var(--breakpoint-xl) / var(--vw)))));
+}
+
+.viewport-size::before {
+  counter-reset: w var(--viewport-width) h var(--viewport-height);
+  content: counter(w) '×' counter(h);
+  display: grid;
+  font-size: var(--text-lg);
+}
+.is-screen-xs::after {
+  counter-reset: w var(--viewport-width) h var(--viewport-height) xs
+    var(--is-screen-xs);
+  /* --vw: var(--viewport-width); */
+  /* --is-screen-xs: min(1, round(calc(1 * (var(--breakpoint-xs) / var(--vw))))); */
+  /* content: 'is-screen-xs: ' counter(w) '×' counter(h) ' | ' counter(xs); */
+  content: counter(xs);
+  font-size: var(--text-md);
+}
+.is-screen-sm::after {
+  counter-reset: w var(--viewport-width) h var(--viewport-height) sm
+    var(--is-screen-sm);
+  content: counter(sm);
+  font-size: var(--text-md);
+}
+.is-screen-md::after {
+  counter-reset: w var(--viewport-width) h var(--viewport-height) md
+    var(--is-screen-md);
+  content: counter(md);
+  font-size: var(--text-md);
+}
+.is-screen-lg::after {
+  counter-reset: w var(--viewport-width) h var(--viewport-height) lg
+    var(--is-screen-lg);
+  content: counter(lg);
+  font-size: var(--text-md);
+}
+.is-screen-xl::after {
+  counter-reset: w var(--viewport-width) h var(--viewport-height) xl
+    var(--is-screen-xl);
+  content: counter(xl);
+  font-size: var(--text-md);
+}
+@property --display-clip {
+  syntax: 'yes | <number>+';
+  inherits: true;
+  initial-value: 0 0 0 0;
+}
+
+.-relative {
+  position: relative;
+}
+
+@media (min-width: 40rem) {
+  /* 640px */
+  .-mobile {
+    display: none;
+  }
+}
+
+@media (max-width: 48rem) {
+  /* 768px */
+  .-tablet {
+    display: none;
+  }
+}
+
+@media (min-width: 64rem) {
+  /* 1024px */
+  .-desktop {
+    display: none;
+  }
+}
+
+@media (max-width: 80rem) {
+  /* 1280px */
+  .-desktop-lg {
+    display: none;
+  }
+}
