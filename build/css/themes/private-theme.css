@@ -9,12 +9,16 @@
 /* ---------------------------------------------------- */
 /*                        Border                          */
 /* ---------------------------------------------------- */
+ --_border-width-10: var(--border-width-10, calc(0.1 * var(--border-width-default)));
+ --_border-width-25: var(--border-width-25, calc(0.25 * var(--border-width-default)));
+ --_border-width-50: var(--border-width-50, calc(0.5 * var(--border-width-default)));
+ --_border-width-75: var(--border-width-75, calc(0.75 * var(--border-width-default)));
  --_border-width-default: var(--border-width-default, 2px);
  --_border-width-scale: var(--border-width-scale, 1.25);
- --_border-width-xsmall: var(--border-width-xsmall, calc(var(--border-width-default) / var(--border-width-scale)));
- --_border-width-small: var(--border-width-small, calc(var(--border-width-default) * var(--border-width-scale)));
+ --_border-width-xsmall: var(--border-width-xsmall, calc(var(--border-width-default) / 2 * var(--border-width-scale)));
+ --_border-width-small: var(--border-width-small, calc(var(--border-width-default) / var(--border-width-scale)));
  --_border-width-medium: var(--border-width-medium, var(--border-width-default));
- --_border-width-large: var(--border-width-large, calc(var(--border-width-default) * var(--border-width-scale) * var(--border-width-scale) * var(--border-width-scale)));
+ --_border-width-large: var(--border-width-large, calc(var(--border-width-default) * var(--border-width-scale)));
  --_border-style: var(--border-style, var(--border-style-default));
  --_border-radius-default: var(--border-radius-default, 0);
  --_border-radius-scale: var(--border-radius-scale, 1.5);
@@ -79,8 +83,8 @@
  --_spacing-multiplier-xxl: var(--spacing-multiplier-xxl, 5.25);
  --_spacing-fluid-min: var(--spacing-fluid-min, 1rem);
  --_spacing-fluid-max: var(--spacing-fluid-max, 1.5rem);
- --_spacing-fluid-min-viewport: var(--spacing-fluid-min-viewport, 1svw);
- --_spacing-fluid-max-viewport: var(--spacing-fluid-max-viewport, 1.5svw);
+ --_spacing-fluid-min-viewport: var(--spacing-fluid-min-viewport, 360px);
+ --_spacing-fluid-max-viewport: var(--spacing-fluid-max-viewport, 1280px);
 
 
 /* ---------------------------------------------------- */
@@ -113,12 +117,15 @@
   /* -------------------- */
   /* Block */
   /* -------------------- */
- --_color-card: var(--color-card, var(--border-radius-medium));
- --_color-card: var(--color-card, var(--space-md));
+ --_card-bg: var(--card-bg, var(--color-bg-neutral));
+ --_card-border: var(--card-border, var(--color-border-subtle));
+ --_card-radius: var(--card-radius, var(--border-radius-medium));
+ --_card-padding: var(--card-padding, var(--space-md));
  --_button-padding-x: var(--button-padding-x, var(--space-sm));
  --_button-padding-y: var(--button-padding-y, var(--space-xs));
  --_button-radius: var(--button-radius, var(--border-radius-medium));
  --_button-color: var(--button-color, var(--color-text-primary));
+ --_button-text: var(--button-text, var(--color-text-primary));
  --_button-bg: var(--button-bg, var(--color-bg-primary));
  --_button-hover-background: var(--button-hover-background, var(--color-bg-primary-hover));
 
