@@ -22,7 +22,7 @@ jobs:
         run: cleancss -o brutallycss/dist/main.min.css brutallycss/css/**/*.css --remove-inlined-files
 
       - name: Install html-minifier
-        run: npm install -g html-minifier-terser
+        run: npm install -g html-minifier
 
       - name: Minify HTML files
         run: |
@@ -82,6 +82,7 @@ jobs:
       - name: Check for changes
         id: check-changes
         run: |
+          cd brutallycss
           if git diff --quiet; then
             echo "changed=false" >> $GITHUB_OUTPUT
             echo "No changes detected"
