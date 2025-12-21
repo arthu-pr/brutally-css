@@ -72,7 +72,10 @@
     var(--color-theme-default, var(--color-arylide-yellow-500)),
     white 40%
   );
-  --color-theme-500: var(--color-arylide-yellow-500);
+  --color-theme-500: var(
+    --color-theme-default,
+    var(--color-arylide-yellow-500)
+  );
   --color-theme-600: color-mix(
     in srgb,
     var(--color-theme-default, var(--color-arylide-yellow-500)),
@@ -93,7 +96,10 @@
     var(--color-theme-default, var(--color-arylide-yellow-500)),
     white 90%
   );
-  --color-theme-default: var(--color-arylide-yellow-500);
+  --color-theme-default: var(
+    --color-theme-default,
+    var(--color-arylide-yellow-500)
+  );
   --font-unit: clamp(1em, 1.5vw, 1.5em);
   --font-tiny: calc(0.25 * var(--space-unit));
   --font-small: 0.5rem;

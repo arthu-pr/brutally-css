@@ -254,14 +254,6 @@ li .square::before {
   grid-row: span 2; /* Spans two rows */
 }
 
-:root {
-  --_breakpoints-mobile: 'var(--breakpoints-POOP, 640px)';
-  --_breakpoints-tablet: 'var(--breakpoints-tablet, 768px)';
-  --_breakpoints-desktop: 'var(--breakpoints-desktop, 1024px)';
-  --_breakpoints-desktop-xl: 'var(--breakpoints-desktop-xl, 1280px)';
-  --_breakpoints-desktop-xxl: 'var(--breakpoints-desktop-xxl, 1820px)';
-}
-
 /* https://css-tricks.com/examples/HoverEverythingBut/ */
 .grid-container > ul {
   /* float: left; */

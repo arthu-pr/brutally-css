@@ -51,13 +51,9 @@
   /* https://picular.co/erotic */
   --theme-erotic-blue: #2c6974;
 
-  --theme-color-lightness: 0.5;
-
   /* Initial state */
   /* --theme-color: var(--primary); */
-  /* --theme-color: oklch(
-    from var(--color-theme-500) var(--theme-color-lightness) c h 100%
-  ); */
+  --theme-color-50: hsl(from var(--theme-color) h s l / 50%);
   /* --theme-color: var(--color-primary); */
 
   --theme-error: hsl(from var(--theme-color) 30% s l / 100%);
