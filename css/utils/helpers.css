@@ -1,15 +1,3 @@
-/* 
- * Theme utilities
- */
-
 .border-theme {
   border: var(--border-theme);
-}
-
-.text-theme {
-  color: var(--theme-color);
-}
-
-.bg-theme {
-  background-color: var(--theme-color);
 }

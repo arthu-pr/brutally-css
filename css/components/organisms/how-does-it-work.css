@@ -1,6 +1,6 @@
 .o-howDoesItWork {
   grid-area: how-does-it-work;
-  container: roman-list;
+  container: how-does-it-work;
   container-type: inline-size;
   overflow: hidden;
   height: 100%;
@@ -54,7 +54,7 @@
 /* --------------------------------------------- */
 
 /*  Styling of the list based on the parend */
-@container roman-list (min-width: 0) {
+@container how-does-it-work (min-width: 0) {
   .m-list {
     list-style-type: upper-roman;
   }

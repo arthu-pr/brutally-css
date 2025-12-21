@@ -3,10 +3,52 @@
     <title>Brutally CSS - Components</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link href="css/main.min.css" rel="stylesheet" />
-    <!-- <link href="css/layouts/wrapper.css" rel="stylesheet" />
+    <link href="css/main.css" rel="stylesheet" />
+    <link href="css/layouts/wrapper.css" rel="stylesheet" />
     <link href="css/layouts/box.css" rel="stylesheet" />
     <!-- Base -->
+    <link href="css/base/reset.css" rel="stylesheet" />
+    <link href="css/base/helpers.css" rel="stylesheet" />
+    <link href="css/base/colors.css" rel="stylesheet" />
+    <link href="css/base/spacing.css" rel="stylesheet" />
+    <link href="css/base/animations.css" rel="stylesheet" />
+    <link href="css/base/variables.css" rel="stylesheet" />
+    <!-- Utils -->
+    <link href="css/utils/variables.css" rel="stylesheet" />
+    <link href="css/utils.css" rel="stylesheet" />
+    <link href="css/utils/screens.css" rel="stylesheet" />
+    <link href="css/components/common.css" rel="stylesheet" />
+    <link href="css/banner.css" rel="stylesheet" />
+    <link href="css/utils/helpers.css" rel="stylesheet" />
+    <!-- Atoms -->
+    <link href="css/components/atoms/overlay.css" rel="stylesheet" />
+    <link href="css/components/atoms/typography.css" rel="stylesheet" />
+    <link href="css/components/atoms/input.css" rel="stylesheet" />
+    <link href="css/components/atoms/buttons.css" rel="stylesheet" />
+    <link href="css/components/atoms/code.css" rel="stylesheet" />
+    <link href="css/components/atoms/link.css" rel="stylesheet" />
+    <!-- Molecules -->
+    <link href="css/components/molecules/form.css" rel="stylesheet" />
+    <link href="css/components/molecules/shake.css" rel="stylesheet" />
+    <link href="css/components/molecules/dynamic-form.css" rel="stylesheet" />
+    <link href="css/components/molecules/list.css" rel="stylesheet" />
+    <link href="css/components/molecules/modal.css" rel="stylesheet" />
+    <link href="css/components/molecules/section.css" rel="stylesheet" />
+    <link href="css/components/molecules/navbar.css" rel="stylesheet" />
+    <!-- Organisms -->
+    <link href="css/components/organisms/grid.css" rel="stylesheet" />
+    <link
+      href="css/components/organisms/how-does-it-work.css"
+      rel="stylesheet"
+    />
+    <link href="css/components/organisms/theme-bar.css" rel="stylesheet" />
+    <link href="css/components/organisms/info-section.css" rel="stylesheet" />
+    <!-- Animations -->
+    <link href="css/animations/highlighted.css" rel="stylesheet" />
+    <link href="css/animations/vertical.css" rel="stylesheet" />
+    <link href="css/animations/modifier.css" rel="stylesheet" />
+    <!-- Main theme -->
+    <link href="css/theme.css" rel="stylesheet" />
     <link rel="icon" type="image/x-icon" href="/favicon/favicon.ico" />
     <link
       rel="apple-touch-icon"
@@ -29,60 +71,14 @@
   </head>
 
   <body>
-    <div class="wrapper">
+    <div class="wrapper h-full">
       <div class="container padding-y-md">
         <h1 class="-highlighted"><span class="labeled">Components</span></h1>
-        <h2>Utility</h2>
-        <form>
-          <fieldset>
-            <legend>Choose your favorite monster</legend>
-
-            <input type="radio" id="kraken" name="monster" value="K" />
-            <label for="kraken">Kraken</label><br />
-
-            <input type="radio" id="sasquatch" name="monster" value="S" />
-            <label for="sasquatch">Sasquatch</label><br />
-
-            <input type="radio" id="mothman" name="monster" value="M" />
-            <label for="mothman">Mothman</label>
-          </fieldset>
-        </form>
-
-        <!-- Input -->
-        <section class="box">
-          <p aria-label="box-title" class="text-xl">Viewport size</p>
-          <div class="flex gap-md flex-wrap">
-            <span class="viewport-size"></span>
-          </div>
-          <details>
-            <summary>
-              <span class="highlighted text-md"><span>How to?</span></span>
-            </summary>
-            <ol class="m-list">
-              <li class="m-list__item">
-                <a
-                  class="a-link"
-                  href="https://css-tricks.com/snippets/css/calculate-viewport-size-in-css/"
-                  >Calculate Viewport Size in CSS</a
-                >
-              </li>
-              <li class="m-list__item">
-                <a
-                  href="https://dev.to/janeori/css-type-casting-to-numeric-tanatan2-scalars-582j"
-                  class="a-link"
-                >
-                  CSS Type Casting to Numeric: tan(atan2()) Scalars
-                </a>
-                by Jane Ori
-              </li>
-            </ol>
-          </details>
-        </section>
         <h2>Atoms</h2>
 
         <!-- Button -->
         <section class="box">
-          <p aria-label="box-title" class="text-xl">Button</p>
+          <p aria-label="box-title" ="text-xl">Button</p>
           <div class="flex gap-md flex-wrap">
             <button class="a-btn theme">Primary</button>
             <button data-component="secondary" class="a-btn theme">
@@ -104,7 +100,7 @@
 
         <!-- Input -->
         <section class="box">
-          <p aria-label="box-title" class="text-xl">Text Input</p>
+          <p aria-label="box-title" ="text-xl">Text Input</p>
           <div class="flex gap-md flex-wrap">
             <input type="text" class="a-input theme" placeholder="Primary" />
             <input
@@ -125,66 +121,6 @@
               placeholder="Disabled"
             />
           </div>
-        </section>
-
-        <h2>Molecules</h2>
-
-        <!-- Table -->
-        <section class="box">
-          <p aria-label="box-title" class="text-xl">Table</p>
-          <table class="m-table text-theme">
-            <thead class="bg-theme" style="--theme-color-lightness: 1">
-              <tr>
-                <th>Header 1</th>
-                <th>Header 2</th>
-                <th>Header 3</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Row 1, Cell 1</td>
-                <td>Row 1, Cell 2</td>
-                <td>Row 1, Cell 3</td>
-              </tr>
-              <tr>
-                <td>Row 2, Cell 1</td>
-                <td>Row 2, Cell 2</td>
-                <td>Row 2, Cell 3</td>
-              </tr>
-            </tbody>
-          </table>
-
-          <details>
-            <summary>
-              <span class="highlighted text-md"><span>How to?</span></span>
-            </summary>
-            <ol class="m-list">
-              <li class="m-list__item">
-                <h5>
-                  <span>`table-layout: fixed` on the table</span>
-                </h5>
-                <h5>border-collapse: collapse;</h5>
-                <p>
-                  This prevent extra space between table cells and ensures that
-                  if a border is applied, it will be shown.
-                </p>
-                <pre data-code="css">
-                    <code>
-.m-table {
-  table-layout: fixed;
-  border-collapse: collapse;
-  width: 100%;
-}
-                    </code>
-                  </pre>
-                <a
-                  class="a-link"
-                  href="https://css-tricks.com/complete-guide-table-element/"
-                  >HTML Table Element Guide (Chris Coyier on Aug 12, 2024)</a
-                >
-              </li>
-            </ol>
-          </details>
         </section>
       </div>
     </div>
