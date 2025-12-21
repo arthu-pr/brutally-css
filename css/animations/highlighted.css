@@ -61,8 +61,8 @@ p.-highlighted {
   color: var(--color-bg);
   padding: 2px;
   background-image: var(--highlighted-bg);
-  -webkit-box-decoration-break: clone;
-  box-decoration-break: clone;
+  /* -webkit-box-decoration-break: clone; */
+  /* box-decoration-break: clone; */
 }
 
 .-highlighted > span.labeled {
@@ -89,11 +89,11 @@ p.-highlighted {
     --animate-out: highlight-to-left 0.4s 0.1s forwards;
   }
 
-  .-highlighted.-animate:has(> span:hover) > span {
+  .-highlighted.-animate:hover > span {
     --highlight-animate: var(--animate-in);
   }
 
-  .-highlighted.-animate:has(> span:not(:hover)) > span {
+  .-highlighted.-animate:not(:hover) > span {
     --highlight-animate: var(--animate-out);
   }
 }

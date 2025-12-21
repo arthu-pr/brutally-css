@@ -25,6 +25,8 @@
 }
 
 :root {
+  /* Theme Colors */
+  --color-primary: var(--color-theme-default);
   /* Borders */
   --border-theme: var(--border-width) solid var(--theme-color);
   --border-theme-10: var(--border-width-10) solid var(--theme-color);
@@ -50,7 +52,8 @@
   --color-error: var(--theme-error);
 
   /* Initial State */
-  --theme-color: var(--color-theme-500);
+  --theme-color: oklch(from var(--color-primary) l c h / 100%);
+  /* --theme-color: var(--color-theme-500); */
 }
 
 @media (min-width: 48rem) {
