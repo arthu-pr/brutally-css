@@ -26,11 +26,11 @@
 /* ---------------------------------------------------- */
 /*                        Breakpoint                          */
 /* ---------------------------------------------------- */
- --_breakpoint-mobile: var(--breakpoint-mobile, 640px);
- --_breakpoint-tablet: var(--breakpoint-tablet, 768px);
- --_breakpoint-desktop: var(--breakpoint-desktop, 1024px);
- --_breakpoint-desktop-xl: var(--breakpoint-desktop-xl, 1280px);
- --_breakpoint-desktop-xxl: var(--breakpoint-desktop-xxl, 1820px);
+ --_breakpoint-mobile: var(--breakpoint-mobile, 640);
+ --_breakpoint-tablet: var(--breakpoint-tablet, 768);
+ --_breakpoint-desktop: var(--breakpoint-desktop, 1024);
+ --_breakpoint-desktop-xl: var(--breakpoint-desktop-xl, 1280);
+ --_breakpoint-desktop-xxl: var(--breakpoint-desktop-xxl, 1820);
 
 
 /* ---------------------------------------------------- */
@@ -74,13 +74,13 @@
  --_spacing-multiplier-xs: var(--spacing-multiplier-xs, 0.5);
  --_spacing-multiplier-sm: var(--spacing-multiplier-sm, 0.75);
  --_spacing-multiplier-md: var(--spacing-multiplier-md, 1);
- --_spacing-multiplier-lg: var(--spacing-multiplier-lg, 1.5);
- --_spacing-multiplier-xl: var(--spacing-multiplier-xl, 2);
- --_spacing-multiplier-xxl: var(--spacing-multiplier-xxl, 4);
- --_spacing-fluid-min: var(--spacing-fluid-min, 1.125rem);
- --_spacing-fluid-max: var(--spacing-fluid-max, 3rem);
- --_spacing-fluid-min-viewport: var(--spacing-fluid-min-viewport, 360px);
- --_spacing-fluid-max-viewport: var(--spacing-fluid-max-viewport, 1280px);
+ --_spacing-multiplier-lg: var(--spacing-multiplier-lg, 2);
+ --_spacing-multiplier-xl: var(--spacing-multiplier-xl, 3.25);
+ --_spacing-multiplier-xxl: var(--spacing-multiplier-xxl, 5.25);
+ --_spacing-fluid-min: var(--spacing-fluid-min, 1rem);
+ --_spacing-fluid-max: var(--spacing-fluid-max, 1.5rem);
+ --_spacing-fluid-min-viewport: var(--spacing-fluid-min-viewport, 1svw);
+ --_spacing-fluid-max-viewport: var(--spacing-fluid-max-viewport, 1.5svw);
 
 
 /* ---------------------------------------------------- */
@@ -113,10 +113,8 @@
   /* -------------------- */
   /* Block */
   /* -------------------- */
- --_card-bg: var(--card-bg, var(--color-bg-neutral));
- --_card-border-color: var(--card-border-color, var(--color-border-subtle));
- --_card-radius: var(--card-radius, var(--border-radius-medium));
- --_card-padding: var(--card-padding, var(--space-md));
+ --_color-card: var(--color-card, var(--border-radius-medium));
+ --_color-card: var(--color-card, var(--space-md));
  --_button-padding-x: var(--button-padding-x, var(--space-sm));
  --_button-padding-y: var(--button-padding-y, var(--space-xs));
  --_button-radius: var(--button-radius, var(--border-radius-medium));
@@ -134,4 +132,6 @@
  --_cluster-align: var(--cluster-align, center);
  --_center-max-width: var(--center-max-width, 72ch);
  --_center-padding-inline: var(--center-padding-inline, var(--space-md));
+ --_switcher-modifier: var(--switcher-modifier, var(--breakpoint-md));
+ --_switcher-gap: var(--switcher-gap, var(--space-sm));
 }

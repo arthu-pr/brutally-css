@@ -9,12 +9,12 @@
   inherits: true;
   initial-value: yes;
 } */
-
+/* 
 @property --is-screen-sm {
   syntax: 'yes | no';
   inherits: true;
   initial-value: yes;
-}
+} */
 
 /* https://keithclark.co.uk/articles/pseudo-boolean-css-custom-properties/ */
 
@@ -27,11 +27,11 @@
 } */
 
 /* 768px - Tablets */
-@media (min-width: 48rem) {
+/* @media (min-width: 48rem) {
   :root {
     --is-screen-sm: no;
   }
-}
+} */
 
 /* Utility classes */
 /* .screen-xs {

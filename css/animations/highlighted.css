@@ -1,13 +1,13 @@
 /* https://stackoverflow.com/questions/6542212/use-css3-transitions-with-gradient-backgrounds/63848864#63848864 */
 /* Used for the shake animation see shake.css */
 @property --highlighted-color-1 {
-  syntax: "<color>";
+  syntax: '<color>';
   initial-value: #e3c567;
   inherits: false;
 }
 
 @property --highlighted-color-2 {
-  syntax: "<color>";
+  syntax: '<color>';
   initial-value: #e3c567;
   inherits: false;
 }
@@ -15,7 +15,7 @@
 /* Control wether the highlighted background is displayed by default */
 /* Used with animation */
 @property --active {
-  syntax: "<integer>";
+  syntax: '<integer>';
   initial-value: 1;
   inherits: true;
 }
@@ -31,7 +31,9 @@ h4.-highlighted,
 .text-md.-highlighted,
 .text-sm.-highlighted,
 .text-xs.-highlighted,
-p.-highlighted {
+.text-2.-highlighted,
+p.-highlighted,
+div.-highlighted {
   --highlighted-bg-color: color-mix(
     in srgb,
     var(--color-bg),
@@ -51,7 +53,7 @@ p.-highlighted {
 .-highlighted.stick-to-left {
   --left-mobile-val: calc(
     0px - var(--layout-mobile-padding) -
-      var("left", "y-highlighted-text", clamp(-30px, -1.4vw, -2px))
+      var('left', 'y-highlighted-text', clamp(-30px, -1.4vw, -2px))
   );
   left: var(--left-mobile-val, unset);
   padding-right: clamp(2px, 1.4vw, 30px);
@@ -60,7 +62,7 @@ p.-highlighted {
 .-highlighted > span {
   position: relative;
 
-  --highlighted-bg-color-1: var(--color-pri: !qy);
+  --highlighted-bg-color-1: var(--color-primary);
   --highlighted-bg-color-2: var(--color-primary);
 
   --highlighted-bg: linear-gradient(
@@ -77,12 +79,12 @@ p.-highlighted {
   /* box-decoration-break: clone; */
 }
 
-.-highlighted:has(:not(.vertical)) > span.labeled {
+.-highlighted:not(:has(.m-section__title)) > span.labeled {
   left: clamp(-30px, -1.4vw, -2px);
   padding-left: clamp(2px, 1.4vw, 30px);
 }
 
-.-highlighted:has(.vertical) > span.labeled {
+.-highlighted.m-section__title > span.labeled {
   top: clamp(-30px, -1.4vw, -2px);
   padding-top: clamp(2px, 1.4vw, 30px);
 }

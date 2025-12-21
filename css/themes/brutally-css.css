@@ -1,0 +1,69 @@
+@import url('../../build/css/colors.primitive.css') layer(colors.primitives);
+@import url('../../build/css/colors.semantic.css') layer(colors.semantic);
+@import url('../../build/css/colors.intent.css') layer(colors.intent);
+@import url('../../build/css/themes/public-theme.css') layer(theme);
+@import url('../../build/css/themes/private-theme.css') layer(theme);
+@import url('../../build/css/spacing.css') layer(theme);
+
+/* @import url('build/css/cube/cube.composition.css') layer(cube.composition); */
+/* @import url('build/css/cube/cube.utility.css') layer(cube.utility); */
+/* @import url('build/css/cube/cube.block.css') layer(cube.block); */
+
+@layer color, cube, theme;
+
+@layer theme {
+  :root {
+    --border-radius-default: 0;
+
+    --breakpoint-xs: var(--breakpoint-mobile, 30rem);
+    --breakpoint-sm: var(--breakpoint-tablet, 48rem);
+    --breakpoint-md: var(--breakpoint-desktop, 64rem);
+    --breakpoint-lg: var(--breakpoint-desktop, 80rem);
+    --breakpoint-xl: var(--breakpoint-desktop-xl, 96rem);
+    --breakpoint-xxl: var(--breakpoint-desktop-xxl, 128rem);
+
+    /* Custom main Theme color */
+    --color-theme-100: color-mix(
+      in srgb,
+      var(--color-theme-default, var(--color-primary-500)),
+      white 10%
+    );
+    --color-theme-200: color-mix(
+      in srgb,
+      var(--color-theme-default, var(--color-primary-500)),
+      white 20%
+    );
+    --color-theme-300: color-mix(
+      in srgb,
+      var(--color-theme-default, var(--color-primary-500)),
+      white 30%
+    );
+    --color-theme-400: color-mix(
+      in srgb,
+      var(--color-theme-default, var(--color-primary-500)),
+      white 40%
+    );
+    --color-theme-500: var(--color-primary-500);
+    --color-theme-600: color-mix(
+      in srgb,
+      var(--color-theme-default, var(--color-primary-500)),
+      white 60%
+    );
+    --color-theme-700: color-mix(
+      in srgb,
+      var(--color-theme-default, var(--color-primary-500)),
+      white 70%
+    );
+    --color-theme-800: color-mix(
+      in srgb,
+      var(--color-theme-default, var(--color-primary-500)),
+      white 80%
+    );
+    --color-theme-900: color-mix(
+      in srgb,
+      var(--color-theme-default, var(--color-primary-500)),
+      white 90%
+    );
+    --color-theme-default: var(--color-primary-500);
+  }
+}

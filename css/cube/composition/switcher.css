@@ -6,8 +6,8 @@
 .holy {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--gap, 1rem);
-  --switch: 40rem;
+  gap: var(--_switcher-gap, 1rem);
+  --switch: var(--_switcher-modifier);
 }
 
 .switcher > *,
