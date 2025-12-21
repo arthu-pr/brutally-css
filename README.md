@@ -2,6 +2,16 @@
 
 # Playground to explore CSS capabilities and limits without any JavaScript.
 
+## Get Started
+
+```sh
+npm install clean-css-cli -g
+```
+
+```sh
+cleancss -o dist/main.min.css css/**/*.css --watch
+```
+
 ## Minify HTML and CSS commands
 
 ```sh
@@ -20,4 +30,22 @@ cleancss -o dist/main.min.css css/**/*.css --watch
 
 #### Sources
 
--
+### Conditional / Boolean value in CSS
+
+- [Pseudo-boolean CSS custom properties](https://keithclark.co.uk/articles/pseudo-boolean-css-custom-properties/)
+
+### CSS-only Type Grinding
+
+- [(not fully used) Cyclic Dependency Space Toggles](https://kizu.dev/cyclic-toggles/)
+
+- [Inline conditionals in CSS, now?](https://lea.verou.me/blog/2024/css-conditionals-now/)
+
+- [CSS-only Type Grinding](https://www.bitovi.com/blog/css-only-type-grinding-casting-tokens-into-useful-values)
+
+### CUBE CSS
+
+[Link](https://cube.fyi/)
+
+## HOW DOES IT WORK?
+
+See [HOW-TO.MD](HOW-TO.MD) for explanations and code samples.
