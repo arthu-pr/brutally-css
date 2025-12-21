@@ -19,14 +19,14 @@ jobs:
         run: npm install -g clean-css-cli
 
       - name: Build and minify CSS
-        run: cleancss -o dist/main.min.css css/**/*.css --remove-inlined-files
+        run: cleancss -o brutallycss/dist/main.min.css brutallycss/css/**/*.css --remove-inlined-files
 
       - name: Install html-minifier
         run: npm install -g html-minifier-terser
 
       - name: Minify HTML files
         run: |
-          for file in *.html; do
+          for file in brutallycss/**/*.html; do
             html-minifier \
               --collapse-whitespace \
               --remove-comments \
@@ -71,11 +71,11 @@ jobs:
         run: |
 
           # Copy all CSS files from the dist branch
-          cp -r tokens/src/build/css/ brutallycss
+          cp -r tokens/build/css/ brutallycss
 
           # Show what was copied
           echo "Copied tokens:"
-          ls -la tokens/src/build/css/
+          ls -la tokens/build/css/
           ls -la brutallycss/
           ls -la brutallycss/css/
 
