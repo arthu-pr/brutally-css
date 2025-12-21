@@ -1,0 +1,58 @@
+/* margin and padding util classes - apply spacing variables */
+.margin-xs {
+  margin: var(--space-xs);
+}
+.margin-sm {
+  margin: var(--space-sm);
+}
+.margin-md {
+  margin: var(--space-md);
+}
+.margin-lg {
+  margin: var(--space-lg);
+}
+.margin-xl {
+  margin: var(--space-xl);
+}
+.m-0 {
+  margin: 0;
+}
+.mb-0 {
+  margin-bottom: 0;
+}
+
+.mt-md {
+  margin-top: var(--space-md);
+}
+
+.mb-xs {
+  margin-bottom: var(--space-xs);
+}
+
+.margin-auto {
+  margin: auto;
+}
+
+.padding-y-md {
+  padding-top: var(--space-md);
+  padding-bottom: var(--space-md);
+}
+
+.padding-0 {
+  padding: 0;
+}
+.padding-xs {
+  padding: var(--space-xs);
+}
+.padding-sm {
+  padding: var(--space-sm);
+}
+.padding-md {
+  padding: var(--space-md);
+}
+.padding-lg {
+  padding: var(--space-lg);
+}
+.padding-xl {
+  padding: var(--space-xl);
+}

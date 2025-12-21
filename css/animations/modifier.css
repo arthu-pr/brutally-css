@@ -9,7 +9,7 @@
  * https://css-tricks.com/the-checkbox-hack/
  * The ".state" is parent to all modifier (checkboxes and targets) and is triggered
  * using :has() pseudo-class
- * The ".wrapper" is the main container for the layout
+ * The ".container" is the main container for the layout
  * and the direct adjacent sibling to the ".state"
  */
 
@@ -27,51 +27,51 @@
 
 /* 1 - Theme Bar */
 
-.state:has(#zoom-in:checked) + .wrapper {
+.state:has(#zoom-in:checked) + .container {
   --spacing: var(--space-xs);
 }
 
-.state:has(#zoom-out:checked) + .wrapper {
+.state:has(#zoom-out:checked) + .container {
   --spacing: var(--space-xxl);
 }
 
-#zoom-out:checked ~ .wrapper {
+#zoom-out:checked ~ .container {
   --spacing: var(--space-xxl);
 }
 
-:target ~ .wrapper .primary-yellow {
+:target ~ .container .primary-yellow {
   fill: var(--color-primary);
 }
 
-#warm-pink:target ~ .wrapper {
+#warm-pink:target ~ .container {
   --theme-color: var(--theme-warm-pink);
 }
 
-#warm-pink:target ~ .wrapper .warm-pink {
+#warm-pink:target ~ .container .warm-pink {
   fill: var(--theme-warm-pink);
 }
 
-#red:target ~ .wrapper {
+#red:target ~ .container {
   --theme-color: var(--theme-red);
 }
 
-#red:target ~ .wrapper .red {
+#red:target ~ .container .red {
   fill: var(--theme-red);
 }
 
-#erotic-blue:target ~ .wrapper {
+#erotic-blue:target ~ .container {
   --theme-color: var(--theme-erotic-blue);
 }
 
-#erotic-blue:target ~ .wrapper .erotic-blue {
+#erotic-blue:target ~ .container .erotic-blue {
   fill: var(--theme-erotic-blue);
 }
 
-:target ~ .wrapper {
+:target ~ .container {
   --theme-color: var(--color-primary);
 }
 
-:target ~ .wrapper .primary-yellow {
+:target ~ .container .primary-yellow {
   fill: var(--color-primary);
 }
 
@@ -81,12 +81,12 @@
  * 2 - "How does it work?" section 
  */
 
-#how-does-it-work:checked ~ .wrapper .layout {
+#how-does-it-work:checked ~ .container .layout {
   --layout-transform-value: var(--layout-translate-howDoesItWork);
   transform: translateX(calc(-100svw + var(--theme-bar-width)));
 }
 
-#how-does-it-work-back:checked ~ .wrapper .layout {
+#how-does-it-work-back:checked ~ .container .layout {
   --layout-transform-value: var(--layout-translate-main);
   transform: translateX(0);
 }
@@ -116,10 +116,10 @@
 * "We’ll delay the visibility transition of the modal to allow the exit animations 
 * to be completed before it’s completely hidden."
  */
-#modal:not(:checked) ~ .wrapper .m-modal,
-#drawer:not(:checked) ~ .wrapper .m-drawer,
-#modal:not(:checked) ~ .wrapper .a-overlay[for='modal'],
-#drawer:not(:checked) ~ .wrapper .a-overlay[for='drawer'] {
+#modal:not(:checked) ~ .container .m-modal,
+#drawer:not(:checked) ~ .container .m-drawer,
+#modal:not(:checked) ~ .container .a-overlay[for='modal'],
+#drawer:not(:checked) ~ .container .a-overlay[for='drawer'] {
   visibility: hidden;
   transition-delay: 500ms;
   transition-property: visibility;
@@ -128,15 +128,15 @@
 /* 
  * 3.2 Overlay component
  */
-#modal:checked ~ .wrapper .a-overlay[for='modal'],
-#drawer:checked ~ .wrapper .a-overlay[for='drawer'] {
+#modal:checked ~ .container .a-overlay[for='modal'],
+#drawer:checked ~ .container .a-overlay[for='drawer'] {
   animation: overlay-fade-in ease 0.5s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
 }
 
-#modal:not(:checked) ~ .wrapper .a-overlay[for='modal'],
-#drawer:not(:checked) ~ .wrapper .a-overlay[for='drawer'] {
+#modal:not(:checked) ~ .container .a-overlay[for='modal'],
+#drawer:not(:checked) ~ .container .a-overlay[for='drawer'] {
   animation: overlay-fade-out ease 0.5s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
@@ -145,13 +145,13 @@
 /* 
  * 3.3 Disable scrolling when Modal is open
  */
-#modal:checked ~ .wrapper {
+#modal:checked ~ .container {
   height: 100svh;
   overflow-y: hidden;
   overscroll-behavior: contain;
 }
 
-#modal:not(:checked) ~ .wrapper {
+#modal:not(:checked) ~ .container {
   height: auto;
   overscroll-behavior: contain;
 }
@@ -159,25 +159,25 @@
 /* 
  * 3.4 Modal and Drawer animations
  */
-#modal[data-animation='fade'] ~ .wrapper .m-modal {
+#modal[data-animation='fade'] ~ .container .m-modal {
   --animation-in: modal-fade-in;
   --animation-out: modal-fade-out;
 }
 
-#drawer[data-animation='slide'] ~ .wrapper .m-drawer {
+#drawer[data-animation='slide'] ~ .container .m-drawer {
   --animation-in: drawer-slide-in;
   --animation-out: drawer-slide-out;
 }
 
-#modal:checked ~ .wrapper .m-modal,
-#drawer:checked ~ .wrapper .m-drawer {
+#modal:checked ~ .container .m-modal,
+#drawer:checked ~ .container .m-drawer {
   animation: var(--animation-in) ease 0.5s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
 }
 
-#modal:not(:checked) ~ .wrapper .m-modal,
-#drawer:not(:checked) ~ .wrapper .m-drawer {
+#modal:not(:checked) ~ .container .m-modal,
+#drawer:not(:checked) ~ .container .m-drawer {
   animation: var(--animation-out) ease 0.5s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
@@ -186,45 +186,45 @@
 /* 
  * 3.5 Modal button modifiers
  */
-#center-modal:checked ~ .wrapper .m-modal {
+#center-modal:checked ~ .container .m-modal {
   --top-modal: 50svh;
   --modal-translate-y: -50%;
 }
 
 #center-modal:checked
-  ~ .wrapper
+  ~ .container
   .m-modal__footer
   label[for='center-modal']::after {
   content: 'Put me on top';
 }
 
 #brutalist-modal:checked
-  ~ .wrapper
+  ~ .container
   .m-modal__footer
   label[for='brutalist-modal']::after {
   content: 'Classic Modal';
 }
 
-#brutalist-modal:checked ~ .wrapper .a-overlay {
+#brutalist-modal:checked ~ .container .a-overlay {
   /* --overlay-bg: orange; */
 }
 
-#brutalist-modal:checked ~ .wrapper .m-modal {
+#brutalist-modal:checked ~ .container .m-modal {
   --raw: var(--FALSE);
   --dialog-bg: var(--theme-color);
   --dialog-border: var(--border-bg);
   --dialog-box-shadow: none;
 }
 
-#brutalist-modal:checked ~ .wrapper .m-modal .m-modal__title,
-#brutalist-modal:checked ~ .wrapper .m-modal p,
-#brutalist-modal:checked ~ .wrapper .m-modal span,
-#brutalist-modal:checked ~ .wrapper .m-modal label::after {
+#brutalist-modal:checked ~ .container .m-modal .m-modal__title,
+#brutalist-modal:checked ~ .container .m-modal p,
+#brutalist-modal:checked ~ .container .m-modal span,
+#brutalist-modal:checked ~ .container .m-modal label::after {
   --mix-blend-mode: difference;
   color: var(--color-bg);
 }
 
-#brutalist-modal:checked ~ .wrapper .m-modal .m-modal__header,
-#brutalist-modal:checked ~ .wrapper .m-modal .m-modal__footer {
+#brutalist-modal:checked ~ .container .m-modal .m-modal__header,
+#brutalist-modal:checked ~ .container .m-modal .m-modal__footer {
   border-color: var(--color-bg);
 }

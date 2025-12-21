@@ -31,11 +31,13 @@ h4.-highlighted,
 .text-md.-highlighted,
 .text-sm.-highlighted,
 .text-xs.-highlighted,
-p.-highlighted {
+.text-2.-highlighted,
+p.-highlighted,
+div.-highlighted {
   --highlighted-bg-color: color-mix(
     in srgb,
     var(--color-bg),
-    var(--theme-color) calc(100% * var(--active, 0))
+    var(--color-primary) calc(100% * var(--active, 0))
   );
   --highlighted-bg-color-1: var(--highlighted-bg-color);
   --highlighted-bg-color-2: var(--highlighted-bg-color);
@@ -45,13 +47,23 @@ p.-highlighted {
   line-height: 135%;
   margin: 0;
   position: relative;
+  /* padding: 4px 10px 1.4px; */
+}
+
+.-highlighted.stick-to-left {
+  --left-mobile-val: calc(
+    0px - var(--layout-mobile-padding) -
+      var('left', 'y-highlighted-text', clamp(-30px, -1.4vw, -2px))
+  );
+  left: var(--left-mobile-val, unset);
+  padding-right: clamp(2px, 1.4vw, 30px);
 }
 
 .-highlighted > span {
   position: relative;
 
-  --highlighted-bg-color-1: var(--theme-color);
-  --highlighted-bg-color-2: var(--theme-color);
+  --highlighted-bg-color-1: var(--color-primary);
+  --highlighted-bg-color-2: var(--color-primary);
 
   --highlighted-bg: linear-gradient(
     var(--highlighted-bg-color-1),
@@ -59,21 +71,28 @@ p.-highlighted {
   );
 
   color: var(--color-bg);
-  padding: 2px;
+
+  /* TODO: Gotham balance padding */
+  padding: 4.55px 2px 0 2px;
   background-image: var(--highlighted-bg);
   /* -webkit-box-decoration-break: clone; */
   /* box-decoration-break: clone; */
 }
 
-.-highlighted > span.labeled {
+.-highlighted:not(:has(.m-section__title)) > span.labeled {
   left: clamp(-30px, -1.4vw, -2px);
   padding-left: clamp(2px, 1.4vw, 30px);
+}
+
+.-highlighted.m-section__title > span.labeled {
+  top: clamp(-30px, -1.4vw, -2px);
+  padding-top: clamp(2px, 1.4vw, 30px);
 }
 
 @media (min-width: 80rem) {
   /* 1280px */
   .-highlighted.-animate > span {
-    color: var(--theme-color);
+    color: var(--color-primary);
     --animate-in: highlight-to-left 0.5s 0.1s forwards;
     --animate-out: highlight-to-right 0.4s forwards;
     background-size: 0% 100%;
@@ -126,6 +145,6 @@ p.-highlighted {
     background-size: 0% 100%;
     background-color: transparent;
     background-position: right;
-    color: var(--theme-color);
+    color: var(--color-primary);
   }
 }

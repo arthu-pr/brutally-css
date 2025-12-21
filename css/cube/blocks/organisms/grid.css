@@ -92,18 +92,6 @@
   }
 }
 
-.grid__item__title {
-  margin-top: 0;
-  color: var(--color-secondary);
-}
-
-.grid__item__content {
-  display: none;
-  padding: var(--space-sm);
-  background-color: var(--color-bg-40);
-  color: var(--color-contrast-high);
-}
-
 /* https://css-tricks.com/examples/HoverEverythingBut/ */
 .o-grid .o-grid__item {
   /* color: white; */

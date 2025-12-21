@@ -8,10 +8,12 @@
   margin-block-start: var(--space-md);
 }
 
-.m-section .m-section__title {
-  margin-block: 0 var(--space-sm);
-  text-align: center;
-  flex: 1 0 100%;
+@container vertical (min-width: 0px) {
+  .m-section .m-section__title {
+    margin-block: 0 var(--space-sm);
+    text-align: center;
+    flex: 1 0 100%;
+  }
 }
 
 .m-section .m-section__content,

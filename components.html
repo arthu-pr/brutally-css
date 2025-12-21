@@ -3,7 +3,8 @@
     <title>Brutally CSS - Components</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link href="css/main.min.css" rel="stylesheet" />
+    <link href="css/themes/brutally-css.css" rel="stylesheet" />
+    <link href="dist/main.min.css" rel="stylesheet" />
     <!-- <link href="css/layouts/wrapper.css" rel="stylesheet" />
     <link href="css/layouts/box.css" rel="stylesheet" />
     <!-- Base -->
@@ -29,8 +30,8 @@
   </head>
 
   <body>
-    <div class="wrapper">
-      <div class="container padding-y-md">
+    <div class="container">
+      <div class="wrapper padding-y-md flow">
         <h1 class="-highlighted"><span class="labeled">Components</span></h1>
         <h2>Utility</h2>
         <form>
@@ -49,34 +50,50 @@
         </form>
 
         <!-- Input -->
+        <form>
+          <fieldset class="border-theme-">
+            <legend class="text-xl">Viewport size</legend>
+            <div class="cluster">
+              <span class="viewport-size"></span>
+              <hr />
+              <span class="is-screen-xs" data-media="xs"> is-screen-xs </span>
+              <hr />
+              <p>TODO:</p>
+              <span class="is-screen-sm" data-media="sm"> is-screen-sm </span>
+              <hr />
+              <span class="is-screen-md" data-media="md"> is-screen-md </span>
+              <hr />
+              <span class="is-screen-lg" data-media="lg"> is-screen-lg </span>
+              <hr />
+              <span class="is-screen-xl" data-media="xl"> is-screen-xl </span>
+            </div>
+            <details>
+              <summary>
+                <span class="highlighted text-md"><span>How to?</span></span>
+              </summary>
+              <ol class="m-list">
+                <li class="m-list__item">
+                  <a
+                    class="a-link"
+                    href="https://css-tricks.com/snippets/css/calculate-viewport-size-in-css/"
+                    >Calculate Viewport Size in CSS</a
+                  >
+                </li>
+                <li class="m-list__item">
+                  <a
+                    href="https://dev.to/janeori/css-type-casting-to-numeric-tanatan2-scalars-582j"
+                    class="a-link"
+                  >
+                    CSS Type Casting to Numeric: tan(atan2()) Scalars
+                  </a>
+                  by Jane Ori
+                </li>
+              </ol>
+            </details>
+          </fieldset>
+        </form>
         <section class="box">
           <p aria-label="box-title" class="text-xl">Viewport size</p>
-          <div class="flex gap-md flex-wrap">
-            <span class="viewport-size"></span>
-          </div>
-          <details>
-            <summary>
-              <span class="highlighted text-md"><span>How to?</span></span>
-            </summary>
-            <ol class="m-list">
-              <li class="m-list__item">
-                <a
-                  class="a-link"
-                  href="https://css-tricks.com/snippets/css/calculate-viewport-size-in-css/"
-                  >Calculate Viewport Size in CSS</a
-                >
-              </li>
-              <li class="m-list__item">
-                <a
-                  href="https://dev.to/janeori/css-type-casting-to-numeric-tanatan2-scalars-582j"
-                  class="a-link"
-                >
-                  CSS Type Casting to Numeric: tan(atan2()) Scalars
-                </a>
-                by Jane Ori
-              </li>
-            </ol>
-          </details>
         </section>
         <h2>Atoms</h2>
 
