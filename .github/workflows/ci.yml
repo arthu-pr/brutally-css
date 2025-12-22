@@ -40,7 +40,7 @@ jobs:
           done
 
       - name: Debug
-        run: ls -la dist
+        run: ls -la brutallycss/dist
 
       - name: Upload Artifacts
         uses: actions/upload-artifact@v6
