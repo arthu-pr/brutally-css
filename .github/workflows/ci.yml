@@ -139,6 +139,7 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: brutallycss-dist
+          path: brutallycss
 
       - name: Debug
-        run: ls -la brutallycss-dist
+        run: ls -la brutallycss
