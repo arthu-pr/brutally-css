@@ -1,4 +1,4 @@
-name: Minify & Deploy & Check Design Tokens
+name: CI
 on:
   # temporary disable workflows
 
