@@ -40,12 +40,15 @@ jobs:
           done
 
       - name: Debug
-        run: ls -la brutallycss/dist
+        run: |
+          ls -la brutallycss/dist
+          ls -la brutallycss/
 
       - name: Upload Artifacts
         uses: actions/upload-artifact@v6
         with:
           name: brutallycss-dist
+          path: brutallycss
 
   check-design-tokens:
     runs-on: ubuntu-latest
