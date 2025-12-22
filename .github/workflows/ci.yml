@@ -75,7 +75,7 @@ jobs:
 
           # Copy all CSS files from the dist branch
           mkdir -p brutallycss/build/css
-          cp -r tokens/build/css/ brutallycss/build/css/
+          cp -r tokens/build/css/ brutallycss/build/css
 
           # Show what was copied
           echo "Copied tokens:"
