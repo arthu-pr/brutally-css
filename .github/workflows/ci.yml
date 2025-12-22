@@ -74,8 +74,7 @@ jobs:
         run: |
 
           # Copy all CSS files from the dist branch
-          mkdir -p brutallycss/build/css
-          cp -r tokens/build/css/ brutallycss/build/css
+          rsync -a --delete --dry-run tokens/build/css/ brutallycss/build/css/
 
           # Show what was copied
           echo "Copied tokens:"
@@ -87,23 +86,23 @@ jobs:
         id: check-changes
         run: |
           cd brutallycss
-          if git diff --quiet; then
+          if [ -z "$(git status --porcelain)" ]; then
             echo "changed=false" >> $GITHUB_OUTPUT
             echo "No changes detected"
           else
             echo "changed=true" >> $GITHUB_OUTPUT
             echo "Changes detected"
           fi
-
       - name: Set formatted date
         run: echo "DATE=$(date +'%Y-%m-%d')" >> $GITHUB_ENV
 
       - name: Create Pull Request
+        if: steps.check-changes.outputs.changed == 'true'
         uses: peter-evans/create-pull-request@v6
         with:
           path: brutallycss
           commit-message: |
-            "Date: ${{ env.DATE }}"
+            Date: ${{ env.DATE }}
           branch: tokens/update-${{ env.DATE }}
           delete-branch: true
           title: 'Update design tokens ${{ env.DATE }}'
