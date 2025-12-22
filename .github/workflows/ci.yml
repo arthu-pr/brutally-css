@@ -26,7 +26,7 @@ jobs:
 
       - name: Minify HTML files
         run: |
-          for file in brutallycss/**/*.html; do
+          for file in brutallycss/*.html; do
             html-minifier \
               --collapse-whitespace \
               --remove-comments \
