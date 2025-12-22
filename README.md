@@ -1,6 +1,8 @@
-<img width="100%" alt="image" src="https://github.com/user-attachments/assets/0ed4885d-77a0-4ff8-b376-973be2d3c17e" />
+# <img align="left" height="80" alt="brutallycss-logo" src="https://github.com/user-attachments/assets/4417b99d-8669-4a79-9b05-4b3950f0981d" /> CSS Playground — Exploring the Limits of CSS Without JavaScript
 
-# Playground to explore CSS capabilities and limits without any JavaScript.
+---
+
+<img width="100%" alt="image" src="https://github.com/user-attachments/assets/0ed4885d-77a0-4ff8-b376-973be2d3c17e" />
 
 ## Get Started
 
