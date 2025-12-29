@@ -39,7 +39,7 @@ jobs:
               --use-short-doctype  \
               --minify-css true \
               -o "$file" "$file" 
-            mv "$file" dist/"$(basename "$file")"
+            mv "$file" brutallycss/dist/"$(basename "$file")"
           done
 
       - name: Debug

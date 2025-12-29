@@ -28,10 +28,11 @@ jobs:
 
       - name: Copy tokens to project
         run: |
-          cd tokens
-          npx build-tokens brutallycss/build
+          # TODO: when merged in main, use the build output
+          # cd tokens
+          # npx build-tokens brutallycss/build
           # Copy all CSS files from the dist branch
-          # rsync -a --delete --dry-run tokens/build/css/ brutallycss/build/css/
+          rsync -a --delete --dry-run tokens/build/css/ brutallycss/build/css/
 
           # Show what was copied
           echo "Copied tokens:"
