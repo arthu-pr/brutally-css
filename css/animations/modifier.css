@@ -119,7 +119,7 @@
 #modal:not(:checked) ~ .container .m-modal,
 #drawer:not(:checked) ~ .container .m-drawer,
 #modal:not(:checked) ~ .container .a-overlay[for='modal'],
-#drawer:not(:checked) ~ .container .a-overlay[for='drawer'] {
+#drawer:not(:checked) ~ .container .a-overlay[for*='drawer'] {
   visibility: hidden;
   transition-delay: 500ms;
   transition-property: visibility;
@@ -129,14 +129,14 @@
  * 3.2 Overlay component
  */
 #modal:checked ~ .container .a-overlay[for='modal'],
-#drawer:checked ~ .container .a-overlay[for='drawer'] {
+#drawer:checked ~ .container .a-overlay[for*='drawer'] {
   animation: overlay-fade-in ease 0.5s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
 }
 
 #modal:not(:checked) ~ .container .a-overlay[for='modal'],
-#drawer:not(:checked) ~ .container .a-overlay[for='drawer'] {
+#drawer:not(:checked) ~ .container .a-overlay[for*='drawer'] {
   animation: overlay-fade-out ease 0.5s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;

@@ -5,14 +5,14 @@
  *
  * TODO: Not used for now
 */
-.o-themeBar > * {
-  min-width: clamp(
-    var(--min-width, 0px),
-    (var(--breakpoint) - 100%) * 999,
-    100% - var(--gutter)
-  );
-  flex-grow: 1;
-}
+/* .o-themeBar > * { */
+/*   min-width: clamp( */
+/*     var(--min-width, 0px), */
+/*     (var(--breakpoint) - 100%) * 999, */
+/*     100% - var(--gutter) */
+/*   ); */
+/*   flex-grow: 1; */
+/* } */
 
 .o-themeBar {
   grid-area: theme-bar;
@@ -34,10 +34,6 @@
   /* Due to default text-align: -webkit-match-parent; on li element */
   text-align: center;
   padding: 0;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  gap: var(--space-md);
   position: sticky;
   top: 50px;
   bottom: 0;
@@ -63,40 +59,6 @@
   } */
   align-items: center;
   justify-content: center;
-}
-
-/* TODO: fix this without media queries */
-@media (max-width: 40rem) {
-  .o-themeBar {
-    /* border-right: none; */
-    /* border-bottom: var(--border-width) solid var(--theme-color); */
-  }
-}
-
-.o-themeBar__element {
-  /* width: clamp(var(--space-xs), 50%, var(--space-lg)); */
-  /* height: clamp(var(--space-xs), 50%, var(--space-lg)); */
-}
-
-/* https://css-tricks.com/examples/HoverEverythingBut/ */
-.grid-container > ul {
-  /* float: left; */
-  /* width: 200px; */
-  padding: 0 10px 0 0;
-}
-.grid-container div.grid__item {
-  -webkit-transition: all 0.2s ease;
-  -moz-transition: all 0.2s ease;
-  -o-transition: all 0.2s ease;
-}
-.grid-container:hover div.grid__item {
-  opacity: 0.2;
-}
-.grid-container:hover ul:hover div.grid__item {
-  opacity: 0.5;
-}
-.grid-container:hover ul:hover div.grid__item:hover {
-  opacity: 1;
 }
 
 .o-themeBar__btn {
@@ -172,31 +134,13 @@
   * grid-template-columns: XXX;
   * } 
   */
-
-.navbar > ul {
-  float: left;
-  padding: 0 10px 0 0;
-}
-
 .o-themeBar__element {
-  text-decoration: none;
-  display: block;
-  color: white;
-  text-align: center;
-
+  /* text-decoration: none; */
+  /* display: block; */
+  /* color: white; */
+  /* text-align: center; */
+  /**/
   -webkit-transition: all 0.2s ease;
   -moz-transition: all 0.2s ease;
   -o-transition: all 0.2s ease;
-}
-
-.navbar:hover .navbar-content {
-  opacity: 0.2;
-}
-
-.navbar:hover ul:hover .navbar-content {
-  opacity: 0.5;
-}
-
-.navbar:hover ul:hover .navbar-content:hover {
-  opacity: 1;
 }

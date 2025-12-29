@@ -182,7 +182,7 @@ h4::after {
 }
 
 .layout {
-  background-color: var(--color-bg);
+  background-color: var(--color-bg-page);
   width: calc(200svw - 2 * var(--theme-bar-width));
   display: grid;
   grid-template-columns:
