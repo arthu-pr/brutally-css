@@ -1,4 +1,4 @@
-# <img align="left" height="80" alt="brutallycss-logo" src="https://github.com/user-attachments/assets/4417b99d-8669-4a79-9b05-4b3950f0981d" /> CSS Playground — Exploring the Limits of CSS Without JavaScript
+# <img align="left" height="80" alt="brutallycss-logo" src="https://github.com/user-attachments/assets/4417b99d-8669-4a79-9b05-4b3950f0981d" /> Playground to explore the Limits of CSS Without JavaScript
 
 ---
 
