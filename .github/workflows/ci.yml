@@ -24,7 +24,7 @@ jobs:
         run: npm install -g lightningcss-cli
 
       - name: Bundle + minify CSS (nesting supported)
-        run: lightningcss brutallycss/css/**/*.css --bundle --minify -o brutallycss/dist/main.min.css
+        run: lightningcss brutallycss/css/main.css --bundle --minify -o brutallycss/dist/main.min.css
 
       - name: Install html-minifier
         run: npm install -g html-minifier
