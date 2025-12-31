@@ -20,4 +20,8 @@
   --cube-block-checkbox-checkmark-scale: 0;
   --cube-block-checkbox-checkmark-translate-y: -50%;
   --cube-block-checkbox-checkmark-translate-x: -50%;
+  --cube-block-checkbox-animation-duration: 0.3s;
+  --cube-block-checkbox-animation-timing-function: forwards;
+  --cube-block-checkbox-animation-checked-in: checked-in var(--animation-duration) var(--animation-timingFunction);
+  --cube-block-checkbox-animation-checked-out: checked-out var(--animation-duration) var(--animation-timingFunction);
 }

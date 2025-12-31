@@ -2,8 +2,8 @@
   display: flex;
   flex-direction: column;
   gap: var(--_stack-gap);
+}
 
-  & .row {
-    flex-direction: row;
-  }
+.stack.row {
+  flex-direction: row;
 }

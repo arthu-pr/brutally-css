@@ -1,276 +1,93 @@
-@font-face {
-  font-family: 'Boogaloo';
-  src: url('/fonts/boogaloo-regular-webfont.woff') format('woff'),
-    url('/fonts/boogaloo-regular-webfont.woff2') format('woff2');
-  font-display: swap;
-}
+/* =====================================================
+   Design Tokens
+   ===================================================== */
+@import './tokens/css/colors.primitive.css';
+@import './tokens/css/colors.semantic.css';
+@import './tokens/css/colors.intent.css';
+@import './tokens/css/cube/cube.utility.css';
+@import './tokens/css/themes/public-theme.css';
+@import './tokens/css/themes/private-theme.css';
+@import './tokens/css/spacing.css';
 
-@font-face {
-  font-family: 'CaviarDreams';
-  src: url('/fonts/CaviarDreams-webfont.woff') format('woff');
-  font-display: swap;
-}
+/* =====================================================
+   Main CSS Imports
+   ===================================================== */
+@import './entry.css';
+@import './variants.css;';
 
-@font-face {
-  font-family: 'ImpactLabel';
-  src: url('/fonts/Impact_Label-webfont.woff') format('woff');
-  font-display: swap;
-}
+/* =====================================================
+   Animations
+   ===================================================== */
+@import './animations/highlighted.css';
+@import './animations/modifier.css';
+@import './animations/vertical.css';
 
-@font-face {
-  font-family: 'ImpactLabelReversed';
-  src: url('/fonts/Impact_Label_Reversed-webfont.woff') format('woff');
-  font-display: swap;
-}
+/* =====================================================
+   Base & resets
+   ===================================================== */
+@import './base/reset.css';
+@import './base/colors.css';
+@import './base/animations.css';
 
-@font-face {
-  font-family: 'Kavoon';
-  src: url('/fonts/Kavoon-Regular.otf') format('opentype');
-  font-display: swap;
-}
+/* =====================================================
+   Cube CSS
+   https://cube.fyi/
+   ===================================================== */
+@import './cube/blocks/common.css';
 
-@font-face {
-  font-family: 'mail ray stuff';
-  src: url('/fonts/mail ray stuff.otf') format('opentype');
-  font-display: swap;
-}
+/* =====================================================
+   Atoms
+   ===================================================== */
+@import './cube/blocks/atoms/buttons.css';
+@import './cube/blocks/atoms/checkbox.css';
+@import './cube/blocks/atoms/code.css';
+@import './cube/blocks/atoms/icon.css';
+@import './cube/blocks/atoms/input.css';
+@import './cube/blocks/atoms/link.css';
+@import './cube/blocks/atoms/overlay.css';
+@import './cube/blocks/atoms/typewriter.css';
+@import './cube/blocks/atoms/typography.css';
 
-@font-face {
-  font-family: 'Salsa-Regular';
-  src: url('/fonts/salsa-regular-webfont.woff') format('woff'),
-    url('/fonts/salsa-regular-webfont.woff2') format('woff2');
-  font-display: swap;
-}
+/* =====================================================
+   Molecules
+   ===================================================== */
+@import './cube/blocks/molecules/box.css';
+@import './cube/blocks/molecules/dynamic-form.css';
+@import './cube/blocks/molecules/form.css';
+@import './cube/blocks/molecules/modal.css';
+@import './cube/blocks/molecules/navbar.css';
+@import './cube/blocks/molecules/section.css';
+@import './cube/blocks/molecules/shake.css';
+@import './cube/blocks/molecules/table.css';
 
-@font-face {
-  font-family: 'gotham-black';
-  src: url('/fonts/GOTHAM-BLACK.OTF') format('opentype');
-  font-display: swap;
-}
+/* =====================================================
+   Organisms / layout structures
+   ===================================================== */
+@import './cube/blocks/organisms/banner.css';
+@import './cube/blocks/organisms/grid.css';
+@import './cube/blocks/organisms/theme-bar.css';
+@import './cube/blocks/organisms/how-does-it-work.css';
+@import './cube/blocks/organisms/info-section.css';
 
-@font-face {
-  font-family: 'gotham-book';
-  src: url('/fonts/GOTHAM-BOOK.woff') format('woff');
-  font-display: swap;
-}
+/* =====================================================
+   Layout & composition
+   ===================================================== */
+@import './cube/composition/cluster.css';
+@import './cube/composition/flow.css';
+@import './cube/composition/stack.css';
+@import './cube/composition/switcher.css';
+@import './cube/composition/wrapper.css';
 
-@font-face {
-  font-family: 'gotham-bold';
-  src: url('/fonts/GOTHAM-BOLD.woff') format('woff');
-  font-weight: bold;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'VacationPostcard';
-  src: url('/fonts/VacationPostcard.ttf') format('truetype');
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'ChunkFive';
-  src: url('/fonts/ChunkFive-Regular.woff2') format('woff2');
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Atkinson Hyperlegible';
-  src: url('/fonts/Atkinson-Hyperlegible-Regular-102a.woff2') format('woff2');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Atkinson Hyperlegible';
-  src: url('/fonts/Atkinson-Hyperlegible-Bold-102a.woff2') format('woff2');
-  /* font-weight: var(--font-weight-bold, 700); */
-  font-weight: bold;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Atkinson Hyperlegible';
-  src: url('/fonts/Atkinson-Hyperlegible-Italic-102a.woff2') format('woff2');
-  font-weight: normal;
-  font-style: italic;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Atkinson Hyperlegible';
-  src: url('/fonts/Atkinson-Hyperlegible-BoldItalic-102a.woff2') format('woff2');
-  font-weight: var(--font-weight-bold, bold);
-  font-style: italic;
-  font-display: swap;
-}
-
-html {
-  box-sizing: border-box;
-  font-family: 'Atkinson Hyperlegible', sans-serif;
-
-  /* Microsoft web browsers */
-  -ms-overflow-style: none;
-
-  /* Gecko-based browsers */
-  scrollbar-width: none;
-}
-
-/* https://blog.logrocket.com/hide-scrollbar-without-impacting-scrolling-css */
-/* Chrome, Edge, Opera, Safari, and other WebKit-based browsers */
-html::-webkit-scrollbar {
-  display: none;
-}
-
-body {
-  margin: 0;
-  font-size: var(--text-md);
-}
-
-.body::-webkit-scrollbar {
-  display: none;
-}
-
-h1,
-.text-h1,
-h2,
-.text-xxl,
-h3,
-.text-xl,
-h4,
-.text-lg,
-h5 {
-  font-family: gotham-black;
-  text-transform: uppercase;
-  color: var(--theme-color);
-}
-
-h4::after {
-  content: '\25FC';
-  color: var(--theme-color);
-}
-
-.title__css-only {
-  display: block;
-  font-family: 'VacationPostcard';
-}
-
-.section,
-.article {
-  padding: var(--space-unit);
-}
-
-/* 
- * Unholy Albatross
- * https://www.miragecraft.com/blog/unholy-albatross
- * (https://css-tricks.com/holy-albatross-with-widths)
- *
-*/
-
-@keyframes wipe-in-left {
-  from {
-    clip-path: inset(0 0 0 100%);
-  }
-  to {
-    clip-path: inset(0 0 0 0);
-  }
-}
-
-[transition-style='in:wipe:left'] {
-  /* animation: 2.5s cubic-bezier(0.25, 1, 0.3, 1) wipe-in-left both; */
-}
-
-.layout {
-  background-color: var(--color-bg-page);
-  width: calc(200svw - 2 * var(--theme-bar-width));
-  display: grid;
-  grid-template-columns:
-    calc(100svw - var(--theme-bar-width)) var(--theme-bar-width)
-    calc(100svw - var(--theme-bar-width));
-  grid-auto-rows: auto;
-  grid-template-areas:
-    'info-section . .'
-    'main-content theme-bar how-does-it-work';
-  transition: var(--layout-transition);
-  --layout-translate-main: translateX(0);
-  --layout-translate-howDoesItWork: translateX(
-    calc(-100svw + var(--theme-bar-width))
-  );
-  --layout-transform-value: var(--layout-translate-main);
-
-  transform: var(--layout-transform-value);
-  clip-path: inset(0 0 0 0);
-}
-
-.main-content {
-  grid-area: main-content;
-  position: relative;
-  border-right: var(--border-width) solid var(--theme-color);
-  transform: translateY(0);
-}
-
-.grid-container {
-  flex-grow: 1;
-  height: 100%;
-  background-color: var(--color-bg-90);
-  padding: var(--spacing);
-}
-
-ul:hover {
-}
-
-li > div {
-  /* height: 100%;
-  background-color: var(--color-bg-40);
-  outline: 2px solid var(--color-secondary);
-  padding: var(--space-xs); */
-}
-
-/* TODO: TO KEEP OR NOT */
-li .square {
-  aspect-ratio: 1/1;
-}
-
-li .square::before {
-  content: '';
-  display: block;
-  padding-bottom: 100%;
-}
-
-.li-1 {
-  grid-column: 1 / 2;
-  grid-row: 1 / 2;
-}
-
-.li-flexible {
-  aspect-ratio: var(--space-xxl, 5.25em) / var(--space-xxl, 5.25em);
-}
-/* TODO: TO KEEP OR NOT */
-
-/* This will create 2x images every 4 elements */
-.grid-container > ul > li:nth-child(3n) {
-  grid-column: span 2; /* Spans two columns */
-  grid-row: span 2; /* Spans two rows */
-}
-
-/* https://css-tricks.com/examples/HoverEverythingBut/ */
-.grid-container > ul {
-  /* float: left; */
-  /* width: 200px; */
-  padding: 0 10px 0 0;
-}
-.grid-container div.grid__item {
-  -webkit-transition: all 0.2s ease;
-  -moz-transition: all 0.2s ease;
-  -o-transition: all 0.2s ease;
-}
-.grid-container:hover div.grid__item {
-  opacity: 0.2;
-}
-.grid-container:hover ul:hover div.grid__item {
-  opacity: 0.5;
-}
-.grid-container:hover ul:hover div.grid__item:hover {
-  opacity: 1;
-}
+/* =====================================================
+   Utilities
+   ===================================================== */
+@import './cube/utilities/helpers.css';
+@import './cube/utilities/layout.css';
+@import './cube/utilities/screens.css';
+@import './cube/utilities/spacing.css';
+@import './cube/utilities/viewport.css';
+@import './cube/utilities/variables.css';
+/* =====================================================
+   Themes (overrides everything)
+   ===================================================== */
+@import './themes/brutally-css.css';

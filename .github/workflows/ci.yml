@@ -17,30 +17,40 @@ jobs:
         with:
           path: brutallycss
 
-      - name: Install clean-css
-        run: npm install -g clean-css-cli
+      - name: Prepare dist
+        run: mkdir -p brutallycss/dist
 
-      - name: Build and minify CSS
-        run: cleancss -o brutallycss/dist/main.min.css brutallycss/css/**/*.css --remove-inlined-files
+      - name: Install lightningcss (optional, for nesting)
+        run: npm install -g lightningcss-cli
+
+      - name: Bundle + minify CSS (nesting supported)
+        run: lightningcss brutallycss/css/**/*.css --bundle --minify -o brutallycss/dist/main.min.css
 
       - name: Install html-minifier
         run: npm install -g html-minifier
 
-      - name: Minify HTML files
+      - name: Minify HTML files into dist
         run: |
           for file in brutallycss/*.html; do
             html-minifier \
               --collapse-whitespace \
               --remove-comments \
               --remove-optional-tags \
-              --remove-redundant-attributes  \
-              --remove-script-type-attributes  \
-              --remove-tag-whitespace  \
-              --use-short-doctype  \
-              --minify-css true \
-              -o "$file" "$file" 
-            mv "$file" brutallycss/dist/"$(basename "$file")"
+              --remove-redundant-attributes \
+              --remove-script-type-attributes \
+              --remove-tag-whitespace \
+              --use-short-doctype \
+              "$file" > "brutallycss/dist/$(basename "$file")"
           done
+
+      - name: Copy static assets to dist
+        run: |
+          rsync -av --delete \
+            --exclude "css/" \
+            --exclude "dist/" \
+            --exclude ".github/" \
+            --exclude "*.html" \
+            brutallycss/ brutallycss/dist/
 
       - name: Debug
         run: |
@@ -51,7 +61,7 @@ jobs:
         uses: actions/upload-artifact@v6
         with:
           name: brutallycss-dist
-          path: brutallycss
+          path: brutallycss/dist
 
   deploy:
     if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
@@ -62,7 +72,7 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: brutallycss-dist
-          path: brutallycss
+          path: dist
 
       - name: Debug
         run: ls -la brutallycss
@@ -77,4 +87,4 @@ jobs:
         run: ssh-keyscan -H ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
 
       - name: Deploy build with rsync
-        run: rsync -avz ./brutallycss/dist/* ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST }}:/var/www/brutallycss.com/
+        run: rsync -avz --delete ./brutallycss/dist/ ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST }}:/var/www/brutallycss.com/

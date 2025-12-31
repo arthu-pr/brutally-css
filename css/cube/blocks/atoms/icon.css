@@ -1,0 +1,16 @@
+.dice {
+  font-size: var(--text-xxl);
+  position: absolute;
+  top: var(--top);
+  left: var(--left);
+  transition: scale 1s ease-in-out;
+}
+
+.dice::after {
+  content: '\2680';
+  font-size: inherit;
+  line-height: 1;
+  position: absolute;
+  bottom: var(--top);
+  right: var(--left);
+}

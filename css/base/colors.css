@@ -4,7 +4,7 @@
 
 @property --color-primary {
   syntax: '<color>';
-  initial-value: inherit;
+  initial-value: yellow;
   inherits: false;
 }
 

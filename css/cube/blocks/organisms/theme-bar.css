@@ -23,7 +23,6 @@
   border-bottom: var(--border-width) solid var(--theme-color);
   /* border-left: var(--border-width) solid var(--theme-color); */
   --min-width: 60px;
-  gap: var(--space-xs);
   transition: var(--layout-transition);
   transform: translateX(calc(100% - var(--theme-bar-width)));
   z-index: 1;
@@ -44,13 +43,6 @@
   /* TODO: check if necessary */
   padding: var(--space-xs);
 
-  /* display: grid; */
-  /* https://css-tricks.com/look-ma-no-media-queries-responsive-layouts-using-css-grid/ */
-  /* grid-template-columns: repeat(auto-fill, minmax(40px, 1fr)); */
-  grid-template-columns: repeat(
-    auto,
-    clamp(var(--space-xs), 50%, var(--space-md))
-  );
   width: 100%;
   /* grid-auto-flow: column; */
 
@@ -134,13 +126,3 @@
   * grid-template-columns: XXX;
   * } 
   */
-.o-themeBar__element {
-  /* text-decoration: none; */
-  /* display: block; */
-  /* color: white; */
-  /* text-align: center; */
-  /**/
-  -webkit-transition: all 0.2s ease;
-  -moz-transition: all 0.2s ease;
-  -o-transition: all 0.2s ease;
-}
