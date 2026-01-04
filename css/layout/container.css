@@ -21,7 +21,7 @@
   /* https://grafikart.fr/tutoriels/conteneur-css-1233 */
   box-sizing: border-box;
   width: min(
-    var(--breakpoint-tablet),
+    var(--breakpoint-sm),
     calc(100% - 4 * var(--layout-mobile-padding))
   );
   margin-inline: auto;
@@ -34,9 +34,6 @@
 .cont {
   /* https://grafikart.fr/tutoriels/conteneur-css-1233 */
   box-sizing: border-box;
-  width: min(
-    var(--breakpoint-tablet),
-    calc(100% - 4 * var(--layout-mobile-padding))
-  );
+  width: min(var(--breakpoint-sm), calc(100% - 4 * 1rem));
   margin-inline: auto;
 }

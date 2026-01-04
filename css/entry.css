@@ -126,6 +126,7 @@ html::-webkit-scrollbar {
 body {
   margin: 0;
   font-size: var(--text-md);
+  background-color: var(--color-bg);
 }
 
 .body::-webkit-scrollbar {
@@ -182,7 +183,6 @@ h4::after {
 }
 
 .layout {
-  background-color: var(--color-bg-page);
   width: calc(200svw - 2 * var(--theme-bar-width));
   display: grid;
   grid-template-columns:
@@ -273,4 +273,53 @@ li .square::before {
 }
 .grid-container:hover ul:hover div.grid__item:hover {
   opacity: 1;
+}
+
+.lorem {
+  --lorem-ipsum: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ';
+
+  /* Define a counter for empty tags inside */
+  counter-reset: empty-tag;
+
+  /* multiply it */
+  content: var(--lorem-ipsum) var(--lorem-ipsum) var(--lorem-ipsum)
+    var(--lorem-ipsum) var(--lorem-ipsum) var(--lorem-ipsum) var(--lorem-ipsum)
+    var(--lorem-ipsum) var(--lorem-ipsum) var(--lorem-ipsum) var(--lorem-ipsum)
+    var(--lorem-ipsum);
+
+  &::before {
+    content: var(--lorem-ipsum) var(--lorem-ipsum) var(--lorem-ipsum)
+      var(--lorem-ipsum) var(--lorem-ipsum) var(--lorem-ipsum)
+      var(--lorem-ipsum) var(--lorem-ipsum) var(--lorem-ipsum)
+      var(--lorem-ipsum) var(--lorem-ipsum) var(--lorem-ipsum);
+  }
+
+  &:after {
+    content: var(--lorem-ipsum) var(--lorem-ipsum) var(--lorem-ipsum)
+      var(--lorem-ipsum) var(--lorem-ipsum) var(--lorem-ipsum)
+      var(--lorem-ipsum) var(--lorem-ipsum) var(--lorem-ipsum)
+      var(--lorem-ipsum) var(--lorem-ipsum) var(--lorem-ipsum);
+  }
+
+  & > *:empty {
+    counter-increment: empty-tag;
+
+    &::before {
+      content: 'Empty ' counter(empty-tag, upper-roman);
+      display: block;
+      opacity: 0.6;
+      text-indent: var(--space-md);
+      margin-left: var(--space-md);
+      font-size: var(--text-lg);
+    }
+
+    &::after {
+      content: var(--lorem-ipsum) var(--lorem-ipsum) var(--lorem-ipsum)
+        var(--lorem-ipsum) var(--lorem-ipsum) var(--lorem-ipsum)
+        var(--lorem-ipsum) var(--lorem-ipsum) var(--lorem-ipsum)
+        var(--lorem-ipsum) var(--lorem-ipsum) var(--lorem-ipsum);
+      text-indent: var(--space-md);
+      margin-left: var(--space-md);
+    }
+  }
 }

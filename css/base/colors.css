@@ -2,12 +2,6 @@
  * TODO: Migrate this file in variables.css
  */
 
-@property --color-primary {
-  syntax: '<color>';
-  initial-value: yellow;
-  inherits: false;
-}
-
 @property --variant {
   syntax: '<number>';
   initial-value: 0;
@@ -15,7 +9,7 @@
 }
 
 :root {
-  --color-secondary: #e9eaec;
+  /* --color-secondary: #e9eaec; */
 
   --primary: hsl(from var(--color-primary) h s l / 100%);
 

@@ -30,7 +30,7 @@
 /* Make the letter of the title as block element so we can apply every styles to them */
 .banner__title-brutally__r,
 .banner__title-brutally__ly {
-  display: block;
+  /* display: block; */
   transition: opacity 5s linear;
 }
 

@@ -1,6 +1,6 @@
 /**
  * Internal default theme variables
- * Using CSS pseudo-private custom properties
+ * Using CSS pseudo-private custom properties 
  * https://lea.verou.me/blog/2021/10/custom-properties-with-defaults/
  */
 :root {
@@ -60,12 +60,12 @@
   --_font-scale-4: var(--font-scale-4, clamp(2.0736rem, 1.6908425951086956rem + 1.7011440217391305vw, 3.0517578125rem));
   --_font-scale-5: var(--font-scale-5, clamp(2.4883199999999994rem, 1.96930280910326rem + 2.306743070652175vw, 3.814697265625rem));
   --_font-scale-6: var(--font-scale-6, clamp(2.9859839999999993rem, 2.2885279896399444rem + 3.0998044904891318vw, 4.76837158203125rem));
-  --_font-min-font: var(--font-min-font, 16);
-  --_font-max-font: var(--font-max-font, 20);
-  --_font-min-viewport: var(--font-min-viewport, 360);
-  --_font-max-viewport: var(--font-max-viewport, 1280);
-  --_font-scale-min: var(--font-scale-min, 1.2);
-  --_font-scale-max: var(--font-scale-max, 1.25);
+  --_font-minFont: var(--font-minFont, 16);
+  --_font-maxFont: var(--font-maxFont, 20);
+  --_font-minViewport: var(--font-minViewport, 360);
+  --_font-maxViewport: var(--font-maxViewport, 1280);
+  --_font-scaleMin: var(--font-scaleMin, 1.2);
+  --_font-scaleMax: var(--font-scaleMax, 1.25);
   --_font-steps: var(--font-steps, 0,1,2,3,4,5,6);
   --_font-weight-light: var(--font-weight-light, 300);
   --_font-weight-regular: var(--font-weight-regular, 400);
@@ -82,63 +82,43 @@
   --_shadow-disabled: var(--shadow-disabled, 0);
 
 /* ------------------------------------------------------------ */
-/*                            Space                            */
+/*                           Spacing                           */
 /* ------------------------------------------------------------ */
-  --_space-multiplier-unit: var(--space-multiplier-unit, 1rem);
-  --_space-multiplier-xxs: var(--space-multiplier-xxs, 0.25);
-  --_space-multiplier-xs: var(--space-multiplier-xs, 0.5);
-  --_space-multiplier-sm: var(--space-multiplier-sm, 0.75);
-  --_space-multiplier-md: var(--space-multiplier-md, 1);
-  --_space-multiplier-lg: var(--space-multiplier-lg, 2);
-  --_space-multiplier-xl: var(--space-multiplier-xl, 3.25);
-  --_space-multiplier-xxl: var(--space-multiplier-xxl, 5.25);
-  --_space-fluid-min: var(--space-fluid-min, 1rem);
-  --_space-fluid-max: var(--space-fluid-max, 1.5rem);
-  --_space-fluid-min-viewport: var(--space-fluid-min-viewport, 360px);
-  --_space-fluid-max-viewport: var(--space-fluid-max-viewport, 1280px);
-  --_space-unitss: var(--space-unitss, clamp(var(--space-fluid-min), calc(var(--space-fluid-min) + (var(--space-fluid-max) - var(--space-fluid-min)) * ((100vw - var(--space-fluid-min-viewport)) / (var(--space-fluid-max-viewport) - var(--space-fluid-min-viewport)))), var(--space-fluid-max)));
-  --_space-xxs: var(--space-xxs, calc(var(--space-unit) * var(--space-multiplier-xxs)));
-  --_space-xs: var(--space-xs, calc(var(--space-unit) * var(--space-multiplier-xs)));
-  --_space-sm: var(--space-sm, calc(var(--space-unit) * var(--space-multiplier-sm)));
-  --_space-md: var(--space-md, calc(var(--space-unit) * var(--space-multiplier-md)));
-  --_space-lg: var(--space-lg, calc(var(--space-unit) * var(--space-multiplier-lg)));
-  --_space-xl: var(--space-xl, calc(var(--space-unit) * var(--space-multiplier-xl)));
-  --_space-xxl: var(--space-xxl, calc(var(--space-unit) * var(--space-multiplier-xxl)));
+  --_spacing-multiplier-unit: var(--spacing-multiplier-unit, 1rem);
+  --_spacing-multiplier-xxs: var(--spacing-multiplier-xxs, 0.25);
+  --_spacing-multiplier-xs: var(--spacing-multiplier-xs, 0.5);
+  --_spacing-multiplier-sm: var(--spacing-multiplier-sm, 0.75);
+  --_spacing-multiplier-md: var(--spacing-multiplier-md, 1);
+  --_spacing-multiplier-lg: var(--spacing-multiplier-lg, 2);
+  --_spacing-multiplier-xl: var(--spacing-multiplier-xl, 3.25);
+  --_spacing-multiplier-xxl: var(--spacing-multiplier-xxl, 5.25);
+  --_spacing-fluid-min: var(--spacing-fluid-min, 1rem);
+  --_spacing-fluid-max: var(--spacing-fluid-max, 1.5rem);
+  --_spacing-fluid-min-viewport: var(--spacing-fluid-min-viewport, 360px);
+  --_spacing-fluid-max-viewport: var(--spacing-fluid-max-viewport, 1280px);
 
 /* ------------------------------------------------------------ */
-/*                            Layout                            */
+/*                            Space                            */
 /* ------------------------------------------------------------ */
-  --_layout-break-at: var(--layout-break-at, var(--_breakpoint-md));
-  --_layout-gutter-sm: var(--layout-gutter-sm, var(--_space-sm));
-  --_layout-gutter-md: var(--layout-gutter-md, var(--_space-md));
-  --_layout-gutter-lg: var(--layout-gutter-lg, var(--_space-lg));
-  --_layout-gutter-xl: var(--layout-gutter-xl, var(--_space-xl));
-  --_layout-direction: var(--layout-direction, column);
-  --_layout-align-start: var(--layout-align-start, flex-start);
-  --_layout-align-center: var(--layout-align-center, center);
-  --_layout-align-end: var(--layout-align-end, flex-end);
-  --_layout-justify-start: var(--layout-justify-start, flex-start);
-  --_layout-justify-center: var(--layout-justify-center, center);
-  --_layout-justify-end: var(--layout-justify-end, flex-end);
-  --_layout-justify-between: var(--layout-justify-between, space-between);
-  --_layout-gap-xs: var(--layout-gap-xs, var(--_space-xs));
-  --_layout-gap-sm: var(--layout-gap-sm, var(--_space-sm));
-  --_layout-gap-md: var(--layout-gap-md, var(--_space-md));
-  --_layout-gap-lg: var(--layout-gap-lg, var(--_space-lg));
-  --_layout-gap-xl: var(--layout-gap-xl, var(--_space-xl));
-  --_layout-z-index-overlay: var(--layout-z-index-overlay, 1000);
+  --_space-xxs: var(--space-xxs, calc(var(--space-unit) * var(--spacing-multiplier-xxs)));
+  --_space-xs: var(--space-xs, calc(var(--space-unit) * var(--spacing-multiplier-xs)));
+  --_space-sm: var(--space-sm, calc(var(--space-unit) * var(--spacing-multiplier-sm)));
+  --_space-md: var(--space-md, calc(var(--space-unit) * var(--spacing-multiplier-md)));
+  --_space-lg: var(--space-lg, calc(var(--space-unit) * var(--spacing-multiplier-lg)));
+  --_space-xl: var(--space-xl, calc(var(--space-unit) * var(--spacing-multiplier-xl)));
+  --_space-xxl: var(--space-xxl, calc(var(--space-unit) * var(--spacing-multiplier-xxl)));
 
 /* ------------------------------------------------------------ */
 /*                             Text                             */
 /* ------------------------------------------------------------ */
   --_text-body-size: var(--text-body-size, var(--font-scale-0));
-  --_text-body-line-height: var(--text-body-line-height, 1.5);
+  --_text-body-lineHeight: var(--text-body-lineHeight, 1.5);
   --_text-body-weight: var(--text-body-weight, var(--font-weight-regular));
   --_text-caption-size: var(--text-caption-size, var(--font-scale--2));
-  --_text-caption-line-height: var(--text-caption-line-height, 1.4);
+  --_text-caption-lineHeight: var(--text-caption-lineHeight, 1.4);
   --_text-caption-weight: var(--text-caption-weight, var(--font-weight-regular));
   --_text-small-size: var(--text-small-size, var(--font-scale--1));
-  --_text-small-line-height: var(--text-small-line-height, 1.4);
+  --_text-small-lineHeight: var(--text-small-lineHeight, 1.4);
   --_text-small-weight: var(--text-small-weight, var(--font-weight-regular));
   --_text-base-lightness: var(--text-base-lightness, 0);
   --_text-base-chroma: var(--text-base-chroma, 0);
@@ -165,10 +145,10 @@
 /*                           Heading                           */
 /* ------------------------------------------------------------ */
   --_heading-h1-size: var(--heading-h1-size, var(--font-scale-4));
-  --_heading-h1-line-height: var(--heading-h1-line-height, 1.1);
+  --_heading-h1-lineHeight: var(--heading-h1-lineHeight, 1.1);
   --_heading-h1-weight: var(--heading-h1-weight, var(--font-weight-bold));
   --_heading-h2-size: var(--heading-h2-size, var(--font-scale-3));
-  --_heading-h2-line-height: var(--heading-h2-line-height, 1.15);
+  --_heading-h2-lineHeight: var(--heading-h2-lineHeight, 1.15);
   --_heading-h2-weight: var(--heading-h2-weight, var(--font-weight-bold));
 
 /* ------------------------------------------------------------ */
@@ -199,23 +179,26 @@
   --_button-hover-background: var(--button-hover-background, var(--color-bg-primary-hover));
   --_checkbox-bg: var(--checkbox-bg, var(--color-bg-primary));
   --_checkbox-padding: var(--checkbox-padding, var(--space-xs));
-  --_checkbox-animation-duration: var(--checkbox-animation-duration, 0.3s);
-  --_checkbox-animation-timing-function: var(--checkbox-animation-timing-function, forwards);
-  --_checkbox-animation-checked-in: var(--checkbox-animation-checked-in, checked-in var(--checkbox-animation-duration) var(--checkbox-animation-timing-function));
-  --_checkbox-animation-checked-out: var(--checkbox-animation-checked-out, checked-out var(--checkbox-animation-duration) var(--checkbox-animation-timing-function));
+  --_checkbox-radius: var(--checkbox-radius, var(--border-radius-medium));
+  --_checkbox-checkmark: var(--checkbox-checkmark, 0);
+  --_checkbox-checkmark: var(--checkbox-checkmark, -50%);
+  --_checkbox-checkmark: var(--checkbox-checkmark, -50%);
+  --_checkbox-animation: var(--checkbox-animation, 0.3s);
+  --_checkbox-animation: var(--checkbox-animation, forwards);
+  --_checkbox-animation: var(--checkbox-animation, checked-in var(--animation-duration) var(--animation-timingFunction));
+  --_checkbox-animation: var(--checkbox-animation, checked-out var(--animation-duration) var(--animation-timingFunction));
 
   /* -------------------- */
   /*     Composition     */
   /* -------------------- */
-  --_flow-space: var(--flow-space, var(--layout-gutter-md));
-  --_stack-gap: var(--stack-gap, var(--layout-gutter-md));
+  --_flow-space: var(--flow-space, var(--space-md));
+  --_stack-gap: var(--stack-gap, var(--space-md));
   --_stack-align: var(--stack-align, start);
-  --_stack-direction: var(--stack-direction, var(--_layout-direction, column));
-  --_cluster-gap: var(--cluster-gap, var(--layout-gutter-sm));
+  --_cluster-gap: var(--cluster-gap, var(--space-sm));
   --_cluster-align: var(--cluster-align, center);
   --_center-max-width: var(--center-max-width, 72ch);
-  --_center-padding-inline: var(--center-padding-inline, var(--layout-gutter-md));
-  --_switcher-modifier: var(--switcher-modifier, var(--_layout-break-at));
-  --_switcher-gap: var(--switcher-gap, var(--layout-gutter-sm));
+  --_center-padding-inline: var(--center-padding-inline, var(--space-md));
+  --_switcher-modifier: var(--switcher-modifier, var(--breakpoint-md));
+  --_switcher-gap: var(--switcher-gap, var(--space-sm));
 
 }

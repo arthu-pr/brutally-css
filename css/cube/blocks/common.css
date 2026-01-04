@@ -144,14 +144,14 @@
   outline: none;
 }
 
-.theme:not(.-disabled):hover {
+/* .theme:not(.-disabled):hover {
   --component-box-shadow: var(--box-shadow-hover);
   --component-bg: color-mix(
     in srgb,
     var(--color-bg-component-primary-hover) calc(100% * var(--primary, 0)),
     var(--color-bg-component-secondary-hover)
   );
-}
+} */
 
 .theme.-disabled,
 .theme:disabled {
@@ -190,16 +190,23 @@
   --component-box-shadow: unset;
 }
 
+.theme[data-variant='primary'],
+[data-component='primary'] {
+  --primary: var(--TRUE);
+}
+
 .theme[data-variant='secondary'],
 [data-component='secondary'] {
   --secondary: var(--TRUE);
 }
 
-.theme[data-component-label] {
+.theme[data-component-label],
+[data-component-label] {
   margin-top: var(--space-xs);
 }
 
-.theme[data-component-label]::before {
+.theme[data-component-label]::before,
+[data-component-label]::before {
   content: attr(data-component-label);
   position: absolute;
   /* top: 0; */

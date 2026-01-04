@@ -1,0 +1,64 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+  --color-bg-page: #2a2b2a;
+  --color-bg-subtle: #dce0dc;
+  --color-bg-elevated: #ffffff;
+  --color-bg-inset: #b5b8b5;
+  --color-bg-primary: #65572a;
+  --color-bg-primary-hover: #403718;
+  --color-bg-primary-active: #1e1908;
+  --color-bg-primary-subtle: #fbefd2;
+  --color-bg-accent: #b4363b;
+  --color-bg-accent-hover: #7a2225;
+  --color-bg-accent-subtle: #fbeeee;
+  --color-bg-neutral: #4e4731;
+  --color-bg-neutral-strong: #010101;
+  --color-bg-info: #fbeeee;
+  --color-bg-warning: #fbefd2;
+  --color-bg-success: #edda9f;
+  --color-bg-hue: var(--color-primary-hue) * var(--primary, 1) + var(--color-secondary-hue) * var(--secondary, 0) + var(--color-danger-hue) * var(--danger, 0);
+  --color-bg-h: var(--theme-color-bg-hue);
+  --color-bg-lightness: var(--color-primary-lightness) * var(--primary, 1) + var(--color-secondary-lightness) * var(--secondary, 0) + var(--color-danger-lightness) * var(--danger, 0);
+  --color-bg-l: var(--theme-color-bg-lightness);
+  --color-bg-opacity: var(--color-primary-opacity);
+  --color-bg-o: var(--theme-color-bg-opacity);
+  --bg-page: #2a2b2a;
+  --bg-subtle: #dce0dc;
+  --bg-elevated: #ffffff;
+  --bg-inset: #b5b8b5;
+  --bg-primary: #65572a;
+  --bg-primary-hover: #403718;
+  --bg-primary-active: #1e1908;
+  --bg-primary-subtle: #fbefd2;
+  --bg-accent: #b4363b;
+  --bg-accent-hover: #7a2225;
+  --bg-accent-subtle: #fbeeee;
+  --bg-neutral: #4e4731;
+  --bg-neutral-strong: #010101;
+  --bg-info: #fbeeee;
+  --bg-warning: #fbefd2;
+  --bg-success: #edda9f;
+  --bg-base-lightness: 0;
+  --bg-base-chroma: 0;
+  --bg-base-hue: 0;
+  --bg-base-opacity: 1;
+  --bg-hover-lightness: 0.05;
+  --bg-hover-chroma: 0;
+  --bg-hover-hue: 0;
+  --bg-hover-opacity: 1;
+  --bg-active-lightness: 0.1;
+  --bg-active-chroma: 0;
+  --bg-active-hue: 0;
+  --bg-active-opacity: 1;
+  --bg-focus-lightness: 0.05;
+  --bg-focus-chroma: 0;
+  --bg-focus-hue: 0;
+  --bg-focus-opacity: 1;
+  --bg-disabled-lightness: 0;
+  --bg-disabled-chroma: 0;
+  --bg-disabled-hue: 0;
+  --bg-disabled-opacity: 1;
+}

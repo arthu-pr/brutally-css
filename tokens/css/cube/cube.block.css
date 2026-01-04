@@ -16,8 +16,12 @@
   --cube-block-button-hover-background: var(--color-bg-primary-hover);
   --cube-block-checkbox-bg: var(--color-bg-primary);
   --cube-block-checkbox-padding: var(--space-xs);
+  --cube-block-checkbox-radius: var(--border-radius-medium);
+  --cube-block-checkbox-checkmark-scale: 0;
+  --cube-block-checkbox-checkmark-translate-y: -50%;
+  --cube-block-checkbox-checkmark-translate-x: -50%;
   --cube-block-checkbox-animation-duration: 0.3s;
   --cube-block-checkbox-animation-timing-function: forwards;
-  --cube-block-checkbox-animation-checked-in: checked-in var(--checkbox-animation-duration) var(--checkbox-animation-timing-function);
-  --cube-block-checkbox-animation-checked-out: checked-out var(--checkbox-animation-duration) var(--checkbox-animation-timing-function);
+  --cube-block-checkbox-animation-checked-in: checked-in var(--animation-duration) var(--animation-timingFunction);
+  --cube-block-checkbox-animation-checked-out: checked-out var(--animation-duration) var(--animation-timingFunction);
 }

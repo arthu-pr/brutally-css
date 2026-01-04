@@ -4,8 +4,7 @@
   text-transform: uppercase;
   /* color: var(--font-color); */
 
-  --component-padding-x: var(--space-unit);
-  --component-padding-y: var(--space-xs);
+  --component-padding: var(--space-sm) var(--space-md);
 }
 
 .a-btn span,

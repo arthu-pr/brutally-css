@@ -1,14 +1,14 @@
-@property --animate-in {
-  syntax: '<custom-ident> | none';
+/* @property --animate-in {
+  syntax: '<string> | none';
   initial-value: none;
   inherits: false;
 }
 
 @property --animate-out {
-  syntax: '<custom-ident> | none';
+  syntax: '<string> | none';
   initial-value: none;
   inherits: false;
-}
+} */
 
 [data-animation='fade'] {
   --animation-in: fade-in;
@@ -134,5 +134,35 @@
   }
   100% {
     --fade-value: 1;
+  }
+}
+
+/* Checkbox */
+
+@keyframes checked-in {
+  0% {
+    --transform-scale: 0;
+
+    background-color: transparent;
+  }
+
+  100% {
+    --transform-scale: 1;
+
+    background-color: var(--color-bg);
+  }
+}
+
+@keyframes checked-out {
+  0% {
+    --transform-scale: 1;
+
+    background-color: var(--color-bg);
+  }
+
+  100% {
+    --transform-scale: 0;
+
+    background-color: transparent;
   }
 }

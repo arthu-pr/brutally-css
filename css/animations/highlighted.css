@@ -35,13 +35,13 @@ h4.-highlighted,
 p.-highlighted,
 span.-highlighted,
 div.-highlighted {
-  --highlighted-bg-color: color-mix(
+  /* --highlighted-bg-color: color-mix(
     in srgb,
     var(--color-bg),
     var(--theme-color) calc(100% * var(--active, 0))
-  );
-  --highlighted-bg-color-1: var(--highlighted-bg-color);
-  --highlighted-bg-color-2: var(--highlighted-bg-color);
+  ); */
+  --highlighted-bg-color-1: var(--highlighted-bg);
+  --highlighted-bg-color-2: var(--highlighted-bg);
 
   text-transform: uppercase;
   /* TODO: check responsive line-height */
@@ -89,8 +89,8 @@ div.-highlighted {
   margin-right: calc(-1 * clamp(2px, 1.4vw, 30px));
 }
 
-@media (min-width: 80rem) {
-  /* 1280px */
+@media (min-width: 48rem) {
+  /* 768px */
   .-highlighted.-animate > span {
     color: var(--color-primary);
     --animate-in: highlight-to-left 0.5s 0.1s forwards;

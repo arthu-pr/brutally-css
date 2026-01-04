@@ -5,6 +5,9 @@
 
 :root {
   --color-bg-elevated: #ffffff;
+  --color-text-on-primary: #ffffff;
+  --color-text-on-accent: #ffffff;
+  --color-text-on-neutral-strong: #ffffff;
   --color-bg-page: var(--color-secondary-base);
   --color-bg-subtle: var(--color-secondary-100);
   --color-bg-inset: var(--color-secondary-200);

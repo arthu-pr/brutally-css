@@ -10,4 +10,5 @@
   opacity: var(--overlay-opacity);
   inset: var(--border-width);
   background-color: var(--overlay-bg);
+  z-index: var(--_layout-z-index-overlay);
 }

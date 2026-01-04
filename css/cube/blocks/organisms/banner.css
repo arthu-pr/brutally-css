@@ -1,11 +1,14 @@
 .banner {
+  box-sizing: border-box;
   position: relative;
-  height: calc(100svh - var(--border-width));
   /* if one element
   calc(100svh - calc(2 * var(--border-width))) */
   padding: 0 var(--spacing);
   border-bottom: var(--border-width) solid var(--theme-color);
   z-index: 0;
+  display: flex;
+  flex-direction: column;
+  min-block-size: calc(100svh - var(--border-width));
   /* transition: var(--layout-transition); */
   /* transform: translateX(0svw); */
 
@@ -15,6 +18,22 @@
   min-width: 0;
   flex-grow: 1;
   flex-basis: 0;
+
+  & > * {
+    margin-block: var(--space-lg);
+  }
+
+  & > :first-child:not(header) {
+    margin-block-start: calc(0px - var(--border-width));
+  }
+
+  & > :last-child:not(header) {
+    margin-block-end: calc(0px + var(--border-width));
+  }
+
+  & > header {
+    margin-block: auto;
+  }
 }
 
 .banner__title-brutally {

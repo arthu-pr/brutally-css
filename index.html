@@ -103,6 +103,14 @@
       class="a-modifier"
     />
     <input
+      data-modifier="drawer"
+      aria-hidden="true"
+      type="checkbox"
+      id="drawer-settings"
+      data-animation="slide"
+      class="a-modifier"
+    />
+    <input
       aria-hidden="true"
       type="checkbox"
       id="center-modal"
@@ -160,53 +168,67 @@
           </nav>
         </section>
         <div class="main-content">
-          <header class="banner stack align-start justify-center">
-            <span class="banner__alert">&#9888;</span>
-            <span class="banner__alert">&#9888;</span>
-            <span class="banner__alert">&#127137;</span>
-            <span class="banner__alert">&#127138;</span>
-            <span class="banner__alert">&#127139;</span>
-            <span class="banner__alert">&#127143;</span>
-            <span class="banner__alert">&#127149;</span>
-            <span class="banner__alert">&#127157;</span>
-            <span class="banner__alert">&#127159;</span>
-            <span class="banner__alert">&#127178;</span
-            ><span class="banner__alert">&#127180;</span
-            ><span class="banner__alert">&#9824;</span
-            ><span class="banner__alert">&#9827;</span
-            ><span class="banner__alert">&#9829;</span
-            ><span class="banner__alert">&#9830;</span
-            ><span class="banner__alert">&#127137;</span>
+          <div class="banner">
+            <header class="stack align-start justify-center">
+              <span class="banner__alert">&#9888;</span>
+              <span class="banner__alert">&#9888;</span>
+              <span class="banner__alert">&#127137;</span>
+              <span class="banner__alert">&#127138;</span>
+              <span class="banner__alert">&#127139;</span>
+              <span class="banner__alert">&#127143;</span>
+              <span class="banner__alert">&#127149;</span>
+              <span class="banner__alert">&#127157;</span>
+              <span class="banner__alert">&#127159;</span>
+              <span class="banner__alert">&#127178;</span
+              ><span class="banner__alert">&#127180;</span
+              ><span class="banner__alert">&#9824;</span
+              ><span class="banner__alert">&#9827;</span
+              ><span class="banner__alert">&#9829;</span
+              ><span class="banner__alert">&#9830;</span
+              ><span class="banner__alert">&#127137;</span>
 
-            <span class="banner__alert">&#9888;</span>
-            <span class="banner__alert">&#9888;</span>
-            <span class="banner__alert">&#9888;</span>
-            <span class="banner__alert">&#9888;</span>
-            <span class="banner__alert">&#9888;</span>
-            <span class="banner__alert">&#9888;</span>
-            <h1 class="banner__title">
-              <span class="banner__title-brutally">
-                B<span class="banner__title-brutally__r">r</span>utal<span
-                  class="banner__title-brutally__ly"
-                  >ly</span
+              <span class="banner__alert">&#9888;</span>
+              <span class="banner__alert">&#9888;</span>
+              <span class="banner__alert">&#9888;</span>
+              <span class="banner__alert">&#9888;</span>
+              <span class="banner__alert">&#9888;</span>
+              <span class="banner__alert">&#9888;</span>
+              <h1 class="banner__title">
+                <span class="banner__title-brutally">
+                  B<span class="banner__title-brutally__r">r</span>utal<span
+                    class="banner__title-brutally__ly"
+                    >ly</span
+                  >
+                </span>
+                <span class="banner__title__css-only">CSS</span>
+              </h1>
+              <h2 class="banner__description">
+                <span class="-highlighted -active -animate stick-to-left">
+                  <span class="labeled">This website</span></span
                 >
-              </span>
-              <span class="banner__title__css-only">CSS</span>
-            </h1>
-            <h2 class="banner__description">
-              <span class="-highlighted -active -animate stick-to-left">
-                <span class="labeled">This website</span></span
-              >
-              is a playground to explore
-              <span class="-highlighted -animate">
-                <span class="labeled">CSS capabilities and limits</span></span
-              >
-              without any JavaScript.
-            </h2>
-            <div class="typewriter">
-              <h1>The cat and the hat.</h1>
+                is a playground to explore
+                <span class="-highlighted -animate">
+                  <span class="labeled">CSS capabilities and limits</span></span
+                >
+                without any JavaScript.
+              </h2>
+              <div class="typewriter">
+                <h1>The cat and the hat.</h1>
+              </div>
+            </header>
+            <div class="wrapper">
+              <div class="cluster">
+                <label
+                  role="button"
+                  for="drawer-settings"
+                  class="a-btn theme -relative"
+                >
+                  <span class="text-lg">&#9881;</span>
+                  Settings
+                </label>
+              </div>
             </div>
-          </header>
+          </div>
           <main>
             <section class="o-grid">
               <article
@@ -953,7 +975,7 @@
         </div>
       </div>
       <!-- Drawer Component -->
-      <label for="drawer" class="a-overlay"></label>
+      <!-- <label for="drawer" class="a-overlay"></label>
       <div
         class="m-drawer flex flex-column justify-between"
         id="drawer"
@@ -970,25 +992,46 @@
         <div class="m-modal__footer">
           <label class="a-btn theme" for="drawer"><span>Close</span></label>
         </div>
-      </div>
+      </div> -->
 
       <!-- Drawer Component -->
-      <label for="drawer-settings" class="a-overlay"></label>
-      <div
-        class="m-drawer flex flex-column justify-between"
-        id="drawer-settings"
-        aria-modal="true"
-        role="dialog"
-        tabindex="-1"
-      >
-        <div class="m-modal__header">
-          <h3 class="m-modal__title">Drawer Component</h3>
-        </div>
-        <div class="m-modal__content">
-          <p>Example of a drawer component.</p>
-        </div>
-        <div class="m-modal__footer">
-          <label class="a-btn theme" for="drawer"><span>Close</span></label>
+      <div class="a-overlay">
+        <div
+          class="m-drawer flex flex-column justify-between"
+          id="drawer-settings"
+          aria-modal="true"
+          role="dialog"
+          tabindex="-1"
+        >
+          <div class="m-modal__header">
+            <h3 class="m-modal__title">Settings</h3>
+          </div>
+          <div class="m-modal__content flow">
+            <div class="m-form">
+              <div class="m-form-group">
+                <label for="setting-1">Setting 1</label>
+                <input
+                  type="text"
+                  id="setting-1"
+                  class="a-input theme"
+                  placeholder="Enter value for setting 1"
+                />
+              </div>
+              <div class="stack width-full flex-row">
+                <label for="setting-2">Setting 2</label>
+                <input
+                  type="checkbox"
+                  data-component="primary"
+                  id="setting-2"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="m-modal__footer">
+            <label class="a-btn theme" for="drawer-settings"
+              ><span>Close</span></label
+            >
+          </div>
         </div>
       </div>
     </div>

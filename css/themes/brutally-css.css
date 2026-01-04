@@ -26,7 +26,8 @@
     /* --theme-color: oklch(from var(--color-primary) l c h / 100%); */
     --theme-color: var(--color-theme-default);
     --theme-color-current: var(--theme-color);
-    --color-bg: var(--color-graphite-base);
+    --color-bg: var(--color-bg-page);
+    --color-primary: var(--theme-color);
 
     /* Custom main Theme color */
     --color-theme-100: color-mix(

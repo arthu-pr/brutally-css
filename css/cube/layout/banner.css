@@ -1,0 +1,30 @@
+.banner {
+  display: flex;
+  flex-direction: column;
+  min-block-size: 100svh;
+  padding: var(--space-md);
+
+  & > * {
+    margin-block: var(--space-md);
+  }
+
+  & > :first-child:not(header) {
+    margin-block-start: 0;
+  }
+
+  & > :last-child:not(header) {
+    margin-block-end: 0;
+  }
+
+  & > header {
+    margin-block: auto;
+  }
+}
+
+.banner .banner > :last-child:not(header) {
+  margin-block-end: 0;
+}
+
+.banner > header {
+  margin-block: auto;
+}
