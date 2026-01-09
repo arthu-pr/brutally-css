@@ -21,12 +21,22 @@
   /* https://grafikart.fr/tutoriels/conteneur-css-1233 */
   box-sizing: border-box;
   width: min(
-    var(--breakpoint-desktop-xl),
-    calc(100% - 2 * var(--layout-mobile-padding))
+    var(--breakpoint-tablet),
+    calc(100% - 4 * var(--layout-mobile-padding))
   );
   margin-inline: auto;
 }
 
 .container::-webkit-scrollbar {
   display: none;
+}
+
+.cont {
+  /* https://grafikart.fr/tutoriels/conteneur-css-1233 */
+  box-sizing: border-box;
+  width: min(
+    var(--breakpoint-tablet),
+    calc(100% - 4 * var(--layout-mobile-padding))
+  );
+  margin-inline: auto;
 }

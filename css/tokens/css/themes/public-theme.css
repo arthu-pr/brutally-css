@@ -143,6 +143,10 @@
   --checkbox-checkmark: 0;
   --checkbox-checkmark: -50%;
   --checkbox-checkmark: -50%;
+  --checkbox-animation: 0.3s;
+  --checkbox-animation: forwards;
+  --checkbox-animation: checked-in var(--animation-duration) var(--animation-timingFunction);
+  --checkbox-animation: checked-out var(--animation-duration) var(--animation-timingFunction);
 
   /* -------------------- */
   /*     Composition     */

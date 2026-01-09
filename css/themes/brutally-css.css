@@ -1,26 +1,32 @@
-@import url('../../build/css/colors.primitive.css') layer(colors.primitives);
-@import url('../../build/css/colors.semantic.css') layer(colors.semantic);
-@import url('../../build/css/colors.intent.css') layer(colors.intent);
-@import url('../../build/css/themes/public-theme.css') layer(theme);
-@import url('../../build/css/themes/private-theme.css') layer(theme);
-@import url('../../build/css/spacing.css') layer(theme);
+@property --theme-color {
+  syntax: '<color>';
+  initial-value: transparent;
+  inherits: true;
+}
+
+@property --disabled {
+  syntax: '<number>';
+  initial-value: 0;
+  inherits: true;
+}
 
 /* @import url('build/css/cube/cube.composition.css') layer(cube.composition); */
 /* @import url('build/css/cube/cube.utility.css') layer(cube.utility); */
 /* @import url('build/css/cube/cube.block.css') layer(cube.block); */
 
-@layer color, cube, theme;
+@layer colors, cube, theme;
 
-@layer theme {
+@layer colors {
   :root {
-    --border-radius-default: 0;
+    /* Forms */
+    --invalid-color: var(--color-feedback-error);
+    --color-error: var(--color-feedback-error);
 
-    --breakpoint-xs: var(--breakpoint-mobile, 30rem);
-    --breakpoint-sm: var(--breakpoint-tablet, 48rem);
-    --breakpoint-md: var(--breakpoint-desktop, 64rem);
-    --breakpoint-lg: var(--breakpoint-desktop, 80rem);
-    --breakpoint-xl: var(--breakpoint-desktop-xl, 96rem);
-    --breakpoint-xxl: var(--breakpoint-desktop-xxl, 128rem);
+    /* Initial State */
+    /* --theme-color: oklch(from var(--color-primary) l c h / 100%); */
+    --theme-color: var(--color-theme-default);
+    --theme-color-current: var(--theme-color);
+    --color-bg: var(--color-graphite-base);
 
     /* Custom main Theme color */
     --color-theme-100: color-mix(
@@ -64,6 +70,53 @@
       var(--color-theme-default, var(--color-primary-500)),
       white 90%
     );
-    --color-theme-default: var(--color-primary-500);
+    --color-theme-default: var(--color-primary-base);
+  }
+}
+
+@layer cube {
+}
+
+@layer theme {
+  :root {
+    --border-radius-default: 0;
+
+    --breakpoint-xs: var(--breakpoint-mobile, 30rem);
+    --breakpoint-sm: var(--breakpoint-tablet, 48rem);
+    --breakpoint-md: var(--breakpoint-desktop, 64rem);
+    --breakpoint-lg: var(--breakpoint-desktop, 80rem);
+    --breakpoint-xl: var(--breakpoint-desktop-xl, 96rem);
+    --breakpoint-xxl: var(--breakpoint-desktop-xxl, 128rem);
+
+    /* Layout */
+    --layout-mobile-padding: var(--space-md);
+
+    /* Theme Colors */
+    /* --color-primary: var(--color-theme-default); */
+    /* Borders */
+    --color-border-theme: var(--theme-color);
+    --border-theme: var(--border-width) solid var(--theme-color);
+    --border-theme-10: var(--border-width-10) solid var(--theme-color);
+    --border-theme-25: var(--border-width-25) solid var(--theme-color);
+    --border-theme-50: var(--border-width-50) solid var(--theme-color);
+    --border-theme-75: var(--border-width-75) solid var(--theme-color);
+
+    /* Spacing */
+    --container-fluid: var(--space-md) var(--space-md) var(--space-sm);
+    --container: var(--space-sm) var(--space-md) var(--space-xs);
+
+    --opacity: var(--not-disabled, 1);
+
+    /* Navbar */
+    --navbar-size: 80px;
+
+    --highlighted-left-mobile-val: clamp(-30px, -1.4vw, -2px);
+  }
+}
+
+@media (min-width: 48rem) {
+  /* 768px - Tablets */
+  body {
+    --container: var(--space-md) var(--space-lg);
   }
 }
