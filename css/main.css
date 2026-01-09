@@ -5,14 +5,9 @@
 @import './tokens/css/colors.semantic.css';
 @import './tokens/css/colors.intent.css';
 @import './tokens/css/cube/cube.utility.css';
-@import './tokens/css/themes/public-theme.css';
-@import './tokens/css/themes/private-theme.css';
-@import './tokens/css/spacing.css';
-
-/* =====================================================
-   Themes (overrides everything)
-   ===================================================== */
-@import './themes/brutally-css.css';
+/* @import "./tokens/css/themes/public-theme.css";
+@import "./tokens/css/themes/private-theme.css";
+@import "./tokens/css/spacing.css"; */
 
 /* =====================================================
    Main CSS Imports
@@ -53,6 +48,7 @@
 @import './cube/blocks/atoms/overlay.css';
 @import './cube/blocks/atoms/typewriter.css';
 @import './cube/blocks/atoms/typography.css';
+@import './cube/blocks/atoms/parallax.css';
 
 /* =====================================================
    Molecules
@@ -83,7 +79,7 @@
 @import './cube/layout/stack.css';
 @import './cube/layout/switcher.css';
 @import './cube/layout/wrapper.css';
-/* @import './cube/layout/banner.css'; */
+/* @import './cube/layout/banner.css'; *;
 /* =====================================================
    Utilities
    ===================================================== */
@@ -93,3 +89,8 @@
 @import './cube/utilities/spacing.css';
 @import './cube/utilities/viewport.css';
 @import './cube/utilities/variables.css';
+
+/* =====================================================
+   Themes (overrides everything)
+   ===================================================== */
+@import './themes/brutally-css.css';

@@ -127,6 +127,7 @@ body {
   margin: 0;
   font-size: var(--text-md);
   background-color: var(--color-bg);
+  border: var(--border-theme);
 }
 
 .body::-webkit-scrollbar {
@@ -159,7 +160,7 @@ h4::after {
 
 .section,
 .article {
-  padding: var(--space-unit);
+  padding: var(--layout-space-unit);
 }
 
 /* 
@@ -182,6 +183,23 @@ h4::after {
   /* animation: 2.5s cubic-bezier(0.25, 1, 0.3, 1) wipe-in-left both; */
 }
 
+/*
+  * Controller
+  * Main wrapper - called this way as many interations in the app depend on it
+  */
+
+.controller {
+  /* https://dev.to/technoph1le/the-css-accent-color-property-explained-4h9o */
+  accent-color: var(--theme-color);
+  color: hsl(from var(--theme-color) h s l / 0.2);
+  color: var(--color-contrast-lower);
+  mix-blend-mode: var(--mix-blend-mode);
+
+  /* https://medium.com/@ehsaneona/overcoming-position-sticky-issues-solving-overflow-hidden-problems-with-overflow-clip-e8e79a7b0c34 */
+  overflow: clip;
+  -ms-overflow-style: none;
+}
+
 .layout {
   width: calc(200svw - 2 * var(--theme-bar-width));
   display: grid;
@@ -201,12 +219,15 @@ h4::after {
 
   transform: var(--layout-transform-value);
   clip-path: inset(0 0 0 0);
+  position: relative;
+  --mix-blend-mode: normal;
+  color: var(--theme-color);
 }
 
 .main-content {
   grid-area: main-content;
   position: relative;
-  border-right: var(--border-width) solid var(--theme-color);
+  /* border-right: var(--border-width) solid var(--theme-color); */
   transform: translateY(0);
 }
 

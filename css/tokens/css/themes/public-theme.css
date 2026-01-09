@@ -15,9 +15,11 @@
   --border-width-large: calc(var(--border-width-default) * 2 * var(--border-width-scale));
   --border-style: var(--border-style-default);
   --border-radius-default: 0;
+  --border-radius-small: 0.5;
+  --border-radius-medium: calc(var(--border-radius-default) * var(--border-radius-scale));
+  --border-radius-large: 2;
   --border-radius-scale: 1.5;
   --border-radius-light: calc(var(--border-radius-default) / var(--border-radius-scale));
-  --border-radius-medium: calc(var(--border-radius-default) * var(--border-radius-scale));
   --border-radius-heavy: calc(var(--border-radius-default) * 2 * var(--border-radius-scale));
   --border-base-lightness: 0;
   --border-base-chroma: 0;
@@ -43,29 +45,29 @@
 /* ------------------------------------------------------------ */
 /*                          Breakpoint                          */
 /* ------------------------------------------------------------ */
-  --breakpoint-xs: 640;
-  --breakpoint-sm: 768;
-  --breakpoint-md: 1024;
-  --breakpoint-lg: 1280;
-  --breakpoint-xl: 1820;
-  --breakpoint-xxl: 2520;
+  --breakpoint-xs: 640px;
+  --breakpoint-sm: 768px;
+  --breakpoint-md: 1024px;
+  --breakpoint-lg: 1280px;
+  --breakpoint-xl: 1820px;
+  --breakpoint-xxl: 2520px;
 
 /* ------------------------------------------------------------ */
 /*                             Font                             */
 /* ------------------------------------------------------------ */
-  --font-scale-0: clamp(1rem, 0.9021739130434783rem + 0.43478260869565216vw, 1.25rem);
-  --font-scale-1: clamp(1.2rem, 1.0581521739130435rem + 0.6304347826086958vw, 1.5625rem);
-  --font-scale-2: clamp(1.44rem, 1.239211956521739rem + 0.8923913043478261vw, 1.953125rem);
-  --font-scale-3: clamp(1.7279999999999998rem, 1.4488410326086953rem + 1.2407065217391309vw, 2.44140625rem);
-  --font-scale-4: clamp(2.0736rem, 1.6908425951086956rem + 1.7011440217391305vw, 3.0517578125rem);
-  --font-scale-5: clamp(2.4883199999999994rem, 1.96930280910326rem + 2.306743070652175vw, 3.814697265625rem);
-  --font-scale-6: clamp(2.9859839999999993rem, 2.2885279896399444rem + 3.0998044904891318vw, 4.76837158203125rem);
-  --font-min-font: 16;
-  --font-max-font: 20;
+  --font-scale-0: clamp(0.875rem, 0.6304347826086957rem + 1.0869565217391304vw, 1.5rem);
+  --font-scale-1: clamp(0.984375rem, 0.6652173913043479rem + 1.418478260869565vw, 1.7999999999999998rem);
+  --font-scale-2: clamp(1.107421875rem, 0.6955434782608696rem + 1.8305706521739133vw, 2.16rem);
+  --font-scale-3: clamp(1.245849609375rem, 0.7190951086956524rem + 2.341131114130434vw, 2.5919999999999996rem);
+  --font-scale-4: clamp(1.401580810546875rem, 0.7329124320652175rem + 2.9718594599184778vw, 3.1104rem);
+  --font-scale-5: clamp(1.5767784118652344rem, 0.7332430078125004rem + 3.749046240234373vw, 3.732479999999999rem);
+  --font-scale-6: clamp(1.7738757133483887rem, 0.7153582098760192rem + 4.704522237654976vw, 4.478975999999999rem);
+  --font-min-font: 14;
+  --font-max-font: 24;
   --font-min-viewport: 360;
   --font-max-viewport: 1280;
-  --font-scale-min: 1.2;
-  --font-scale-max: 1.25;
+  --font-scale-min: 1.125;
+  --font-scale-max: 1.2;
   --font-steps: 0,1,2,3,4,5,6;
   --font-weight-light: 300;
   --font-weight-regular: 400;
@@ -75,15 +77,23 @@
 /* ------------------------------------------------------------ */
 /*                            Shadow                            */
 /* ------------------------------------------------------------ */
-  --shadow-default: 0.25;
-  --shadow-hover: 0.25;
-  --shadow-active: 0.25;
-  --shadow-focus: 0.25;
-  --shadow-disabled: 0;
+  --shadow-xs: 0.25;
+  --shadow-sm: 0.5;
+  --shadow-md: 1;
+  --shadow-lg: 2;
+  --shadow-xl: 4;
+  --shadow-default: 1;
+  --shadow-scale: 1.5;
 
 /* ------------------------------------------------------------ */
 /*                            Space                            */
 /* ------------------------------------------------------------ */
+  --space-fluid-min: 1rem;
+  --space-fluid-max: 1.5rem;
+  --space-fluid-min-viewport: 360px;
+  --space-fluid-max-viewport: 1280px;
+  --space-unit-default: 1rem;
+  --space-unit-fluid: clamp(var(--space-fluid-min), calc(var(--space-fluid-min) + (var(--space-fluid-max) - var(--space-fluid-min)) * ((100vw - var(--space-fluid-min-viewport)) / (var(--space-fluid-max-viewport) - var(--space-fluid-min-viewport)))), var(--space-fluid-max));
   --space-multiplier-unit: 1rem;
   --space-multiplier-xxs: 0.25;
   --space-multiplier-xs: 0.5;
@@ -92,27 +102,15 @@
   --space-multiplier-lg: 2;
   --space-multiplier-xl: 3.25;
   --space-multiplier-xxl: 5.25;
-  --space-fluid-min: 1rem;
-  --space-fluid-max: 1.5rem;
-  --space-fluid-min-viewport: 360px;
-  --space-fluid-max-viewport: 1280px;
-  --space-unitss: clamp(var(--space-fluid-min), calc(var(--space-fluid-min) + (var(--space-fluid-max) - var(--space-fluid-min)) * ((100vw - var(--space-fluid-min-viewport)) / (var(--space-fluid-max-viewport) - var(--space-fluid-min-viewport)))), var(--space-fluid-max));
-  --space-xxs: calc(var(--space-unit) * var(--space-multiplier-xxs));
-  --space-xs: calc(var(--space-unit) * var(--space-multiplier-xs));
-  --space-sm: calc(var(--space-unit) * var(--space-multiplier-sm));
-  --space-md: calc(var(--space-unit) * var(--space-multiplier-md));
-  --space-lg: calc(var(--space-unit) * var(--space-multiplier-lg));
-  --space-xl: calc(var(--space-unit) * var(--space-multiplier-xl));
-  --space-xxl: calc(var(--space-unit) * var(--space-multiplier-xxl));
 
 /* ------------------------------------------------------------ */
 /*                            Layout                            */
 /* ------------------------------------------------------------ */
   --layout-break-at: var(--breakpoint-md);
-  --layout-gutter-sm: var(--space-sm);
-  --layout-gutter-md: var(--space-md);
-  --layout-gutter-lg: var(--space-lg);
-  --layout-gutter-xl: var(--space-xl);
+  --layout-gutter-sm: var(--spacing-sm);
+  --layout-gutter-md: var(--spacing-md);
+  --layout-gutter-lg: var(--spacing-lg);
+  --layout-gutter-xl: var(--spacing-xl);
   --layout-direction: column;
   --layout-align-start: flex-start;
   --layout-align-center: center;
@@ -121,12 +119,25 @@
   --layout-justify-center: center;
   --layout-justify-end: flex-end;
   --layout-justify-between: space-between;
-  --layout-gap-xs: var(--space-xs);
-  --layout-gap-sm: var(--space-sm);
-  --layout-gap-md: var(--space-md);
-  --layout-gap-lg: var(--space-lg);
-  --layout-gap-xl: var(--space-xl);
-  --layout-z-index-overlay: 1000;
+  --layout-gap-xs: var(--spacing-xs);
+  --layout-gap-sm: var(--spacing-sm);
+  --layout-gap-md: var(--spacing-md);
+  --layout-gap-lg: var(--spacing-lg);
+  --layout-gap-xl: var(--spacing-xl);
+  --layout-overlay-z-index: 1000;
+  --layout-overlay-opacity: 0;
+  --layout-space-unit: var(--space-unit-fluid);
+
+/* ------------------------------------------------------------ */
+/*                           Spacing                           */
+/* ------------------------------------------------------------ */
+  --spacing-xxs: calc(var(--layout-space-unit) * var(--space-multiplier-xxs));
+  --spacing-xs: calc(var(--layout-space-unit) * var(--space-multiplier-xs));
+  --spacing-sm: calc(var(--layout-space-unit) * var(--space-multiplier-sm));
+  --spacing-md: calc(var(--layout-space-unit) * var(--space-multiplier-md));
+  --spacing-lg: calc(var(--layout-space-unit) * var(--space-multiplier-lg));
+  --spacing-xl: calc(var(--layout-space-unit) * var(--space-multiplier-xl));
+  --spacing-xxl: calc(var(--layout-space-unit) * var(--space-multiplier-xxl));
 
 /* ------------------------------------------------------------ */
 /*                             Text                             */

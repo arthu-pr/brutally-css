@@ -4,16 +4,16 @@
   inset: 0;
 }
 
-@property --modal-opacity {
+@property --overlay-opacity {
   syntax: '<percentage>';
   initial-value: 0%;
-  inherits: false;
+  inherits: true;
 }
 
-@property --modal-z-index {
+@property --overlay-z-index {
   syntax: '<number>';
-  initial-value: 0;
-  inherits: false;
+  initial-value: -1;
+  inherits: true;
 }
 
 @property --modal-translate-x {
@@ -39,7 +39,7 @@
 
   border: var(--dialog-border);
 
-  opacity: var(--modal-opacity);
+  opacity: var(--overlay-opacity);
   --modal-z-index: calc(var(--_layout-z-index-overlay) + 10);
   z-index: var(--modal-z-index);
   margin: 0;
@@ -51,20 +51,22 @@
   position: absolute;
   left: 50%;
   top: var(--top-modal);
+  transition: var(--drawer-transition, trannslate(0 0));
   transform: translate(var(--modal-translate-x), var(--modal-translate-y));
 }
 
 .m-drawer {
-  max-width: 100%;
   width: clamp(260px, 65%, 896px);
   background: var(--dialog-bg);
   border: var(--dialog-border);
   position: fixed;
   top: 0;
-  bottom: 0;
-  /* height: 100svh; */
   right: 0;
-  transform: translateX(-600px);
+  height: 100svh;
+  --modal-z-index: calc(var(--overlay-z-index) + 10);
+  z-index: var(--modal-z-index);
+  transform: var(--drawer-translate-x, translateX(100%));
+  transition: transform 0.5s ease;
 }
 
 .m-modal:hover {

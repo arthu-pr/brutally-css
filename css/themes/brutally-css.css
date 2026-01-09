@@ -1,3 +1,7 @@
+@import url('../tokens/css/themes/public-theme.css') layer(theme);
+@import url('../tokens/css/themes/private-theme.css') layer(theme);
+@import url('../tokens/css/spacing.css') layer(theme);
+
 @property --theme-color {
   syntax: '<color>';
   initial-value: transparent;
@@ -14,7 +18,7 @@
 /* @import url('build/css/cube/cube.utility.css') layer(cube.utility); */
 /* @import url('build/css/cube/cube.block.css') layer(cube.block); */
 
-@layer colors, cube, theme;
+@layer colors, theme-default, theme, cube;
 
 @layer colors {
   :root {
@@ -23,11 +27,12 @@
     --color-error: var(--color-feedback-error);
 
     /* Initial State */
+    --_theme-color: var(--color-theme-default);
     /* --theme-color: oklch(from var(--color-primary) l c h / 100%); */
-    --theme-color: var(--color-theme-default);
-    --theme-color-current: var(--theme-color);
+    --_theme-color-current: var(--_theme-color);
+    --theme-color: var(--_theme-color);
     --color-bg: var(--color-bg-page);
-    --color-primary: var(--theme-color);
+    --color-primary: var(--_theme-color);
 
     /* Custom main Theme color */
     --color-theme-100: color-mix(
@@ -82,12 +87,9 @@
   :root {
     --border-radius-default: 0;
 
-    --breakpoint-xs: var(--breakpoint-mobile, 30rem);
-    --breakpoint-sm: var(--breakpoint-tablet, 48rem);
-    --breakpoint-md: var(--breakpoint-desktop, 64rem);
-    --breakpoint-lg: var(--breakpoint-desktop, 80rem);
-    --breakpoint-xl: var(--breakpoint-desktop-xl, 96rem);
-    --breakpoint-xxl: var(--breakpoint-desktop-xxl, 128rem);
+    --border-width-default: 8px;
+    /* --border-width: var(--_border-width-default); */
+    /* --border-width: var(--border-width-default); */
 
     /* Layout */
     --layout-mobile-padding: var(--space-md);
@@ -112,6 +114,15 @@
     --navbar-size: 80px;
 
     --highlighted-left-mobile-val: clamp(-30px, -1.4vw, -2px);
+
+    /* TODO: retro-compatibility remap */
+    --space-xxs: var(--spacing-xxs);
+    --space-xs: var(--spacing-xs);
+    --space-sm: var(--spacing-sm);
+    --space-md: var(--spacing-md);
+    --space-lg: var(--spacing-lg);
+    --space-xl: var(--spacing-xl);
+    --space-xxl: var(--spacing-xxl);
   }
 }
 

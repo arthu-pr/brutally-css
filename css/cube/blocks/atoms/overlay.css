@@ -5,10 +5,17 @@
 }
 
 .a-overlay {
-  --overlay-bg: var(--color-bg-80);
+  /* --overlay-z-index: -1; */
+
   position: fixed;
-  opacity: var(--overlay-opacity);
-  inset: var(--border-width);
-  background-color: var(--overlay-bg);
-  z-index: var(--_layout-z-index-overlay);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: auto;
+  inset: 0;
+  opacity: var(--overlay-opacity, 0%);
+  /* background-color: var(--overlay-bg); */
+  z-index: var(--overlay-z-index, 1000);
+  backdrop-filter: blur(var(--overlay-blur, 8px));
+  transition: opacity 0.3s ease;
 }

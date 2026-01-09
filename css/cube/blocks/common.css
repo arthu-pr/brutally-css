@@ -45,13 +45,13 @@
 
   --theme: ;
   --base-unit: 4px;
-  --padding-x: var(--space-unit);
+  --padding-x: var(--layout-space-unit);
   --padding-y: var(--space-xss);
   --styled: calc(1 - var(--unstyled));
-  --padding-x: var(--space-unit);
+  --padding-x: var(--layout-space-unit);
   --margin-bottom: var(--space-xs);
   --component-padding-y: calc(var(--space-xs) * var(--styled));
-  --component-padding-x: calc(var(--space-unit) * var(--styled));
+  --component-padding-x: calc(var(--layout-space-unit) * var(--styled));
   --component-padding: var(--component-padding-y) var(--component-padding-x);
   /* --border-width: var(--border-width-25); */
   /* --is-raw: var(--raw); */
@@ -76,7 +76,7 @@
   --component-mb: calc(var(--margin-bottom) * var(--styled));
   /* --component-padding-y: calc(var(--padding-y) * var(--styled)); */
   /* --component-padding-x: calc(var(--padding-x) * var(--styled)); */
-  --component-border-width: calc(var(--border-width-small) * var(--styled));
+  --component-border-width: calc(var(--border-width-xsmall) * var(--styled));
 
   --theme-base-unit: var(--base-unit);
   --theme-base-unit-calc: calc(
@@ -116,7 +116,7 @@
   );
 
   --component-box-shadow: var(--box-shadow-base);
-  /* --component-padding-x: calc(var(--space-unit) * var(--styled)); */
+  /* --component-padding-x: calc(var(--layout-space-unit) * var(--styled)); */
   /* --component-padding-y: 0; */
   --component-border-style: solid;
 

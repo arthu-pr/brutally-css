@@ -27,9 +27,11 @@ declare const tokens: {
     style: DesignToken;
     radius: {
       default: DesignToken;
+      small: DesignToken;
+      medium: DesignToken;
+      large: DesignToken;
       scale: DesignToken;
       light: DesignToken;
-      medium: DesignToken;
       heavy: DesignToken;
     };
     base: {
@@ -308,13 +310,25 @@ declare const tokens: {
     };
   };
   shadow: {
+    xs: DesignToken;
+    sm: DesignToken;
+    md: DesignToken;
+    lg: DesignToken;
+    xl: DesignToken;
     default: DesignToken;
-    hover: DesignToken;
-    active: DesignToken;
-    focus: DesignToken;
-    disabled: DesignToken;
+    scale: DesignToken;
   };
   space: {
+    fluid: {
+      min: DesignToken;
+      max: DesignToken;
+      min_viewport: DesignToken;
+      max_viewport: DesignToken;
+    };
+    unit: {
+      default: DesignToken;
+      fluid: DesignToken;
+    };
     multiplier: {
       unit: DesignToken;
       xxs: DesignToken;
@@ -325,20 +339,6 @@ declare const tokens: {
       xl: DesignToken;
       xxl: DesignToken;
     };
-    fluid: {
-      min: DesignToken;
-      max: DesignToken;
-      min_viewport: DesignToken;
-      max_viewport: DesignToken;
-    };
-    unitss: DesignToken;
-    xxs: DesignToken;
-    xs: DesignToken;
-    sm: DesignToken;
-    md: DesignToken;
-    lg: DesignToken;
-    xl: DesignToken;
-    xxl: DesignToken;
   };
   layout: {
     breakAt: DesignToken;
@@ -367,9 +367,20 @@ declare const tokens: {
       lg: DesignToken;
       xl: DesignToken;
     };
-    zIndex: {
-      overlay: DesignToken;
+    overlay: {
+      zIndex: DesignToken;
+      opacity: DesignToken;
     };
+    spaceUnit: DesignToken;
+  };
+  spacing: {
+    xxs: DesignToken;
+    xs: DesignToken;
+    sm: DesignToken;
+    md: DesignToken;
+    lg: DesignToken;
+    xl: DesignToken;
+    xxl: DesignToken;
   };
   bg: {
     primary: DesignToken;
@@ -573,7 +584,6 @@ declare const tokens: {
         start: DesignToken;
         end: DesignToken;
         center: DesignToken;
-        "justify-center": DesignToken;
       };
       justify: {
         start: DesignToken;

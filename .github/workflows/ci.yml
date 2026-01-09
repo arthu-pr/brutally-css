@@ -14,24 +14,28 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v5
-        with:
-          path: brutallycss
 
-      - name: Prepare dist
-        run: mkdir -p brutallycss/dist
+      # - name: Prepare dist
+      #   run: mkdir -p brutallycss/dist
 
-      - name: Install lightningcss (optional, for nesting)
+      - name: Install lightningcss (most recent/optimal and support CSS nesting)
         run: npm install -g lightningcss-cli
 
-      - name: Bundle + minify CSS (nesting supported)
-        run: lightningcss brutallycss/css/main.css --bundle --minify -o brutallycss/dist/main.min.css
+      - name: Install clean-css (to minify into one single file afterwards)
+        run: npm install -g clean-css-cli
+
+      - name: Bundle + minify CSS
+        run: lightningcss --targets ">= 0.25%" --minify  css/**/*.css -d dist/
+
+      - name: Minify in one single CSS file
+        run: cleancss -o dist/main.min.css dist/*.css --remove-inlined-files
 
       - name: Install html-minifier
         run: npm install -g html-minifier
 
       - name: Minify HTML files into dist
         run: |
-          for file in brutallycss/*.html; do
+          for file in *.html; do
             html-minifier \
               --collapse-whitespace \
               --remove-comments \
@@ -40,7 +44,7 @@ jobs:
               --remove-script-type-attributes \
               --remove-tag-whitespace \
               --use-short-doctype \
-              "$file" > "brutallycss/dist/$(basename "$file")"
+              "$file" > "dist/$(basename "$file")"
           done
 
       - name: Copy static assets to dist
@@ -50,19 +54,19 @@ jobs:
             --exclude "dist/" \
             --exclude ".github/" \
             --exclude "*.html" \
-            brutallycss/ brutallycss/dist/
+            ./ \
+            ./dist/
 
       - name: Debug
         run: |
-          ls -la brutallycss/dist
-          ls -la brutallycss/
+          ls -la dist
+          ls -la .
 
       - name: Upload Artifacts
         uses: actions/upload-artifact@v6
         with:
           name: brutallycss-dist
-          path: brutallycss/dist
-
+          path: dist
   deploy:
     if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
     runs-on: ubuntu-latest
@@ -75,7 +79,7 @@ jobs:
           path: dist
 
       - name: Debug
-        run: ls -la brutallycss
+        run: ls -la dist
 
       - name: Install SSH Key
         uses: shimataro/ssh-key-action@v2
@@ -87,4 +91,4 @@ jobs:
         run: ssh-keyscan -H ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
 
       - name: Deploy build with rsync
-        run: rsync -avz --delete ./brutallycss/dist/ ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST }}:/var/www/brutallycss.com/
+        run: rsync -avz --delete ./dist ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST }}:/var/www/brutallycss.com/

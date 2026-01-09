@@ -23,6 +23,16 @@
     margin-block: var(--space-lg);
   }
 
+  & > header {
+    flex-grow: 1;
+    flex-shrink: 0;
+  }
+
+  & > * {
+    flex-grow: 0;
+    flex-shrink: 1;
+  }
+
   & > :first-child:not(header) {
     margin-block-start: calc(0px - var(--border-width));
   }
@@ -36,9 +46,14 @@
   }
 }
 
+.banner__title {
+  /* font-size: var(--fit-xxl); */
+}
+
 .banner__title-brutally {
   display: flex;
   line-height: 0.8;
+  font-size: var(--h1);
 }
 
 .banner__title__css-only {
@@ -53,8 +68,8 @@
 .banner__description {
   font-family: 'ImpactLabelReversed';
   width: clamp(14rem, 100%, 100rem);
-  font-size: var(--text-xl);
-  font-size: var(--text-2);
+  /* font-size: var(--text-xl); */
+  /* font-size: var(--text-2); */
   font-size: var(--text-lg);
 }
 

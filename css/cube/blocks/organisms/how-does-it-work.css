@@ -39,7 +39,7 @@
   gap: var(--space-lg);
 }
 
-.o-howDoesItWork .container {
+.o-howDoesItWork .controller {
   flex: 1;
   /* position: absolute;
   top: 0;

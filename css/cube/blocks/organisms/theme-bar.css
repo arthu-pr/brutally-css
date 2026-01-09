@@ -19,8 +19,8 @@
   width: var(--theme-bar-width);
 
   /* border-left: var(--border-width) solid var(--theme-color); */
-  border-right: var(--border-width) solid var(--theme-color);
-  border-bottom: var(--border-width) solid var(--theme-color);
+  /* border-right: var(--border-width) solid var(--theme-color); */
+  /* border-bottom: var(--border-width) solid var(--theme-color); */
   /* border-left: var(--border-width) solid var(--theme-color); */
   --min-width: 60px;
   transition: var(--layout-transition);
@@ -40,15 +40,8 @@
   /* Default style applied to ul */
   margin: 0;
 
-  /* TODO: check if necessary */
   padding: var(--space-xs);
-
-  width: 100%;
-  /* grid-auto-flow: column; */
-
-  /* @media (min-width: 40rem) {
-    grid-auto-flow: row;
-  } */
+  width: calc(var(--theme-bar-width) - 2 * var(--border-width));
   align-items: center;
   justify-content: center;
 }

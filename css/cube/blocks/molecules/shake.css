@@ -23,7 +23,7 @@
 }
 
 /* shake the all website */
-#shake:checked ~ .container {
+#shake:checked ~ .controller {
   animation: shake-hard 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) infinite;
 }
 
@@ -90,43 +90,43 @@
 }
 
 /* Display the banner alert and animate them */
-#shake:checked ~ .container .banner__alert {
+#shake:checked ~ .controller .banner__alert {
   --banner__alert__scale-animation-duration: 1.5s;
   display: block;
   animation: scale var(--banner__alert__scale-animation-duration) linear
     infinite;
 }
 
-#shake:checked ~ .container .banner__alert:nth-child(even) {
+#shake:checked ~ .controller .banner__alert:nth-child(even) {
   --banner__alert__scale-animation-duration: 3.5s;
 }
 
-#shake:checked ~ .container .banner__alert:nth-child(1) {
+#shake:checked ~ .controller .banner__alert:nth-child(1) {
   --banner__alert__scale-animation-duration: 0.5s;
 }
 
-#shake:checked ~ .container .banner__alert:nth-child(5) {
+#shake:checked ~ .controller .banner__alert:nth-child(5) {
   --banner__alert__scale-animation-duration: 8.5s;
 }
 
 /* While the website is shaking, reduce the opacity of certain letters of the main title */
-#shake:checked ~ .container .banner .banner__title-brutally::first-letter,
-#shake:checked ~ .container .banner .banner__title-brutally__r,
-#shake:checked ~ .container .banner .banner__title-brutally__ly {
+#shake:checked ~ .controller .banner .banner__title-brutally::first-letter,
+#shake:checked ~ .controller .banner .banner__title-brutally__r,
+#shake:checked ~ .controller .banner .banner__title-brutally__ly {
   opacity: 0;
 }
 
 /* While the website is shaking, animate the second part of the title */
-#shake:checked ~ .container .banner .banner__title__css-only {
+#shake:checked ~ .controller .banner .banner__title__css-only {
   animation: translate-vertical 1.5s linear infinite;
 }
-#shake:checked ~ .container .highlighted:not(.animate) > span {
+#shake:checked ~ .controller .highlighted:not(.animate) > span {
   transition: background-image 0.5s linear;
   animation: highlighted-shake 1.5s linear infinite;
 }
 
 /* Make the shake svg move from left to right */
-#shake:checked ~ .container .shake__shape {
+#shake:checked ~ .controller .shake__shape {
   animation: translate-horizontal 4s linear infinite;
   animation-fill-mode: forwards;
 }
