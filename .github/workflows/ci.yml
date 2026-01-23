@@ -36,7 +36,7 @@ jobs:
 
           # lightningcss --targets ">= 0.25%" --bundle --minify "${files[@]}" -d dist/
 
-          lightningcss --minify --bundle --targets ">= 0.25%"  css/main.css -d dist
+          lightningcss --minify --bundle --targets ">= 0.25%"  css/main.css -d dist/css
 
       # - name: Minify in one single CSS file
       #   run: cleancss -o dist/main.min.css dist/*.css --remove-inlined-files
@@ -60,10 +60,12 @@ jobs:
 
       - name: Copy static assets to dist
         run: |
-          rsync -av --delete \
+          rsync -av \
             --exclude "css/" \
             --exclude "dist/" \
+            --exclude ".git/" \
             --exclude ".github/" \
+            --exclude "*.md" \
             --exclude "*.html" \
             ./ \
             ./dist/
