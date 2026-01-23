@@ -43,7 +43,6 @@
 @import './cube/blocks/atoms/buttons.css';
 @import './cube/blocks/atoms/checkbox.css';
 @import './cube/blocks/atoms/code.css';
-@import './cube/blocks/atoms/icon.css';
 @import './cube/blocks/atoms/input.css';
 @import './cube/blocks/atoms/link.css';
 @import './cube/blocks/atoms/overlay.css';
@@ -100,4 +99,8 @@
 /* =====================================================
    Themes (overrides everything)
    ===================================================== */
+@import url('./themes/tokens/css/colors.css') layer(colors);
+@import url('./themes/tokens/css/themes/private-theme.css') layer(theme);
+@import url('./themes/tokens/css/themes/private-theme.css') layer(theme);
+@import url('./themes/tokens/css/space.css') layer(theme);
 @import './themes/brutally-css.css';

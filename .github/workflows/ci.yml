@@ -27,17 +27,19 @@ jobs:
       - name: Bundle + minify CSS
         run: |
           ls -la
-          shopt -s globstar nullglob
+          # shopt -s globstar nullglob
 
-          files=()
-          for f in css/**/*.css; do
-            [[ "$f" != "css/main.css" ]] && files+=("$f")
-          done
+          # files=()
+          # for f in css/**/*.css; do
+          #   [[ "$f" != "css/main.css" ]] && files+=("$f")
+          # done
 
-          lightningcss --targets ">= 0.25%" --bundle --minify "${files[@]}" -d dist/
+          # lightningcss --targets ">= 0.25%" --bundle --minify "${files[@]}" -d dist/
 
-      - name: Minify in one single CSS file
-        run: cleancss -o dist/main.min.css dist/*.css --remove-inlined-files
+          lightningcss --minify --bundle --targets ">= 0.25%"  css/main.css -d dist
+
+      # - name: Minify in one single CSS file
+      #   run: cleancss -o dist/main.min.css dist/*.css --remove-inlined-files
 
       - name: Install html-minifier
         run: npm install -g html-minifier
