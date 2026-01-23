@@ -27,7 +27,14 @@ jobs:
       - name: Bundle + minify CSS
         run: |
           ls -la
-          lightningcss --targets ">= 0.25%" --minify css/^\(main\)/**/*.css -d dist/
+          shopt -s globstar nullglob
+
+          files=()
+          for f in css/**/*.css; do
+            [[ "$f" != "css/main.css" ]] && files+=("$f")
+          done
+
+          lightningcss --targets ">= 0.25%" --minify "${files[@]}" -d dist/
 
       - name: Minify in one single CSS file
         run: cleancss -o dist/main.min.css dist/*.css --remove-inlined-files
