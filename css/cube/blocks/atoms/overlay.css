@@ -17,5 +17,8 @@
   /* background-color: var(--overlay-bg); */
   z-index: var(--overlay-z-index, 1000);
   backdrop-filter: blur(var(--overlay-blur, 8px));
-  transition: opacity 0.3s ease;
+  transition:
+    opacity 0.3s ease,
+    backdrop-filter 0.3s ease,
+    z-index 0.3s ease;
 }

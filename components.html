@@ -3,11 +3,6 @@
     <title>Brutally CSS - Components</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <!-- <link href="css/themes/brutally-css.css" rel="stylesheet" /> -->
-    <link href="main.min.css" rel="stylesheet" />
-    <!-- <link href="css/layouts/wrapper.css" rel="stylesheet" />
-    <link href="css/layouts/box.css" rel="stylesheet" />
-    <!-- Base -->
     <link rel="icon" type="image/x-icon" href="/favicon/favicon.ico" />
     <link
       rel="apple-touch-icon"
@@ -27,6 +22,7 @@
       href="/favicon/favicon-16x16.png"
     />
     <link rel="manifest" href="/site.webmanifest" />
+    <link href="css/main.min.css" rel="stylesheet" />
   </head>
 
   <body>
@@ -34,22 +30,8 @@
       <div class="wrapper padding-y-md flow">
         <h1 class="-highlighted"><span class="labeled">Components</span></h1>
         <h2>Utility</h2>
-        <form>
-          <fieldset>
-            <legend>Choose your favorite monster</legend>
 
-            <input type="radio" id="kraken" name="monster" value="K" />
-            <label for="kraken">Kraken</label><br />
-
-            <input type="radio" id="sasquatch" name="monster" value="S" />
-            <label for="sasquatch">Sasquatch</label><br />
-
-            <input type="radio" id="mothman" name="monster" value="M" />
-            <label for="mothman">Mothman</label>
-          </fieldset>
-        </form>
-
-        <!-- Input -->
+        <!-- Viewport -->
         <section class="box" data-box-title="Viewport size">
           <div class="cluster">
             <span class="viewport-size"></span>
@@ -90,6 +72,7 @@
           </details>
         </section>
         <section class="box" data-box-title="Viewport size"></section>
+
         <h2>Atoms</h2>
 
         <!-- Button -->
@@ -208,28 +191,80 @@
           </details>
         </section>
 
-        <!-- <section class="m-section"> -->
+        <!-- Parallax -->
         <section class="box" data-box-title="Parallax">
-          <div class="parallax">
-            <div class="parallax-back">
-              <div class="dice" style="--top: 95%; --left: 50%">&#9856;</div>
-              <div class="dice" style="--top: 30%; --left: 1%">&#9857;</div>
-              <div class="dice" style="--top: 60%; --left: 29%">&#9858;</div>
-              <div class="dice" style="--top: 30%; --left: 80%">&#9859;</div>
-              <div class="dice" style="--top: 35%; --left: 35%">&#9860;</div>
-              <div class="dice" style="--top: 12%; --left: 90%">&#9861;</div>
+          <div class="parallax height-quarter">
+            <div class="parallax-back height-screen">
+              <div class="dice" style="--top: 95%; --left: 50%"></div>
+              <div class="dice" style="--top: 30%; --left: 1%"></div>
+              <div class="dice" style="--top: 60%; --left: 29%"></div>
+              <div class="dice" style="--top: 30%; --left: 80%"></div>
+              <div class="dice" style="--top: 35%; --left: 35%"></div>
+              <div class="dice" style="--top: 12%; --left: 90%"></div>
+              <div class="dice" style="--top: 145%; --left: 90%"></div>
+              <div class="dice" style="--top: 120%; --left: 90%"></div>
+              <div class="dice" style="--top: 102%; --left: 90%"></div>
             </div>
             <div class="parallax-content">
-              <!-- <h3 class="m-section__title">Section</h3> -->
-              <div class="switcher"></div>
               <p class="lorem">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
                 <span></span>
                 <span></span>
               </p>
             </div>
           </div>
+          <details>
+            <summary>
+              <span class="highlighted text-md"><span>How to?</span></span>
+            </summary>
+            <ol class="m-list">
+              <li class="m-list__item flow">
+                <a
+                  class="a-link"
+                  href="https://blog.logrocket.com/styling-css-empty-pseudo-class/"
+                >
+                  Styling with the CSS :empty pseudo-class
+                </a>
+                <pre data-code="html">
+<code class="language-html">&lt;div class=&quot;parallax height-quarter&quot;&gt;
+  &lt;div class=&quot;parallax-back height-screen&quot;&gt;
+    &lt;div class=&quot;dice&quot; style=&quot;--top: 95%; --left: 50%&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;dice&quot; style=&quot;--top: 30%; --left: 1%&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;dice&quot; style=&quot;--top: 60%; --left: 29%&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;dice&quot; style=&quot;--top: 30%; --left: 80%&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;dice&quot; style=&quot;--top: 35%; --left: 35%&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;dice&quot; style=&quot;--top: 12%; --left: 90%&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;dice&quot; style=&quot;--top: 145%; --left: 90%&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;dice&quot; style=&quot;--top: 120%; --left: 90%&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;dice&quot; style=&quot;--top: 102%; --left: 90%&quot;&gt;&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;parallax-content&quot;&gt;
+    &lt;p class=&quot;lorem&quot;&gt;
+      &lt;span&gt;&lt;/span&gt;
+      &lt;span&gt;&lt;/span&gt;
+      &lt;span&gt;&lt;/span&gt;
+      &lt;span&gt;&lt;/span&gt;
+      &lt;span&gt;&lt;/span&gt;
+      &lt;span&gt;&lt;/span&gt;
+      &lt;span&gt;&lt;/span&gt;
+      &lt;span&gt;&lt;/span&gt;
+      &lt;span&gt;&lt;/span&gt;
+      &lt;span&gt;&lt;/span&gt;
+    &lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code>
+    </pre>
+              </li>
+            </ol>
+          </details>
         </section>
-        <!-- </section> -->
       </div>
     </div>
   </body>

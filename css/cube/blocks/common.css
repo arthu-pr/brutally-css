@@ -135,7 +135,7 @@
   );
   border: var(--component-border-width) var(--component-border-style)
     var(--component-border-color);
-  border-radius: var(--border-radius);
+  border-radius: var(--_border-radius-medium);
   background-color: var(--component-bg);
   box-shadow: var(--component-box-shadow);
   color: var(--component-color);

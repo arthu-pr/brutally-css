@@ -1,10 +1,11 @@
 /* =====================================================
    Design Tokens
    ===================================================== */
-@import './tokens/css/colors.primitive.css';
+/* @import './tokens/css/colors.primitive.css';
 @import './tokens/css/colors.semantic.css';
-@import './tokens/css/colors.intent.css';
-@import './tokens/css/cube/cube.utility.css';
+@import './tokens/css/colors.intent.css'; */
+/* @import './tokens/css/colors.css'; */
+@import './themes/tokens/css/cube/cube.utility.css';
 /* @import "./tokens/css/themes/public-theme.css";
 @import "./tokens/css/themes/private-theme.css";
 @import "./tokens/css/spacing.css"; */
@@ -89,6 +90,12 @@
 @import './cube/utilities/spacing.css';
 @import './cube/utilities/viewport.css';
 @import './cube/utilities/variables.css';
+
+/* =====================================================
+   Fun
+   ===================================================== */
+@import './fun/dice.css';
+@import './fun/lorem.css';
 
 /* =====================================================
    Themes (overrides everything)

@@ -1,0 +1,48 @@
+.lorem {
+  --lorem-ipsum: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ';
+
+  /* Define a counter for empty tags inside */
+  counter-reset: empty-tag;
+
+  /* multiply it */
+  content: var(--lorem-ipsum) var(--lorem-ipsum) var(--lorem-ipsum)
+    var(--lorem-ipsum) var(--lorem-ipsum) var(--lorem-ipsum) var(--lorem-ipsum)
+    var(--lorem-ipsum) var(--lorem-ipsum) var(--lorem-ipsum) var(--lorem-ipsum)
+    var(--lorem-ipsum);
+
+  &::before {
+    content: var(--lorem-ipsum) var(--lorem-ipsum) var(--lorem-ipsum)
+      var(--lorem-ipsum) var(--lorem-ipsum) var(--lorem-ipsum)
+      var(--lorem-ipsum) var(--lorem-ipsum) var(--lorem-ipsum)
+      var(--lorem-ipsum) var(--lorem-ipsum) var(--lorem-ipsum);
+  }
+
+  &:after {
+    content: var(--lorem-ipsum) var(--lorem-ipsum) var(--lorem-ipsum)
+      var(--lorem-ipsum) var(--lorem-ipsum) var(--lorem-ipsum)
+      var(--lorem-ipsum) var(--lorem-ipsum) var(--lorem-ipsum)
+      var(--lorem-ipsum) var(--lorem-ipsum) var(--lorem-ipsum);
+  }
+
+  & > *:empty {
+    counter-increment: empty-tag;
+
+    &::before {
+      content: 'Empty ' counter(empty-tag, upper-roman);
+      display: block;
+      opacity: 0.6;
+      text-indent: var(--space-md);
+      margin-left: var(--space-md);
+      font-size: var(--text-lg);
+    }
+
+    &::after {
+      content: var(--lorem-ipsum) var(--lorem-ipsum) var(--lorem-ipsum)
+        var(--lorem-ipsum) var(--lorem-ipsum) var(--lorem-ipsum)
+        var(--lorem-ipsum) var(--lorem-ipsum) var(--lorem-ipsum)
+        var(--lorem-ipsum) var(--lorem-ipsum) var(--lorem-ipsum);
+      text-indent: var(--space-md);
+      margin-left: var(--space-md);
+    }
+  }
+}

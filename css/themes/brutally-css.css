@@ -1,6 +1,7 @@
-@import url('../tokens/css/themes/public-theme.css') layer(theme);
-@import url('../tokens/css/themes/private-theme.css') layer(theme);
-@import url('../tokens/css/spacing.css') layer(theme);
+@import url('./tokens/css/colors.css') layer(colors);
+@import url('./tokens/css/themes/public-theme.css') layer(theme);
+@import url('./tokens/css/themes/private-theme.css') layer(theme);
+@import url('./tokens/css/spacing.css') layer(theme);
 
 @property --theme-color {
   syntax: '<color>';
@@ -87,9 +88,19 @@
   :root {
     --border-radius-default: 0;
 
-    --border-width-default: 8px;
-    /* --border-width: var(--_border-width-default); */
+    --border-width-base: 4px;
+    --border-width-sm: var(--from-sm) 4px;
+    --border-width-md: var(--from-md) 8px;
+    --border-width-default: var(
+      --border-width-sm,
+      var(--border-width-md)
+    ); /* --border-width: var(--_border-width-default); */
     /* --border-width: var(--border-width-default); */
+    --border-width-default: var(
+      --border-width-md,
+      var(--border-width-sm, var(--border-width-base))
+    );
+    --border-width: var(--border-width-default);
 
     /* Layout */
     --layout-mobile-padding: var(--space-md);
@@ -123,6 +134,10 @@
     --space-lg: var(--spacing-lg);
     --space-xl: var(--spacing-xl);
     --space-xxl: var(--spacing-xxl);
+  }
+
+  .border-theme {
+    border-color: var(--theme-color);
   }
 }
 

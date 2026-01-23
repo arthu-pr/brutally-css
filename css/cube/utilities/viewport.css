@@ -30,12 +30,6 @@
   --is-screen-md: min(1, round(calc((var(--breakpoint-md) / var(--vw)))));
   --is-screen-lg: min(1, round(calc((var(--breakpoint-lg) / var(--vw)))));
   --is-screen-xl: min(1, round(calc((var(--breakpoint-xl) / var(--vw)))));
-
-  screen-xs: ;
-  screen-sm: ;
-  screen-md: ;
-  screen-lg: ;
-  screen-xl: ;
 }
 
 .viewport-size::before {

@@ -1,6 +1,7 @@
 @font-face {
   font-family: 'Boogaloo';
-  src: url('/fonts/boogaloo-regular-webfont.woff') format('woff'),
+  src:
+    url('/fonts/boogaloo-regular-webfont.woff') format('woff'),
     url('/fonts/boogaloo-regular-webfont.woff2') format('woff2');
   font-display: swap;
 }
@@ -37,7 +38,8 @@
 
 @font-face {
   font-family: 'Salsa-Regular';
-  src: url('/fonts/salsa-regular-webfont.woff') format('woff'),
+  src:
+    url('/fonts/salsa-regular-webfont.woff') format('woff'),
     url('/fonts/salsa-regular-webfont.woff2') format('woff2');
   font-display: swap;
 }
@@ -127,7 +129,9 @@ body {
   margin: 0;
   font-size: var(--text-md);
   background-color: var(--color-bg);
-  border: var(--border-theme);
+  color: var(--color-contrast-lower);
+  border-top: var(--border-theme);
+  border-bottom: var(--border-theme);
 }
 
 .body::-webkit-scrollbar {
@@ -201,15 +205,12 @@ h4::after {
 }
 
 .layout {
-  width: calc(200svw - 2 * var(--theme-bar-width));
+  --content-width: calc(100svw - var(--theme-bar-width));
+  /* width: calc(200svw - var(--theme-bar-width)); */
   display: grid;
-  grid-template-columns:
-    calc(100svw - var(--theme-bar-width)) var(--theme-bar-width)
-    calc(100svw - var(--theme-bar-width));
+  grid-template-columns: 1fr var(--theme-bar-width) 1fr;
   grid-auto-rows: auto;
-  grid-template-areas:
-    'info-section . .'
-    'main-content theme-bar how-does-it-work';
+  grid-template-areas: 'main-content theme-bar how-does-it-work';
   transition: var(--layout-transition);
   --layout-translate-main: translateX(0);
   --layout-translate-howDoesItWork: translateX(
@@ -222,10 +223,13 @@ h4::after {
   position: relative;
   --mix-blend-mode: normal;
   color: var(--theme-color);
+  display: flex;
+  width: 200svw;
 }
 
 .main-content {
   grid-area: main-content;
+  width: var(--content-width);
   position: relative;
   /* border-right: var(--border-width) solid var(--theme-color); */
   transform: translateY(0);
@@ -294,53 +298,4 @@ li .square::before {
 }
 .grid-container:hover ul:hover div.grid__item:hover {
   opacity: 1;
-}
-
-.lorem {
-  --lorem-ipsum: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ';
-
-  /* Define a counter for empty tags inside */
-  counter-reset: empty-tag;
-
-  /* multiply it */
-  content: var(--lorem-ipsum) var(--lorem-ipsum) var(--lorem-ipsum)
-    var(--lorem-ipsum) var(--lorem-ipsum) var(--lorem-ipsum) var(--lorem-ipsum)
-    var(--lorem-ipsum) var(--lorem-ipsum) var(--lorem-ipsum) var(--lorem-ipsum)
-    var(--lorem-ipsum);
-
-  &::before {
-    content: var(--lorem-ipsum) var(--lorem-ipsum) var(--lorem-ipsum)
-      var(--lorem-ipsum) var(--lorem-ipsum) var(--lorem-ipsum)
-      var(--lorem-ipsum) var(--lorem-ipsum) var(--lorem-ipsum)
-      var(--lorem-ipsum) var(--lorem-ipsum) var(--lorem-ipsum);
-  }
-
-  &:after {
-    content: var(--lorem-ipsum) var(--lorem-ipsum) var(--lorem-ipsum)
-      var(--lorem-ipsum) var(--lorem-ipsum) var(--lorem-ipsum)
-      var(--lorem-ipsum) var(--lorem-ipsum) var(--lorem-ipsum)
-      var(--lorem-ipsum) var(--lorem-ipsum) var(--lorem-ipsum);
-  }
-
-  & > *:empty {
-    counter-increment: empty-tag;
-
-    &::before {
-      content: 'Empty ' counter(empty-tag, upper-roman);
-      display: block;
-      opacity: 0.6;
-      text-indent: var(--space-md);
-      margin-left: var(--space-md);
-      font-size: var(--text-lg);
-    }
-
-    &::after {
-      content: var(--lorem-ipsum) var(--lorem-ipsum) var(--lorem-ipsum)
-        var(--lorem-ipsum) var(--lorem-ipsum) var(--lorem-ipsum)
-        var(--lorem-ipsum) var(--lorem-ipsum) var(--lorem-ipsum)
-        var(--lorem-ipsum) var(--lorem-ipsum) var(--lorem-ipsum);
-      text-indent: var(--space-md);
-      margin-left: var(--space-md);
-    }
-  }
 }
