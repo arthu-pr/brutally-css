@@ -25,7 +25,9 @@ jobs:
         run: npm install -g clean-css-cli
 
       - name: Bundle + minify CSS
-        run: lightningcss --targets ">= 0.25%" --minify css/^\(main\)/**/*.css -d dist/
+        run: |
+          ls -la
+          lightningcss --targets ">= 0.25%" --minify css/^\(main\)/**/*.css -d dist/
 
       - name: Minify in one single CSS file
         run: cleancss -o dist/main.min.css dist/*.css --remove-inlined-files
