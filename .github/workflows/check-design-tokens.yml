@@ -36,7 +36,7 @@ jobs:
 
           # Show what was copied
           echo "Copied tokens:"
-          ls -la tokens/tokens/css/
+          ls -la tokens/build/css/
           ls -la brutallycss/
           ls -la brutallycss/css/
 
