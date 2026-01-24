@@ -2,7 +2,28 @@
 
 ---
 
-<img width="100%" alt="image" src="https://github.com/user-attachments/assets/0ed4885d-77a0-4ff8-b376-973be2d3c17e" />
+## <img width="100%" alt="image" src="https://github.com/user-attachments/assets/0ed4885d-77a0-4ff8-b376-973be2d3c17e" />
+
+## Architecture
+
+### ABEM ABEM: Atomic BEM (Block Element Modifier) CSS architecture
+
+- [Link](https://css-tricks.com/abem-useful-adaptation-bem/)
+
+## Runtime theming, state and user interactions with CSS only
+
+### The checkbox hack
+
+- [The Checkbox Hack](https://css-tricks.com/the-checkbox-hack/)
+
+Based on user interactions:
+
+- The state
+- The theme
+- The layout
+- The content
+
+Can be changed
 
 ## Get Started
 
@@ -12,6 +33,10 @@ npm install clean-css-cli -g
 
 ```sh
 cleancss -o dist/main.min.css css/**/*.css --watch
+```
+
+```sh
+lightningcss css/main.css --bundle --minify -o main.min.css
 ```
 
 ## Minify HTML and CSS commands
@@ -29,8 +54,6 @@ cleancss -o dist/main.min.css css/**/*.css --watch
 - [ ] https://knowler.dev/blog/so-you-want-to-encapsulate-your-styles
 - [ ] https://mayank.co/blog/revert-layer/
 - [ ]
-
-#### Sources
 
 ### Conditional / Boolean value in CSS
 

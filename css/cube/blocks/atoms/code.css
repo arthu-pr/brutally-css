@@ -5,6 +5,13 @@
   padding: var(--space-xxs) var(--space-sm);
 }
 
+pre[data-code] {
+  position: relative;
+  padding: var(--space-sm);
+  border: 1px solid #e5e7eb;
+  overflow: auto;
+}
+
 [data-code]::after {
   content: attr(data-code);
   position: absolute;

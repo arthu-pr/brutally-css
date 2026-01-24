@@ -1,21 +1,21 @@
-@property --animate-in {
-  syntax: "<animation-name>";
+/* @property --animate-in {
+  syntax: '<string> | none';
   initial-value: none;
   inherits: false;
 }
 
 @property --animate-out {
-  syntax: "<animation-name>";
+  syntax: '<string> | none';
   initial-value: none;
   inherits: false;
-}
+} */
 
-[data-animation="fade"] {
+[data-animation='fade'] {
   --animation-in: fade-in;
   --animation-out: fade-out;
 }
 
-[data-animation="slide"] {
+[data-animation='slide'] {
   --animation-in: slide-in;
   --animation-out: slide-out;
 }
@@ -39,82 +39,8 @@
 
 /* Fade (e.g. Modal) */
 
-@property --overlay-opacity {
-  syntax: "<percentage>";
-  initial-value: 0%;
-  inherits: false;
-}
-
-@property --overlay-z-index {
-  syntax: "<number>";
-  initial-value: -1;
-  inherits: false;
-}
-
-@keyframes overlay-fade-out {
-  from {
-    --overlay-opacity: 100%;
-    --overlay-z-index: 99;
-  }
-  to {
-    --overlay-opacity: 0%;
-    --overlay-z-index: -1;
-  }
-}
-
-@keyframes overlay-fade-in {
-  from {
-    --overlay-opacity: 0%;
-    --overlay-z-index: -1;
-  }
-  to {
-    --overlay-opacity: 100%;
-    --overlay-z-index: 99;
-  }
-}
-
-@keyframes modal-fade-out {
-  from {
-    --modal-opacity: 100%;
-    --modal-z-index: 100;
-  }
-  to {
-    --modal-opacity: 0%;
-    --modal-z-index: 0;
-  }
-}
-
-@keyframes modal-fade-in {
-  from {
-    --modal-opacity: 0%;
-    --modal-z-index: 0;
-  }
-  to {
-    --modal-opacity: 100%;
-    --modal-z-index: 100;
-  }
-}
-
-@keyframes drawer-slide-out {
-  from {
-    transform: translateX(0%);
-  }
-  to {
-    transform: translateX(100%);
-  }
-}
-
-@keyframes drawer-slide-in {
-  from {
-    transform: translateX(100%);
-  }
-  to {
-    transform: translateX(0%);
-  }
-}
-
 @property --fade-value {
-  syntax: "<number>";
+  syntax: '<number>';
   initial-value: 0;
   inherits: false;
 }

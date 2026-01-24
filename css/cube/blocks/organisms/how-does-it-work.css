@@ -7,11 +7,13 @@
   position: sticky;
   /* top: calc(0 - var(--border-width)); */
   top: var(--spacing);
+  min-height: calc(100vh - 2 * var(--spacing));
   padding: var(--spacing);
   max-height: calc(100vh - var(--spacing) - 2 * var(--border-width));
   display: flex;
   flex-direction: column;
   padding-top: 0;
+  width: var(--content-width);
 }
 
 .o-howDoesItWork__header {
@@ -39,7 +41,7 @@
   gap: var(--space-lg);
 }
 
-.o-howDoesItWork .container {
+.o-howDoesItWork .controller {
   flex: 1;
   /* position: absolute;
   top: 0;

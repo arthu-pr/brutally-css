@@ -1,47 +1,42 @@
-@property --display-clip {
-  syntax: 'yes | <number>+';
-  inherits: true;
-  initial-value: 0 0 0 0;
+/* 
+ * https://github.com/propjockey/css-media-vars
+ */
+
+:root {
+  --from-xs: var(--on);
+  --from-sm: var(--on);
+  --from-md: var(--on);
+  --from-lg: var(--on);
+  --from-xl: var(--on);
 }
 
-/* @property --is-screen-xs {
-  syntax: 'yes | no';
-  inherits: true;
-  initial-value: yes;
-} */
-/* 
-@property --is-screen-sm {
-  syntax: 'yes | no';
-  inherits: true;
-  initial-value: yes;
-} */
-
-/* https://keithclark.co.uk/articles/pseudo-boolean-css-custom-properties/ */
-
-/* Define variables */
-/* @media (max-width: 30rem) { */
-/* 480px */
-/* :root {
-    --is-screen-xs: yes;
-  }
-} */
-
-/* 768px - Tablets */
-/* @media (min-width: 48rem) {
+/* @media (min-width: 0px) {
   :root {
-    --is-screen-sm: no;
+    --is-screen-xs: ;
   }
 } */
 
-/* Utility classes */
-/* .screen-xs {
-  --display-clip: var(--is-screen-xs);
-  clip-path: rect(var(--display-clip));
-  visibility: var(--is-screen-xs);
-} */
+/* sm+ */
+@media (min-width: 40rem) {
+  :root {
+    --from-sm: var(--off);
+  }
+}
+/* md+ */
+@media (min-width: 64rem) {
+  :root {
+    --from-md: var(--off);
+  }
+}
+/* lg+ */
+@media (min-width: 80rem) {
+  :root {
+    --from-lg: var(--off);
+  }
+}
 
-.screen-sm {
-  --display-clip: var(--is-screen-sm);
-  clip-path: rect(var(--display-clip));
-  visibility: var(--is-screen-sm);
+@media (min-width: 90rem) {
+  :root {
+    --from-xl: var(--off);
+  }
 }

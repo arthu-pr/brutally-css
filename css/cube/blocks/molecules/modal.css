@@ -1,32 +1,27 @@
-.m-modal-container {
+/* .m-modal-container {
   opacity: 0;
   position: fixed;
   inset: 0;
 }
-
-@property --modal-opacity {
-  syntax: '<percentage>';
-  initial-value: 0%;
-  inherits: false;
-}
-
-@property --modal-z-index {
-  syntax: '<number>';
-  initial-value: 0;
-  inherits: false;
-}
-
 @property --modal-translate-x {
   syntax: '<percentage>';
   initial-value: -50%;
   inherits: false;
-}
+} */
 
 .m-modal,
 .m-drawer {
-  --dialog-bg: var(--color-bg-light);
+  --dialog-bg: var(--color-bg-neutral);
   --dialog-border: var(--border-theme);
   --dialog-box-shadow: var(--box-shadow-base);
+}
+
+.m-dialog,
+[aria-modal='true'][role='dialog'] {
+  --dialog-z-index: calc(var(--overlay-z-index) + 10);
+  z-index: var(--dialog-z-index);
+  --dialog-opacity: calc(var(--overlay-opacity) + 1);
+  opacity: var(--dialog-opacity);
 }
 
 .m-modal {
@@ -39,8 +34,9 @@
 
   border: var(--dialog-border);
 
-  opacity: var(--modal-opacity);
-  z-index: var(--modal-z-index);
+  /* opacity: var(--overlay-opacity); */
+  /* --modal-z-index: calc(var(--overlay-z-index) + 10); */
+  /* z-index: var(--modal-z-index); */
   margin: 0;
   width: 692px;
   max-width: calc(100% - 2 * var(--border-width));
@@ -50,20 +46,22 @@
   position: absolute;
   left: 50%;
   top: var(--top-modal);
+  /* transition: var(--drawer-transition, trannslate(0 0)); */
   transform: translate(var(--modal-translate-x), var(--modal-translate-y));
 }
 
 .m-drawer {
-  max-width: 100%;
   width: clamp(260px, 65%, 896px);
   background: var(--dialog-bg);
   border: var(--dialog-border);
   position: fixed;
   top: 0;
-  bottom: 0;
-  /* height: 100svh; */
   right: 0;
-  transform: translateX(-600px);
+  height: 100svh;
+  /* --modal-z-index: calc(var(--overlay-z-index) + 10);
+  z-index: var(--modal-z-index); */
+  transform: var(--drawer-translate-x, translateX(100%));
+  transition: transform 0.5s ease;
 }
 
 .m-modal:hover {
