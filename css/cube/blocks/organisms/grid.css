@@ -20,14 +20,14 @@
   ); */
   grid-auto-rows: auto;
   /* grid-auto-flow: dense; */
-  --gap: var(--space-unit);
+  --gap: var(--layout-space-unit);
   --line-offset: calc(var(--gap) / 2);
   --line-thickness: calc(var(--border-width) / 4);
   --line-color: var(--theme-color);
 }
 
 .o-grid__item {
-  padding: var(--space-unit);
+  padding: var(--layout-space-unit);
   grid-row: var(--grow, auto);
   grid-column: var(--gcolumn, 1);
 

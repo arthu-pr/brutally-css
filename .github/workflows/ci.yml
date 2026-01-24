@@ -5,6 +5,8 @@ on:
   push:
     branches:
       - main
+      - dev
+  pull_request:
 
 jobs:
   minify:
@@ -12,134 +14,94 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v5
-        with:
-          path: brutallycss
 
-      - name: Install clean-css
+      # - name: Prepare dist
+      #   run: mkdir -p brutallycss/dist
+
+      - name: Install lightningcss (most recent/optimal and support CSS nesting)
+        run: npm install -g lightningcss-cli
+
+      - name: Install clean-css (to minify into one single file afterwards)
         run: npm install -g clean-css-cli
 
-      - name: Build and minify CSS
-        run: cleancss -o brutallycss/dist/main.min.css brutallycss/css/**/*.css --remove-inlined-files
+      - name: Bundle + minify CSS
+        run: |
+          ls -la
+          # shopt -s globstar nullglob
+
+          # files=()
+          # for f in css/**/*.css; do
+          #   [[ "$f" != "css/main.css" ]] && files+=("$f")
+          # done
+
+          # lightningcss --targets ">= 0.25%" --bundle --minify "${files[@]}" -d dist/
+
+          lightningcss --minify --bundle --targets ">= 0.25%"  css/main.css -d dist/css
+
+      # - name: Minify in one single CSS file
+      #   run: cleancss -o dist/main.min.css dist/*.css --remove-inlined-files
 
       - name: Install html-minifier
         run: npm install -g html-minifier
 
-      - name: Minify HTML files
+      - name: Minify HTML files into dist
         run: |
-          for file in brutallycss/*.html; do
+          for file in *.html; do
             html-minifier \
               --collapse-whitespace \
               --remove-comments \
               --remove-optional-tags \
-              --remove-redundant-attributes  \
-              --remove-script-type-attributes  \
-              --remove-tag-whitespace  \
-              --use-short-doctype  \
-              --minify-css true \
-              -o "$file" "$file" 
+              --remove-redundant-attributes \
+              --remove-script-type-attributes \
+              --remove-tag-whitespace \
+              --use-short-doctype \
+              "$file" > "dist/$(basename "$file")"
           done
+
+      - name: Copy static assets to dist
+        run: |
+          rsync -av \
+            --exclude "css/" \
+            --exclude "dist/" \
+            --exclude ".git/" \
+            --exclude ".github/" \
+            --exclude "*.md" \
+            --exclude "*.html" \
+            ./ \
+            ./dist/
 
       - name: Debug
         run: |
-          ls -la brutallycss/dist
-          ls -la brutallycss/
+          ls -la dist
+          ls -la .
 
       - name: Upload Artifacts
         uses: actions/upload-artifact@v6
         with:
           name: brutallycss-dist
-          path: brutallycss
-
-  check-design-tokens:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Set up directories
-        run: |
-          mkdir -p tokens brutallycss
-          ls -la
-
-      - name: Checkout repository
-        uses: actions/checkout@v4
-        with:
-          path: brutallycss
-
-      - name: Checkout tokens repository
-        uses: actions/checkout@v4
-        with:
-          repository: arthur-plazanet/unholy-design-tokens
-          ref: main
-          path: tokens
-
-      - name: Copy tokens to project
-        run: |
-
-          # Copy all CSS files from the dist branch
-          rsync -a --delete --dry-run tokens/build/css/ brutallycss/build/css/
-
-          # Show what was copied
-          echo "Copied tokens:"
-          ls -la tokens/build/css/
-          ls -la brutallycss/
-          ls -la brutallycss/css/
-
-      - name: Check for changes
-        id: check-changes
-        run: |
-          cd brutallycss
-          if [ -z "$(git status --porcelain)" ]; then
-            echo "changed=false" >> $GITHUB_OUTPUT
-            echo "No changes detected"
-          else
-            echo "changed=true" >> $GITHUB_OUTPUT
-            echo "Changes detected"
-          fi
-      - name: Set formatted date
-        run: echo "DATE=$(date +'%Y-%m-%d')" >> $GITHUB_ENV
-
-      - name: Create Pull Request
-        if: steps.check-changes.outputs.changed == 'true'
-        uses: peter-evans/create-pull-request@v6
-        with:
-          path: brutallycss
-          commit-message: |
-            Date: ${{ env.DATE }}
-          branch: tokens/update-${{ env.DATE }}
-          delete-branch: true
-          title: 'Update design tokens ${{ env.DATE }}'
-          body: |
-            ## Design Tokens Update
-
-            This PR updates the design tokens from the tokens repository.
-
-            **Details:**
-            # - 📦 Version: `${{ inputs.token_version }}`
-            - 🔗 Source: [arthur-plazanet/unholy-design-tokens](https://github.com/arthur-plazanet/unholy-design-tokens)
-            # - 📍 Branch: `${{ inputs.tokens_branch }}`
-            # - 🔑 Commit: [`${{ inputs.tokens_sha }}`](https://github.com/${{ inputs.tokens_repo }}/commit/${{ inputs.tokens_sha }})
-            # - 🕐 Built: ${{ inputs.build_timestamp }}
-
-            ### Changed Files
-            This PR includes updates to design token CSS files in `tokens/src/build/css/`.
-
-            ---
-            🤖 *This PR was automatically generated by the token distribution workflow.*
-          labels: |
-            design-tokens
-            automated
-          assignees: ${{ github.actor }}
-
-      - name: Output result
-        run: echo "No token updates needed - tokens are already up to date"
-
+          path: dist
   deploy:
+    if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
     runs-on: ubuntu-latest
-    needs: [minify, check-design-tokens]
+    needs: [minify]
     steps:
       - name: Download Artifacts
         uses: actions/download-artifact@v4
         with:
           name: brutallycss-dist
-          path: brutallycss
+          path: dist
 
       - name: Debug
-        run: ls -la brutallycss
+        run: ls -la dist
+
+      - name: Install SSH Key
+        uses: shimataro/ssh-key-action@v2
+        with:
+          key: ${{ secrets.SSH_KEY }}
+          known_hosts: unnecessary
+
+      - name: Adding Known Hosts
+        run: ssh-keyscan -H ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
+
+      - name: Deploy build with rsync
+        run: rsync -avz --delete ./dist ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST }}:/var/www/brutallycss.com/

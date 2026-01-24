@@ -1,26 +1,39 @@
-@import url('../../build/css/colors.primitive.css') layer(colors.primitives);
-@import url('../../build/css/colors.semantic.css') layer(colors.semantic);
-@import url('../../build/css/colors.intent.css') layer(colors.intent);
-@import url('../../build/css/themes/public-theme.css') layer(theme);
-@import url('../../build/css/themes/private-theme.css') layer(theme);
-@import url('../../build/css/spacing.css') layer(theme);
+/* @import url('./tokens/css/colors.css') layer(colors);
+@import url('./tokens/css/themes/public-theme.css') layer(theme);
+@import url('./tokens/css/themes/private-theme.css') layer(theme);
+@import url('./tokens/css/spacing.css') layer(theme); */
+
+@property --theme-color {
+  syntax: '<color>';
+  initial-value: transparent;
+  inherits: true;
+}
+
+@property --disabled {
+  syntax: '<number>';
+  initial-value: 0;
+  inherits: true;
+}
 
 /* @import url('build/css/cube/cube.composition.css') layer(cube.composition); */
 /* @import url('build/css/cube/cube.utility.css') layer(cube.utility); */
 /* @import url('build/css/cube/cube.block.css') layer(cube.block); */
 
-@layer color, cube, theme;
+@layer colors, theme-default, theme, cube;
 
-@layer theme {
+@layer colors {
   :root {
-    --border-radius-default: 0;
+    /* Forms */
+    --invalid-color: var(--color-feedback-error);
+    --color-error: var(--color-feedback-error);
 
-    --breakpoint-xs: var(--breakpoint-mobile, 30rem);
-    --breakpoint-sm: var(--breakpoint-tablet, 48rem);
-    --breakpoint-md: var(--breakpoint-desktop, 64rem);
-    --breakpoint-lg: var(--breakpoint-desktop, 80rem);
-    --breakpoint-xl: var(--breakpoint-desktop-xl, 96rem);
-    --breakpoint-xxl: var(--breakpoint-desktop-xxl, 128rem);
+    /* Initial State */
+    --_theme-color: var(--color-theme-default);
+    /* --theme-color: oklch(from var(--color-primary) l c h / 100%); */
+    --_theme-color-current: var(--_theme-color);
+    --theme-color: var(--_theme-color);
+    --color-bg: var(--color-bg-neutral);
+    --color-primary: var(--_theme-color);
 
     /* Custom main Theme color */
     --color-theme-100: color-mix(
@@ -64,6 +77,73 @@
       var(--color-theme-default, var(--color-primary-500)),
       white 90%
     );
-    --color-theme-default: var(--color-primary-500);
+    --color-theme-default: var(--color-primary-base);
+  }
+}
+
+@layer cube {
+}
+
+@layer theme {
+  :root {
+    --border-radius-default: 0;
+
+    --border-width-base: 4px;
+    --border-width-sm: var(--from-sm) 4px;
+    --border-width-md: var(--from-md) 8px;
+    --border-width-default: var(
+      --border-width-sm,
+      var(--border-width-md)
+    ); /* --border-width: var(--_border-width-default); */
+    /* --border-width: var(--border-width-default); */
+    --border-width-default: var(
+      --border-width-md,
+      var(--border-width-sm, var(--border-width-base))
+    );
+    --border-width: var(--border-width-default);
+
+    /* Layout */
+    --layout-mobile-padding: var(--space-md);
+
+    /* Theme Colors */
+    /* --color-primary: var(--color-theme-default); */
+    /* Borders */
+    --color-border-theme: var(--theme-color);
+    --border-theme: var(--border-width) solid var(--theme-color);
+    --border-theme-10: var(--border-width-10) solid var(--theme-color);
+    --border-theme-25: var(--border-width-25) solid var(--theme-color);
+    --border-theme-50: var(--border-width-50) solid var(--theme-color);
+    --border-theme-75: var(--border-width-75) solid var(--theme-color);
+
+    /* Spacing */
+    --container-fluid: var(--space-md) var(--space-md) var(--space-sm);
+    --container: var(--space-sm) var(--space-md) var(--space-xs);
+
+    --opacity: var(--not-disabled, 1);
+
+    /* Navbar */
+    --navbar-size: 80px;
+
+    --highlighted-left-mobile-val: clamp(-30px, -1.4vw, -2px);
+
+    /* TODO: retro-compatibility remap */
+    --space-xxs: var(--spacing-xxs);
+    --space-xs: var(--spacing-xs);
+    --space-sm: var(--spacing-sm);
+    --space-md: var(--spacing-md);
+    --space-lg: var(--spacing-lg);
+    --space-xl: var(--spacing-xl);
+    --space-xxl: var(--spacing-xxl);
+  }
+
+  .border-theme {
+    border-color: var(--theme-color);
+  }
+}
+
+@media (min-width: 48rem) {
+  /* 768px - Tablets */
+  body {
+    --container: var(--space-md) var(--space-lg);
   }
 }

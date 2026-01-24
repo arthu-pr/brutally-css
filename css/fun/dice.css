@@ -1,0 +1,50 @@
+.dice {
+  --dice-1: '\2680';
+  --dice-2: '\2681';
+  --dice-3: '\2682';
+  --dice-4: '\2683';
+  --dice-5: '\2684';
+  --dice-6: '\2685';
+
+  font-size: var(--text-xxl);
+  position: absolute;
+  top: var(--top);
+  left: var(--left);
+  transition: scale 1s ease-in-out;
+
+  &:empty:nth-child(1) {
+    content: var(--dice-1);
+  }
+  &:empty:nth-child(2) {
+    content: var(--dice-2);
+  }
+  &:nth-child(3)::empty {
+    content: var(--dice-3);
+  }
+  &:nth-child(4)::empty {
+    content: var(--dice-4);
+  }
+  &:nth-child(5)::empty {
+    content: var(--dice-5);
+  }
+  &:nth-child(6)::empty {
+    content: var(--dice-6);
+  }
+
+  &:empty {
+    font-size: var(--text-xxl);
+    line-height: 1;
+    /* position: absolute; */
+    /* top: 0; */
+    /* left: 0; */
+  }
+}
+
+.dice::after {
+  content: var(--dice-4);
+  font-size: inherit;
+  line-height: 1;
+  position: absolute;
+  bottom: var(--top);
+  right: var(--left);
+}

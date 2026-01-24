@@ -1,6 +1,6 @@
 :root {
-  --border-width: 0.5rem;
-  --border-width: clamp(0.2rem, 1.5vw, 0.5rem);
+  /* --border-width: 0.5rem;
+  --border-width: clamp(0.2rem, 1.5vw, 0.5rem); */
   --border-width-10: calc(0.1 * var(--border-width));
   --border-width-25: calc(0.25 * var(--border-width));
   --border-width-50: calc(0.5 * var(--border-width));
