@@ -1,6 +1,7 @@
 @font-face {
   font-family: 'Boogaloo';
-  src: url('/fonts/boogaloo-regular-webfont.woff') format('woff'),
+  src:
+    url('/fonts/boogaloo-regular-webfont.woff') format('woff'),
     url('/fonts/boogaloo-regular-webfont.woff2') format('woff2');
   font-display: swap;
 }
@@ -37,7 +38,8 @@
 
 @font-face {
   font-family: 'Salsa-Regular';
-  src: url('/fonts/salsa-regular-webfont.woff') format('woff'),
+  src:
+    url('/fonts/salsa-regular-webfont.woff') format('woff'),
     url('/fonts/salsa-regular-webfont.woff2') format('woff2');
   font-display: swap;
 }
@@ -126,6 +128,10 @@ html::-webkit-scrollbar {
 body {
   margin: 0;
   font-size: var(--text-md);
+  background-color: var(--color-bg);
+  color: var(--color-contrast-lower);
+  border-top: var(--border-theme);
+  border-bottom: var(--border-theme);
 }
 
 .body::-webkit-scrollbar {
@@ -158,7 +164,7 @@ h4::after {
 
 .section,
 .article {
-  padding: var(--space-unit);
+  padding: var(--layout-space-unit);
 }
 
 /* 
@@ -181,17 +187,30 @@ h4::after {
   /* animation: 2.5s cubic-bezier(0.25, 1, 0.3, 1) wipe-in-left both; */
 }
 
+/*
+  * Controller
+  * Main wrapper - called this way as many interations in the app depend on it
+  */
+
+.controller {
+  /* https://dev.to/technoph1le/the-css-accent-color-property-explained-4h9o */
+  accent-color: var(--theme-color);
+  color: hsl(from var(--theme-color) h s l / 0.2);
+  color: var(--color-contrast-lower);
+  mix-blend-mode: var(--mix-blend-mode);
+
+  /* https://medium.com/@ehsaneona/overcoming-position-sticky-issues-solving-overflow-hidden-problems-with-overflow-clip-e8e79a7b0c34 */
+  overflow: clip;
+  -ms-overflow-style: none;
+}
+
 .layout {
-  background-color: var(--color-bg-page);
-  width: calc(200svw - 2 * var(--theme-bar-width));
+  --content-width: calc(100svw - var(--theme-bar-width));
+  /* width: calc(200svw - var(--theme-bar-width)); */
   display: grid;
-  grid-template-columns:
-    calc(100svw - var(--theme-bar-width)) var(--theme-bar-width)
-    calc(100svw - var(--theme-bar-width));
+  grid-template-columns: 1fr var(--theme-bar-width) 1fr;
   grid-auto-rows: auto;
-  grid-template-areas:
-    'info-section . .'
-    'main-content theme-bar how-does-it-work';
+  grid-template-areas: 'main-content theme-bar how-does-it-work';
   transition: var(--layout-transition);
   --layout-translate-main: translateX(0);
   --layout-translate-howDoesItWork: translateX(
@@ -201,12 +220,18 @@ h4::after {
 
   transform: var(--layout-transform-value);
   clip-path: inset(0 0 0 0);
+  position: relative;
+  --mix-blend-mode: normal;
+  color: var(--theme-color);
+  display: flex;
+  width: 200svw;
 }
 
 .main-content {
   grid-area: main-content;
+  width: var(--content-width);
   position: relative;
-  border-right: var(--border-width) solid var(--theme-color);
+  /* border-right: var(--border-width) solid var(--theme-color); */
   transform: translateY(0);
 }
 
