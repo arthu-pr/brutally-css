@@ -33,12 +33,11 @@ h4.-highlighted,
 .text-xs.-highlighted,
 .text-2.-highlighted,
 p.-highlighted,
-span.-highlighted,
 div.-highlighted {
   --highlighted-bg-color: color-mix(
     in srgb,
     var(--color-bg),
-    var(--theme-color) calc(100% * var(--active, 0))
+    var(--color-primary) calc(100% * var(--active, 0))
   );
   --highlighted-bg-color-1: var(--highlighted-bg-color);
   --highlighted-bg-color-2: var(--highlighted-bg-color);
@@ -54,22 +53,17 @@ div.-highlighted {
 .-highlighted.stick-to-left {
   --left-mobile-val: calc(
     0px - var(--layout-mobile-padding) -
-      var(--highlighted-text-gap-left, clamp(-30px, -1.4vw, -2px))
+      var('left', 'y-highlighted-text', clamp(-30px, -1.4vw, -2px))
   );
-  --left-pos: calc(0px - var(--highlighted-text-gap-left));
-
-  left: var(--left-pos);
-}
-
-.-highlighted.stick-to-left > span.labeled:first-of-type {
-  padding-left: var(--highlighted-text-gap-left);
+  left: var(--left-mobile-val, unset);
+  padding-right: clamp(2px, 1.4vw, 30px);
 }
 
 .-highlighted > span {
   position: relative;
 
-  --highlighted-bg-color-1: var(--theme-color);
-  --highlighted-bg-color-2: var(--theme-color);
+  --highlighted-bg-color-1: var(--color-primary);
+  --highlighted-bg-color-2: var(--color-primary);
 
   --highlighted-bg: linear-gradient(
     var(--highlighted-bg-color-1),
@@ -85,8 +79,14 @@ div.-highlighted {
   /* box-decoration-break: clone; */
 }
 
-.-highlighted.stick-to-left {
-  margin-right: calc(-1 * clamp(2px, 1.4vw, 30px));
+.-highlighted:not(:has(.m-section__title)) > span.labeled {
+  left: clamp(-30px, -1.4vw, -2px);
+  padding-left: clamp(2px, 1.4vw, 30px);
+}
+
+.-highlighted.m-section__title > span.labeled {
+  top: clamp(-30px, -1.4vw, -2px);
+  padding-top: clamp(2px, 1.4vw, 30px);
 }
 
 @media (min-width: 80rem) {

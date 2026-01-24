@@ -24,7 +24,7 @@
 
 .m-modal,
 .m-drawer {
-  --dialog-bg: var(--color-bg-neutral);
+  --dialog-bg: var(--color-bg-light);
   --dialog-border: var(--border-theme);
   --dialog-box-shadow: var(--box-shadow-base);
 }

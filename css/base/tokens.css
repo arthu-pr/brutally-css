@@ -1,16 +1,4 @@
-/* 
- * CSS-only Type Grinding
- * https://www.bitovi.com/blog/css-only-type-grinding-casting-tokens-into-useful-values
- *
- * We use CSS Properties to create design tokens for colors, variants, and states.
- * Usage:
- * .some-css-class {
- *   --color: primary;
- *   --variant: contained;
- *   --state: hover;
- * }
-*/
-
+@layer state;
 @property --color {
   syntax: 'primary | secondary | danger | background';
   initial-value: primary;
@@ -268,7 +256,7 @@
   --raw: 1;
 }
 @property --use-bg {
-  syntax: '<number>';
+  syntax: '<number  >';
   initial-value: 0;
   inherits: true;
 }

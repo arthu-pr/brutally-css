@@ -1,6 +1,6 @@
 @property --overlay-bg {
   syntax: '<color>';
-  initial-value: #00000080;
+  initial-value: var(--color-bg-80);
   inherits: false;
 }
 
