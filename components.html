@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link href="css/themes/brutally-css.css" rel="stylesheet" />
-    <link href="main.min.css" rel="stylesheet" />
+    <link href="dist/main.min.css" rel="stylesheet" />
     <!-- <link href="css/layouts/wrapper.css" rel="stylesheet" />
     <link href="css/layouts/box.css" rel="stylesheet" />
     <!-- Base -->
@@ -50,51 +50,57 @@
         </form>
 
         <!-- Input -->
-        <section class="box" data-box-title="Viewport size">
-          <div class="cluster">
-            <span class="viewport-size"></span>
-            <hr />
-            <span class="is-screen-xs" data-media="xs"> is-screen-xs </span>
-            <hr />
-            <p>TODO:</p>
-            <span class="is-screen-sm" data-media="sm"> is-screen-sm </span>
-            <hr />
-            <span class="is-screen-md" data-media="md"> is-screen-md </span>
-            <hr />
-            <span class="is-screen-lg" data-media="lg"> is-screen-lg </span>
-            <hr />
-            <span class="is-screen-xl" data-media="xl"> is-screen-xl </span>
-          </div>
-          <details>
-            <summary>
-              <span class="highlighted text-md"><span>How to?</span></span>
-            </summary>
-            <ol class="m-list">
-              <li class="m-list__item">
-                <a
-                  class="a-link"
-                  href="https://css-tricks.com/snippets/css/calculate-viewport-size-in-css/"
-                  >Calculate Viewport Size in CSS</a
-                >
-              </li>
-              <li class="m-list__item">
-                <a
-                  href="https://dev.to/janeori/css-type-casting-to-numeric-tanatan2-scalars-582j"
-                  class="a-link"
-                >
-                  CSS Type Casting to Numeric: tan(atan2()) Scalars
-                </a>
-                by Jane Ori
-              </li>
-            </ol>
-          </details>
+        <form>
+          <fieldset class="border-theme-">
+            <legend class="text-xl">Viewport size</legend>
+            <div class="cluster">
+              <span class="viewport-size"></span>
+              <hr />
+              <span class="is-screen-xs" data-media="xs"> is-screen-xs </span>
+              <hr />
+              <p>TODO:</p>
+              <span class="is-screen-sm" data-media="sm"> is-screen-sm </span>
+              <hr />
+              <span class="is-screen-md" data-media="md"> is-screen-md </span>
+              <hr />
+              <span class="is-screen-lg" data-media="lg"> is-screen-lg </span>
+              <hr />
+              <span class="is-screen-xl" data-media="xl"> is-screen-xl </span>
+            </div>
+            <details>
+              <summary>
+                <span class="highlighted text-md"><span>How to?</span></span>
+              </summary>
+              <ol class="m-list">
+                <li class="m-list__item">
+                  <a
+                    class="a-link"
+                    href="https://css-tricks.com/snippets/css/calculate-viewport-size-in-css/"
+                    >Calculate Viewport Size in CSS</a
+                  >
+                </li>
+                <li class="m-list__item">
+                  <a
+                    href="https://dev.to/janeori/css-type-casting-to-numeric-tanatan2-scalars-582j"
+                    class="a-link"
+                  >
+                    CSS Type Casting to Numeric: tan(atan2()) Scalars
+                  </a>
+                  by Jane Ori
+                </li>
+              </ol>
+            </details>
+          </fieldset>
+        </form>
+        <section class="box">
+          <p aria-label="box-title" class="text-xl">Viewport size</p>
         </section>
-        <section class="box" data-box-title="Viewport size"></section>
         <h2>Atoms</h2>
 
         <!-- Button -->
-        <section class="box" data-box-title="Button">
-          <div class="cluster">
+        <section class="box">
+          <p aria-label="box-title" class="text-xl">Button</p>
+          <div class="flex gap-md flex-wrap">
             <button class="a-btn theme">Primary</button>
             <button data-component="secondary" class="a-btn theme">
               Secondary
@@ -114,8 +120,9 @@
         </section>
 
         <!-- Input -->
-        <section class="box" data-box-title="Text Input">
-          <div class="cluster">
+        <section class="box">
+          <p aria-label="box-title" class="text-xl">Text Input</p>
+          <div class="flex gap-md flex-wrap">
             <input type="text" class="a-input theme" placeholder="Primary" />
             <input
               type="text"
@@ -140,7 +147,8 @@
         <h2>Molecules</h2>
 
         <!-- Table -->
-        <section class="box" data-box-title="Table">
+        <section class="box">
+          <p aria-label="box-title" class="text-xl">Table</p>
           <table class="m-table text-theme">
             <thead class="bg-theme" style="--theme-color-lightness: 1">
               <tr>
@@ -195,124 +203,6 @@
             </ol>
           </details>
         </section>
-
-        <!-- <section class="m-section"> -->
-        <section class="box" data-box-title="Parallax">
-          <div class="parallax">
-            <div class="parallax-back">
-              <div class="dice" style="--top: 95%; --left: 50%">&#9856;</div>
-              <div class="dice" style="--top: 30%; --left: 1%">&#9857;</div>
-              <div class="dice" style="--top: 60%; --left: 29%">&#9858;</div>
-              <div class="dice" style="--top: 30%; --left: 80%">&#9859;</div>
-              <div class="dice" style="--top: 35%; --left: 35%">&#9860;</div>
-              <div class="dice" style="--top: 12%; --left: 90%">&#9861;</div>
-            </div>
-            <div class="parallax-content">
-              <!-- <h3 class="m-section__title">Section</h3> -->
-              <div class="switcher"></div>
-              <p class="">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla
-                rerum inventore, explicabo a esse, obcaecati impedit neque nobis
-                cum animi magni doloribus in veritatis? Dolorum illum pariatur
-                repudiandae corrupti unde.
-                <br />
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla
-                rerum inventore, explicabo a esse, obcaecati impedit neque nobis
-                cum animi magni doloribus in veritatis? Dolorum illum pariatur
-                repudiandae corrupti unde.
-                <br />
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla
-                rerum inventore, explicabo a esse, obcaecati impedit neque nobis
-                cum animi magni doloribus in veritatis? Dolorum illum pariatur
-                repudiandae corrupti unde.
-                <br />
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla
-                rerum inventore, explicabo a esse, obcaecati impedit neque nobis
-                cum animi magni doloribus in veritatis? Dolorum illum pariatur
-                repudiandae corrupti unde.
-                <br />
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla
-                rerum inventore, explicabo a esse, obcaecati impedit neque nobis
-                cum animi magni doloribus in veritatis? Dolorum illum pariatur
-                repudiandae corrupti unde.
-                <br />
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla
-                rerum inventore, explicabo a esse, obcaecati impedit neque nobis
-                cum animi magni doloribus in veritatis? Dolorum illum pariatur
-                repudiandae corrupti unde.
-                <br />
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla
-                rerum inventore, explicabo a esse, obcaecati impedit neque nobis
-                cum animi magni doloribus in veritatis? Dolorum illum pariatur
-                repudiandae corrupti unde.
-                <br />
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla
-                rerum inventore, explicabo a esse, obcaecati impedit neque nobis
-                cum animi magni doloribus in veritatis? Dolorum illum pariatur
-                repudiandae corrupti unde.
-                <br />
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla
-                rerum inventore, explicabo a esse, obcaecati impedit neque nobis
-                cum animi magni doloribus in veritatis? Dolorum illum pariatur
-                repudiandae corrupti unde.
-                <br />
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla
-                rerum inventore, explicabo a esse, obcaecati impedit neque nobis
-                cum animi magni doloribus in veritatis? Dolorum illum pariatur
-                repudiandae corrupti unde. <br />
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla
-                rerum inventore, explicabo a esse, obcaecati impedit neque nobis
-                cum animi magni doloribus in veritatis? Dolorum illum pariatur
-                repudiandae corrupti unde. <br />
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla
-                rerum inventore, explicabo a esse, obcaecati impedit neque nobis
-                cum animi magni doloribus in veritatis? Dolorum illum pariatur
-                repudiandae corrupti unde. <br />
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla
-                rerum inventore, explicabo a esse, obcaecati impedit neque nobis
-                cum animi magni doloribus in veritatis? Dolorum illum pariatur
-                repudiandae corrupti unde. <br />
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla
-                rerum inventore, explicabo a esse, obcaecati impedit neque nobis
-                cum animi magni doloribus in veritatis? Dolorum illum pariatur
-                repudiandae corrupti unde.
-                <br />
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla
-                rerum inventore, explicabo a esse, obcaecati impedit neque nobis
-                cum animi magni doloribus in veritatis? Dolorum illum pariatur
-                repudiandae corrupti unde. <br />
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla
-                rerum inventore, explicabo a esse, obcaecati impedit neque nobis
-                cum animi magni doloribus in veritatis? Dolorum illum pariatur
-                repudiandae corrupti unde. <br />
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla
-                rerum inventore, explicabo a esse, obcaecati impedit neque nobis
-                cum animi magni doloribus in veritatis? Dolorum illum pariatur
-                repudiandae corrupti unde.
-                <br />
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla
-                rerum inventore, explicabo a esse, obcaecati impedit neque nobis
-                cum animi magni doloribus in veritatis? Dolorum illum pariatur
-                repudiandae corrupti unde. <br />
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla
-                rerum inventore, explicabo a esse, obcaecati impedit neque nobis
-                cum animi magni doloribus in veritatis? Dolorum illum pariatur
-                repudiandae corrupti unde. <br />
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla
-                rerum inventore, explicabo a esse, obcaecati impedit neque nobis
-                cum animi magni doloribus in veritatis? Dolorum illum pariatur
-                repudiandae corrupti unde.
-                <br />
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla
-                rerum inventore, explicabo a esse, obcaecati impedit neque nobis
-                cum animi magni doloribus in veritatis? Dolorum illum pariatur
-                repudiandae corrupti unde.
-              </p>
-            </div>
-          </div>
-        </section>
-        <!-- </section> -->
       </div>
     </div>
   </body>

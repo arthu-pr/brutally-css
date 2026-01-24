@@ -4,6 +4,10 @@
   /* if one element
   calc(100svh - calc(2 * var(--border-width))) */
   padding: 0 var(--spacing);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
   border-bottom: var(--border-width) solid var(--theme-color);
   z-index: 0;
   /* transition: var(--layout-transition); */
@@ -35,13 +39,11 @@
   font-family: 'ImpactLabelReversed';
   width: clamp(14rem, 100%, 100rem);
   font-size: var(--text-xl);
-  font-size: var(--text-2);
-  font-size: var(--text-lg);
 }
 
 @media (min-width: 64rem) {
   .banner__description {
-    /* font-size: var(--text-xl); */
+    font-size: var(--text-xxl);
   }
 }
 

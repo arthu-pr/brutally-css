@@ -14,10 +14,6 @@ npm install clean-css-cli -g
 cleancss -o dist/main.min.css css/**/*.css --watch
 ```
 
-```sh
-lightningcss css/main.css --bundle --minify -o main.min.css
-```
-
 ## Minify HTML and CSS commands
 
 ```sh

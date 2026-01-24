@@ -47,8 +47,8 @@
 
     <!-- <link href="css/theme.css" rel="stylesheet" /> -->
 
-    <!-- <link rel="stylesheet" href="css/themes/brutally-css.css" /> -->
-    <link href="main.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/themes/brutally-css.css" />
+    <link href="dist/main.min.css" rel="stylesheet" />
 
     <link rel="icon" type="image/x-icon" href="/favicon/favicon.ico" />
     <link
@@ -160,31 +160,14 @@
           </nav>
         </section>
         <div class="main-content">
-          <header class="banner stack align-start justify-center">
-            <span class="banner__alert">&#9888;</span>
-            <span class="banner__alert">&#9888;</span>
-            <span class="banner__alert">&#127137;</span>
-            <span class="banner__alert">&#127138;</span>
-            <span class="banner__alert">&#127139;</span>
-            <span class="banner__alert">&#127143;</span>
-            <span class="banner__alert">&#127149;</span>
-            <span class="banner__alert">&#127157;</span>
-            <span class="banner__alert">&#127159;</span>
-            <span class="banner__alert">&#127178;</span
-            ><span class="banner__alert">&#127180;</span
-            ><span class="banner__alert">&#9824;</span
-            ><span class="banner__alert">&#9827;</span
-            ><span class="banner__alert">&#9829;</span
-            ><span class="banner__alert">&#9830;</span
-            ><span class="banner__alert">&#127137;</span>
-
+          <header class="banner">
             <span class="banner__alert">&#9888;</span>
             <span class="banner__alert">&#9888;</span>
             <span class="banner__alert">&#9888;</span>
             <span class="banner__alert">&#9888;</span>
             <span class="banner__alert">&#9888;</span>
             <span class="banner__alert">&#9888;</span>
-            <h1 class="banner__title">
+            <h1 clas="banner__title">
               <span class="banner__title-brutally">
                 B<span class="banner__title-brutally__r">r</span>utal<span
                   class="banner__title-brutally__ly"
@@ -193,16 +176,11 @@
               </span>
               <span class="banner__title__css-only">CSS</span>
             </h1>
-            <h2 class="banner__description">
-              <span class="-highlighted -active -animate stick-to-left">
-                <span class="labeled">This website</span></span
-              >
-              is a playground to explore
-              <span class="-highlighted -animate">
-                <span class="labeled">CSS capabilities and limits</span></span
-              >
+            <div class="banner__description text2 -highlighted -active">
+              <span class="labeled">This website</span>is a playground to
+              explore <span class="labeled">CSS capabilities and limits</span>
               without any JavaScript.
-            </h2>
+            </div>
             <div class="typewriter">
               <h1>The cat and the hat.</h1>
             </div>
@@ -443,7 +421,7 @@
                   cupidatat non proident, sunt in culpa qui officia deserunt
                   mollit anim id est laborum.
                 </p>
-                <h3 class="-highlighted -animate -active stick-to-left">
+                <h3 class="-highlighted -animate -active">
                   <span class="labeled">Highlighted</span>
                 </h3>
                 <p>
@@ -465,48 +443,12 @@
                 </p>
               </div>
             </div>
-            <div class="m-section">
-              <h3 class="m-section__title">Parralax</h3>
-              <div class="m-section__content">
-                <h3>Content with a parallax background</h3>
-                <div class="parallax">
-                  <div class="parallax__layer parallax__layer--back">
-                    <h4>Background layer</h4>
-                    <img src="img/reteach-logo.svg" alt="Reteach logo" />
-                    <img src="img/reteach-logo.svg" alt="Reteach logo" />
-                    <img src="img/reteach-logo.svg" alt="Reteach logo" />
-                    <img src="img/reteach-logo.svg" alt="Reteach logo" />
-                    <img src="img/reteach-logo.svg" alt="Reteach logo" />
-                  </div>
-                  <div class="parallax__layer parallax__layer--base">
-                    <div class="cluster">
-                      <img src="img/img_loaded.jpg" alt="Loaded image" />
-                      <div class="stack">
-                        <h4>A stack example</h4>
-                        <p>
-                          Lorem ipsum dolor sit amet consectetur adipisicing
-                          elit. Quasi iste ad necessitatibus esse laudantium
-                          facilis minima explicabo quisquam, cupiditate,
-                          incidunt tempora eaque aut nam rerum. Eum recusandae
-                          eos ut voluptates?
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
           </main>
         </div>
         <!-- Theme bar -->
-        <section class="o-themeBar gap-xs">
-          <ul
-            class="o-themeBar__container stack sticky margin-0 gap-xs padding-x-sm"
-          >
-            <li>
-              <span>&#9881;</span>
-            </li>
-            <li>
+        <section class="o-themeBar">
+          <ul class="o-themeBar__container">
+            <li class="o-o-themeBar__element">
               <button
                 type="button"
                 class="o-themeBar__btn"
@@ -957,26 +899,6 @@
       <div
         class="m-drawer flex flex-column justify-between"
         id="drawer"
-        aria-modal="true"
-        role="dialog"
-        tabindex="-1"
-      >
-        <div class="m-modal__header">
-          <h3 class="m-modal__title">Drawer Component</h3>
-        </div>
-        <div class="m-modal__content">
-          <p>Example of a drawer component.</p>
-        </div>
-        <div class="m-modal__footer">
-          <label class="a-btn theme" for="drawer"><span>Close</span></label>
-        </div>
-      </div>
-
-      <!-- Drawer Component -->
-      <label for="drawer-settings" class="a-overlay"></label>
-      <div
-        class="m-drawer flex flex-column justify-between"
-        id="drawer-settings"
         aria-modal="true"
         role="dialog"
         tabindex="-1"
