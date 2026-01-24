@@ -32,7 +32,7 @@ jobs:
           # cd tokens
           # npx build-tokens brutallycss/build
           # Copy all CSS files from the dist branch
-          rsync -a --delete --dry-run tokens/tokens/css/ brutallycss/css/themes/tokens/
+          rsync -a --delete --dry-run tokens/build/css/ brutallycss/css/themes/tokens/
 
           # Show what was copied
           echo "Copied tokens:"
