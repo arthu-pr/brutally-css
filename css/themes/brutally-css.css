@@ -32,7 +32,7 @@
     /* --theme-color: oklch(from var(--color-primary) l c h / 100%); */
     --_theme-color-current: var(--_theme-color);
     --theme-color: var(--_theme-color);
-    --color-bg: var(--color-bg-page);
+    --color-bg: var(--color-bg-neutral);
     --color-primary: var(--_theme-color);
 
     /* Custom main Theme color */

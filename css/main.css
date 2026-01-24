@@ -100,7 +100,7 @@
    Themes (overrides everything)
    ===================================================== */
 @import url('./themes/tokens/css/colors.css') layer(colors);
-@import url('./themes/tokens/css/themes/private-theme.css') layer(theme);
+@import url('./themes/tokens/css/themes/public-theme.css') layer(theme);
 @import url('./themes/tokens/css/themes/private-theme.css') layer(theme);
 @import url('./themes/tokens/css/space.css') layer(theme);
 @import './themes/brutally-css.css';
