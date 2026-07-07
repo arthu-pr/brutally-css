@@ -103,41 +103,39 @@
       <!-- Modal -->
       <!-- states -->
       <input
-        aria-hidden="true"
-        data-dialog
         type="checkbox"
         id="modal"
+        data-dialog-toggle="modal"
         class="a-modifier"
       />
       <input
-        aria-hidden="true"
-        data-dialog
         type="checkbox"
         id="drawer"
+        data-dialog-toggle="drawer"
         class="a-modifier"
       />
       <input
         id="drawer-settings"
-        data-dialog
         type="checkbox"
+        data-dialog-toggle="drawer-settings"
         class="a-modifier"
       />
       <input
-        aria-hidden="true"
         type="checkbox"
         id="center-modal"
+        data-dialog-toggle="center-modal"
         class="a-modifier"
       />
       <input
-        aria-hidden="true"
         type="checkbox"
         id="brutalist-modal"
+        data-dialog-toggle="brutalist-modal"
         class="a-modifier"
       />
       <input
-        aria-hidden="true"
         type="checkbox"
         id="close-modal"
+        data-dialog-toggle="close-modal"
         class="a-modifier"
       />
       <!--TODO: part of theming -->
@@ -145,16 +143,17 @@
       <input type="checkbox" id="zoom-out" class="a-modifier" />
 
       <!-- Triggers -->
-      <label for="modal" class="a-overlay"></label>
       <label for="drawer-settings" class="a-overlay"></label>
 
       <!-- Modal Component -->
+      <label for="modal" data-dialog class="a-overlay"></label>
       <div
         class="m-modal"
         id="modal"
         aria-modal="true"
         role="dialog"
         tabindex="-1"
+        data-dialog="modal"
       >
         <div class="m-modal__header">
           <h3 class="m-modal__title">Modal title</h3>
@@ -171,7 +170,7 @@
           <label class="a-btn theme" for="modal"><span>Close</span></label>
         </div>
       </div>
-
+      <div class=""></div>
       <!-- Drawer Component -->
       <div
         class="m-drawer"
@@ -179,6 +178,7 @@
         aria-modal="true"
         role="dialog"
         tabindex="-1"
+        data-dialog="drawer"
       >
         <div class="m-modal__header">
           <h3 class="m-modal__title">Settings</h3>
@@ -211,16 +211,9 @@
           <div class="main-content">
             <div class="banner">
               <nav class="m-navbar">
-                <svg
-                  class="m-navbar_menu screen-sm"
-                  viewBox="0 0 100 80"
-                  width="40"
-                  height="40"
-                >
-                  <rect width="100" height="20" rx="8"></rect>
-                  <rect y="30" width="100" height="20" rx="8"></rect>
-                  <rect y="60" width="100" height="20" rx="8"></rect>
-                </svg>
+                <div class="hamburger-menu screen-sm">
+                  <input class="" />
+                </div>
                 <ul class="flex flex-grow justify-between">
                   <li>
                     <a class="a-link theme" href="/components">Components</a>
@@ -824,7 +817,7 @@
                     Building a Scalable CSS Architecture With BEM and Utility Classes
                   </p>
                   <a class="a-link"
-                    href="https://css-tricks.com/building-a-scalable-css-architecture-with-bem-and-utility-classes/">Building
+                    href="https://css-tricks.com/building-a-scalable-css-architecture-with-bem-and-utilities-classes/">Building
                     a
                     Scalable CSS Architecture With BEM and Utility Classes</a>
                 </li> -->
@@ -897,14 +890,14 @@
                         Pseudo-boolean CSS custom properties
                       </a>
                       <pre data-code="css"><code>
-                      `--icon-visible: 1;
+                        `--icon-visible: 1;
                         .icon {
-                          width: calc(16px * var(--icon-visible, 1));
+                        width: calc(16px * var(--icon-visible, 1));
                         }
 
                         /* Later */
                         --icon-visible: 0;`
-                    </code></pre>
+                      </code></pre>
                     </li>
                     <li class="m-list__item">
                       <h4>
@@ -916,20 +909,20 @@
                         depending on the child(ren)
                       </p>
                       <pre data-code="css">
-                    <code>
-                      .dynamic-form {
+                      <code>
+                        .dynamic-form {
                         container: dynamic-form;
                         container-type: inline-size;
                         --unstyled: 0;
                         --border-color: var(--theme-color);
-                      }
+                        }
 
-                      .dynamic-form:has(#ready:not(:checked)) {
+                        .dynamic-form:has(#ready:not(:checked)) {
                         --unstyled: 1;
                         --border-color: transparent;
-                      }
-                    </code>
-                  </pre>
+                        }
+                      </code>
+                    </pre>
                       <a
                         class="a-link"
                         href="https://ishadeed.com/article/css-has-guide/"

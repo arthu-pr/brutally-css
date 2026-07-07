@@ -3,6 +3,18 @@
   position: fixed;
   left: -9999px;
 }
+/* 
+@property --is-visible {
+  syntax: 'initial | ';
+  initial-value: var(--off);
+  inherits: false;
+} */
+/* 
+@property --overlay-opacity {
+  syntax: '<percentage>';
+  initial-value: 0%;
+  inherits: false;
+} */
 
 /* 
  * Main file for CSS modifier using Checkbox Hack
@@ -117,106 +129,116 @@
 * to be completed before it’s completely hidden."
  */
 
+/**
+  * App scope tout le HTML (index)
+  */
 .app {
-  --overlay-opacity: -1;
-  --overlay-z-index: -1;
-}
-/* 
- * 3.2 Overlay component
- */
-.app:not(:has(#modal:checked)) {
-  & .a-overlay[for='modal'] {
-    backdrop-filter: none;
-    --overlay-opacity: -1;
-    --overlay-z-index: -1;
+  /* 
+   * 3.2 Overlay component
+   */
+  --is-visible: var(--off);
+  --bd-filter: var(--is-visible) blur(var(--_layout-overlay-blur, 8px));
+  --overlay-opacity: var(--is-visible) 100%;
+
+  /* --dialog-z-index: var(--is-visible) calc(var(--overlay-z-index) + 10); */
+  /* --dialog-opacity: var(--is-visible) 100%; */
+  /* 
+  & .a-overlay,
+  & .m-modal,
+  & .m-drawer {
+     /* vars needed by modal and drawer */
+  /* --overlay-opacity: var(--is-visible) 100%; */
+  /* --overlay-z-index: var(--is-visible) var(--_layout-overlay-z-index); */
+  /* } */
+
+  /* & > :not(:has(#modal:checked)) { */
+  & [data-dialog] {
+    --overlay-opacity: var(--is-visible) 100%;
+    --overlay-z-index: var(--is-visible) var(--_layout-overlay-z-index);
+    /* --is-visible: var(--off); */
   }
 
-  & .m-modal {
-    --overlay-opacity: -1;
-    --overlay-z-index: -1;
-    /* pointer-events: none; */
-  }
-}
+  /* } */
 
-.app:has(#modal:checked) {
-  & .a-overlay[for='modal'] {
-    backdrop-filter: blur(var(--_layout-overlay-blur, 8px));
-    --overlay-opacity: 100%;
-    --overlay-z-index: var(--_layout-overlay-z-index);
-  }
+  &:has([data-dialog-toggle]:checked) {
+    & .a-overlay {
+      --is-visible: var(--on);
+    }
 
-  & .m-modal {
+    & .m-modal {
+      --is-visible: var(--on);
+    }
+
+    /* --dialog-z-index: var(--is-visible) calc(var(--overlay-z-index) + 10);
+      --dialog-opacity: var(--is-visible) 100%;
+      opacity: var(--dialog-opacity, -1);
+      z-index: var(--dialog-z-index, -1); */
     /* pointer-events: auto; */
-    --overlay-opacity: 100%;
-    --overlay-z-index: var(--_layout-overlay-z-index);
+    /* --overlay-opacity: 100%;
+      --overlay-z-index: var(--_layout-overlay-z-index); */
   }
 }
-
-/* .app:not(:has(#drawer-settings:checked)) {
-}
-
-.app:has(#modal:checked) {
-  & .a-overlay[for='modal'] {
-    backdrop-filter: blur(var(--_layout-overlay-blur, 8px));
-    --overlay-opacity: 100%;
-    --overlay-z-index: var(--_layout-overlay-z-index);
-  }
-}
-.app:has(#drawer-settings:checked) {
-  & .a-overlay[for='drawer-settings'] {
-    backdrop-filter: blur(var(--_layout-overlay-blur, 8px));
-    --overlay-opacity: 100%;
-    --overlay-z-index: var(--_layout-overlay-z-index);
-  }
-} */
-/* drawer slide */
-.app .m-drawer {
-  transition: transform 0.5s ease;
-}
-.app:has(#drawer-settings:checked) {
-  & .a-overlay[for='drawer-settings'] {
-    backdrop-filter: blur(var(--_layout-overlay-blur, 8px));
-    --overlay-opacity: 100%;
-    --overlay-z-index: var(--_layout-overlay-z-index);
-  }
-
+&:not(:has([data-dialog-toggle]:checked)) {
   & .m-drawer {
-    transform: translateX(0);
-    --overlay-opacity: 100%;
-    --overlay-z-index: var(--_layout-overlay-z-index);
-    transition: transform 0.5s ease;
+    --is-visible: var(--off);
+  }
+
+  & .a-overlay {
+    --is-visible: var(--off);
+  }
+  & .m-modal {
+    --is-visible: var(--off);
   }
 }
 
-.app:not(:has(#drawer-settings:checked)) {
+&:has([data-dialog-toggle]:checked) {
   & .m-drawer {
-    transform: translateX(100%);
-    --overlay-z-index: -1;
-    transition: all 0.5s ease;
-  }
-
-  & .a-overlay[for='drawer-settings'] {
-    backdrop-filter: none;
-    --overlay-opacity: 0;
-    --overlay-z-index: -1;
+    --is-visible: var(--on);
   }
 }
+
 /* 
  * 3.3 Disable scrolling when Modal is open
  */
 /* modal closed */
-.app:not(:has(#modal:checked)) .controller,
-.app:not(:has(#drawer-settings:checked)) .controller {
+&:not(:has(#modal:checked)) .controller,
+&:not(:has([data-dialog-toggle]:checked)) .controller {
   height: auto;
   overscroll-behavior: contain;
 }
 
 /* modal open */
-.app:has(#modal:checked) .controller,
-.app:has(#drawer-settings:checked) .controller {
+&:has(#modal:checked) .controller,
+&:has([data-dialog-toggle]:checked) .controller {
   height: 100svh;
   overflow-y: hidden;
   overscroll-behavior: contain;
+}
+
+/* ----------------------------------------------------------------------------- */
+/* 3.4 - Modal and Drawer animations */
+/* ---------------------------------------------- */
+
+& .m-drawer {
+  --is-visible: var(--off);
+}
+
+& .m-modal {
+  --is-visible: var(--off);
+}
+
+&:has([data-dialog-toggle]:checked) {
+  & .a-overlay {
+    --is-visible: var(--on);
+  }
+
+  & .m-drawer {
+    --is-visible: var(--on);
+    /* transform: translateX(0); */
+    /* --overlay-opacity: 100%; */
+    /* --overlay-z-index: var(--_layout-overlay-z-index); */
+    /* transition: transform 0.5s ease; */
+  }
 }
 
 /* 
@@ -247,41 +269,76 @@
 /* 
  * 3.5 Modal button modifiers
  */
-.app:has(#center-modal:checked) ~ .controller .m-modal {
-  --top-modal: 50svh;
-  --modal-translate-y: -50%;
+.app {
+  &:has(#center-modal):checked {
+    & .m-modal {
+      --top-modal: 50svh;
+      --modal-translate-y: -50%;
+    }
+
+    & .m-modal__footer label[for='center-modal']::after {
+      content: 'Put me on top';
+    }
+  }
+
+  &:has(#brutalist-modal):checked {
+    & .m-modal {
+      --raw: var(--TRUE);
+      --dialog-bg: var(--theme-color);
+      --dialog-border: var(--border-bg);
+      --dialog-box-shadow: none;
+    }
+
+    & .m-modal .m-modal__title,
+    & .m-modal p,
+    & .m-modal span,
+    & .m-modal label::after {
+      --mix-blend-mode: difference;
+      color: var(--color-bg);
+    }
+
+    & .m-modal .m-modal__header,
+    & .m-modal .m-modal__footer {
+      border-color: var(--color-bg);
+    }
+
+    & .m-modal__footer label[for='brutalist-modal']::after {
+      content: 'Classic Modal';
+    }
+  }
 }
 
-.app:has(#center-modal:checked)
+/* 
+.app:has(#center-modal):checked
   ~ .controller
   .m-modal__footer
   label[for='center-modal']::after {
   content: 'Put me on top';
-}
+} */
 
-.app:has(#brutalist-modal:checked)
+.app:has(#brutalist-modal):checked
   ~ .controller
   .m-modal__footer
   label[for='brutalist-modal']::after {
   content: 'Classic Modal';
 }
 
-.app:has(#brutalist-modal:checked) ~ .controller .m-modal {
+.app:has(#brutalist-modal):checked ~ .controller .m-modal {
   --raw: var(--FALSE);
   --dialog-bg: var(--theme-color);
   --dialog-border: var(--border-bg);
   --dialog-box-shadow: none;
 }
 
-.app:has(#brutalist-modal:checked) ~ .controller .m-modal .m-modal__title,
-.app:has(#brutalist-modal:checked) ~ .controller .m-modal p,
-.app:has(#brutalist-modal:checked) ~ .controller .m-modal span,
-.app:has(#brutalist-modal:checked) ~ .controller .m-modal label::after {
+.app:has(#brutalist-modal):checked ~ .controller .m-modal .m-modal__title,
+.app:has(#brutalist-modal):checked ~ .controller .m-modal p,
+.app:has(#brutalist-modal):checked ~ .controller .m-modal span,
+.app:has(#brutalist-modal):checked ~ .controller .m-modal label::after {
   --mix-blend-mode: difference;
   color: var(--color-bg);
 }
 
-.app:has(#brutalist-modal:checked) ~ .controller .m-modal .m-modal__header,
-.app:has(#brutalist-modal:checked) ~ .controller .m-modal .m-modal__footer {
+.app:has(#brutalist-modal):checked ~ .controller .m-modal .m-modal__header,
+.app:has(#brutalist-modal):checked ~ .controller .m-modal .m-modal__footer {
   border-color: var(--color-bg);
 }

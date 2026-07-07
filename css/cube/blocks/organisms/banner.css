@@ -68,9 +68,6 @@
 .banner__description {
   font-family: 'ImpactLabelReversed';
   width: clamp(14rem, 100%, 100rem);
-  /* font-size: var(--text-xl); */
-  /* font-size: var(--text-2); */
-  font-size: var(--text-lg);
 }
 
 @media (min-width: 64rem) {

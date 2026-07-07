@@ -59,19 +59,23 @@
     -webkit-background-clip: padding-box, text;
     background-clip: padding-box, text;
 
-    transition: background-size 500ms ease, color 500ms ease;
+    transition:
+      background-size 500ms ease,
+      color 500ms ease;
   }
 
   /* HOVER IN: anchor left, then expand */
   .-highlighted.-animate:hover > span {
-    background-position: left; /* discrete, not transitioned */
+    background-position: left;
+    /* discrete, not transitioned */
     background-size: 100% 100%;
     color: var(--color-bg);
   }
 
   /* HOVER OUT: anchor right, then shrink */
   .-highlighted.-animate:not(:hover) > span {
-    background-position: right; /* discrete */
+    background-position: right;
+    /* discrete */
     background-size: 0% 100%;
     color: var(--color-primary);
   }

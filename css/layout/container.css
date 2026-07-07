@@ -1,4 +1,4 @@
-/* https://css-tricks.com/use-css-clamp-to-create-a-more-flexible-wrapper-utility/ */
+/* https://css-tricks.com/use-css-clamp-to-create-a-more-flexible-wrapper-utilities/ */
 .container {
   /* --theme-color: oklch(from var(--color-theme-default) h s l / 100%); */
   position: relative;

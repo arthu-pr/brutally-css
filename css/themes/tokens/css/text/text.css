@@ -23,10 +23,10 @@
   --text-body-size: var(--font-scale-0);
   --text-body-line-height: 1.5;
   --text-body-weight: var(--font-weight-regular);
-  --text-caption-size: var(--font-scale--2);
+  --text-caption-size: var(--font-scale-2);
   --text-caption-line-height: 1.4;
   --text-caption-weight: var(--font-weight-regular);
-  --text-small-size: var(--font-scale--1);
+  --text-small-size: var(--font-scale-1);
   --text-small-line-height: 1.4;
   --text-small-weight: var(--font-weight-regular);
   --component-text-lightness: calc(var(--color-text-lightness) + var(--variant-text-lightness) + var(--state-text-lightness));

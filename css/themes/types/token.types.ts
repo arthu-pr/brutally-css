@@ -22,12 +22,155 @@ export interface DesignTokens {
       default: string;
     };
     radius: {
+      '0': string;
       '1': string;
       '2': string;
       '4': string;
-      base: string;
-      '0.5': string;
+      '5': string;
+      '6': string;
+      '8': string;
+      '10': string;
+      '9999': string;
       scale: string;
+    };
+  };
+  'breakpoint-pool': {
+    tailwind: {
+      sm: string;
+      md: string;
+      lg: string;
+      xl: string;
+      '2xl': string;
+    };
+    bootstrap: {
+      xs: string;
+      sm: string;
+      md: string;
+      lg: string;
+      xl: string;
+      xxl: string;
+    };
+    'material-ui': {
+      xs: string;
+      sm: string;
+      md: string;
+      lg: string;
+      xl: string;
+    };
+    'ant-design': {
+      xs: string;
+      sm: string;
+      md: string;
+      lg: string;
+      xl: string;
+      xxl: string;
+    };
+    'chakra-ui': {
+      sm: string;
+      md: string;
+      lg: string;
+      xl: string;
+      '2xl': string;
+    };
+    foundation: {
+      small: string;
+      medium: string;
+      large: string;
+      xlarge: string;
+      xxlarge: string;
+    };
+    'ibm-carbon': {
+      sm: string;
+      md: string;
+      lg: string;
+      xl: string;
+      max: string;
+    };
+    atlassian: {
+      sm: string;
+      md: string;
+      lg: string;
+      xl: string;
+    };
+    'shopify-polaris': {
+      xs: string;
+      sm: string;
+      md: string;
+      lg: string;
+      xl: string;
+    };
+    govuk: {
+      mobile: string;
+      tablet: string;
+      desktop: string;
+    };
+    apple: {
+      iphone: string;
+      iphonePlus: string;
+      ipad: string;
+      ipadPro: string;
+      desktop: string;
+    };
+    'ultra-wide': {
+      desktop: string;
+      wide: string;
+      ultra: string;
+      max: string;
+    };
+    bulma: {
+      tablet: string;
+      desktop: string;
+      widescreen: string;
+      fullhd: string;
+    };
+    primer: {
+      sm: string;
+      md: string;
+      lg: string;
+      xl: string;
+    };
+    'fluent-ui': {
+      sm: string;
+      md: string;
+      lg: string;
+      xl: string;
+    };
+    'adobe-spectrum': {
+      s: string;
+      m: string;
+      l: string;
+      xl: string;
+      xxl: string;
+    };
+    'salesforce-lightning': {
+      small: string;
+      medium: string;
+      large: string;
+      xlarge: string;
+    };
+    mantine: {
+      xs: string;
+      sm: string;
+      md: string;
+      lg: string;
+      xl: string;
+    };
+    vuetify: {
+      xs: string;
+      sm: string;
+      md: string;
+      lg: string;
+      xl: string;
+      xxl: string;
+    };
+    'open-props': {
+      xxs: string;
+      xs: string;
+      sm: string;
+      md: string;
+      lg: string;
+      xl: string;
+      xxl: string;
     };
   };
   breakpoint: {
@@ -88,6 +231,90 @@ export interface DesignTokens {
       base: string;
     };
     'vanilla-cream': {
+      '100': string;
+      '200': string;
+      '300': string;
+      '400': string;
+      '500': string;
+      '600': string;
+      '700': string;
+      '800': string;
+      '900': string;
+      base: string;
+    };
+    'blue-tz': {
+      '100': string;
+      '200': string;
+      '300': string;
+      '400': string;
+      '500': string;
+      '600': string;
+      '700': string;
+      '800': string;
+      '900': string;
+      base: string;
+    };
+    'eastern-blue': {
+      '100': string;
+      '200': string;
+      '300': string;
+      '400': string;
+      '500': string;
+      '600': string;
+      '700': string;
+      '800': string;
+      '900': string;
+      base: string;
+    };
+    'yellow-sun': {
+      '100': string;
+      '200': string;
+      '300': string;
+      '400': string;
+      '500': string;
+      '600': string;
+      '700': string;
+      '800': string;
+      '900': string;
+      base: string;
+    };
+    'yellow-tz': {
+      '100': string;
+      '200': string;
+      '300': string;
+      '400': string;
+      '500': string;
+      '600': string;
+      '700': string;
+      '800': string;
+      '900': string;
+      base: string;
+    };
+    'blue-sun-light': {
+      '100': string;
+      '200': string;
+      '300': string;
+      '400': string;
+      '500': string;
+      '600': string;
+      '700': string;
+      '800': string;
+      '900': string;
+      base: string;
+    };
+    'river-bed-my-pant': {
+      '100': string;
+      '200': string;
+      '300': string;
+      '400': string;
+      '500': string;
+      '600': string;
+      '700': string;
+      '800': string;
+      '900': string;
+      base: string;
+    };
+    grey: {
       '100': string;
       '200': string;
       '300': string;
@@ -359,15 +586,6 @@ export interface DesignTokens {
     };
   };
   font: {
-    scale: {
-      '0': string;
-      '1': string;
-      '2': string;
-      '3': string;
-      '4': string;
-      '5': string;
-      '6': string;
-    };
     minFont: string;
     maxFont: string;
     minViewport: string;
@@ -376,20 +594,44 @@ export interface DesignTokens {
     scaleMax: string;
     steps: string;
     weight: {
+      thin: string;
       light: string;
       normal: string;
       medium: string;
       bold: string;
+      black: string;
+    };
+    lineHeight: {
+      '1': string;
+      '2': string;
+      '3': string;
+      '4': string;
+      '5': string;
+      '6': string;
+      '7': string;
+      '8': string;
+    };
+    scale: {
+      '0': string;
+      '1': string;
+      '2': string;
+      '3': string;
+      '4': string;
+      '5': string;
+      '6': string;
+      '7': string;
+      '8': string;
     };
   };
+  opacity: string;
   shadow: {
-    base: string;
-    scale: string;
     xs: string;
     sm: string;
     md: string;
     lg: string;
     xl: string;
+    base: string;
+    scale: string;
   };
   space: {
     fluid: {
@@ -412,6 +654,11 @@ export interface DesignTokens {
       xl: string;
       xxl: string;
     };
+  };
+  stacking: {
+    '1': string;
+    base: string;
+    'scale-ratio': string;
   };
   layout: {
     breakAt: string;
@@ -449,6 +696,23 @@ export interface DesignTokens {
     'depth-base': string;
     mobile: {
       padding: string;
+    };
+  };
+  theme: {
+    radius: string;
+    'shadow-base': string;
+    'shadow-base-all': string;
+    'shadow-scale': string;
+    'stack-index': {
+      default: string;
+      root: string;
+      overlay: string;
+      hidden: string;
+    };
+    opacity: {
+      hidden: string;
+      half: string;
+      visible: string;
     };
   };
   radius: {
@@ -513,6 +777,16 @@ export interface DesignTokens {
       lineHeight: string;
       weight: string;
     };
+    h3: {
+      size: string;
+      lineHeight: string;
+      weight: string;
+    };
+    h4: {
+      size: string;
+      lineHeight: string;
+      weight: string;
+    };
   };
   component: {
     bg: {
@@ -549,6 +823,9 @@ export interface DesignTokens {
   };
   cube: {
     block: {
+      'block-padding-x': string;
+      'block-padding-y': string;
+      'block-padding': string;
       card: {
         bg: string;
         border: string;
@@ -566,6 +843,14 @@ export interface DesignTokens {
       checkbox: {
         bg: string;
         padding: string;
+      };
+      dialog: {
+        bg: string;
+        border: string;
+        radius: string;
+        padding: string;
+        'stacking-index': string;
+        opacity: string;
       };
     };
     composition: {
@@ -595,7 +880,7 @@ export interface DesignTokens {
       on: string;
       off: string;
     };
-    utility: {
+    utilities: {
       margin: {
         't-0': string;
         't-xs': string;
@@ -677,11 +962,11 @@ export interface DesignTokens {
         'top-lg': string;
         'top-xl': string;
         'bottom-0': string;
+        block: string;
+        'block-x': string;
+        'block-y': string;
       };
-      text: {
-        center: string;
-        dim: string;
-      };
+      'text-center': string;
       border: {
         solid: string;
         dashed: string;
@@ -754,6 +1039,19 @@ export interface DesignTokens {
         inset: string;
         info: string;
         success: string;
+      };
+      heading: {
+        h1: string;
+        h2: string;
+        h3: string;
+        h4: string;
+        h5: string;
+        h6: string;
+      };
+      text: {
+        body: string;
+        caption: string;
+        small: string;
       };
     };
   };
@@ -928,5 +1226,11 @@ export interface DesignTokens {
       scaler: string;
       left: string;
     };
+  };
+  tricks: {
+    'is-toggled': string;
+    'is-not-toggled': string;
+    yes: string;
+    no: string;
   };
 }

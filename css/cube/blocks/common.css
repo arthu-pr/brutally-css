@@ -97,11 +97,7 @@
    * Pseudo-boolean CSS custom properties - https://keithclark.co.uk/articles/pseudo-boolean-css-custom-properties
    * Define colors based on component state 
    */
-  --component-color: color-mix(
-    in srgb,
-    var(--font-color) calc(100% * var(--primary, 0)),
-    var(--theme-color)
-  );
+  --component-color: var(--primary, var(--color-contrast-high));
 
   --component-bg: color-mix(
     in srgb,
