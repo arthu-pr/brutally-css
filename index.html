@@ -3,51 +3,8 @@
     <title>Brutally CSS</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <!-- <link href="css/main.css" rel="stylesheet" />
-    <link href="css/layouts/wrapper.css" rel="stylesheet" /> -->
-    <!-- Base -->
-    <!-- <link href="css/base/reset.css" rel="stylesheet" />
-    <link href="css/base/helpers.css" rel="stylesheet" />
-    <link href="css/base/colors.css" rel="stylesheet" />
-    <link href="css/base/spacing.css" rel="stylesheet" />
-    <link href="css/base/animations.css" rel="stylesheet" />
-    <link href="css/base/variables.css" rel="stylesheet" /> -->
-    <!-- Utils -->
-    <!-- <link href="css/utils/variables.css" rel="stylesheet" />
-    <link href="css/utils.css" rel="stylesheet" />
-    <link href="css/utils/screens.css" rel="stylesheet" />
-    <link href="css/blocks/common.css" rel="stylesheet" />
-    <link href="css/banner.css" rel="stylesheet" />
-    <link href="css/utils/viewport.css" rel="stylesheet" /> -->
-    <!-- Atoms -->
-    <!-- <link href="css/blocks/atoms/overlay.css" rel="stylesheet" />
-    <link href="css/blocks/atoms/typography.css" rel="stylesheet" />
-    <link href="css/blocks/atoms/typewriter.css" rel="stylesheet" />
-    <link href="css/blocks/atoms/input.css" rel="stylesheet" />
-    <link href="css/blocks/atoms/buttons.css" rel="stylesheet" />
-    <link href="css/blocks/atoms/code.css" rel="stylesheet" />
-    <link href="css/blocks/atoms/link.css" rel="stylesheet" /> -->
-    <!-- Molecules -->
-    <!-- <link href="css/blocks/molecules/form.css" rel="stylesheet" />
-    <link href="css/blocks/molecules/shake.css" rel="stylesheet" />
-    <link href="css/blocks/molecules/dynamic-form.css" rel="stylesheet" />
-    <link href="css/blocks/molecules/list.css" rel="stylesheet" />
-    <link href="css/blocks/molecules/modal.css" rel="stylesheet" />
-    <link href="css/blocks/molecules/section.css" rel="stylesheet" />
-    <link href="css/blocks/molecules/navbar.css" rel="stylesheet" /> -->
-    <!-- Organisms -->
-    <!-- <link href="css/blocks/organisms/grid.css" rel="stylesheet" /> -->
-    <!-- <link href="css/blocks/organisms/how-does-it-work.css" rel="stylesheet" /> -->
-    <!-- <link href="css/blocks/organisms/theme-bar.css" rel="stylesheet" /> -->
-    <!-- <link href="css/blocks/organisms/info-section.css" rel="stylesheet" /> -->
-    <!-- Animations -->
-    <!-- <link href="css/animations/highlighted.css" rel="stylesheet" /> -->
-    <!-- <link href="css/animations/vertical.css" rel="stylesheet" /> -->
-    <!-- <link href="css/animations/modifier.css" rel="stylesheet" /> -->
-
-    <!-- <link href="css/theme.css" rel="stylesheet" /> -->
-
-    <!-- <link rel="stylesheet" href="css/themes/brutally-css.css" /> -->
+    <!-- All CSS is bundled from css/main.css into css/main.min.css
+         (see README.md "Get Started" for the build command). -->
     <link href="css/main.min.css" rel="stylesheet" />
 
     <link rel="icon" type="image/x-icon" href="/favicon/favicon.ico" />
@@ -103,58 +60,32 @@
       <!-- Modal -->
       <!-- states -->
       <input
-        aria-hidden="true"
-        data-dialog
         type="checkbox"
         id="modal"
-        class="a-modifier"
-      />
-      <input
-        aria-hidden="true"
-        data-dialog
-        type="checkbox"
-        id="drawer"
+        data-dialog-toggle="modal"
         class="a-modifier"
       />
       <input
         id="drawer-settings"
-        data-dialog
         type="checkbox"
+        data-dialog-toggle="drawer-settings"
         class="a-modifier"
       />
-      <input
-        aria-hidden="true"
-        type="checkbox"
-        id="center-modal"
-        class="a-modifier"
-      />
-      <input
-        aria-hidden="true"
-        type="checkbox"
-        id="brutalist-modal"
-        class="a-modifier"
-      />
-      <input
-        aria-hidden="true"
-        type="checkbox"
-        id="close-modal"
-        class="a-modifier"
-      />
+      <input type="checkbox" id="center-modal" class="a-modifier" />
+      <input type="checkbox" id="brutalist-modal" class="a-modifier" />
       <!--TODO: part of theming -->
       <input type="checkbox" id="zoom-in" class="a-modifier" />
       <input type="checkbox" id="zoom-out" class="a-modifier" />
 
-      <!-- Triggers -->
-      <label for="modal" class="a-overlay"></label>
-      <label for="drawer-settings" class="a-overlay"></label>
-
       <!-- Modal Component -->
+      <label for="modal" data-dialog class="a-overlay"></label>
       <div
-        class="m-modal"
+        class="m-modal border-theme"
         id="modal"
         aria-modal="true"
         role="dialog"
         tabindex="-1"
+        data-dialog="modal"
       >
         <div class="m-modal__header">
           <h3 class="m-modal__title">Modal title</h3>
@@ -171,19 +102,23 @@
           <label class="a-btn theme" for="modal"><span>Close</span></label>
         </div>
       </div>
+      <div class=""></div>
 
+      <!-- Triggers -->
+      <label for="drawer-settings" data-dialog class="a-overlay"></label>
       <!-- Drawer Component -->
       <div
-        class="m-drawer"
+        class="m-drawer border-theme"
         id="drawer-settings"
         aria-modal="true"
         role="dialog"
         tabindex="-1"
+        data-dialog="drawer"
       >
-        <div class="m-modal__header">
-          <h3 class="m-modal__title">Settings</h3>
+        <div class="m-drawer__header">
+          <h3 class="m-drawer__title">Settings</h3>
         </div>
-        <div class="m-modal__content flow">
+        <div class="m-drawer__content flow">
           <div class="m-form">
             <div class="m-form-group">
               <label for="setting-1">Setting 1</label>
@@ -200,8 +135,10 @@
             </div>
           </div>
         </div>
-        <div class="m-modal__footer">
-          <a class="a-btn theme" href="#/">Close</a>
+        <div class="m-drawer__footer">
+          <label class="a-btn theme" for="drawer-settings">
+            <span>Close</span>
+          </label>
         </div>
       </div>
 
@@ -211,16 +148,9 @@
           <div class="main-content">
             <div class="banner">
               <nav class="m-navbar">
-                <svg
-                  class="m-navbar_menu screen-sm"
-                  viewBox="0 0 100 80"
-                  width="40"
-                  height="40"
-                >
-                  <rect width="100" height="20" rx="8"></rect>
-                  <rect y="30" width="100" height="20" rx="8"></rect>
-                  <rect y="60" width="100" height="20" rx="8"></rect>
-                </svg>
+                <div class="hamburger-menu screen-sm">
+                  <input class="" />
+                </div>
                 <ul class="flex flex-grow justify-between">
                   <li>
                     <a class="a-link theme" href="/components">Components</a>
@@ -492,14 +422,6 @@
                       data-component-label="Modal"
                     >
                       <span>Open Modal</span>
-                    </label>
-                    <label
-                      role="button"
-                      for="drawer"
-                      class="a-btn theme -relative"
-                      data-component-label="Drawer"
-                    >
-                      <span>Open Drawer</span>
                     </label>
                   </div>
                 </article>
@@ -786,8 +708,13 @@
           <!-- How does it work? -->
           <section class="o-howDoesItWork">
             <div class="o-howDoesItWork__header">
-              <!-- <label role="button" for="how-does-it-work-back" class="o-howDoesItWork__backBtn a-btn theme m-0"
-            aria-label="back-button"> Back </label> -->
+              <label
+                role="button"
+                for="how-does-it-work-back"
+                class="o-howDoesItWork__backBtn a-btn theme m-0"
+                aria-label="back-button"
+                >Back</label
+              >
               <h2 class="m-0">How Does It Work?</h2>
             </div>
             <div class="o-howDoesItWork__content">
@@ -824,7 +751,7 @@
                     Building a Scalable CSS Architecture With BEM and Utility Classes
                   </p>
                   <a class="a-link"
-                    href="https://css-tricks.com/building-a-scalable-css-architecture-with-bem-and-utility-classes/">Building
+                    href="https://css-tricks.com/building-a-scalable-css-architecture-with-bem-and-utilities-classes/">Building
                     a
                     Scalable CSS Architecture With BEM and Utility Classes</a>
                 </li> -->
@@ -897,14 +824,14 @@
                         Pseudo-boolean CSS custom properties
                       </a>
                       <pre data-code="css"><code>
-                      `--icon-visible: 1;
+                        `--icon-visible: 1;
                         .icon {
-                          width: calc(16px * var(--icon-visible, 1));
+                        width: calc(16px * var(--icon-visible, 1));
                         }
 
                         /* Later */
                         --icon-visible: 0;`
-                    </code></pre>
+                      </code></pre>
                     </li>
                     <li class="m-list__item">
                       <h4>
@@ -916,20 +843,20 @@
                         depending on the child(ren)
                       </p>
                       <pre data-code="css">
-                    <code>
-                      .dynamic-form {
+                      <code>
+                        .dynamic-form {
                         container: dynamic-form;
                         container-type: inline-size;
                         --unstyled: 0;
                         --border-color: var(--theme-color);
-                      }
+                        }
 
-                      .dynamic-form:has(#ready:not(:checked)) {
+                        .dynamic-form:has(#ready:not(:checked)) {
                         --unstyled: 1;
                         --border-color: transparent;
-                      }
-                    </code>
-                  </pre>
+                        }
+                      </code>
+                    </pre>
                       <a
                         class="a-link"
                         href="https://ishadeed.com/article/css-has-guide/"
@@ -1097,26 +1024,6 @@
           </section>
         </div>
       </div>
-
-      <!-- Drawer Component -->
-      <!-- <label for="drawer" class="a-overlay"></label>
-      <div
-        class="m-drawer flex flex-column justify-between"
-        id="drawer"
-        aria-modal="true"
-        role="dialog"
-        tabindex="-1"
-      >
-        <div class="m-modal__header">
-          <h3 class="m-modal__title">Drawer Component</h3>
-        </div>
-        <div class="m-modal__content">
-          <p>Example of a drawer component.</p>
-        </div>
-        <div class="m-modal__footer">
-          <label class="a-btn theme" for="drawer"><span>Close</span></label>
-        </div>
-      </div> -->
     </div>
   </body>
 </html>

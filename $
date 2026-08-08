@@ -1,0 +1,115 @@
+/* .m-modal-container {
+  opacity: 0;
+  position: fixed;
+  inset: 0;
+}
+@property --modal-translate-x {
+  syntax: '<percentage>';
+  initial-value: -50%;
+  inherits: false;
+} */
+
+.m-modal,
+.m-drawer {
+  --dialog-bg: var(--color-bg-neutral);
+  --dialog-border: var(--border-theme);
+  --dialog-box-shadow: var(--box-shadow-base);
+}
+
+.m-dialog,
+[aria-modal="true"][role="dialog"] {
+  /* Dialog should be above the overlay */
+  --dialog-z-index: calc(var(--overlay-z-index) + 1);
+  z-index: var(--dialog-z-index);
+
+  --dialog-opacity: calc(var(--overlay-opacity) + 1);
+  opacity: var(--dialog-opacity);
+}
+
+.m-modal {
+  --top-modal: 50%;
+  --top-modal: var(--space-sm);
+  --modal-translate-y: 0;
+  --modal-translate-x: -50%;
+  --box-shadow-x: 8px;
+  --box-shadow-y: 8px;
+  --raw: var(--TRUE);
+
+  /* opacity: var(--overlay-opacity); */
+  /* --modal-z-index: calc(var(--overlay-z-index) + 10); */
+  /* z-index: var(--modal-z-index); */
+  margin: 0;
+  width: 692px;
+  max-width: calc(100% - 2 * var(--border-width));
+
+  position: absolute;
+  left: 0;
+  top: var(--top-modal);
+  /* transition: var(--drawer-transition, trannslate(0 0)); */
+  transform: translate(var(--modal-translate-x), var(--modal-translate-y));
+}
+
+.m-drawer {
+  --left-drawer: var(--off);
+  --left-position: var(--left-drawer) 0;
+  --is-right-position: 0 var(--left-drawer);
+  width: clamp(260px, 65%, 896px);
+  position: fixed;
+  top: 0;
+  height: 100svh;
+  transform: var(--drawer-translate-x, translateX(100%));
+  transition: transform 0.5s ease;
+
+  &[data-position="left"] {
+    right: auto;
+    left: 0;
+  }
+
+  &[data-position="right"] {
+    left: auto;
+    right: 0;
+  }
+}
+
+.m-modal:hover {
+  box-shadow: var(--dialog-box-shadow);
+}
+
+.m-modal__header {
+  padding: var(--space-md);
+  border-bottom: var(--border-theme-10);
+}
+
+.m-modal__header:hover::first-letter {
+  mix-blend-mode: difference;
+}
+
+.m-modal__title {
+  margin: 0;
+}
+
+.m-modal__title:hover::first-letter {
+  color: blue;
+}
+
+.m-modal__content {
+  padding: var(--space-md);
+}
+
+.m-modal__footer {
+  text-align: left;
+  padding: var(--space-md);
+  border-top: var(--border-theme-10);
+}
+
+.m-modal .a-btn {
+  margin-bottom: 0;
+}
+
+.m-modal__footer label[for="center-modal"]::after {
+  content: "Center me";
+}
+
+.m-modal__footer label[for="brutalist-modal"]::after {
+  content: "Brutalist Modal";
+}
