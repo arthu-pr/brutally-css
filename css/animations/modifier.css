@@ -73,8 +73,9 @@
  * 2 - "How does it work?" section
  */
 
-.app:has(#how-does-it-work:checked) .layout {
+.app:has(`#how-does-it-work`:checked) .layout {
   --layout-transform-value: var(--layout-translate-howDoesItWork);
+
   transform: translateX(calc(-100svw + var(--theme-bar-width)));
 }
 
