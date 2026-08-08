@@ -29,8 +29,13 @@
 
 /* =====================================================
    Base & resets
+   reset.css is layered (lower than `layout` below) so composition
+   primitives can still set margin/etc. on top of it - an unlayered
+   reset would always win over ANY layered rule regardless of
+   specificity, which defeats a reset's whole purpose of being the
+   lowest-priority defaults.
    ===================================================== */
-@import './base/reset.css';
+@import './base/reset.css' layer(reset);
 @import './base/colors.css';
 @import './base/animations.css';
 
@@ -81,8 +86,12 @@
    unlayered component/utility rules, instead of relying on import
    order to stay overridable.
    ===================================================== */
+@import './cube/layout/center.css' layer(layout);
 @import './cube/layout/cluster.css' layer(layout);
+@import './cube/layout/cover.css' layer(layout);
 @import './cube/layout/flow.css' layer(layout);
+@import './cube/layout/reel.css' layer(layout);
+@import './cube/layout/region.css' layer(layout);
 @import './cube/layout/stack.css' layer(layout);
 @import './cube/layout/switcher.css' layer(layout);
 @import './cube/layout/wrapper.css' layer(layout);
