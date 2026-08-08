@@ -27,51 +27,43 @@
 
 /* 1 - Theme Bar */
 
-.state:has(#zoom-in:checked) + .controller {
+.app:has(#zoom-in:checked) {
   --spacing: var(--space-xs);
 }
 
-.state:has(#zoom-out:checked) + .controller {
+.app:has(#zoom-out:checked) {
   --spacing: var(--space-xxl);
 }
 
-#zoom-out:checked {
-  --spacing: var(--space-xxl);
-}
-
-:target .primary-yellow {
-  fill: var(--color-primary);
-}
-
-#warm-pink:target {
+.app:has(#warm-pink:target) {
   --theme-color: var(--theme-warm-pink);
 }
 
-#warm-pink:target .warm-pink {
+.app:has(#warm-pink:target) .warm-pink {
   fill: var(--theme-warm-pink);
 }
 
-#red:target {
+.app:has(#red:target) {
   --theme-color: var(--theme-red);
 }
 
-#red:target .red {
+.app:has(#red:target) .red {
   fill: var(--theme-red);
 }
 
-#erotic-blue:target {
+.app:has(#erotic-blue:target) {
   --theme-color: var(--theme-erotic-blue);
 }
 
-#erotic-blue:target .erotic-blue {
+.app:has(#erotic-blue:target) .erotic-blue {
   fill: var(--theme-erotic-blue);
 }
 
-:target {
+.app:has(:target) {
   --theme-color: var(--color-primary);
 }
 
-:target .primary-yellow {
+.app:has(:target) .primary-yellow {
   fill: var(--color-primary);
 }
 
@@ -81,12 +73,12 @@
  * 2 - "How does it work?" section
  */
 
-#how-does-it-work:checked .layout {
+.app:has(#how-does-it-work:checked) .layout {
   --layout-transform-value: var(--layout-translate-howDoesItWork);
   transform: translateX(calc(-100svw + var(--theme-bar-width)));
 }
 
-#how-does-it-work-back:checked .layout {
+.app:has(#how-does-it-work-back:checked) .layout {
   --layout-transform-value: var(--layout-translate-main);
   transform: translateX(0);
 }

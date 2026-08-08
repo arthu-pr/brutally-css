@@ -39,8 +39,7 @@
   --dialog-z-index: var(--is-visible) calc(var(--overlay-z-index) + 10);
   z-index: var(--dialog-z-index, -1000);
 
-  --dialog-opacity: var(--is-visible) calc(var(--overlay-opacity) + 1);
-  opacity: var(--dialog-opacity, -100%);
+  opacity: var(--overlay-opacity, 0%);
 }
 
 .m-modal {
@@ -61,6 +60,7 @@
   left: 50%;
   top: var(--top-modal);
 
+  transition: opacity 0.3s ease;
   transform: translate(var(--modal-translate-x), var(--modal-translate-y));
 }
 
@@ -72,7 +72,9 @@
   bottom: 0;
   height: 100svh;
   /* transform: var(--drawer-translate-x, translateX(100%)); */
-  transition: transform 0.5s ease;
+  transition:
+    transform 0.5s ease,
+    opacity 0.3s ease;
   --drawer-translate-x: var(--is-visible) 0;
   transform: translateX(var(--drawer-translate-x, -100%));
 }
