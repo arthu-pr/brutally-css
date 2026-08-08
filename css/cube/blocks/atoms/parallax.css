@@ -7,13 +7,13 @@
   scrollbar-width: none;
 
   /* Parallax background */
-  & + *,
+  /* & > *, */
   & > .parallax-back {
     position: absolute;
     inset: 0;
-    transform: translateZ(-1px) scale(2);
+    transform: translateZ(-2px) scale(2);
 
-    & + * + *,
+    /* & + * + *, */
     & > .parallax-content {
       transform: translateZ(0);
     }
