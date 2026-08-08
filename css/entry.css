@@ -187,6 +187,12 @@ h4::after {
   /* animation: 2.5s cubic-bezier(0.25, 1, 0.3, 1) wipe-in-left both; */
 }
 
+/* =====================================================
+   Below this point is this playground's own page shell/demo layout
+   (.controller, .layout, the grid demo rules) - not reusable library
+   CSS, kept here because it's specific to this site's markup.
+   ===================================================== */
+
 /*
   * Controller
   * Main wrapper - called this way as many interations in the app depend on it

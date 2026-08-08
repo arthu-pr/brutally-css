@@ -1,0 +1,8 @@
+/*
+ * Region — vertical breathing room for a page section.
+ * https://every-layout.dev/
+ */
+.region {
+  padding-block: var(--_region-padding, var(--space-xl));
+  position: relative;
+}

@@ -1,0 +1,72 @@
+/*
+ * Reel — full-bleed horizontal scroller with snap points.
+ * https://every-layout.dev/layouts/reel/
+ *
+ * CSS-only version: the original Every Layout reel pairs this with JS for
+ * wheel-redirect, drag-to-scroll and a position counter. This playground
+ * has none of that, so it relies on native touch/trackpad/shift+wheel
+ * scrolling and `scroll-snap-type` alone.
+ */
+.reel-shell {
+  flex: 1;
+  min-inline-size: 0;
+}
+
+.reel {
+  display: flex;
+  align-items: center;
+  block-size: clamp(220px, 115px + 32vw, 520px);
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x proximity;
+  overscroll-behavior-x: contain;
+  padding-block-end: var(--space-sm);
+}
+
+.reel::-webkit-scrollbar {
+  height: 30px;
+}
+
+.reel::-webkit-scrollbar-thumb {
+  background-color: var(--theme-color);
+}
+
+@media (min-width: 640px) {
+  .reel::-webkit-scrollbar-thumb {
+    border-right: 0.85rem solid var(--color-bg);
+    background-clip: padding-box;
+    border-top: none;
+    border-bottom: none;
+    border-left: none;
+  }
+}
+
+/* Firefox */
+@supports not selector(::-webkit-scrollbar) {
+  .reel {
+    scrollbar-color: var(--theme-color) var(--color-bg);
+  }
+}
+
+.reel > * {
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+}
+
+.reel > img {
+  block-size: calc(100% - var(--space-xl));
+  flex-basis: auto;
+  width: auto;
+}
+
+.reel > *:nth-child(odd) {
+  align-self: flex-end;
+}
+
+.reel > *:nth-child(even) {
+  align-self: flex-start;
+}
+
+.reel > * + * {
+  margin-inline-start: var(--space-md);
+}

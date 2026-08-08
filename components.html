@@ -193,7 +193,8 @@
 
         <!-- Parallax -->
         <section class="box" data-box-title="Parallax">
-          <div class="parallax height-quarter">
+          <div class="parallax height-half">
+            <!-- Paralax background -->
             <div class="parallax-back height-screen">
               <div class="dice" style="--top: 95%; --left: 50%"></div>
               <div class="dice" style="--top: 30%; --left: 1%"></div>
@@ -205,6 +206,7 @@
               <div class="dice" style="--top: 120%; --left: 90%"></div>
               <div class="dice" style="--top: 102%; --left: 90%"></div>
             </div>
+            <!-- Parallax content -->
             <div class="parallax-content">
               <p class="lorem">
                 <span></span>
@@ -261,6 +263,63 @@
   &lt;/div&gt;
 &lt;/div&gt;</code>
     </pre>
+              </li>
+            </ol>
+          </details>
+        </section>
+
+        <!-- Card -->
+        <section class="box" data-box-title="Card">
+          <table class="m-table text-theme">
+            <thead class="bg-theme" style="--theme-color-lightness: 1">
+              <tr>
+                <th>Header 1</th>
+                <th>Header 2</th>
+                <th>Header 3</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Row 1, Cell 1</td>
+                <td>Row 1, Cell 2</td>
+                <td>Row 1, Cell 3</td>
+              </tr>
+              <tr>
+                <td>Row 2, Cell 1</td>
+                <td>Row 2, Cell 2</td>
+                <td>Row 2, Cell 3</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <details>
+            <summary>
+              <span class="highlighted text-md"><span>How to?</span></span>
+            </summary>
+            <ol class="m-list">
+              <li class="m-list__item">
+                <h5>
+                  <span>`table-layout: fixed` on the table</span>
+                </h5>
+                <h5>border-collapse: collapse;</h5>
+                <p>
+                  This prevent extra space between table cells and ensures that
+                  if a border is applied, it will be shown.
+                </p>
+                <pre data-code="css">
+                    <code>
+.m-table {
+  table-layout: fixed;
+  border-collapse: collapse;
+  width: 100%;
+}
+                    </code>
+                  </pre>
+                <a
+                  class="a-link"
+                  href="https://css-tricks.com/complete-guide-table-element/"
+                  >HTML Table Element Guide (Chris Coyier on Aug 12, 2024)</a
+                >
               </li>
             </ol>
           </details>

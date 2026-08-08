@@ -9,7 +9,7 @@
   margin-inline: auto;
 } */
 
-/* https://css-tricks.com/use-css-clamp-to-create-a-more-flexible-wrapper-utility/ */
+/* https://css-tricks.com/use-css-clamp-to-create-a-more-flexible-wrapper-utilities/ */
 .wrapper {
   /* width: clamp(100%, 90vw, 70rem); */
   width: 100%;

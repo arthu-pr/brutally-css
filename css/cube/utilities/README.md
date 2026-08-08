@@ -1,4 +1,4 @@
-# Cube CSS Utilities ([source](https://cube.fyi/utility.html))
+# Cube CSS Utilities ([source](https://cube.fyi/utilities.html))
 
 - [viewport.css](./viewport.css): get viewport width and height units in CSS only
   Using `tan()` and `atan2()` function
@@ -23,7 +23,7 @@ atan2(opposite, adjacent) = angle-in-radians */
   --viewport-height: tan(atan2(var(--100svh), 1px));
 ```
 
-- [screen.css](./screens.css): utility to later specify values based on screen size without using media queries
+- [screen.css](./screens.css): utilities to later specify values based on screen size without using media queries
   Based on [css-media-vars](https://github.com/propjockey/css-media-vars/tree/master)
 
 Using the [CSS Space Toggle Tricks](https://css-tricks.com/the-css-custom-property-toggle-trick/), allowing runtime evaluation of CSS variables ([CSS is a programming language thanks to the Space Toggle trick](https://github.com/propjockey/css-sweeper?tab=readme-ov-file#css-is-a-programming-language-thanks-to-the-space-toggle-trick))
