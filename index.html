@@ -3,51 +3,8 @@
     <title>Brutally CSS</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <!-- <link href="css/main.css" rel="stylesheet" />
-    <link href="css/layouts/wrapper.css" rel="stylesheet" /> -->
-    <!-- Base -->
-    <!-- <link href="css/base/reset.css" rel="stylesheet" />
-    <link href="css/base/helpers.css" rel="stylesheet" />
-    <link href="css/base/colors.css" rel="stylesheet" />
-    <link href="css/base/spacing.css" rel="stylesheet" />
-    <link href="css/base/animations.css" rel="stylesheet" />
-    <link href="css/base/variables.css" rel="stylesheet" /> -->
-    <!-- Utils -->
-    <!-- <link href="css/utils/variables.css" rel="stylesheet" />
-    <link href="css/utils.css" rel="stylesheet" />
-    <link href="css/utils/screens.css" rel="stylesheet" />
-    <link href="css/blocks/common.css" rel="stylesheet" />
-    <link href="css/banner.css" rel="stylesheet" />
-    <link href="css/utils/viewport.css" rel="stylesheet" /> -->
-    <!-- Atoms -->
-    <!-- <link href="css/blocks/atoms/overlay.css" rel="stylesheet" />
-    <link href="css/blocks/atoms/typography.css" rel="stylesheet" />
-    <link href="css/blocks/atoms/typewriter.css" rel="stylesheet" />
-    <link href="css/blocks/atoms/input.css" rel="stylesheet" />
-    <link href="css/blocks/atoms/buttons.css" rel="stylesheet" />
-    <link href="css/blocks/atoms/code.css" rel="stylesheet" />
-    <link href="css/blocks/atoms/link.css" rel="stylesheet" /> -->
-    <!-- Molecules -->
-    <!-- <link href="css/blocks/molecules/form.css" rel="stylesheet" />
-    <link href="css/blocks/molecules/shake.css" rel="stylesheet" />
-    <link href="css/blocks/molecules/dynamic-form.css" rel="stylesheet" />
-    <link href="css/blocks/molecules/list.css" rel="stylesheet" />
-    <link href="css/blocks/molecules/modal.css" rel="stylesheet" />
-    <link href="css/blocks/molecules/section.css" rel="stylesheet" />
-    <link href="css/blocks/molecules/navbar.css" rel="stylesheet" /> -->
-    <!-- Organisms -->
-    <!-- <link href="css/blocks/organisms/grid.css" rel="stylesheet" /> -->
-    <!-- <link href="css/blocks/organisms/how-does-it-work.css" rel="stylesheet" /> -->
-    <!-- <link href="css/blocks/organisms/theme-bar.css" rel="stylesheet" /> -->
-    <!-- <link href="css/blocks/organisms/info-section.css" rel="stylesheet" /> -->
-    <!-- Animations -->
-    <!-- <link href="css/animations/highlighted.css" rel="stylesheet" /> -->
-    <!-- <link href="css/animations/vertical.css" rel="stylesheet" /> -->
-    <!-- <link href="css/animations/modifier.css" rel="stylesheet" /> -->
-
-    <!-- <link href="css/theme.css" rel="stylesheet" /> -->
-
-    <!-- <link rel="stylesheet" href="css/themes/brutally-css.css" /> -->
+    <!-- All CSS is bundled from css/main.css into css/main.min.css
+         (see README.md "Get Started" for the build command). -->
     <link href="css/main.min.css" rel="stylesheet" />
 
     <link rel="icon" type="image/x-icon" href="/favicon/favicon.ico" />
@@ -109,41 +66,16 @@
         class="a-modifier"
       />
       <input
-        type="checkbox"
-        id="drawer"
-        data-dialog-toggle="drawer"
-        class="a-modifier"
-      />
-      <input
         id="drawer-settings"
         type="checkbox"
         data-dialog-toggle="drawer-settings"
         class="a-modifier"
       />
-      <input
-        type="checkbox"
-        id="center-modal"
-        data-dialog-toggle="center-modal"
-        class="a-modifier"
-      />
-      <input
-        type="checkbox"
-        id="brutalist-modal"
-        data-dialog-toggle="brutalist-modal"
-        class="a-modifier"
-      />
-      <input
-        type="checkbox"
-        id="close-modal"
-        data-dialog-toggle="close-modal"
-        class="a-modifier"
-      />
+      <input type="checkbox" id="center-modal" class="a-modifier" />
+      <input type="checkbox" id="brutalist-modal" class="a-modifier" />
       <!--TODO: part of theming -->
       <input type="checkbox" id="zoom-in" class="a-modifier" />
       <input type="checkbox" id="zoom-out" class="a-modifier" />
-
-      <!-- Triggers -->
-      <label for="drawer-settings" class="a-overlay"></label>
 
       <!-- Modal Component -->
       <label for="modal" data-dialog class="a-overlay"></label>
@@ -171,6 +103,9 @@
         </div>
       </div>
       <div class=""></div>
+
+      <!-- Triggers -->
+      <label for="drawer-settings" data-dialog class="a-overlay"></label>
       <!-- Drawer Component -->
       <div
         class="m-drawer"
@@ -180,10 +115,10 @@
         tabindex="-1"
         data-dialog="drawer"
       >
-        <div class="m-modal__header">
-          <h3 class="m-modal__title">Settings</h3>
+        <div class="m-drawer__header">
+          <h3 class="m-drawer__title">Settings</h3>
         </div>
-        <div class="m-modal__content flow">
+        <div class="m-drawer__content flow">
           <div class="m-form">
             <div class="m-form-group">
               <label for="setting-1">Setting 1</label>
@@ -200,8 +135,10 @@
             </div>
           </div>
         </div>
-        <div class="m-modal__footer">
-          <a class="a-btn theme" href="#/">Close</a>
+        <div class="m-drawer__footer">
+          <label class="a-btn theme" for="drawer-settings">
+            <span>Close</span>
+          </label>
         </div>
       </div>
 
@@ -485,14 +422,6 @@
                       data-component-label="Modal"
                     >
                       <span>Open Modal</span>
-                    </label>
-                    <label
-                      role="button"
-                      for="drawer"
-                      class="a-btn theme -relative"
-                      data-component-label="Drawer"
-                    >
-                      <span>Open Drawer</span>
                     </label>
                   </div>
                 </article>
@@ -1090,26 +1019,6 @@
           </section>
         </div>
       </div>
-
-      <!-- Drawer Component -->
-      <!-- <label for="drawer" class="a-overlay"></label>
-      <div
-        class="m-drawer flex flex-column justify-between"
-        id="drawer"
-        aria-modal="true"
-        role="dialog"
-        tabindex="-1"
-      >
-        <div class="m-modal__header">
-          <h3 class="m-modal__title">Drawer Component</h3>
-        </div>
-        <div class="m-modal__content">
-          <p>Example of a drawer component.</p>
-        </div>
-        <div class="m-modal__footer">
-          <label class="a-btn theme" for="drawer"><span>Close</span></label>
-        </div>
-      </div> -->
     </div>
   </body>
 </html>

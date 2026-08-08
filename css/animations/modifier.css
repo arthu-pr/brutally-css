@@ -3,20 +3,8 @@
   position: fixed;
   left: -9999px;
 }
-/* 
-@property --is-visible {
-  syntax: 'initial | ';
-  initial-value: var(--off);
-  inherits: false;
-} */
-/* 
-@property --overlay-opacity {
-  syntax: '<percentage>';
-  initial-value: 0%;
-  inherits: false;
-} */
 
-/* 
+/*
  * Main file for CSS modifier using Checkbox Hack
  * https://css-tricks.com/the-checkbox-hack/
  * The ".state" is parent to all modifier (checkboxes and targets) and is triggered
@@ -25,13 +13,13 @@
  * and the direct adjacent sibling to the ".state"
  */
 
-/* TODO: Change all modifier with :has()
+/* TODO: Change all modifier with :has() */
 
-/* 
+/*
  *
  * 1 - Theme Bar
  * 2 - "How does it work?" section
- * 3 - Modal
+ * 3 - Modal & Drawer
  *
  */
 
@@ -47,58 +35,58 @@
   --spacing: var(--space-xxl);
 }
 
-#zoom-out:checked ~ .controller {
+#zoom-out:checked {
   --spacing: var(--space-xxl);
 }
 
-:target ~ .controller .primary-yellow {
+:target .primary-yellow {
   fill: var(--color-primary);
 }
 
-#warm-pink:target ~ .controller {
+#warm-pink:target {
   --theme-color: var(--theme-warm-pink);
 }
 
-#warm-pink:target ~ .controller .warm-pink {
+#warm-pink:target .warm-pink {
   fill: var(--theme-warm-pink);
 }
 
-#red:target ~ .controller {
+#red:target {
   --theme-color: var(--theme-red);
 }
 
-#red:target ~ .controller .red {
+#red:target .red {
   fill: var(--theme-red);
 }
 
-#erotic-blue:target ~ .controller {
+#erotic-blue:target {
   --theme-color: var(--theme-erotic-blue);
 }
 
-#erotic-blue:target ~ .controller .erotic-blue {
+#erotic-blue:target .erotic-blue {
   fill: var(--theme-erotic-blue);
 }
 
-:target ~ .controller {
+:target {
   --theme-color: var(--color-primary);
 }
 
-:target ~ .controller .primary-yellow {
+:target .primary-yellow {
   fill: var(--color-primary);
 }
 
 /* ----------------------------------------------------------------------------- */
 
-/* 
- * 2 - "How does it work?" section 
+/*
+ * 2 - "How does it work?" section
  */
 
-#how-does-it-work:checked ~ .controller .layout {
+#how-does-it-work:checked .layout {
   --layout-transform-value: var(--layout-translate-howDoesItWork);
   transform: translateX(calc(-100svw + var(--theme-bar-width)));
 }
 
-#how-does-it-work-back:checked ~ .controller .layout {
+#how-does-it-work-back:checked .layout {
   --layout-transform-value: var(--layout-translate-main);
   transform: translateX(0);
 }
@@ -112,177 +100,74 @@
 
 /* ----------------------------------------------------------------------------- */
 
-/* 
+/*
  * 3 - Modal & Drawer
  *
  * 3.1 - Visibility trick
  * 3.2 - Overlay component
  * 3.3 - Disable scrolling when Modal is open
- * 3.4 - Modal and Drawer animations
- * 3.5 - Modal button modifiers
+ * 3.4 - Modal button modifiers
  *
  */
 
-/* 
+/*
 * 3.1 - Visibility trick from https://webdesign.tutsplus.com/css-only-modal--cms-107772t
-* "We’ll delay the visibility transition of the modal to allow the exit animations 
-* to be completed before it’s completely hidden."
+* "We'll delay the visibility transition of the modal to allow the exit animations
+* to be completed before it's completely hidden."
  */
 
 /**
   * App scope tout le HTML (index)
   */
 .app {
-  /* 
+  /*
    * 3.2 Overlay component
    */
   --is-visible: var(--off);
   --bd-filter: var(--is-visible) blur(var(--_layout-overlay-blur, 8px));
   --overlay-opacity: var(--is-visible) 100%;
 
-  /* --dialog-z-index: var(--is-visible) calc(var(--overlay-z-index) + 10); */
-  /* --dialog-opacity: var(--is-visible) 100%; */
-  /* 
-  & .a-overlay,
-  & .m-modal,
-  & .m-drawer {
-     /* vars needed by modal and drawer */
-  /* --overlay-opacity: var(--is-visible) 100%; */
-  /* --overlay-z-index: var(--is-visible) var(--_layout-overlay-z-index); */
-  /* } */
-
-  /* & > :not(:has(#modal:checked)) { */
   & [data-dialog] {
     --overlay-opacity: var(--is-visible) 100%;
     --overlay-z-index: var(--is-visible) var(--_layout-overlay-z-index);
-    /* --is-visible: var(--off); */
   }
 
-  /* } */
-
-  &:has([data-dialog-toggle]:checked) {
-    & .a-overlay {
+  &:has([data-dialog-toggle='modal']:checked) {
+    & > .a-overlay:has(+ .m-modal) {
       --is-visible: var(--on);
-    }
 
-    & .m-modal {
+      & + .m-modal {
+        --is-visible: var(--on);
+      }
+    }
+  }
+
+  &:has([data-dialog-toggle='drawer-settings']:checked) {
+    & > .a-overlay:has(+ .m-drawer) {
       --is-visible: var(--on);
-    }
 
-    /* --dialog-z-index: var(--is-visible) calc(var(--overlay-z-index) + 10);
-      --dialog-opacity: var(--is-visible) 100%;
-      opacity: var(--dialog-opacity, -1);
-      z-index: var(--dialog-z-index, -1); */
-    /* pointer-events: auto; */
-    /* --overlay-opacity: 100%;
-      --overlay-z-index: var(--_layout-overlay-z-index); */
-  }
-}
-&:not(:has([data-dialog-toggle]:checked)) {
-  & .m-drawer {
-    --is-visible: var(--off);
-  }
-
-  & .a-overlay {
-    --is-visible: var(--off);
-  }
-  & .m-modal {
-    --is-visible: var(--off);
-  }
-}
-
-&:has([data-dialog-toggle]:checked) {
-  & .m-drawer {
-    --is-visible: var(--on);
-  }
-}
-
-/* 
- * 3.3 Disable scrolling when Modal is open
- */
-/* modal closed */
-&:not(:has(#modal:checked)) .controller,
-&:not(:has([data-dialog-toggle]:checked)) .controller {
-  height: auto;
-  overscroll-behavior: contain;
-}
-
-/* modal open */
-&:has(#modal:checked) .controller,
-&:has([data-dialog-toggle]:checked) .controller {
-  height: 100svh;
-  overflow-y: hidden;
-  overscroll-behavior: contain;
-}
-
-/* ----------------------------------------------------------------------------- */
-/* 3.4 - Modal and Drawer animations */
-/* ---------------------------------------------- */
-
-& .m-drawer {
-  --is-visible: var(--off);
-}
-
-& .m-modal {
-  --is-visible: var(--off);
-}
-
-&:has([data-dialog-toggle]:checked) {
-  & .a-overlay {
-    --is-visible: var(--on);
-  }
-
-  & .m-drawer {
-    --is-visible: var(--on);
-    /* transform: translateX(0); */
-    /* --overlay-opacity: 100%; */
-    /* --overlay-z-index: var(--_layout-overlay-z-index); */
-    /* transition: transform 0.5s ease; */
-  }
-}
-
-/* 
- * 3.4 Modal and Drawer animations
- */
-/* #modal[data-animation='fade'] ~ .controller .m-modal {
-  --animation-in: modal-fade-in;
-  --animation-out: modal-fade-out;
-}
-
-[data-modifier='drawer'][data-animation='slide'] ~ .controller .m-drawer {
-  --animation-in: drawer-slide-in;
-  --animation-out: drawer-slide-out;
-} */
-
-/* #modal:checked ~ .controller .m-modal {
-  animation: var(--animation-in) ease 0.5s;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards;
-}
-
-#modal:not(:checked) ~ .controller .m-modal {
-  animation: var(--animation-out) ease 0.5s;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards;
-} */
-
-/* 
- * 3.5 Modal button modifiers
- */
-.app {
-  &:has(#center-modal):checked {
-    & .m-modal {
-      --top-modal: 50svh;
-      --modal-translate-y: -50%;
-    }
-
-    & .m-modal__footer label[for='center-modal']::after {
-      content: 'Put me on top';
+      & + .m-drawer {
+        --is-visible: var(--on);
+      }
     }
   }
 
-  &:has(#brutalist-modal):checked {
-    & .m-modal {
+  &:not(:has([data-dialog-toggle]:checked)) {
+    & > .a-overlay {
+      --is-visible: var(--off);
+    }
+
+    & > .m-modal {
+      --is-visible: var(--off);
+    }
+
+    & > .m-drawer {
+      --is-visible: var(--off);
+    }
+  }
+
+  &:has(#brutalist-modal:checked) {
+    & > .m-modal {
       --raw: var(--TRUE);
       --dialog-bg: var(--theme-color);
       --dialog-border: var(--border-bg);
@@ -306,39 +191,29 @@
       content: 'Classic Modal';
     }
   }
-}
 
-/* 
-.app:has(#center-modal):checked
-  ~ .controller
-  .m-modal__footer
-  label[for='center-modal']::after {
-  content: 'Put me on top';
-} */
+  &:has(#center-modal:checked) {
+    & .m-modal {
+      --top-modal: 50svh;
+      --modal-translate-y: -50%;
+    }
 
-.app:has(#brutalist-modal):checked
-  ~ .controller
-  .m-modal__footer
-  label[for='brutalist-modal']::after {
-  content: 'Classic Modal';
-}
+    & .m-modal__footer label[for='center-modal']::after {
+      content: 'Put me on top';
+    }
+  }
 
-.app:has(#brutalist-modal):checked ~ .controller .m-modal {
-  --raw: var(--FALSE);
-  --dialog-bg: var(--theme-color);
-  --dialog-border: var(--border-bg);
-  --dialog-box-shadow: none;
-}
+  /*
+   * 3.3 Disable scrolling when Modal is open
+   */
+  &:not(:has([data-dialog-toggle='modal']:checked)) .controller {
+    height: auto;
+    overscroll-behavior: contain;
+  }
 
-.app:has(#brutalist-modal):checked ~ .controller .m-modal .m-modal__title,
-.app:has(#brutalist-modal):checked ~ .controller .m-modal p,
-.app:has(#brutalist-modal):checked ~ .controller .m-modal span,
-.app:has(#brutalist-modal):checked ~ .controller .m-modal label::after {
-  --mix-blend-mode: difference;
-  color: var(--color-bg);
-}
-
-.app:has(#brutalist-modal):checked ~ .controller .m-modal .m-modal__header,
-.app:has(#brutalist-modal):checked ~ .controller .m-modal .m-modal__footer {
-  border-color: var(--color-bg);
+  &:has([data-dialog-toggle='modal']:checked) .controller {
+    height: 100svh;
+    overflow-y: hidden;
+    overscroll-behavior: contain;
+  }
 }

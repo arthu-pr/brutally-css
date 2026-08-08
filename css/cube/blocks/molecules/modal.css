@@ -50,7 +50,7 @@
   --modal-translate-x: -50%;
   --box-shadow-x: 8px;
   --box-shadow-y: 8px;
-  --raw: var(--TRUE);
+  --raw: var(--FALSE);
 
   /* opacity: var(--overlay-opacity); */
   /* --modal-z-index: calc(var(--overlay-z-index) + 10); */
@@ -58,19 +58,14 @@
   margin: 0;
   width: 692px;
   max-width: calc(100% - 2 * var(--border-width));
-  left: 0;
+  left: 50%;
   top: var(--top-modal);
 
   transform: translate(var(--modal-translate-x), var(--modal-translate-y));
 }
 
 .m-drawer {
-  --left-drawer: var(--off);
-  --right-drawer: var(--on);
-  --is-left-position: var(--left-drawer) 0;
-  --is-right-position: var(--right-drawer, 0);
-  left: var(--is-left-position, 0);
-  right: var(--is-right-position, 0);
+  right: 0;
   width: clamp(260px, 65%, 896px);
   position: fixed;
   top: 0;
@@ -86,11 +81,11 @@
    * We select overlays that have a modal as a direct sibling and a sibling overlay / modal
    * Which means that there are more than one modal, and we increase the z-index the more modals are opened
   */
-.a-overlay:has(+ .m-modal):has(~ .a-overlay) ~ .a-overlay {
+.a-overlay:has(+ .m-modal):not(.m-drawer):has(~ .a-overlay) ~ .a-overlay {
   --overlay-z-index: calc(var(--dialog-z-index) + 1);
 }
 
-.a-overlay:has(+ .m-modal):has(~ .a-overlay) ~ .m-modal {
+.a-overlay:has(+ .m-modal):not(.m-drawer):has(~ .a-overlay) ~ .m-modal {
   --modal-z-index: calc(var(--dialog-z-index) + 2);
 }
 
