@@ -15,6 +15,9 @@
    ===================================================== */
 @import './entry.css';
 @import './variants.css';
+
+/* App-shell wrapper, specific to this playground's page structure
+   (distinct from the reusable `cube/layout/` composition layer below). */
 @import './layout/container.css';
 
 /* =====================================================
@@ -73,13 +76,18 @@
 
 /* =====================================================
    Layout & composition
+   These are the CUBE "Composition" primitives (Every Layout style):
+   generic, reusable on any element. Layered so they always lose to
+   unlayered component/utility rules, instead of relying on import
+   order to stay overridable.
    ===================================================== */
-@import './cube/layout/cluster.css';
-@import './cube/layout/flow.css';
-@import './cube/layout/stack.css';
-@import './cube/layout/switcher.css';
-@import './cube/layout/wrapper.css';
-/* @import './cube/layout/banner.css'; *;
+@import './cube/layout/cluster.css' layer(layout);
+@import './cube/layout/flow.css' layer(layout);
+@import './cube/layout/stack.css' layer(layout);
+@import './cube/layout/switcher.css' layer(layout);
+@import './cube/layout/wrapper.css' layer(layout);
+/* @import './cube/layout/banner.css' layer(layout); */
+
 /* =====================================================
    Utilities
    ===================================================== */
@@ -92,6 +100,7 @@
 
 /* =====================================================
    Fun
+   Playground/demo content, not part of the reusable component set.
    ===================================================== */
 @import './fun/dice.css';
 @import './fun/lorem.css';
