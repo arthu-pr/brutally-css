@@ -112,4 +112,4 @@ jobs:
           ls -la ~/.ssh
           cat ~/.ssh/known_hosts
       - name: Deploy build with rsync
-        run: rsync -avz ./dist/ ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST }}:/var/www/brutallycss.com/
+        run: rsync -avz --delete ./dist/ ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST }}:/var/www/brutallycss.com/
