@@ -8,6 +8,15 @@
   --from-md: var(--on);
   --from-lg: var(--on);
   --from-xl: var(--on);
+
+  /* Exact match for --breakpoint-sm (48rem/768px), for components that need
+     to switch on that specific design-token value rather than the rougher
+     xs/sm/md/lg/xl scale above (e.g. navbar.css collapsing to a hamburger).
+     --on resolves empty/valid, --off resolves guaranteed-invalid (see
+     themes/core.css) - so start mobile-first: below the breakpoint until
+     the media query below says otherwise. */
+  --from-breakpoint-sm: var(--off);
+  --below-breakpoint-sm: var(--on);
 }
 
 /* @media (min-width: 0px) {
@@ -20,6 +29,13 @@
 @media (min-width: 40rem) {
   :root {
     --from-sm: var(--off);
+  }
+}
+/* breakpoint-sm+ (48rem/768px) */
+@media (min-width: 48rem) {
+  :root {
+    --from-breakpoint-sm: var(--on);
+    --below-breakpoint-sm: var(--off);
   }
 }
 /* md+ */

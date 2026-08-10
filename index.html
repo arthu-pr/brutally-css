@@ -134,6 +134,26 @@
               <input type="checkbox" data-component="primary" id="setting-2" />
             </div>
           </div>
+          <details>
+            <summary>
+              <span class="highlighted text-md"><span>How to?</span></span>
+            </summary>
+            <ol class="m-list">
+              <li class="m-list__item">
+                <h5>Checkbox-hack drawer + `accent-color`</h5>
+                <p>
+                  Same open/close trick as the modal, in a side panel. The
+                  checkbox's native tick color comes from `accent-color`
+                  instead of a custom-built control.
+                </p>
+                <a
+                  class="a-link"
+                  href="https://css-tricks.com/almanac/properties/a/accent-color/"
+                  >CSS-Tricks - accent-color</a
+                >
+              </li>
+            </ol>
+          </details>
         </div>
         <div class="m-drawer__footer">
           <label class="a-btn theme" for="drawer-settings">
@@ -148,10 +168,26 @@
           <div class="main-content">
             <div class="banner">
               <nav class="m-navbar">
-                <div class="hamburger-menu screen-sm">
-                  <input class="" />
-                </div>
-                <ul class="flex flex-grow justify-between">
+                <input
+                  type="checkbox"
+                  id="nav-menu"
+                  class="a-modifier m-navbar__toggle"
+                />
+                <label
+                  for="nav-menu"
+                  role="button"
+                  aria-label="Toggle navigation menu"
+                  aria-controls="nav-menu-list"
+                  class="m-navbar__hamburger"
+                >
+                  <span class="m-navbar__hamburger__bar"></span>
+                  <span class="m-navbar__hamburger__bar"></span>
+                  <span class="m-navbar__hamburger__bar"></span>
+                </label>
+                <ul
+                  id="nav-menu-list"
+                  class="m-navbar__list flex flex-grow justify-between"
+                >
                   <li>
                     <a class="a-link theme" href="/components">Components</a>
                   </li>
@@ -364,6 +400,57 @@
                         </span>
                       </form>
                     </div>
+                    <details>
+                      <summary>
+                        <span class="highlighted text-md"><span>How to?</span></span>
+                      </summary>
+                      <ol class="m-list">
+                        <li class="m-list__item">
+                          <h5>The "Checkbox Hack"</h5>
+                          <p>
+                            A hidden checkbox plus a `label` toggles state -
+                            here it drives the loading/submitted look with no
+                            JS.
+                          </p>
+                          <a
+                            class="a-link"
+                            href="https://css-tricks.com/the-checkbox-hack/"
+                            >CSS-Tricks - The "Checkbox Hack"</a
+                          >
+                        </li>
+                        <li class="m-list__item">
+                          <h5>CSS boolean variables</h5>
+                          <p>
+                            Custom properties as 0/1 switches, multiplied into
+                            `calc()` to turn styles on and off.
+                          </p>
+                          <pre data-code="css">
+                            <code>
+--icon-visible: 1;
+.icon { width: calc(16px * var(--icon-visible, 1)); }
+                            </code>
+                          </pre>
+                          <a
+                            class="a-link"
+                            href="https://keithclark.co.uk/articles/pseudo-boolean-css-custom-properties/"
+                            >Pseudo-boolean CSS custom properties</a
+                          >
+                        </li>
+                        <li class="m-list__item">
+                          <h5>`:has()`</h5>
+                          <p>
+                            Styles the form container based on which
+                            radio/checkbox children are checked - a parent
+                            selector.
+                          </p>
+                          <a
+                            class="a-link"
+                            href="https://ishadeed.com/article/css-has-guide/"
+                            >CSS :has() Interactive Guide</a
+                          >
+                        </li>
+                      </ol>
+                    </details>
                   </div>
                 </article>
                 <article class="o-grid__item">
@@ -399,6 +486,25 @@
                       ></rect>
                     </svg>
                   </label>
+                  <details>
+                    <summary>
+                      <span class="highlighted text-md"><span>How to?</span></span>
+                    </summary>
+                    <ol class="m-list">
+                      <li class="m-list__item">
+                        <h5>Shake CSS Animation</h5>
+                        <p>
+                          A `@keyframes` shake toggled by the checkbox hack -
+                          click the square.
+                        </p>
+                        <a
+                          class="a-link"
+                          href="https://css-tricks.com/snippets/css/shake-css-keyframe-animation/"
+                          >CSS-Tricks - Shake CSS Animation</a
+                        >
+                      </li>
+                    </ol>
+                  </details>
                 </article>
                 <article class="o-grid__item">
                   <p>
@@ -424,6 +530,25 @@
                       <span>Open Modal</span>
                     </label>
                   </div>
+                  <details>
+                    <summary>
+                      <span class="highlighted text-md"><span>How to?</span></span>
+                    </summary>
+                    <ol class="m-list">
+                      <li class="m-list__item">
+                        <h5>Checkbox-hack dialog</h5>
+                        <p>
+                          A checkbox + `label[for]` opens/closes the modal;
+                          `:has()` on the wrapper locks page scroll while open.
+                        </p>
+                        <a
+                          class="a-link"
+                          href="https://css-tricks.com/prevent-page-scrolling-when-a-modal-is-open/"
+                          >Prevent Page Scrolling When a Modal is Open</a
+                        >
+                      </li>
+                    </ol>
+                  </details>
                 </article>
                 <article class="o-grid__item">
                   <h3 class="vertical">
@@ -718,308 +843,98 @@
               <h2 class="m-0">How Does It Work?</h2>
             </div>
             <div class="o-howDoesItWork__content">
-              <div class="o-howDoesItWork__lists">
-                <div class="wrapper">
-                  <h3>Global architecture</h3>
-                  <ol class="m-list">
-                    <li class="m-list__item">
-                      <h4>
-                        <span>CSS Custom properties</span>
-                      </h4>
-                      <p>Used for every variables and be changed at runtime.</p>
-                      <a
-                        class="a-link"
-                        href="https://css-tricks.com/a-complete-guide-to-custom-properties/"
-                        >CSS-Tricks - A Complete Guide to Custom Properties</a
-                      >
-                    </li>
-                    <li class="m-list__item">
-                      <h4>
-                        <span>
-                          ABEM: Atomic BEM (Block Element Modifier) CSS
-                          architecture
-                        </span>
-                      </h4>
-                      <a
-                        class="a-link"
-                        href="https://css-tricks.com/abem-useful-adaptation-bem/"
-                        >CSS-Tricks - ABEM. A more useful adaptation of BEM.</a
-                      >
-                    </li>
-                    <!-- <li class="m-list__item"></li>
-                  <h4 ><span>
-                    Building a Scalable CSS Architecture With BEM and Utility Classes
+              <ol class="o-howDoesItWork__snap">
+                <li class="o-howDoesItWork__card">
+                  <h3><span class="highlighted">Checkbox Hack</span></h3>
+                  <p>
+                    A hidden checkbox plus a `label[for]` toggles state -
+                    drives every modal, drawer, and menu on this site with no
+                    JS.
                   </p>
-                  <a class="a-link"
-                    href="https://css-tricks.com/building-a-scalable-css-architecture-with-bem-and-utilities-classes/">Building
-                    a
-                    Scalable CSS Architecture With BEM and Utility Classes</a>
-                </li> -->
-                    <li class="m-list__item">
-                      <h4>
-                        <span>Layout: Unholy Albatros</span>
-                      </h4>
-                      <a
-                        class="a-link"
-                        href="https://www.miragecraft.com/blog/unholy-albatross"
-                        >Unholy Albatross</a
-                      >
-                    </li>
-                    <li class="m-list__item">
-                      <h4>
-                        <span>Container queries (WIP)</span>
-                      </h4>
-                      <blockquote
-                        cite="https://css-tricks.com/css-container-queries/"
-                      >
-                        Create layouts made with elements that respond to, say,
-                        the width of their containers rather than the width of
-                        the viewport.
-                      </blockquote>
-                      <a
-                        class="a-link"
-                        href="https://css-tricks.com/css-container-queries/"
-                        >CSS-Tricks - CSS Container Queries
-                      </a>
-                    </li>
-                    <!-- <li>
-                  <h4 class="m-list__item -highlighted text-xl"></h4>
-                  <p class="m-list__item__description">
-                    <span class="m-list__item__description__solution"> grid-auto-flow: column; makes items flow across
-                      columns, ie into a single row align-self: center; does vertical centering </span> Sources: Stack
-                    Overflow <a href="https://stackoverflow.com/a/50801675">answer from the specs</a>
+                  <a
+                    class="a-link"
+                    href="https://css-tricks.com/the-checkbox-hack/"
+                    >CSS-Tricks - The "Checkbox Hack"</a
+                  >
+                </li>
+                <li class="o-howDoesItWork__card">
+                  <h3><span class="highlighted">Space-toggle variables</span></h3>
+                  <p>
+                    `--on`/`--off` custom properties that are valid or
+                    guaranteed-invalid switch whole values - including
+                    keywords like `display` or `position` - without
+                    `@media`/`@container` at the point of use.
                   </p>
-                </li> -->
-                  </ol>
-                  <h3>Tricks used</h3>
-                  <ol>
-                    <li class="m-list__item">
-                      <h4>
-                        <span>The "Checkbox Hack"</span>
-                      </h4>
-                      <a
-                        class="a-link"
-                        href="https://css-tricks.com/the-checkbox-hack/"
-                        >CSS-Tricks - The “Checkbox Hack” (and things you can do
-                        with it)</a
-                      >
-                    </li>
-                    <li class="m-list__item">
-                      <h4>
-                        <span>CSS boolean variables</span>
-                      </h4>
-                      <p>
-                        Re-usable state logic with tricks using calc and custom
-                        properties
-                      </p>
-                      <a
-                        class="a-link"
-                        href="https://dev.to/tracygjg/conditional-css-437e"
-                        >Conditional CSS
-                      </a>
-                      <a
-                        class="a-link"
-                        href="https://keithclark.co.uk/articles/pseudo-boolean-css-custom-properties/"
-                      >
-                        Pseudo-boolean CSS custom properties
-                      </a>
-                      <pre data-code="css"><code>
-                        `--icon-visible: 1;
-                        .icon {
-                        width: calc(16px * var(--icon-visible, 1));
-                        }
-
-                        /* Later */
-                        --icon-visible: 0;`
-                      </code></pre>
-                    </li>
-                    <li class="m-list__item">
-                      <h4>
-                        <span>Pseudo-selector</span>
-                      </h4>
-                      <h5>:has()</h5>
-                      <p>
-                        :has() acts as a parent selector - style the parent
-                        depending on the child(ren)
-                      </p>
-                      <pre data-code="css">
-                      <code>
-                        .dynamic-form {
-                        container: dynamic-form;
-                        container-type: inline-size;
-                        --unstyled: 0;
-                        --border-color: var(--theme-color);
-                        }
-
-                        .dynamic-form:has(#ready:not(:checked)) {
-                        --unstyled: 1;
-                        --border-color: transparent;
-                        }
-                      </code>
-                    </pre>
-                      <a
-                        class="a-link"
-                        href="https://ishadeed.com/article/css-has-guide/"
-                        >CSS :has() Interactive Guide</a
-                      >
-                    </li>
-                  </ol>
-                </div>
-                <div class="wrapper">
-                  <h3>Specific features</h3>
-                  <ol role="list">
-                    <li class="m-list__item">
-                      <h4>
-                        <span
-                          >Grid, apply styles to everything
-                          <i>but the element actually being hovered</i>
-                        </span>
-                      </h4>
-                      <a
-                        class="a-link"
-                        href="https://css-tricks.com/hover-on-everything-but/"
-                      >
-                        Hover on “Everything But”</a
-                      >
-                      <div class="a-box -info">
-                        <span
-                          ><a
-                            href="https://css-tricks.com/examples/HoverEverythingBut/"
-                            >Live Demo</a
-                          ></span
-                        >
-                      </div>
-                      <p class="-info"></p>
-                    </li>
-                    <li class="m-list__item">
-                      <h4>
-                        <span>
-                          How can I make an SVG scale with its parent
-                          container?</span
-                        >
-                      </h4>
-                      <a
-                        class="a-link"
-                        href="https://stackoverflow.com/questions/19484707/how-can-i-make-an-svg-scale-with-its-parent-container"
-                      >
-                        How can I make an SVG scale with its parent container?
-                      </a>
-                    </li>
-                    <li class="m-list__item">
-                      <h4><span>How to scale SVG </span></h4>
-                      <a class="a-link" href="https://css-tricks.com/scale-svg/"
-                        >CSS-Tricks - How to scale SVG</a
-                      >
-                    </li>
-                    <li class="m-list__item">
-                      <h4><span>Shake CSS Animation</span></h4>
-                      <a
-                        class="a-link"
-                        href="https://css-tricks.com/snippets/css/shake-css-keyframe-animation/"
-                        >CSS-Tricks - Shake CSS Animation</a
-                      >
-                    </li>
-                    <li class="m-list__item">
-                      <h4>
-                        <span>
-                          `position: sticky` inside a container with overflow:
-                          hidden`</span
-                        >
-                      </h4>
-                      <p class="m-list__item__description">
-                        Use
-                        <span class="m-list__item__description__solution">
-                          `overflow: clip`
-                        </span>
-                        Sources: Stack Overflow
-                        <a href="https://stackoverflow.com/a/72792224"
-                          >answer from the specs</a
-                        >
-                        More simple ELI5
-                        <a
-                          href="https://medium.com/@ehsaneona/overcoming-position-sticky-issues-solving-overflow-hidden-problems-with-overflow-clip-e8e79a7b0c34"
-                          >article</a
-                        >
-                        from Medium
-                        <!-- make a line break before the span through CSS -->
-                        <span
-                          class="m-list__item__description__used-on"
-                          style="
-                            display: inline-block;
-                            color: red;
-                            background: hsl(from red h s l / 0.2);
-                          "
-                          >(used on `.wrapper`)</span
-                        >
-                      </p>
-                    </li>
-                  </ol>
-                  <h3>Components</h3>
-                  <ol>
-                    <li class="m-list__item">
-                      <h4><span>Modal</span></h4>
-                    </li>
-
-                    <li class="m-list__item">
-                      <a
-                        class="a-link"
-                        href="https://css-tricks.com/prevent-page-scrolling-when-a-modal-is-open/"
-                        >Prevent Page Scrolling When a Modal is Open</a
-                      >
-                      - CSS-Tricks and
-                      <a
-                        class="a-link"
-                        href="https://css-tricks.com/prevent-page-scrolling-when-a-modal-is-open/#comment-1713778"
-                        >comment</a
-                      >
-                    </li>
-                    <li class="m-list__item">
-                      <a
-                        href="https://webdesign.tutsplus.com/css-only-modal--cms-107772t"
-                      >
-                        What is a modal? And how to build a CSS-only Modal
-                      </a>
-                    </li>
-                    <li class="m-list__item">
-                      `overscroll-behavior` [CSS
-                      property](https://developer.mozilla.org/en-US/docs/Web/CSS/overscroll-behavior)
-                    </li>
-                    <li class="m-list__item">
-                      <h4><span>Form</span></h4>
-                      <p class="m-list__item__description"></p>
-                      <h5>`:focus-within`</h5>
-                      <a
-                        class="a-link"
-                        href="https://css-tricks.com/accessible-forms-with-pseudo-classes/"
-                        >Accessible Forms with Pseudo Classes</a
-                      >
-                    </li>
-                  </ol>
-                  <h3>Other</h3>
-                  <ol>
-                    <li class="m-list__item">
-                      <p class="m-list__item__description"></p>
-                      <h5>`accent-color`</h5>
-                      https://dev.to/technoph1le/the-css-accent-color-property-explained-4h9o
-                      and
-                      <a
-                        href="https://css-tricks.com/almanac/properties/a/accent-color/"
-                        >CSS-Tricks</a
-                      >
-                    </li>
-                  </ol>
-                  <h3>Accessibility</h3>
-                  <ol>
-                    <li class="m-list__item">
-                      <h4><span>Aria</span></h4>
-                      <a
-                        href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/navigation_role"
-                        >Navigation role</a
-                      >
-                    </li>
-                  </ol>
-                </div>
-              </div>
+                  <a
+                    class="a-link"
+                    href="https://github.com/propjockey/css-sweeper?tab=readme-ov-file#css-is-a-programming-language-thanks-to-the-space-toggle-trick"
+                    >CSS is a programming language thanks to the Space Toggle
+                    trick</a
+                  >
+                </li>
+                <li class="o-howDoesItWork__card">
+                  <h3><span class="highlighted">`:has()`</span></h3>
+                  <p>
+                    Acts as a parent selector - style a container based on
+                    which children are checked, focused, or present.
+                  </p>
+                  <a
+                    class="a-link"
+                    href="https://ishadeed.com/article/css-has-guide/"
+                    >CSS :has() Interactive Guide</a
+                  >
+                </li>
+                <li class="o-howDoesItWork__card">
+                  <h3><span class="highlighted">Custom properties</span></h3>
+                  <p>
+                    Every color, spacing, and border on this site is a
+                    variable, changeable at runtime - the single source of
+                    truth behind the theme switcher.
+                  </p>
+                  <a
+                    class="a-link"
+                    href="https://css-tricks.com/a-complete-guide-to-custom-properties/"
+                    >CSS-Tricks - A Complete Guide to Custom Properties</a
+                  >
+                </li>
+                <li class="o-howDoesItWork__card">
+                  <h3><span class="highlighted">`accent-color`</span></h3>
+                  <p>
+                    Recolors native checkboxes, radios, and range inputs to
+                    match the theme - no custom-built controls needed.
+                  </p>
+                  <a
+                    class="a-link"
+                    href="https://css-tricks.com/almanac/properties/a/accent-color/"
+                    >CSS-Tricks - accent-color</a
+                  >
+                </li>
+                <li class="o-howDoesItWork__card">
+                  <h3><span class="highlighted">`overscroll-behavior`</span></h3>
+                  <p>
+                    Stops scroll from chaining into the page behind - used
+                    right here so scrolling this panel doesn't also scroll
+                    the page underneath.
+                  </p>
+                  <a
+                    class="a-link"
+                    href="https://css-tricks.com/prevent-page-scrolling-when-a-modal-is-open/"
+                    >Prevent Page Scrolling When a Modal is Open</a
+                  >
+                </li>
+                <li class="o-howDoesItWork__card">
+                  <h3><span class="highlighted">Unholy Albatross</span></h3>
+                  <p>
+                    The `flex`/`clamp()` layout trick behind the responsive
+                    grid - columns that wrap without a single `@media` query.
+                  </p>
+                  <a
+                    class="a-link"
+                    href="https://www.miragecraft.com/blog/unholy-albatross"
+                    >Unholy Albatross</a
+                  >
+                </li>
+              </ol>
             </div>
           </section>
         </div>

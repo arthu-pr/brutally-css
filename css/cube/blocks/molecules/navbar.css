@@ -1,9 +1,9 @@
 .m-navbar {
-  container: navbar;
-  container-type: inline-size;
+  position: relative;
   height: var(--navbar-size);
   width: 100%;
   display: flex;
+  align-items: center;
   padding: var(--space-sm) var(--space-md);
 
   /* Render links etc. as unstyled components */
@@ -20,4 +20,89 @@
   gap: var(--space-md);
   stroke: var(--theme-color);
   fill: var(--theme-color);
+}
+
+/* Toggle checkbox: drives state via :has(), never rendered itself */
+.m-navbar__toggle {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/*
+ * Space-toggle trick (see css/cube/utilities/screens.css): --from-breakpoint-sm
+ * is a guaranteed-invalid token below 48rem/768px and an empty (valid) token
+ * at/above it, so `var(--from-breakpoint-sm) none` only ever resolves to a
+ * real value on desktop, letting `display` fall back to `flex` on mobile -
+ * no @media or @container needed at the point of use.
+ */
+.m-navbar__hamburger {
+  --hamburger-display-desktop: var(--from-breakpoint-sm) none;
+  display: var(--hamburger-display-desktop, flex);
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 2rem;
+  height: 2rem;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.m-navbar__hamburger__bar {
+  display: block;
+  height: 2px;
+  width: 100%;
+  background: var(--theme-color);
+  transform-origin: center;
+  transition:
+    transform 0.25s ease,
+    opacity 0.25s ease;
+}
+
+/* Hamburger -> cross, whichever container/breakpoint made it visible */
+.m-navbar:has(.m-navbar__toggle:checked) .m-navbar__hamburger__bar:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.m-navbar:has(.m-navbar__toggle:checked) .m-navbar__hamburger__bar:nth-child(2) {
+  opacity: 0;
+}
+.m-navbar:has(.m-navbar__toggle:checked) .m-navbar__hamburger__bar:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/*
+ * Same space-toggle trick, driving the mobile dropdown layout. Each property
+ * is set via its own `--x-mobile: var(--below-breakpoint-sm) <value>;` custom
+ * property, valid (and so applied) only below 48rem/768px; above it the
+ * substitution is invalid and the property falls back to its desktop value.
+ */
+.m-navbar__list {
+  --list-position-mobile: var(--below-breakpoint-sm) absolute;
+  --list-direction-mobile: var(--below-breakpoint-sm) column;
+  --list-align-mobile: var(--below-breakpoint-sm) stretch;
+  --list-bg-mobile: var(--below-breakpoint-sm) var(--color-bg);
+  --list-border-mobile: var(--below-breakpoint-sm) var(--border-theme);
+  --list-max-height-mobile: var(--below-breakpoint-sm) 0;
+  --list-overflow-mobile: var(--below-breakpoint-sm) hidden;
+
+  position: var(--list-position-mobile, static);
+  top: 100%;
+  left: 0;
+  right: 0;
+  flex-direction: var(--list-direction-mobile, row);
+  align-items: var(--list-align-mobile, center);
+  background: var(--list-bg-mobile, transparent);
+  border: var(--list-border-mobile, none);
+  margin: 0;
+  max-height: var(--list-max-height-mobile, none);
+  overflow-y: var(--list-overflow-mobile, visible);
+  transition: max-height 0.25s ease;
+}
+
+.m-navbar:has(.m-navbar__toggle:checked) .m-navbar__list {
+  --list-max-height-mobile-open: var(--below-breakpoint-sm) 50vh;
+  --list-overflow-mobile-open: var(--below-breakpoint-sm) auto;
+
+  max-height: var(--list-max-height-mobile-open, none);
+  overflow-y: var(--list-overflow-mobile-open, visible);
 }
