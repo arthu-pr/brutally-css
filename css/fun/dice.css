@@ -1,3 +1,11 @@
+/*
+ * Spawn multiple dice symbols on the page, using CSS variables to position them
+ * e.g.
+ * <div class="dice" style="--top: 95%; --left: 50%"></div>
+ * <div class="dice" style="--top: 30%; --left: 1%"></div>
+ * <div class="dice" style="--top: 60%; --left: 29%"></div>
+ * etc. The dice symbols are Unicode characters from U+2680 to U+2685, representing the six faces of a die.
+ */
 .dice {
   --dice-1: '\2680';
   --dice-2: '\2681';

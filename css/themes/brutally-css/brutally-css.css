@@ -10,20 +10,12 @@
   inherits: true;
 }
 
-/* @layer colors, theme-default, theme, cube; */
-/* 
-@import '../tokens/css/colors.css' layer(colors);
-@import '../tokens/css/themes/public-theme.css' layer(theme);
-@import '../tokens/css/themes/private-theme.css' layer(theme); */
-
-/* TODO: fix */
-/* @import '../tokens/css/border/border.css' layer(theme);
-@import '../tokens/css/space.css' layer(theme); */
-
-/* CUBE Utilities */
-/* @import '../core.css'; */
-
-/* Default typography mapping */
+/*
+ * Token imports (colors, public/private theme, border, space, cube utils)
+ * are owned by core.css, which imports this file unlayered - do not
+ * re-import them here, that would double-import and risk collisions
+ * between the public (--x) / private (--_x) token layers.
+ */
 
 @layer theme {
   :root {
@@ -129,13 +121,21 @@
   :root {
     --border-radius-default: 0;
 
-    /* --border-width-default: 4px; */
+    /*
+     * --from-sm/--from-md are valid (thus true) *below* their breakpoint,
+     * not from it - see css/cube/utilities/screens.css. So --border-width-sm
+     * only resolves under 40rem, --border-width-md only under 64rem, and
+     * neither is valid at 64rem+. Checking --border-width-md first and
+     * falling back to a hardcoded `4px` (thinner than every breakpoint
+     * value) meant anything 64rem+ silently got the thinnest border on
+     * the site. Fix: check the narrowest tier first, and make the final
+     * fallback match the widest tier's value (8px) instead of the
+     * narrowest, so 64rem+ stays as thick as tablet instead of falling
+     * back to mobile's width.
+     */
     --border-width-sm: var(--from-sm) 4px;
     --border-width-md: var(--from-md) 8px;
-    --border-width-default: var(--border-width-sm, var(--border-width-md));
-    /* --border-width: var(--_border-width-default); */
-    /* --border-width: var(--border-width-default); */
-    --border-width-default: var(--border-width-md, var(--border-width-sm, 4px));
+    --border-width-default: var(--border-width-sm, var(--border-width-md, 8px));
     --border-width: var(--border-width-default);
 
     /* Layout */
@@ -159,6 +159,7 @@
 
     /* Navbar */
     --navbar-size: 80px;
+    --hamburger-bar-height: 2px;
 
     --highlighted-left-mobile-val: clamp(-30px, -1.4vw, -2px);
 

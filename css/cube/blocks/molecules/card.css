@@ -1,0 +1,77 @@
+/*
+ * Card - "block link" pattern per Inclusive Components
+ * https://inclusive-components.design/cards/
+ * Only the title is a real <a>. A stretched ::after on that link covers
+ * the whole card, so the entire surface is clickable while there's still
+ * exactly one focusable/semantic link. Secondary interactive elements
+ * (e.g. the meta/author link) get position:relative + a higher z-index
+ * so they stay independently clickable above the stretched link.
+ */
+
+.m-card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  gap: var(--space-md);
+}
+
+.m-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: var(--_card-bg, var(--color-bg));
+  border-radius: var(--_card-radius, var(--border-radius-medium));
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.m-card:has(.m-card__link:hover, .m-card__link:focus-visible) {
+  transform: translate(-4px, -4px);
+  box-shadow: 8px 8px 0 0 var(--theme-color);
+}
+
+.m-card__media {
+  height: 9rem;
+  background-image: repeating-linear-gradient(
+    135deg,
+    var(--theme-color) 0 10px,
+    transparent 10px 20px
+  );
+}
+
+.m-card__content {
+  padding: var(--_card-padding, var(--space-md));
+}
+
+.m-card__tag {
+  position: relative;
+  z-index: 1;
+  font-size: var(--text-xs);
+}
+
+.m-card__title {
+  margin: var(--space-xs) 0;
+}
+
+.m-card__link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.m-card__link::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+}
+
+.m-card__meta {
+  position: relative;
+  z-index: 1;
+  font-size: var(--text-sm);
+}
+
+.m-card__meta a {
+  position: relative;
+  z-index: 1;
+}

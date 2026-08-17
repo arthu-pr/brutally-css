@@ -8,5 +8,13 @@
  */
 
 .flow > * + * {
-  margin-top: var(--_flow-space, 1em);
+  /*
+   * Read the public tokens directly instead of `--_flow-space`: that
+   * private token is only ever assigned on `:root` (private-theme.css),
+   * so it's a fixed value baked in once - a local `--flow-space` or
+   * `--gutter` override on a `.flow` element (or its style attribute)
+   * never reaches it, since custom-property inheritance doesn't re-run
+   * the `var()` formula per element.
+   */
+  margin-top: var(--flow-space, var(--gutter, 1em));
 }

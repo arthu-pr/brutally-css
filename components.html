@@ -26,8 +26,91 @@
   </head>
 
   <body>
-    <div class="cont">
-      <div class="wrapper padding-y-md flow">
+    <div class="app">
+      <!-- Modal / Drawer state + dialogs - must be direct children of
+           `.app` for the `.app > .a-overlay` / `.app:has(...)` rules in
+           css/animations/modifier.css to match. -->
+      <input
+        type="checkbox"
+        id="modal"
+        data-dialog-toggle="modal"
+        class="a-modifier"
+      />
+      <input type="checkbox" id="center-modal" class="a-modifier" />
+      <input type="checkbox" id="brutalist-modal" class="a-modifier" />
+      <input
+        id="drawer-settings"
+        type="checkbox"
+        data-dialog-toggle="drawer-settings"
+        class="a-modifier"
+      />
+
+      <label for="modal" data-dialog class="a-overlay"></label>
+      <div
+        class="m-modal border-theme"
+        id="modal"
+        aria-modal="true"
+        role="dialog"
+        tabindex="-1"
+        data-dialog="modal"
+      >
+        <div class="m-modal__header">
+          <h3 class="m-modal__title">Modal title</h3>
+        </div>
+        <div class="m-modal__content">
+          <p>
+            Example of a fade modal with a close button. Don't like the
+            position? Use the action buttons below.
+          </p>
+        </div>
+        <div class="m-modal__footer flex flex-wrap justify-end gap-xs">
+          <label class="a-btn theme" for="center-modal"></label>
+          <label class="a-btn theme" for="brutalist-modal"></label>
+          <label class="a-btn theme" for="modal"><span>Close</span></label>
+        </div>
+      </div>
+
+      <label for="drawer-settings" data-dialog class="a-overlay"></label>
+      <div
+        class="m-drawer border-theme"
+        id="drawer-settings"
+        aria-modal="true"
+        role="dialog"
+        tabindex="-1"
+        data-dialog="drawer"
+      >
+        <div class="m-modal__header">
+          <h3 class="m-modal__title">Settings</h3>
+        </div>
+        <div class="m-modal__content flow flex-grow">
+          <div class="m-form">
+            <div class="m-form-group">
+              <label for="drawer-setting-1">Setting 1</label>
+              <input
+                type="text"
+                id="drawer-setting-1"
+                class="a-input theme"
+                placeholder="Enter value for setting 1"
+              />
+            </div>
+            <div class="stack width-full flex-row">
+              <label for="drawer-setting-2">Setting 2</label>
+              <input
+                type="checkbox"
+                data-component="primary"
+                id="drawer-setting-2"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="m-modal__footer">
+          <label class="a-btn theme" for="drawer-settings">
+            <span>Close</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="wrapper padding-y-md flow" style="--gutter: 2em">
         <h1 class="-highlighted"><span class="labeled">Components</span></h1>
         <h2>Utility</h2>
 
@@ -130,6 +213,84 @@
             <label for="checkbox-2">Label </label>
             <input type="checkbox" data-component="secondary" id="checkbox-2" />
           </div>
+        </section>
+
+        <!-- Highlighted Text -->
+        <section class="box" data-box-title="Highlighted Text">
+          <div class="stack gap-md">
+            <h3 class="-highlighted -active stick-to-left">
+              <span class="labeled">Static marker highlight</span>
+            </h3>
+            <p>
+              <span class="-highlighted -animate"
+                ><span class="labeled">Hover this text</span></span
+              >
+              to see the highlight swap sides (desktop only).
+            </p>
+          </div>
+          <details>
+            <summary>
+              <span class="highlighted text-md"><span>How to?</span></span>
+            </summary>
+            <ol class="m-list">
+              <li class="m-list__item">
+                <h5>Marker highlight via `background-clip`</h5>
+                <p>
+                  A gradient `background-image` behind the text acts as the
+                  marker. `.-animate` clips it to the text on hover
+                  (`background-clip: text`) and slides it in/out by
+                  transitioning `background-size`/`background-position` -
+                  `.-active` flips which side it starts from.
+                </p>
+                <a
+                  class="a-link"
+                  href="https://developer.mozilla.org/en-US/docs/Web/CSS/background-clip"
+                  >MDN - background-clip</a
+                >
+              </li>
+            </ol>
+          </details>
+        </section>
+
+        <!-- Vertical -->
+        <section class="box" data-box-title="Vertical" style="overflow: hidden">
+          <h3 class="vertical" style="white-space: nowrap">
+            <span
+              >Pure CSS marquee - infinite `@keyframes` translate, no JS</span
+            >
+          </h3>
+          <details>
+            <summary>
+              <span class="highlighted text-md"><span>How to?</span></span>
+            </summary>
+            <ol class="m-list">
+              <li class="m-list__item">
+                <h5>CSS-only marquee</h5>
+                <p>
+                  `transform: translateX(100%)` animated to `-100%` on an
+                  infinite linear `@keyframes` loop. The parent box needs
+                  `overflow: hidden` to hide the text while it's off-screen.
+                </p>
+                <pre data-code="css">
+                    <code>
+.vertical {
+  transform: translateX(100%);
+  animation: infinite-scroll 20s linear infinite;
+}
+@keyframes infinite-scroll {
+  from { transform: translateX(100%); }
+  to { transform: translateX(-100%); }
+}
+                    </code>
+                  </pre>
+                <a
+                  class="a-link"
+                  href="https://developer.mozilla.org/en-US/docs/Web/CSS/animation"
+                  >MDN - animation</a
+                >
+              </li>
+            </ol>
+          </details>
         </section>
 
         <h2>Molecules</h2>
@@ -268,57 +429,207 @@
           </details>
         </section>
 
-        <!-- Card -->
-        <section class="box" data-box-title="Card">
-          <table class="m-table text-theme">
-            <thead class="bg-theme" style="--theme-color-lightness: 1">
-              <tr>
-                <th>Header 1</th>
-                <th>Header 2</th>
-                <th>Header 3</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Row 1, Cell 1</td>
-                <td>Row 1, Cell 2</td>
-                <td>Row 1, Cell 3</td>
-              </tr>
-              <tr>
-                <td>Row 2, Cell 1</td>
-                <td>Row 2, Cell 2</td>
-                <td>Row 2, Cell 3</td>
-              </tr>
-            </tbody>
-          </table>
-
+        <!-- Shake -->
+        <section class="box" data-box-title="Shake">
+          <div class="cluster">
+            <div class="m-shake">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 40 40"
+                class="shake__shape"
+              >
+                <rect
+                  class="shake-rect"
+                  x="0"
+                  y="0"
+                  width="40"
+                  height="40"
+                  stroke-width="5"
+                ></rect>
+                <rect
+                  class="shake-rect-internal"
+                  x="5"
+                  y="5"
+                  width="30"
+                  height="30"
+                ></rect>
+              </svg>
+            </div>
+          </div>
           <details>
             <summary>
               <span class="highlighted text-md"><span>How to?</span></span>
             </summary>
             <ol class="m-list">
               <li class="m-list__item">
-                <h5>
-                  <span>`table-layout: fixed` on the table</span>
-                </h5>
-                <h5>border-collapse: collapse;</h5>
+                <h5>Shake CSS Animation</h5>
                 <p>
-                  This prevent extra space between table cells and ensures that
-                  if a border is applied, it will be shown.
+                  Hover the square: a `@keyframes shake` runs on `:hover`,
+                  nudging `transform: translate3d()` back and forth. On the
+                  homepage the same SVG is also wired to a checkbox that shakes
+                  the entire page as an easter egg - here it's just the
+                  self-contained hover trick.
                 </p>
                 <pre data-code="css">
                     <code>
-.m-table {
-  table-layout: fixed;
-  border-collapse: collapse;
-  width: 100%;
+.shake__shape:hover {
+  animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}
+@keyframes shake {
+  10%, 90% { transform: translate3d(-1px, 0, 0); }
+  20%, 80% { transform: translate3d(2px, 0, 0); }
+  30%, 50%, 70% { transform: translate3d(-4px, 0, 0); }
+  40%, 60% { transform: translate3d(4px, 0, 0); }
 }
                     </code>
                   </pre>
                 <a
                   class="a-link"
-                  href="https://css-tricks.com/complete-guide-table-element/"
-                  >HTML Table Element Guide (Chris Coyier on Aug 12, 2024)</a
+                  href="https://css-tricks.com/snippets/css/shake-css-keyframe-animation/"
+                  >CSS-Tricks - Shake CSS Animation</a
+                >
+              </li>
+            </ol>
+          </details>
+        </section>
+
+        <!-- Card -->
+        <section class="box" data-box-title="Card">
+          <div class="m-card-grid">
+            <article class="m-card border-theme">
+              <div class="m-card__media" aria-hidden="true"></div>
+              <div class="m-card__content flow">
+                <span class="m-card__tag a-link">CSS Trick</span>
+                <h3 class="m-card__title">
+                  <a
+                    class="m-card__link"
+                    href="https://inclusive-components.design/cards/"
+                    >Block links, the inclusive way</a
+                  >
+                </h3>
+                <p>
+                  The whole card is clickable, yet there's still only one real,
+                  keyboard-focusable link.
+                </p>
+                <p class="m-card__meta">
+                  By
+                  <a href="https://twitter.com/heydonworks">Heydon Pickering</a>
+                </p>
+              </div>
+            </article>
+            <article class="m-card border-theme">
+              <div class="m-card__media" aria-hidden="true"></div>
+              <div class="m-card__content flow">
+                <span class="m-card__tag a-link">Accessibility</span>
+                <h3 class="m-card__title">
+                  <a class="m-card__link" href="#"
+                    >A second card to show the grid</a
+                  >
+                </h3>
+                <p>
+                  Try tabbing through both cards - only the title link and the
+                  author link receive focus.
+                </p>
+              </div>
+            </article>
+          </div>
+          <details>
+            <summary>
+              <span class="highlighted text-md"><span>How to?</span></span>
+            </summary>
+            <ol class="m-list">
+              <li class="m-list__item">
+                <h5>Stretched link ("block link") pattern</h5>
+                <p>
+                  Only the card title is a real `&lt;a&gt;`. An absolutely
+                  positioned `::after` on that link stretches to the card's
+                  edges, making the whole card clickable while keeping exactly
+                  one focusable target. Any secondary link (like the author)
+                  just needs `position: relative` and a higher `z-index` to stay
+                  reachable above it.
+                </p>
+                <pre data-code="css">
+                    <code>
+.m-card { position: relative; }
+.m-card__link::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+}
+.m-card__meta a { position: relative; z-index: 1; }
+                    </code>
+                  </pre>
+                <a
+                  class="a-link"
+                  href="https://inclusive-components.design/cards/"
+                  >Inclusive Components - Cards</a
+                >
+              </li>
+            </ol>
+          </details>
+        </section>
+
+        <!-- Modal -->
+        <section class="box" data-box-title="Modal">
+          <div class="cluster">
+            <label
+              role="button"
+              for="modal"
+              class="a-btn theme -relative"
+              data-component
+            >
+              <span>Open Modal</span>
+            </label>
+          </div>
+          <details>
+            <summary>
+              <span class="highlighted text-md"><span>How to?</span></span>
+            </summary>
+            <ol class="m-list">
+              <li class="m-list__item">
+                <h5>Checkbox-hack dialog</h5>
+                <p>
+                  A checkbox + `label[for]` opens/closes the modal; `:has()` on
+                  the wrapper locks page scroll while open.
+                </p>
+                <a
+                  class="a-link"
+                  href="https://css-tricks.com/prevent-page-scrolling-when-a-modal-is-open/"
+                  >Prevent Page Scrolling When a Modal is Open</a
+                >
+              </li>
+            </ol>
+          </details>
+        </section>
+
+        <!-- Drawer -->
+        <section class="box" data-box-title="Drawer">
+          <div class="cluster">
+            <label
+              role="button"
+              for="drawer-settings"
+              class="a-btn theme -relative"
+              data-component
+            >
+              <span>Open Drawer</span>
+            </label>
+          </div>
+          <details>
+            <summary>
+              <span class="highlighted text-md"><span>How to?</span></span>
+            </summary>
+            <ol class="m-list">
+              <li class="m-list__item">
+                <h5>Checkbox-hack drawer + `accent-color`</h5>
+                <p>
+                  Same open/close trick as the modal, in a side panel. The
+                  checkbox's native tick color comes from `accent-color` instead
+                  of a custom-built control.
+                </p>
+                <a
+                  class="a-link"
+                  href="https://css-tricks.com/almanac/properties/a/accent-color/"
+                  >CSS-Tricks - accent-color</a
                 >
               </li>
             </ol>
