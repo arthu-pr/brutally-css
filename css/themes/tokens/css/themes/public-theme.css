@@ -235,7 +235,10 @@
   /* -------------------- */
   /*     Composition     */
   /* -------------------- */
-  --flow-space: var(--gutter);
+  /* --flow-space intentionally not defaulted here: css/cube/layout/flow.css
+     already falls back to --gutter itself (var(--flow-space, var(--gutter, 1em))).
+     Setting it here would bake a fixed value onto :root that shadows any
+     local --gutter override on a .flow element - see flow.css comment. */
   --stack-gap: var(--gutter);
   --stack-align: start;
   --stack-direction: var(--layout-direction);

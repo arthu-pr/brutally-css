@@ -39,24 +39,29 @@
 .m-navbar__hamburger {
   --hamburger-display-desktop: var(--from-breakpoint-sm) none;
   display: var(--hamburger-display-desktop, flex);
-  flex-direction: column;
   justify-content: center;
   gap: 5px;
   width: 2rem;
   height: 2rem;
   cursor: pointer;
   z-index: 1;
+
+  transition: transform 0.5s ease;
 }
 
 .m-navbar__hamburger__bar {
   display: block;
-  height: 2px;
+  height: var(--hamburger-bar-height);
   width: 100%;
   background: var(--theme-color);
   transform-origin: center;
   transition:
-    transform 0.25s ease,
-    opacity 0.25s ease;
+    transform 0.5s ease,
+    opacity 0.5s ease;
+
+  & > :last-of-type {
+    height: calc(var(--hamburger-bar-height) * 1.3);
+  }
 }
 
 /* Hamburger -> cross, whichever container/breakpoint made it visible */
@@ -81,7 +86,6 @@
   --list-direction-mobile: var(--below-breakpoint-sm) column;
   --list-align-mobile: var(--below-breakpoint-sm) stretch;
   --list-bg-mobile: var(--below-breakpoint-sm) var(--color-bg);
-  --list-border-mobile: var(--below-breakpoint-sm) var(--border-theme);
   --list-max-height-mobile: var(--below-breakpoint-sm) 0;
   --list-overflow-mobile: var(--below-breakpoint-sm) hidden;
 
@@ -89,10 +93,10 @@
   top: 100%;
   left: 0;
   right: 0;
+  z-index: 1;
   flex-direction: var(--list-direction-mobile, row);
   align-items: var(--list-align-mobile, center);
   background: var(--list-bg-mobile, transparent);
-  border: var(--list-border-mobile, none);
   margin: 0;
   max-height: var(--list-max-height-mobile, none);
   overflow-y: var(--list-overflow-mobile, visible);
@@ -100,7 +104,7 @@
 }
 
 .m-navbar:has(.m-navbar__toggle:checked) .m-navbar__list {
-  --list-max-height-mobile-open: var(--below-breakpoint-sm) 50vh;
+  --list-max-height-mobile-open: var(--below-breakpoint-sm) calc(100vh - var(--navbar-size));
   --list-overflow-mobile-open: var(--below-breakpoint-sm) auto;
 
   max-height: var(--list-max-height-mobile-open, none);

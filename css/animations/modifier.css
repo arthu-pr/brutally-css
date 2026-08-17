@@ -161,7 +161,7 @@
 
   &:has(#brutalist-modal:checked) {
     & > .m-modal {
-      --raw: var(--TRUE);
+      --raw: var(--FALSE);
       --dialog-bg: var(--theme-color);
       --dialog-border: var(--border-bg);
       --dialog-box-shadow: none;
@@ -199,12 +199,12 @@
   /*
    * 3.3 Disable scrolling when Modal is open
    */
-  &:not(:has([data-dialog-toggle='modal']:checked)) .controller {
+  &:not(:has([data-dialog-toggle='modal']:checked)) {
     height: auto;
     overscroll-behavior: contain;
   }
 
-  &:has([data-dialog-toggle='modal']:checked) .controller {
+  &:has([data-dialog-toggle='modal']:checked) {
     height: 100svh;
     overflow-y: hidden;
     overscroll-behavior: contain;

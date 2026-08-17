@@ -1,27 +1,36 @@
+/*
+ * A fun CSS class that generates a lot of Lorem Ipsum text, and also adds a counter for empty tags inside it.
+ * Usage:
+ * <div class="lorem">
+ *   <p></p>
+ *   <p></p>
+ * </div>
+ * Will generate: 
+ * Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+ * Empty I
+ * Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+ * Empty II
+ * Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+ * Empty III
+ * Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing
+ */
+
 .lorem {
   --lorem-ipsum: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ';
+  --content: var(--lorem-ipsum) var(--lorem-ipsum) var(--lorem-ipsum) var(--lorem-ipsum) var(--lorem-ipsum) var(--lorem-ipsum) var(--lorem-ipsum) var(--lorem-ipsum) var(--lorem-ipsum) var(--lorem-ipsum) var(--lorem-ipsum) var(--lorem-ipsum);
 
   /* Define a counter for empty tags inside */
   counter-reset: empty-tag;
 
   /* multiply it */
-  content: var(--lorem-ipsum) var(--lorem-ipsum) var(--lorem-ipsum)
-    var(--lorem-ipsum) var(--lorem-ipsum) var(--lorem-ipsum) var(--lorem-ipsum)
-    var(--lorem-ipsum) var(--lorem-ipsum) var(--lorem-ipsum) var(--lorem-ipsum)
-    var(--lorem-ipsum);
+  content: var(--content);
 
   &::before {
-    content: var(--lorem-ipsum) var(--lorem-ipsum) var(--lorem-ipsum)
-      var(--lorem-ipsum) var(--lorem-ipsum) var(--lorem-ipsum)
-      var(--lorem-ipsum) var(--lorem-ipsum) var(--lorem-ipsum)
-      var(--lorem-ipsum) var(--lorem-ipsum) var(--lorem-ipsum);
+    content: var(--content);
   }
 
   &:after {
-    content: var(--lorem-ipsum) var(--lorem-ipsum) var(--lorem-ipsum)
-      var(--lorem-ipsum) var(--lorem-ipsum) var(--lorem-ipsum)
-      var(--lorem-ipsum) var(--lorem-ipsum) var(--lorem-ipsum)
-      var(--lorem-ipsum) var(--lorem-ipsum) var(--lorem-ipsum);
+    content: var(--content);
   }
 
   & > *:empty {
@@ -37,10 +46,7 @@
     }
 
     &::after {
-      content: var(--lorem-ipsum) var(--lorem-ipsum) var(--lorem-ipsum)
-        var(--lorem-ipsum) var(--lorem-ipsum) var(--lorem-ipsum)
-        var(--lorem-ipsum) var(--lorem-ipsum) var(--lorem-ipsum)
-        var(--lorem-ipsum) var(--lorem-ipsum) var(--lorem-ipsum);
+      content: var(--content);
       text-indent: var(--space-md);
       margin-left: var(--space-md);
     }

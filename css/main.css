@@ -62,6 +62,7 @@
    Molecules
    ===================================================== */
 @import './cube/blocks/molecules/box.css';
+@import './cube/blocks/molecules/card.css';
 @import './cube/blocks/molecules/dynamic-form.css';
 @import './cube/blocks/molecules/form.css';
 @import './cube/blocks/molecules/modal.css';

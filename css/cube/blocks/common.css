@@ -36,6 +36,12 @@
   inherits: true;
 }
 
+/* @property --size {
+  syntax: '<length>';
+  initial-value: 0;
+  inherits: true;
+} */
+
 :root {
   /* https://dev.to/tracygjg/conditional-css-437e */
   --TRUE: 1;
@@ -79,9 +85,7 @@
   --component-border-width: calc(var(--border-width-xsmall) * var(--styled));
 
   --theme-base-unit: var(--base-unit);
-  --theme-base-unit-calc: calc(
-    var(--theme-base-unit) * var(--not-raw, 1) * var(--styled, 1)
-  );
+  --theme-base-unit-calc: calc(var(--theme-base-unit) * var(--not-raw, 1) * var(--styled, 1));
 
   --box-shadow-x: var(--theme-base-unit-calc);
   --box-shadow-y: var(--theme-base-unit-calc);
@@ -90,8 +94,7 @@
   --component-translate-y: var(--theme-base-unit-calc);
 
   --box-shadow-base: var(--box-shadow-x) var(--box-shadow-y) 0 0 black;
-  --box-shadow-hover: var(--box-shadow-x) var(--box-shadow-y) 0 0
-    var(--theme-color);
+  --box-shadow-hover: var(--box-shadow-x) var(--box-shadow-y) 0 0 var(--theme-color);
 
   /*
    * Pseudo-boolean CSS custom properties - https://keithclark.co.uk/articles/pseudo-boolean-css-custom-properties
@@ -99,38 +102,23 @@
    */
   --component-color: var(--primary, var(--color-contrast-high));
 
-  --component-bg: color-mix(
-    in srgb,
-    var(--theme-color) calc(100% * var(--primary, 0)),
-    transparent
-  );
+  --component-bg: color-mix(in srgb, var(--theme-color) calc(100% * var(--primary, 0)), transparent);
 
-  --component-border-color: color-mix(
-    in srgb,
-    var(--color-bg) calc(100% * var(--primary, 0)),
-    var(--theme-color)
-  );
+  --component-border-color: color-mix(in srgb, var(--color-bg) calc(100% * var(--primary, 0)), var(--theme-color));
 
   --component-box-shadow: var(--box-shadow-base);
   /* --component-padding-x: calc(var(--layout-space-unit) * var(--styled)); */
   /* --component-padding-y: 0; */
   --component-border-style: solid;
 
-  --component-transform: translate(
-    var(--component-translate-x),
-    var(--component-translate-y)
-  );
+  --component-transform: translate(var(--component-translate-x), var(--component-translate-y));
   /* --component-height: auto;
   --component-width: auto;
   margin-bottom: var(--component-mb);
 
   /* If --component-padding is not defined, use --component-padding-y and --component-padding-x already defined by default*/
-  padding: var(
-    --component-padding,
-    var(--component-padding-y) var(--component-padding-x)
-  );
-  border: var(--component-border-width) var(--component-border-style)
-    var(--component-border-color);
+  padding: var(--component-padding, var(--component-padding-y) var(--component-padding-x));
+  border: var(--component-border-width) var(--component-border-style) var(--component-border-color);
   border-radius: var(--_border-radius-medium);
   background-color: var(--component-bg);
   box-shadow: var(--component-box-shadow);
@@ -179,10 +167,7 @@
 /* Disable the active and focus-visible states on disabled and raw modifiers */
 .theme:not(.-disabled, .-raw):active,
 .theme:not(.-disabled, .-raw):focus-visible {
-  transform: translate(
-    var(--component-translate-x),
-    var(--component-translate-y)
-  );
+  transform: translate(var(--component-translate-x), var(--component-translate-y));
   --component-box-shadow: unset;
 }
 
