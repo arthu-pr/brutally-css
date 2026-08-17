@@ -22,15 +22,21 @@
   --dialog-border: var(--border-theme);
   --dialog-box-shadow: var(--box-shadow-base); */
 
-  background: var(--dialog-bg);
+  /* background: var(--dialog-bg);
   border: var(--dialog-border);
   box-shadow: var(--dialog-box-shadow);
-  border-radius: var(--border-radius-lg);
+  border-radius: var(--border-radius-lg);*/
 }
 
 [data-dialog],
 [aria-modal='true'][role='dialog'] {
   /* --is-visible: var(--off); */
+  /* Flat by default (e.g. the plain overlay backdrop). .m-modal/.m-drawer
+     opt back out below - selector specificity there must beat the
+     [aria-modal='true'][role='dialog'] branch here (0,2,0), since the
+     dialogs match both branches of this selector list. */
+  --raw: var(--TRUE);
+
   position: fixed;
   display: flex;
   flex-direction: column;
@@ -40,6 +46,45 @@
   z-index: var(--dialog-z-index, -1000);
 
   opacity: var(--overlay-opacity, 0%);
+
+  &.m-modal,
+  &.m-drawer {
+    --dialog-bg: var(--color-bg-neutral);
+    --dialog-border: var(--border-theme);
+    --dialog-box-shadow: var(--box-shadow-base);
+
+    background: var(--dialog-bg);
+    border: var(--dialog-border);
+    box-shadow: var(--dialog-box-shadow);
+    border-radius: var(--border-radius-lg);
+  }
+
+  & > .m-modal__header,
+  & > .m-modal__content,
+  & > .m-modal__footer {
+    padding: var(--space-md);
+  }
+
+  & > .m-modal__footer,
+  & > footer {
+    border-top: var(--border-theme-10);
+
+    &:has(.m-drawer) {
+      margin-top: auto;
+    }
+  }
+}
+
+/*
+ * .m-modal/.m-drawer opt back out of the flat default above so their own
+ * content (buttons, inputs...) keeps its normal themed shadow. Needs to
+ * out-specify [aria-modal='true'][role='dialog'] (0,2,0) - both dialogs
+ * carry that attribute pair too, so a plain `.m-modal { --raw: FALSE }`
+ * (0,1,0) silently loses the cascade and never applies.
+ */
+[aria-modal='true'][role='dialog'].m-modal,
+[aria-modal='true'][role='dialog'].m-drawer {
+  --raw: var(--FALSE);
 }
 
 .m-modal {
@@ -49,7 +94,6 @@
   --modal-translate-x: -50%;
   --box-shadow-x: 8px;
   --box-shadow-y: 8px;
-  --raw: var(--FALSE);
 
   /* opacity: var(--overlay-opacity); */
   /* --modal-z-index: calc(var(--overlay-z-index) + 10); */
@@ -83,7 +127,7 @@
    * We select overlays that have a modal as a direct sibling and a sibling overlay / modal
    * Which means that there are more than one modal, and we increase the z-index the more modals are opened
   */
-.a-overlay:has(+ .m-modal):not(.m-drawer):has(~ .a-overlay) ~ .a-overlay {
+.a-overlay:has(+ .m-modal):not(.m-drawer):has(~ .a-overlay) ~ .a-overlay:has(+ .m-modal) {
   --overlay-z-index: calc(var(--dialog-z-index) + 1);
 }
 
@@ -96,7 +140,6 @@
 }
 
 .m-modal__header {
-  padding: var(--space-md);
   border-bottom: var(--border-theme-10);
 }
 
@@ -112,13 +155,8 @@
   color: blue;
 }
 
-.m-modal__content {
-  padding: var(--space-md);
-}
-
 .m-modal__footer {
   text-align: left;
-  padding: var(--space-md);
   border-top: var(--border-theme-10);
 }
 

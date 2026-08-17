@@ -30,6 +30,20 @@
       transform 200ms ease,
       background-color 200ms ease;
   }
+  &:checked + label::after {
+    content: attr(data-checked);
+  }
+
+  &:not(:checked) + label::after {
+    content: attr(data-text);
+  }
+  /* &:after {
+    content: attr(data-text);
+  }
+
+  &:checked:after {
+    content: attr(data-checked);
+  } */
 
   &:checked {
     /* --checkbox-animation: var(--checkbox-animation-checked-in); */
