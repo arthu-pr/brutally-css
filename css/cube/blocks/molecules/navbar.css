@@ -86,27 +86,35 @@
   --list-direction-mobile: var(--below-breakpoint-sm) column;
   --list-align-mobile: var(--below-breakpoint-sm) stretch;
   --list-bg-mobile: var(--below-breakpoint-sm) var(--color-bg);
-  --list-max-height-mobile: var(--below-breakpoint-sm) 0;
-  --list-overflow-mobile: var(--below-breakpoint-sm) hidden;
+  --list-max-height: var(--below-breakpoint-sm) 0;
+  --list-overflow: var(--below-breakpoint-sm) hidden;
 
   position: var(--list-position-mobile, static);
   top: 100%;
-  left: 0;
-  right: 0;
+  left: calc(-1 * var(--layout-mobile-padding));
+  right: calc(-1 * var(--layout-mobile-padding));
   z-index: 1;
   flex-direction: var(--list-direction-mobile, row);
   align-items: var(--list-align-mobile, center);
   background: var(--list-bg-mobile, transparent);
   margin: 0;
-  max-height: var(--list-max-height-mobile, none);
-  overflow-y: var(--list-overflow-mobile, visible);
-  transition: max-height 0.25s ease;
+  height: var(--list-max-height, none);
+  overflow-y: var(--list-overflow, visible);
+  transition: height 0.25s ease;
 }
 
+/*
+ * Overriding the same --list-max-height/--list-overflow custom properties
+ * (rather than declaring new ones consumed by a second `height`/
+ * `overflow-y` declaration) keeps this a single-property transition -
+ * Chrome fails to animate `height` when its start and end values come
+ * from two differently-named var() chains.
+ *
+ * dvh (not vh) so the open height tracks the *smallest* viewport once
+ * mobile browser toolbars retract, landing flush with the real screen
+ * bottom instead of overshooting under dynamic chrome.
+ */
 .m-navbar:has(.m-navbar__toggle:checked) .m-navbar__list {
-  --list-max-height-mobile-open: var(--below-breakpoint-sm) calc(100vh - var(--navbar-size));
-  --list-overflow-mobile-open: var(--below-breakpoint-sm) auto;
-
-  max-height: var(--list-max-height-mobile-open, none);
-  overflow-y: var(--list-overflow-mobile-open, visible);
+  --list-max-height: var(--below-breakpoint-sm) calc(100dvh - var(--navbar-size));
+  --list-overflow: var(--below-breakpoint-sm) auto;
 }
