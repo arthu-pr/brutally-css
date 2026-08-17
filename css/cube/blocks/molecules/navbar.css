@@ -59,7 +59,7 @@
     transform 0.5s ease,
     opacity 0.5s ease;
 
-  & > :last-of-type {
+  &:nth-child(3) {
     height: calc(var(--hamburger-bar-height) * 1.3);
   }
 }
